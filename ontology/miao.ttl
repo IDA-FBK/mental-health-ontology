@@ -1,97 +1,267 @@
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix mls: <http://www.w3.org/ns/mls#> .
-@prefix nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
-@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix : <http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
-@prefix vann: <http://purl.org/vocab/vann/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix itsrdf: <http://www.w3.org/2005/11/its/rdf#> .
+@base <http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/> .
 
-@prefix miao: <http://www.gsi.upm.es/ontologies/miao/ns#> .
+<http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology> rdf:type owl:Ontology ;
+                                                                                      owl:imports <http://www.w3.org/2016/03/mls#> .
 
-<http://www.gsi.upm.es/ontologies/miao/ns> a owl:Ontology ;
-   rdfs:label "MIAO Mental Illness Analysis Ontology"@en ;
-   owl:versionInfo "1.0.0"^^xsd:string ;
-   owl:versionIRI <http://www.gsi.upm.es/ontologies/miao/ns/1.0.0> ;
-   owl:imports <http://www.w3.org/2005/11/its/rdf#> , <http://www.w3.org/ns/prov-o#> ;
-   dc:title "MIAO Mental Illness Analysis Ontology"@en ;
-   rdfs:comment "MIAO is an ontology designed for representing mental illness analysis and annotations."@en ;
-   dc:description "MIAO is an ontology for representing mental illnesses, their characteristics, and annotation of related phenomena."@en ;
-   vann:preferredNamespacePrefix "miao" ;
-   vann:preferredNamespaceUri "http://www.gsi.upm.es/ontologies/miao/ns#" .
+#################################################################
+#    Object Properties
+#################################################################
 
-miao:AnalysedEntity a owl:Class ;
-   rdfs:subClassOf prov:Entity ;
-   rdfs:label "Analysed Entity"@en ;
-   rdfs:comment "Represents any entity that serves as the subject or source of mental illness analysis. This may include textual data (e.g., clinical notes, social media posts, questionnaires), or agents (e.g., patients, respondents, participants) whose mental health status is being assessed."@en .
-
-miao:MentalIllnessAnnotation a owl:Class ;
-   rdfs:subClassOf prov:Entity , oa:Annotation ;
-   rdfs:label "Mental Illness Annotation"@en ;
-   rdfs:comment "Represents an annotation indicating the presence, symptoms, or characteristics of a mental illness, extracted or inferred from analysed sources such as text, questionnaires, or other data."@en .
-
-miao:MentalIllnessAnalysis a owl:Class ;
-   rdfs:subClassOf prov:Activity ;
-   rdfs:label "Mental Illness Analysis"@en ;
-   rdfs:comment "Represents the activity of analyzing a resource (such as text, questionnaire responses, or other data) to detect, annotate, or infer mental illnesses or related characteristics."@en .
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology#belongsToMentalIllnessesSet
+:belongsToMentalIllnessesSet rdf:type owl:ObjectProperty ;
+                             owl:inverseOf :hasMentalIllness ;
+                             rdfs:domain :MentalIlness ;
+                             rdfs:range :MentalIlnessesSet ;
+                             rdfs:comment "Inverse relation of hasMentalIlness. This relation connect a MentalIllness with its corresponding MentalIlnessSet." .
 
 
-miao:MentalIllnessModel a owl:Class ;
-   rdfs:subClassOf prov:Entity ;
-   rdfs:label "Mental Illness Model"@en ;
-   rdfs:comment "Represents a conceptual or computational model used to categorize, structure, or assess mental illnesses and related phenomena. This may include clinical classification systems (e.g., DSM-5, ICD-11), computational models for symptom grouping or severity grading, or custom frameworks defining both typologies and levels of mental health conditions."@en .
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology#hasMentalIllness
+:hasMentalIllness rdf:type owl:ObjectProperty ;
+                  rdfs:domain :MentalIlnessesSet ;
+                  rdfs:range :MentalIlness ;
+                  rdfs:comment "Relation connecting a MentalIllnessSet with its corresponding MentalIlnesses." .
 
-miao:MentalIllnessCategory a owl:Class ;
-   rdfs:subClassOf prov:Entity ;
-   rdfs:label "Mental Illness Category"@en ;
-   rdfs:comment "Abstract superclass for categories related to mental illnesses. Use the subclass miao:DisorderType for categories representing types of mental illness (e.g., anxiety disorder, depressive disorder), and miao:SeverityLevel for categories representing severity or grade (e.g., mild, moderate, severe), as defined by a particular model or classification system."@en .
 
-miao:DisorderType a owl:Class ;
-    rdfs:subClassOf miao:MentalIllnessCategory ;
-    rdfs:label "Disorder Type"@en ;
-    rdfs:comment "A category representing a type of mental illness (e.g., depressive disorder, anxiety disorder)."@en .
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology#isPredictionOf
+:isPredictionOf rdf:type owl:ObjectProperty ;
+                owl:inverseOf :hasPrediction ;
+                rdfs:domain :Prediction ;
+                rdfs:range :PredictionsSet ;
+                rdfs:comment "Inverse relation of hasPrediction. This relation connects a Prediction to its correspoding PredictionsSet." .
 
-miao:SeverityLevel a owl:Class ;
-    rdfs:subClassOf miao:MentalIllnessCategory ;
-    rdfs:label "Severity Level"@en ;
-    rdfs:comment "A category representing the severity or grade of a mental illness (e.g., mild, moderate, severe)."@en .
 
-miao:hasMentalIllnessCategory a owl:ObjectProperty ;
-   rdfs:subPropertyOf prov:hadMember ;
-   rdfs:label "has mental illness category"@en ;
-   rdfs:domain [
-       a owl:Class ;
-       owl:unionOf ( miao:MentalIllnessAnnotation miao:MentalIllnessModel )
-   ] ;
-   rdfs:range miao:MentalIllnessCategory ;
-   rdfs:comment "Specifies the category of the mental illness."@en .
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/hasMentalIlness
+:hasMentalIlness rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :hasPrediction ;
+                 rdfs:domain :MentalIlnessesSet ;
+                 rdfs:range :MentalIlness ;
+                 rdfs:comment "(Sub)-Relation of hasPrediction object property used to represent the relation between a MentalIllnessesAnalysis and its corresponding MentalIllnesses identified." .
 
-miao:hasMentalIllnessIntensity a owl:DatatypeProperty ;
-   rdfs:label "has mental illness intensity"@en ;
-   rdfs:comment "Value that quantifies the intensity or severity of the detected or annotated mental illness or symptom."@en ;
-   rdfs:domain miao:MentalIllnessAnnotation ;
-   rdfs:range xsd:float .
 
-miao:usedMentalIllnessModel a owl:ObjectProperty ;
-   rdfs:subPropertyOf prov:used ;
-   rdfs:label "used mental illness model"@en ;
-   rdfs:domain miao:MentalIllnessAnalysis ;
-   rdfs:range miao:MentalIllnessModel ;
-   rdfs:comment "Specifies the mental illness model used in the analysis."@en .
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/hasMentalIlnessCategory
+:hasMentalIlnessCategory rdf:type owl:ObjectProperty ;
+                         owl:inverseOf :isMentalIlnessCategoryOf ;
+                         rdfs:domain :MentalIlnessesModel ;
+                         rdfs:range :MentalIlnessCategory ;
+                         rdfs:comment "A relation between a MentalIllnessesModel and its Mental Illnesses categories." .
 
-miao:analysed a owl:ObjectProperty ;
-   rdfs:subPropertyOf prov:used ;
-   rdfs:label "analysed"@en ;
-   rdfs:domain miao:AnnotationAnalysis ;
-   rdfs:range miao:AnalysedEntity ;
-   rdfs:comment "This property relates the analysis activity with the resource that is analysed."@en .
 
-miao:usedMLModel a owl:ObjectProperty ;
-   rdfs:subPropertyOf prov:used ;
-   rdfs:label "used machine learning model"@en ;
-   rdfs:domain prov:Activity ;
-   rdfs:range mls:Model ;
-   rdfs:comment "This property relates an activity (such as a MentalIllnessAnalysis) with the Machine Learning Model (mls:Model) used to carry out the activity."@en .
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/hasPrediction
+:hasPrediction rdf:type owl:ObjectProperty ;
+               rdfs:domain :PredictionsSet ;
+               rdfs:range :Prediction ;
+               rdfs:comment "Relation used to represent the connection between a PredictionsSet and its corresponding Predictions." .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/isGeneratedBy
+:isGeneratedBy rdf:type owl:ObjectProperty ;
+               owl:inverseOf prov:generated ;
+               rdf:type owl:InverseFunctionalProperty ;
+               rdfs:domain :MentalIlnessesSet ;
+               rdfs:range :MentalIlnessesAnalysis ;
+               rdfs:comment "Inverse relation of the prov:generated relation. This relation is used to represent the relation between a  MentalIllnessesSet and the MentalIllnessesAnalysis tha generated it." .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/isMentalIlnessCategoryOf
+:isMentalIlnessCategoryOf rdf:type owl:ObjectProperty ;
+                          rdfs:domain :MentalIlnessCategory ;
+                          rdfs:range :MentalIlnessesModel ;
+                          rdfs:comment "Inverse relation of hasMentalIllnessCategory object propery that represents the relation between a MentalIllnessCategory and its corresponding MentalIllnessesModel." .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/referredToMentalIllness
+:referredToMentalIllness rdf:type owl:ObjectProperty ;
+                         owl:inverseOf :referredToMentalIllnessCategory ;
+                         rdf:type owl:InverseFunctionalProperty ;
+                         rdfs:domain :MentalIlnessCategory ;
+                         rdfs:range :MentalIlness ;
+                         rdfs:comment "Inverse relation of referredToMentalIllnessCategory used to represent to which MentalIlness (predicted) a MentalIlnessCategoy (from the literature) corresponds to." .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/referredToMentalIllnessCategory
+:referredToMentalIllnessCategory rdf:type owl:ObjectProperty ,
+                                          owl:FunctionalProperty ;
+                                 rdfs:domain :MentalIlness ;
+                                 rdfs:range :MentalIlnessCategory ;
+                                 rdfs:comment "Relation used to represent to which MentalIlnessCategoy (from the literature) a MentalIlness (predicted) corresponds to." .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/usedInMentalIlnessesAnalysis
+:usedInMentalIlnessesAnalysis rdf:type owl:ObjectProperty ;
+                              rdfs:domain :MentalIlnessesModel ;
+                              rdfs:range :MentalIlnessesAnalysis ;
+                              rdfs:comment "Inverse relation of usedMentalIlnessesAnalysis used to indicate which MetalIllnessAnalysis adopted a specific MentalIllnessesModel (from the literature)." .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/usedMentalIlnessesModel
+:usedMentalIlnessesModel rdf:type owl:ObjectProperty ,
+                                  owl:FunctionalProperty ;
+                         rdfs:domain :MentalIlnessesAnalysis ;
+                         rdfs:range :MentalIlnessesModel ;
+                         rdfs:comment "Relations used to indicate to which MentalIllnessesModel (from the literature) a MentalIllnessesAnalysis is based on." .
+
+
+###  http://www.w3.org/ns/prov#generated
+prov:generated rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :MentalIlnessesAnalysis ;
+               rdfs:range :MentalIlnessesSet ;
+               rdfs:comment "Relation taken from the Prov ontology that is used to represent the relation between a MentalIlness Analysis and the generated set of MentalIllnessesSet." .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/MLConfidence
+:MLConfidence rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Prediction ;
+              rdfs:range xsd:decimal ;
+              rdfs:comment "Data Property used to represent the confidence of a machine/deep learning model." .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/hasMentalIllnessLevel
+:hasMentalIllnessLevel rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :MentalIlness ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "Represents the intensity of the mental illness as a categorical value, e.g., Low, Medium, or High." .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/hasMentalIllnessScore
+:hasMentalIllnessScore rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :MentalIlness ;
+                       rdfs:range xsd:decimal ;
+                       rdfs:comment "Represents the intensity of the mental illness as a numeric score between 0 and 1." .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/DisorderType
+:DisorderType rdf:type owl:Class ;
+              rdfs:subClassOf :MentalIlness ;
+              rdfs:comment "This concept defines the types of disorder(s) related to a MentalIllness." ;
+              rdfs:label "Disorder type"@en ,
+                         "Tipo disordine"@it .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/MentalIlness
+:MentalIlness rdf:type owl:Class ;
+              rdfs:subClassOf :Prediction ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :belongsToMentalIllnessesSet ;
+                                owl:someValuesFrom :MentalIlnessesSet
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :referredToMentalIllnessCategory ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :MentalIlnessCategory
+                              ] ;
+              rdfs:comment "A concept used to represent the result (i.e., a prediction) from a machine/deep learning model." ;
+              rdfs:label "Malattia Mentale"@it ,
+                         "Mental Illness"@en .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/MentalIlnessCategory
+:MentalIlnessCategory rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty :isMentalIlnessCategoryOf ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass :MentalIlnessesModel
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :referredToMentalIllness ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass :MentalIlness
+                                      ] ;
+                      rdfs:comment "A concept used to represent a mental illness category that belongs to a specific model (e.g., ontology) used to represent mental illnesses" ;
+                      rdfs:label "Categoria Malattia Mentale"@it ,
+                                 "Mental Illness Category"@en .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/MentalIlnessesAnalysis
+:MentalIlnessesAnalysis rdf:type owl:Class ;
+                        rdfs:subClassOf <http://www.w3.org/ns/mls#Run> ,
+                                        prov:Activity ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :usedMentalIlnessesModel ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass :MentalIlnessesModel
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty prov:generated ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass :MentalIlnessesSet
+                                        ] ;
+                        rdfs:comment "A Mental Illness Analysis represent an analysis (i.e., a run) of a machine/deep learning model to discover the presence of mental ilnesses from a given source." ;
+                        rdfs:label "Analisi Malattie Mentali"@it ,
+                                   "Mental Illnesses Analysis"@en .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/MentalIlnessesModel
+:MentalIlnessesModel rdf:type owl:Class ;
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasMentalIlnessCategory ;
+                                       owl:someValuesFrom :MentalIlnessCategory
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :usedInMentalIlnessesAnalysis ;
+                                       owl:someValuesFrom :MentalIlnessesAnalysis
+                                     ] ;
+                     rdfs:comment "A Mental Ilnesses Model represents a model (from literature) used to represent mental illnesses (e.g., an ontology)." ;
+                     rdfs:label "Mental Illnesses Model"@en .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/MentalIlnessesSet
+:MentalIlnessesSet rdf:type owl:Class ;
+                   rdfs:subClassOf :PredictionsSet ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasMentalIllness ;
+                                     owl:someValuesFrom :MentalIlness
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isGeneratedBy ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :MentalIlnessesAnalysis
+                                   ] ;
+                   rdfs:label "Insieme Malattie Mentali"@it ,
+                              "Mental Illnesses Set"@en .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/Prediction
+:Prediction rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty :isPredictionOf ;
+                              owl:someValuesFrom :PredictionsSet
+                            ] ;
+            rdfs:comment "Prediction represents a prediction from a machine/deep learning model." ;
+            rdfs:label "Prediction"@en ,
+                       "Predizione"@it .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/PredictionsSet
+:PredictionsSet rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasPrediction ;
+                                  owl:someValuesFrom :Prediction
+                                ] ;
+                rdfs:comment "Predictions Set is a concept used to collect (multiple) Predictions from a machine/deep learning model." ;
+                rdfs:label "Insieme Predizioni"@it ,
+                           "Predictions Set"@en .
+
+
+###  http://www.w3.org/ns/prov#Activity
+prov:Activity rdf:type owl:Class ;
+              rdfs:comment "Ref: https://www.w3.org/TR/prov-o/#Activity" .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
