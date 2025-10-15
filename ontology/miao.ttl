@@ -15,7 +15,7 @@
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology#belongsToMentalIllnessesSet
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/belongsToMentalIllnessesSet
 :belongsToMentalIllnessesSet rdf:type owl:ObjectProperty ;
                              owl:inverseOf :hasMentalIllness ;
                              rdfs:domain :MentalIlness ;
@@ -23,19 +23,11 @@
                              rdfs:comment "Inverse relation of hasMentalIlness. This relation connect a MentalIllness with its corresponding MentalIlnessSet." .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology#hasMentalIllness
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/hasMentalIllness
 :hasMentalIllness rdf:type owl:ObjectProperty ;
                   rdfs:domain :MentalIlnessesSet ;
                   rdfs:range :MentalIlness ;
                   rdfs:comment "Relation connecting a MentalIllnessSet with its corresponding MentalIlnesses." .
-
-
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology#isPredictionOf
-:isPredictionOf rdf:type owl:ObjectProperty ;
-                owl:inverseOf :hasPrediction ;
-                rdfs:domain :Prediction ;
-                rdfs:range :PredictionsSet ;
-                rdfs:comment "Inverse relation of hasPrediction. This relation connects a Prediction to its correspoding PredictionsSet." .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/hasMentalIlness
@@ -56,6 +48,7 @@
 
 ###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/hasPrediction
 :hasPrediction rdf:type owl:ObjectProperty ;
+               owl:inverseOf :isPredictionOf ;
                rdfs:domain :PredictionsSet ;
                rdfs:range :Prediction ;
                rdfs:comment "Relation used to represent the connection between a PredictionsSet and its corresponding Predictions." .
@@ -75,6 +68,13 @@
                           rdfs:domain :MentalIlnessCategory ;
                           rdfs:range :MentalIlnessesModel ;
                           rdfs:comment "Inverse relation of hasMentalIllnessCategory object propery that represents the relation between a MentalIllnessCategory and its corresponding MentalIllnessesModel." .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/isPredictionOf
+:isPredictionOf rdf:type owl:ObjectProperty ;
+                rdfs:domain :Prediction ;
+                rdfs:range :PredictionsSet ;
+                rdfs:comment "Inverse relation of hasPrediction. This relation connects a Prediction to its correspoding PredictionsSet." .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/referredToMentalIllness
@@ -159,7 +159,8 @@ prov:generated rdf:type owl:ObjectProperty ,
               rdfs:subClassOf :Prediction ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty :belongsToMentalIllnessesSet ;
-                                owl:someValuesFrom :MentalIlnessesSet
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :MentalIlnessesSet
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty :referredToMentalIllnessCategory ;
@@ -241,7 +242,8 @@ prov:generated rdf:type owl:ObjectProperty ,
 :Prediction rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
                               owl:onProperty :isPredictionOf ;
-                              owl:someValuesFrom :PredictionsSet
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :PredictionsSet
                             ] ;
             rdfs:comment "Prediction represents a prediction from a machine/deep learning model." ;
             rdfs:label "Prediction"@en ,
@@ -257,6 +259,10 @@ prov:generated rdf:type owl:ObjectProperty ,
                 rdfs:comment "Predictions Set is a concept used to collect (multiple) Predictions from a machine/deep learning model." ;
                 rdfs:label "Insieme Predizioni"@it ,
                            "Predictions Set"@en .
+
+
+###  http://www.w3.org/ns/mls#Run
+<http://www.w3.org/ns/mls#Run> rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/prov#Activity
