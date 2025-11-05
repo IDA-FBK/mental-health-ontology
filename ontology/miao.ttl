@@ -10,8 +10,7 @@
 @base <http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/> .
 
 <http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology> rdf:type owl:Ontology ;
-                                                                                      owl:imports dcterms: ,
-                                                                                                  <http://www.w3.org/2016/03/mls#> ;
+                                                                                      owl:imports <http://www.w3.org/2016/03/mls#> ;
                                                                                       <http://purl.org/dc/elements/1.1/publisher> "Intelligent Digital Agents Research Group <https://ida.fbk.eu> @ Digital Health and Wellbeing Center, Fondazione Bruno Kessler <https://digitalhealthcenter-en.fbk.eu/home>  and GSI - Universidad Politécnica de Madrid <https://www.gsi.upm.es/es/>" ;
                                                                                       <http://purl.org/dc/elements/1.1/rights> "CreativeCommons 4.0 NonCommercial-ShareAlike <https://creativecommons.org/licenses/by-nc-sa/4.0/>" ;
                                                                                       <http://purl.org/dc/elements/1.1/title> "MIAO: An ontology for manual and automatic mental illness analysis"@en ;
@@ -22,6 +21,9 @@
                                                                                                       "Sergio Muñoz López" ,
                                                                                                       "Tania Bailoni" ;
                                                                                       dcterms:license "https://creativecommons.org/licenses/by-nc-sa/4.0/" ;
+                                                                                      dcterms:modified "2012-06-14"^^xsd:date ;
+                                                                                      dcterms:publisher <http://purl.org/dc/aboutdcmi#DCMI> ;
+                                                                                      dcterms:title "DCMI Metadata Terms - other"@en ;
                                                                                       owl:versionInfo 1.00 ;
                                                                                       <https://vocab.org/vann/#preferredNamespacePrefix> "miao" .
 
@@ -551,64 +553,77 @@ prov:wasGeneratedBy rdf:type owl:ObjectProperty ,
 
 ###  http://purl.org/dc/terms/alternative
 dcterms:alternative rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf dcterms:title .
+                    rdfs:subPropertyOf dcterms:title ;
+                    rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/available
 dcterms:available rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf dcterms:date .
+                  rdfs:subPropertyOf dcterms:date ;
+                  rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/bibliographicCitation
 dcterms:bibliographicCitation rdf:type owl:DatatypeProperty ;
-                              rdfs:subPropertyOf dcterms:identifier .
+                              rdfs:subPropertyOf dcterms:identifier ;
+                              rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/created
 dcterms:created rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf dcterms:date .
+                rdfs:subPropertyOf dcterms:date ;
+                rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/date
-dcterms:date rdf:type owl:DatatypeProperty .
+dcterms:date rdf:type owl:DatatypeProperty ;
+             rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/dateAccepted
 dcterms:dateAccepted rdf:type owl:DatatypeProperty ;
-                     rdfs:subPropertyOf dcterms:date .
+                     rdfs:subPropertyOf dcterms:date ;
+                     rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/dateCopyrighted
 dcterms:dateCopyrighted rdf:type owl:DatatypeProperty ;
-                        rdfs:subPropertyOf dcterms:date .
+                        rdfs:subPropertyOf dcterms:date ;
+                        rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/dateSubmitted
 dcterms:dateSubmitted rdf:type owl:DatatypeProperty ;
-                      rdfs:subPropertyOf dcterms:date .
+                      rdfs:subPropertyOf dcterms:date ;
+                      rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/identifier
-dcterms:identifier rdf:type owl:DatatypeProperty .
+dcterms:identifier rdf:type owl:DatatypeProperty ;
+                   rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/issued
 dcterms:issued rdf:type owl:DatatypeProperty ;
-               rdfs:subPropertyOf dcterms:date .
+               rdfs:subPropertyOf dcterms:date ;
+               rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/modified
 dcterms:modified rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf dcterms:date .
+                 rdfs:subPropertyOf dcterms:date ;
+                 rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/title
-dcterms:title rdf:type owl:DatatypeProperty .
+dcterms:title rdf:type owl:DatatypeProperty ;
+              rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/valid
 dcterms:valid rdf:type owl:DatatypeProperty ;
-              rdfs:subPropertyOf dcterms:date .
+              rdfs:subPropertyOf dcterms:date ;
+              rdfs:range rdfs:Literal .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/hasMentalIllnessDetectionConfidence
@@ -741,6 +756,7 @@ dcterms:Standard rdf:type owl:Class .
 :AutomaticMentalIlnessesDetection rdf:type owl:Class ;
                                   rdfs:subClassOf :MentalIllnessesDetection ,
                                                   <http://www.w3.org/ns/mls#Run> ;
+                                  owl:disjointWith :ManualMentalIllnessesDetection ;
                                   rdfs:comment "An AutomaticMentalIllnessesDetection represents an analysis (i.e., a run) performed by a machine/deep learning model to detect mental illnesses from a given source." ;
                                   rdfs:label "Automatic Mental Illnesses Detection"@en ,
                                              "Rilevamento Automatico Malattie Mentali"@it .
@@ -875,25 +891,29 @@ prov:Entity rdf:type owl:Class ;
 ###  http://purl.org/dc/terms/
 dcterms: rdf:type owl:NamedIndividual ;
          dcterms:modified "2012-06-14"^^xsd:date ;
-         dcterms:publisher <http://purl.org/dc/aboutdcmi#DCMI> ;
-         dcterms:title "DCMI Metadata Terms - other"@en .
+         dcterms:title "DCMI Metadata Terms - other"@en ;
+         dcterms:publisher <http://purl.org/dc/aboutdcmi#DCMI> .
 
 
 ###  http://purl.org/dc/terms/Agent
 dcterms:Agent rdf:type owl:NamedIndividual ,
-                       dcterms:AgentClass .
+                       dcterms:AgentClass ;
+              dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/AgentClass
-dcterms:AgentClass rdf:type owl:NamedIndividual .
+dcterms:AgentClass rdf:type owl:NamedIndividual ;
+                   dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/BibliographicResource
-dcterms:BibliographicResource rdf:type owl:NamedIndividual .
+dcterms:BibliographicResource rdf:type owl:NamedIndividual ;
+                              dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/Box
-dcterms:Box rdf:type owl:NamedIndividual .
+dcterms:Box rdf:type owl:NamedIndividual ;
+            dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/DCMIType
@@ -917,11 +937,13 @@ dcterms:DDC rdf:type owl:NamedIndividual ,
 
 
 ###  http://purl.org/dc/terms/FileFormat
-dcterms:FileFormat rdf:type owl:NamedIndividual .
+dcterms:FileFormat rdf:type owl:NamedIndividual ;
+                   dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/Frequency
-dcterms:Frequency rdf:type owl:NamedIndividual .
+dcterms:Frequency rdf:type owl:NamedIndividual ;
+                  dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/IMT
@@ -935,19 +957,23 @@ dcterms:IMT rdf:type owl:NamedIndividual ,
 
 
 ###  http://purl.org/dc/terms/ISO3166
-dcterms:ISO3166 rdf:type owl:NamedIndividual .
+dcterms:ISO3166 rdf:type owl:NamedIndividual ;
+                dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/ISO639-2
-dcterms:ISO639-2 rdf:type owl:NamedIndividual .
+dcterms:ISO639-2 rdf:type owl:NamedIndividual ;
+                 dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/ISO639-3
-dcterms:ISO639-3 rdf:type owl:NamedIndividual .
+dcterms:ISO639-3 rdf:type owl:NamedIndividual ;
+                 dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/Jurisdiction
-dcterms:Jurisdiction rdf:type owl:NamedIndividual .
+dcterms:Jurisdiction rdf:type owl:NamedIndividual ;
+                     dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/LCC
@@ -970,19 +996,23 @@ dcterms:LCSH rdf:type owl:NamedIndividual ,
 
 
 ###  http://purl.org/dc/terms/LicenseDocument
-dcterms:LicenseDocument rdf:type owl:NamedIndividual .
+dcterms:LicenseDocument rdf:type owl:NamedIndividual ;
+                        dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/LinguisticSystem
-dcterms:LinguisticSystem rdf:type owl:NamedIndividual .
+dcterms:LinguisticSystem rdf:type owl:NamedIndividual ;
+                         dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/Location
-dcterms:Location rdf:type owl:NamedIndividual .
+dcterms:Location rdf:type owl:NamedIndividual ;
+                 dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/LocationPeriodOrJurisdiction
-dcterms:LocationPeriodOrJurisdiction rdf:type owl:NamedIndividual .
+dcterms:LocationPeriodOrJurisdiction rdf:type owl:NamedIndividual ;
+                                     dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/MESH
@@ -996,19 +1026,23 @@ dcterms:MESH rdf:type owl:NamedIndividual ,
 
 
 ###  http://purl.org/dc/terms/MediaType
-dcterms:MediaType rdf:type owl:NamedIndividual .
+dcterms:MediaType rdf:type owl:NamedIndividual ;
+                  dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/MediaTypeOrExtent
-dcterms:MediaTypeOrExtent rdf:type owl:NamedIndividual .
+dcterms:MediaTypeOrExtent rdf:type owl:NamedIndividual ;
+                          dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/MethodOfAccrual
-dcterms:MethodOfAccrual rdf:type owl:NamedIndividual .
+dcterms:MethodOfAccrual rdf:type owl:NamedIndividual ;
+                        dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/MethodOfInstruction
-dcterms:MethodOfInstruction rdf:type owl:NamedIndividual .
+dcterms:MethodOfInstruction rdf:type owl:NamedIndividual ;
+                            dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/NLM
@@ -1022,59 +1056,73 @@ dcterms:NLM rdf:type owl:NamedIndividual ,
 
 
 ###  http://purl.org/dc/terms/Period
-dcterms:Period rdf:type owl:NamedIndividual .
+dcterms:Period rdf:type owl:NamedIndividual ;
+               dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/PeriodOfTime
-dcterms:PeriodOfTime rdf:type owl:NamedIndividual .
+dcterms:PeriodOfTime rdf:type owl:NamedIndividual ;
+                     dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/PhysicalMedium
-dcterms:PhysicalMedium rdf:type owl:NamedIndividual .
+dcterms:PhysicalMedium rdf:type owl:NamedIndividual ;
+                       dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/PhysicalResource
-dcterms:PhysicalResource rdf:type owl:NamedIndividual .
+dcterms:PhysicalResource rdf:type owl:NamedIndividual ;
+                         dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/Point
-dcterms:Point rdf:type owl:NamedIndividual .
+dcterms:Point rdf:type owl:NamedIndividual ;
+              dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/Policy
-dcterms:Policy rdf:type owl:NamedIndividual .
+dcterms:Policy rdf:type owl:NamedIndividual ;
+               dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/ProvenanceStatement
-dcterms:ProvenanceStatement rdf:type owl:NamedIndividual .
+dcterms:ProvenanceStatement rdf:type owl:NamedIndividual ;
+                            dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/RFC1766
-dcterms:RFC1766 rdf:type owl:NamedIndividual .
+dcterms:RFC1766 rdf:type owl:NamedIndividual ;
+                dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/RFC3066
-dcterms:RFC3066 rdf:type owl:NamedIndividual .
+dcterms:RFC3066 rdf:type owl:NamedIndividual ;
+                dcterms:issued "2002-07-13"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/RFC4646
-dcterms:RFC4646 rdf:type owl:NamedIndividual .
+dcterms:RFC4646 rdf:type owl:NamedIndividual ;
+                dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/RFC5646
-dcterms:RFC5646 rdf:type owl:NamedIndividual .
+dcterms:RFC5646 rdf:type owl:NamedIndividual ;
+                dcterms:issued "2010-10-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/RightsStatement
-dcterms:RightsStatement rdf:type owl:NamedIndividual .
+dcterms:RightsStatement rdf:type owl:NamedIndividual ;
+                        dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/SizeOrDuration
-dcterms:SizeOrDuration rdf:type owl:NamedIndividual .
+dcterms:SizeOrDuration rdf:type owl:NamedIndividual ;
+                       dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/Standard
-dcterms:Standard rdf:type owl:NamedIndividual .
+dcterms:Standard rdf:type owl:NamedIndividual ;
+                 dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/TGN
@@ -1098,249 +1146,303 @@ dcterms:UDC rdf:type owl:NamedIndividual ,
 
 
 ###  http://purl.org/dc/terms/URI
-dcterms:URI rdf:type owl:NamedIndividual .
+dcterms:URI rdf:type owl:NamedIndividual ;
+            dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/W3CDTF
-dcterms:W3CDTF rdf:type owl:NamedIndividual .
+dcterms:W3CDTF rdf:type owl:NamedIndividual ;
+               dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/abstract
-dcterms:abstract rdf:type owl:NamedIndividual .
+dcterms:abstract rdf:type owl:NamedIndividual ;
+                 dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/accessRights
-dcterms:accessRights rdf:type owl:NamedIndividual .
+dcterms:accessRights rdf:type owl:NamedIndividual ;
+                     dcterms:issued "2003-02-15"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/accrualMethod
-dcterms:accrualMethod rdf:type owl:NamedIndividual .
+dcterms:accrualMethod rdf:type owl:NamedIndividual ;
+                      dcterms:issued "2005-06-13"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/accrualPeriodicity
-dcterms:accrualPeriodicity rdf:type owl:NamedIndividual .
+dcterms:accrualPeriodicity rdf:type owl:NamedIndividual ;
+                           dcterms:issued "2005-06-13"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/accrualPolicy
-dcterms:accrualPolicy rdf:type owl:NamedIndividual .
+dcterms:accrualPolicy rdf:type owl:NamedIndividual ;
+                      dcterms:issued "2005-06-13"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/alternative
-dcterms:alternative rdf:type owl:NamedIndividual .
+dcterms:alternative rdf:type owl:NamedIndividual ;
+                    dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/audience
-dcterms:audience rdf:type owl:NamedIndividual .
+dcterms:audience rdf:type owl:NamedIndividual ;
+                 dcterms:issued "2001-05-21"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/available
-dcterms:available rdf:type owl:NamedIndividual .
+dcterms:available rdf:type owl:NamedIndividual ;
+                  dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/bibliographicCitation
-dcterms:bibliographicCitation rdf:type owl:NamedIndividual .
+dcterms:bibliographicCitation rdf:type owl:NamedIndividual ;
+                              dcterms:issued "2003-02-15"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/conformsTo
-dcterms:conformsTo rdf:type owl:NamedIndividual .
+dcterms:conformsTo rdf:type owl:NamedIndividual ;
+                   dcterms:issued "2001-05-21"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/contributor
-dcterms:contributor rdf:type owl:NamedIndividual .
+dcterms:contributor rdf:type owl:NamedIndividual ;
+                    dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/coverage
-dcterms:coverage rdf:type owl:NamedIndividual .
+dcterms:coverage rdf:type owl:NamedIndividual ;
+                 dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/created
-dcterms:created rdf:type owl:NamedIndividual .
+dcterms:created rdf:type owl:NamedIndividual ;
+                dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/creator
-dcterms:creator rdf:type owl:NamedIndividual .
+dcterms:creator rdf:type owl:NamedIndividual ;
+                dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/date
-dcterms:date rdf:type owl:NamedIndividual .
+dcterms:date rdf:type owl:NamedIndividual ;
+             dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/dateAccepted
-dcterms:dateAccepted rdf:type owl:NamedIndividual .
+dcterms:dateAccepted rdf:type owl:NamedIndividual ;
+                     dcterms:issued "2002-07-13"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/dateCopyrighted
-dcterms:dateCopyrighted rdf:type owl:NamedIndividual .
+dcterms:dateCopyrighted rdf:type owl:NamedIndividual ;
+                        dcterms:issued "2002-07-13"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/dateSubmitted
-dcterms:dateSubmitted rdf:type owl:NamedIndividual .
+dcterms:dateSubmitted rdf:type owl:NamedIndividual ;
+                      dcterms:issued "2002-07-13"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/description
-dcterms:description rdf:type owl:NamedIndividual .
+dcterms:description rdf:type owl:NamedIndividual ;
+                    dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/educationLevel
-dcterms:educationLevel rdf:type owl:NamedIndividual .
+dcterms:educationLevel rdf:type owl:NamedIndividual ;
+                       dcterms:issued "2002-07-13"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/extent
-dcterms:extent rdf:type owl:NamedIndividual .
+dcterms:extent rdf:type owl:NamedIndividual ;
+               dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/format
-dcterms:format rdf:type owl:NamedIndividual .
+dcterms:format rdf:type owl:NamedIndividual ;
+               dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/hasFormat
-dcterms:hasFormat rdf:type owl:NamedIndividual .
+dcterms:hasFormat rdf:type owl:NamedIndividual ;
+                  dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/hasPart
-dcterms:hasPart rdf:type owl:NamedIndividual .
+dcterms:hasPart rdf:type owl:NamedIndividual ;
+                dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/hasVersion
-dcterms:hasVersion rdf:type owl:NamedIndividual .
+dcterms:hasVersion rdf:type owl:NamedIndividual ;
+                   dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/identifier
-dcterms:identifier rdf:type owl:NamedIndividual .
+dcterms:identifier rdf:type owl:NamedIndividual ;
+                   dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/instructionalMethod
 dcterms:instructionalMethod rdf:type owl:NamedIndividual ;
+                            dcterms:issued "2005-06-13"^^xsd:date ;
                             <http://purl.org/dc/dcam/rangeIncludes> dcterms:MethodOfInstruction ;
                             dcterms:description "Instructional Method typically includes ways of presenting instructional materials or conducting instructional activities, patterns of learner-to-learner and learner-to-instructor interactions, and mechanisms by which group and individual levels of learning are measured.  Instructional methods include all aspects of the instruction and learning processes from planning and implementation through evaluation and feedback."@en ;
-                            dcterms:issued "2005-06-13"^^xsd:date ;
                             rdfs:comment "A process, used to engender knowledge, attitudes and skills, that the described resource is designed to support."@en ;
                             rdfs:isDefinedBy dcterms: ;
                             rdfs:label "Instructional Method"@en .
 
 
 ###  http://purl.org/dc/terms/isFormatOf
-dcterms:isFormatOf rdf:type owl:NamedIndividual .
+dcterms:isFormatOf rdf:type owl:NamedIndividual ;
+                   dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/isPartOf
-dcterms:isPartOf rdf:type owl:NamedIndividual .
+dcterms:isPartOf rdf:type owl:NamedIndividual ;
+                 dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/isReferencedBy
-dcterms:isReferencedBy rdf:type owl:NamedIndividual .
+dcterms:isReferencedBy rdf:type owl:NamedIndividual ;
+                       dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/isReplacedBy
-dcterms:isReplacedBy rdf:type owl:NamedIndividual .
+dcterms:isReplacedBy rdf:type owl:NamedIndividual ;
+                     dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/isRequiredBy
-dcterms:isRequiredBy rdf:type owl:NamedIndividual .
+dcterms:isRequiredBy rdf:type owl:NamedIndividual ;
+                     dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/isVersionOf
-dcterms:isVersionOf rdf:type owl:NamedIndividual .
+dcterms:isVersionOf rdf:type owl:NamedIndividual ;
+                    dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/issued
-dcterms:issued rdf:type owl:NamedIndividual .
+dcterms:issued rdf:type owl:NamedIndividual ;
+               dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/language
-dcterms:language rdf:type owl:NamedIndividual .
+dcterms:language rdf:type owl:NamedIndividual ;
+                 dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/license
-dcterms:license rdf:type owl:NamedIndividual .
+dcterms:license rdf:type owl:NamedIndividual ;
+                dcterms:issued "2004-06-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/mediator
-dcterms:mediator rdf:type owl:NamedIndividual .
+dcterms:mediator rdf:type owl:NamedIndividual ;
+                 dcterms:issued "2001-05-21"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/medium
-dcterms:medium rdf:type owl:NamedIndividual .
+dcterms:medium rdf:type owl:NamedIndividual ;
+               dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/modified
-dcterms:modified rdf:type owl:NamedIndividual .
+dcterms:modified rdf:type owl:NamedIndividual ;
+                 dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/provenance
 dcterms:provenance rdf:type owl:NamedIndividual ;
+                   dcterms:issued "2004-09-20"^^xsd:date ;
                    <http://purl.org/dc/dcam/rangeIncludes> dcterms:ProvenanceStatement ;
                    dcterms:description "The statement may include a description of any changes successive custodians made to the resource."@en ;
-                   dcterms:issued "2004-09-20"^^xsd:date ;
                    rdfs:comment "A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation."@en ;
                    rdfs:isDefinedBy dcterms: ;
                    rdfs:label "Provenance"@en .
 
 
 ###  http://purl.org/dc/terms/publisher
-dcterms:publisher rdf:type owl:NamedIndividual .
+dcterms:publisher rdf:type owl:NamedIndividual ;
+                  dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/references
-dcterms:references rdf:type owl:NamedIndividual .
+dcterms:references rdf:type owl:NamedIndividual ;
+                   dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/relation
-dcterms:relation rdf:type owl:NamedIndividual .
+dcterms:relation rdf:type owl:NamedIndividual ;
+                 dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/replaces
-dcterms:replaces rdf:type owl:NamedIndividual .
+dcterms:replaces rdf:type owl:NamedIndividual ;
+                 dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/requires
-dcterms:requires rdf:type owl:NamedIndividual .
+dcterms:requires rdf:type owl:NamedIndividual ;
+                 dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/rights
-dcterms:rights rdf:type owl:NamedIndividual .
+dcterms:rights rdf:type owl:NamedIndividual ;
+               dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/rightsHolder
 dcterms:rightsHolder rdf:type owl:NamedIndividual ;
+                     dcterms:issued "2004-06-14"^^xsd:date ;
                      <http://purl.org/dc/dcam/rangeIncludes> dcterms:Agent ;
                      dcterms:description "Recommended practice is to refer to the rights holder with a URI. If this is not possible or feasible, a literal value that identifies the rights holder may be provided."@en ;
-                     dcterms:issued "2004-06-14"^^xsd:date ;
                      rdfs:comment "A person or organization owning or managing rights over the resource."@en ;
                      rdfs:isDefinedBy dcterms: ;
                      rdfs:label "Rights Holder"@en .
 
 
 ###  http://purl.org/dc/terms/source
-dcterms:source rdf:type owl:NamedIndividual .
+dcterms:source rdf:type owl:NamedIndividual ;
+               dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/spatial
-dcterms:spatial rdf:type owl:NamedIndividual .
+dcterms:spatial rdf:type owl:NamedIndividual ;
+                dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/subject
-dcterms:subject rdf:type owl:NamedIndividual .
+dcterms:subject rdf:type owl:NamedIndividual ;
+                dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/tableOfContents
-dcterms:tableOfContents rdf:type owl:NamedIndividual .
+dcterms:tableOfContents rdf:type owl:NamedIndividual ;
+                        dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/temporal
-dcterms:temporal rdf:type owl:NamedIndividual .
+dcterms:temporal rdf:type owl:NamedIndividual ;
+                 dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/title
-dcterms:title rdf:type owl:NamedIndividual .
+dcterms:title rdf:type owl:NamedIndividual ;
+              dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/type
-dcterms:type rdf:type owl:NamedIndividual .
+dcterms:type rdf:type owl:NamedIndividual ;
+             dcterms:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/valid
-dcterms:valid rdf:type owl:NamedIndividual .
+dcterms:valid rdf:type owl:NamedIndividual ;
+              dcterms:issued "2000-07-11"^^xsd:date .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology
