@@ -7,25 +7,24 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/> .
+@base <https://w3id.org/fuskg/miao> .
 
 <http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology> rdf:type owl:Ontology ;
                                                                                       owl:imports <http://www.w3.org/2016/03/mls#> ;
-                                                                                      <http://purl.org/dc/elements/1.1/publisher> "Intelligent Digital Agents Research Group <https://ida.fbk.eu> @ Digital Health and Wellbeing Center, Fondazione Bruno Kessler <https://digitalhealthcenter-en.fbk.eu/home>  and GSI - Universidad Politécnica de Madrid <https://www.gsi.upm.es/es/>" ;
-                                                                                      <http://purl.org/dc/elements/1.1/rights> "CreativeCommons 4.0 NonCommercial-ShareAlike <https://creativecommons.org/licenses/by-nc-sa/4.0/>" ;
-                                                                                      <http://purl.org/dc/elements/1.1/title> "MIAO: An ontology for manual and automatic mental illness analysis"@en ;
+                                                                                      dcterms:publisher "Intelligent Digital Agents Research Group <https://ida.fbk.eu> @ Digital Health and Wellbeing Center, Fondazione Bruno Kessler <https://digitalhealthcenter-en.fbk.eu/home>  and GSI - Universidad Politécnica de Madrid <https://www.gsi.upm.es/es/>" ;
+                                                                                      dcterms:rights "CreativeCommons 4.0 NonCommercial-ShareAlike <https://creativecommons.org/licenses/by-nc-sa/4.0/>" ;
+                                                                                      dcterms:title "MIAO: An ontology for manual and automatic mental illness analysis"@en ;
                                                                                       dcterms:created "2025-10-27"^^xsd:date ;
+																					  dcterms:modified "2025-10-27"^^xsd:date ;
                                                                                       dcterms:creator "Carlos Á. Iglesias" ,
                                                                                                       "Gianluca Apriceno" ,
                                                                                                       "Mauro Dragoni" ,
                                                                                                       "Sergio Muñoz López" ,
                                                                                                       "Tania Bailoni" ;
                                                                                       dcterms:license "https://creativecommons.org/licenses/by-nc-sa/4.0/" ;
-                                                                                      dcterms:modified "2012-06-14"^^xsd:date ;
-                                                                                      dcterms:publisher <http://purl.org/dc/aboutdcmi#DCMI> ;
-                                                                                      dcterms:title "DCMI Metadata Terms - other"@en ;
-                                                                                      owl:versionInfo 1.00 ;
-                                                                                      <https://vocab.org/vann/#preferredNamespacePrefix> "miao" .
+																					  vann:preferredNamespaceUri "https://w3id.org/miao" ;
+                                                                                      vann:preferredNamespacePrefix "miao" ;
+                                                                                      owl:versionInfo 1.00 .
 
 #################################################################
 #    Annotation properties
