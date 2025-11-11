@@ -1,4 +1,4 @@
-@prefix : <http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/> .
+@prefix : <https://w3id.org/miao/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -9,22 +9,22 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <https://w3id.org/fuskg/miao> .
 
-<http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology> rdf:type owl:Ontology ;
-                                                                                      owl:imports <http://www.w3.org/2016/03/mls#> ;
-                                                                                      dcterms:publisher "Intelligent Digital Agents Research Group <https://ida.fbk.eu> @ Digital Health and Wellbeing Center, Fondazione Bruno Kessler <https://digitalhealthcenter-en.fbk.eu/home>  and GSI - Universidad Politécnica de Madrid <https://www.gsi.upm.es/es/>" ;
-                                                                                      dcterms:rights "CreativeCommons 4.0 NonCommercial-ShareAlike <https://creativecommons.org/licenses/by-nc-sa/4.0/>" ;
-                                                                                      dcterms:title "MIAO: A Mental Illness Analysis Ontology for Detecting Mental Health Conditions"@en ;
-                                                                                      dcterms:created "2025-10-27"^^xsd:date ;
-																					  dcterms:modified "2025-10-27"^^xsd:date ;
-                                                                                      dcterms:creator "Carlos Á. Iglesias" ,
-                                                                                                      "Gianluca Apriceno" ,
-                                                                                                      "Mauro Dragoni" ,
-                                                                                                      "Sergio Muñoz López" ,
-                                                                                                      "Tania Bailoni" ;
-                                                                                      dcterms:license "https://creativecommons.org/licenses/by-nc-sa/4.0/" ;
-																					  vann:preferredNamespaceUri "https://w3id.org/miao" ;
-                                                                                      vann:preferredNamespacePrefix "miao" ;
-                                                                                      owl:versionInfo 1.00 .
+<https://w3id.org/miao> rdf:type owl:Ontology ;
+					  owl:imports <http://www.w3.org/2016/03/mls#> ;
+					  dcterms:publisher "Intelligent Digital Agents Research Group <https://ida.fbk.eu> @ Digital Health and Wellbeing Center, Fondazione Bruno Kessler <https://digitalhealthcenter-en.fbk.eu/home>  and GSI - Universidad Politécnica de Madrid <https://www.gsi.upm.es/es/>" ;
+					  dcterms:rights "CreativeCommons 4.0 NonCommercial-ShareAlike <https://creativecommons.org/licenses/by-nc-sa/4.0/>" ;
+					  dcterms:title "MIAO: A Mental Illness Analysis Ontology for Detecting Mental Health Conditions"@en ;
+					  dcterms:created "2025-10-27"^^xsd:date ;
+					  dcterms:modified "2025-10-27"^^xsd:date ;
+					  dcterms:creator "Carlos Á. Iglesias" ,
+									  "Gianluca Apriceno" ,
+									  "Mauro Dragoni" ,
+									  "Sergio Muñoz López" ,
+									  "Tania Bailoni" ;
+					  dcterms:license "https://creativecommons.org/licenses/by-nc-sa/4.0/" ;
+					  vann:preferredNamespaceUri "https://w3id.org/miao" ;
+					  vann:preferredNamespacePrefix "miao" ;
+					  owl:versionInfo 1.00 .
 
 #################################################################
 #    Annotation properties
@@ -452,7 +452,7 @@ dcterms:W3CDTF rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/belongsToMentalIllnessesSet
+###  https://w3id.org/miao/belongsToMentalIllnessesSet
 :belongsToMentalIllnessesSet rdf:type owl:ObjectProperty ;
                              owl:inverseOf :hasMentalIllness ;
                              rdfs:domain :MentalIlness ;
@@ -460,7 +460,7 @@ dcterms:W3CDTF rdf:type rdfs:Datatype .
                              rdfs:comment "Inverse relation of hasMentalIlness. This relation connect a MentalIllness with its corresponding MentalIlnessSet." .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/hasInputData
+###  https://w3id.org/miao/hasInputData
 :hasInputData rdf:type owl:ObjectProperty ;
               owl:inverseOf :isInputOfMentalIlnessesDetection ;
               rdfs:domain :MentalIllnessesDetection ;
@@ -468,14 +468,14 @@ dcterms:W3CDTF rdf:type rdfs:Datatype .
               rdfs:comment "A relation between a MentalIllnessesDetection and data that is taken as input to the MentalIllnessesDetection." .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/hasMentalIllness
+###  https://w3id.org/miao/hasMentalIllness
 :hasMentalIllness rdf:type owl:ObjectProperty ;
                   rdfs:domain :MentalIlnessesSet ;
                   rdfs:range :MentalIlness ;
                   rdfs:comment "Relation connecting a MentalIllnessesSet with its corresponding MentalIlnesses." .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/hasMentalIlnessCategory
+###  https://w3id.org/miao/hasMentalIlnessCategory
 :hasMentalIlnessCategory rdf:type owl:ObjectProperty ;
                          owl:inverseOf :isMentalIlnessCategoryOf ;
                          rdfs:domain :MentalIlnessesSchema ;
@@ -483,20 +483,20 @@ dcterms:W3CDTF rdf:type rdfs:Datatype .
                          rdfs:comment "A relation between a MentalIllnessesModel and its Mental Illness categories." .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/isInputOfMentalIlnessesDetection
+###  https://w3id.org/miao/isInputOfMentalIlnessesDetection
 :isInputOfMentalIlnessesDetection rdf:type owl:ObjectProperty ;
                                   rdfs:domain <http://www.w3.org/ns/mls#Data> ;
                                   rdfs:range :MentalIllnessesDetection .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/isMentalIlnessCategoryOf
+###  https://w3id.org/miao/isMentalIlnessCategoryOf
 :isMentalIlnessCategoryOf rdf:type owl:ObjectProperty ;
                           rdfs:domain :MentalIlnessCategory ;
                           rdfs:range :MentalIlnessesSchema ;
                           rdfs:comment "Inverse relation of hasMentalIllnessCategory object propery that represents the relation between a MentalIllnessCategory and its corresponding MentalIllnessesModel." .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/referredToMentalIllness
+###  https://w3id.org/miao/referredToMentalIllness
 :referredToMentalIllness rdf:type owl:ObjectProperty ;
                          owl:inverseOf :referredToMentalIllnessCategory ;
                          rdf:type owl:InverseFunctionalProperty ;
@@ -505,7 +505,7 @@ dcterms:W3CDTF rdf:type rdfs:Datatype .
                          rdfs:comment "Inverse relation of referredToMentalIllnessCategory used to represent to which MentalIlness (predicted) a MentalIlnessCategoy (from the literature) corresponds to." .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/referredToMentalIllnessCategory
+###  https://w3id.org/miao/referredToMentalIllnessCategory
 :referredToMentalIllnessCategory rdf:type owl:ObjectProperty ,
                                           owl:FunctionalProperty ;
                                  rdfs:domain :MentalIlness ;
@@ -513,7 +513,7 @@ dcterms:W3CDTF rdf:type rdfs:Datatype .
                                  rdfs:comment "Relation used to represent to which MentalIlnessCategoy (from the literature) a MentalIlness (predicted) corresponds to." .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/usedInMentalIllnessesDetection
+###  https://w3id.org/miao/usedInMentalIllnessesDetection
 :usedInMentalIllnessesDetection rdf:type owl:ObjectProperty ;
                                 owl:inverseOf :usedMentalIllnessesSchema ;
                                 rdfs:domain :MentalIlnessesSchema ;
@@ -521,7 +521,7 @@ dcterms:W3CDTF rdf:type rdfs:Datatype .
                                 rdfs:comment "Inverse relation of usedMentalIlnessesSchema used to indicate which MentalIllnessesDetection a specific MentalIllnessesSchema (from the literature) refers to." .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/usedMentalIllnessesSchema
+###  https://w3id.org/miao/usedMentalIllnessesSchema
 :usedMentalIllnessesSchema rdf:type owl:ObjectProperty ,
                                     owl:FunctionalProperty ;
                            rdfs:domain :MentalIllnessesDetection ;
@@ -625,21 +625,21 @@ dcterms:valid rdf:type owl:DatatypeProperty ;
               rdfs:range rdfs:Literal .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/hasMentalIllnessDetectionConfidence
+###  https://w3id.org/miao/hasMentalIllnessDetectionConfidence
 :hasMentalIllnessDetectionConfidence rdf:type owl:DatatypeProperty ;
                                      rdfs:domain :MentalIlness ;
                                      rdfs:range xsd:decimal ;
                                      rdfs:comment "Data Property used to represent the confidence of both an human expert or a machine/deep learning model about the presence of a mental illness." .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/hasMentalIllnessLevel
+###  https://w3id.org/miao/hasMentalIllnessLevel
 :hasMentalIllnessLevel rdf:type owl:DatatypeProperty ;
                        rdfs:domain :MentalIlness ;
                        rdfs:range xsd:string ;
                        rdfs:comment "Represents the intensity of the mental illness as a categorical value, e.g., Low, Medium, or High." .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/hasMentalIllnessScore
+###  https://w3id.org/miao/hasMentalIllnessScore
 :hasMentalIllnessScore rdf:type owl:DatatypeProperty ;
                        rdfs:domain :MentalIlness ;
                        rdfs:range xsd:decimal ;
@@ -751,7 +751,7 @@ dcterms:SizeOrDuration rdf:type owl:Class ;
 dcterms:Standard rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/AutomaticMentalIlnessesDetection
+###  https://w3id.org/miao/AutomaticMentalIlnessesDetection
 :AutomaticMentalIlnessesDetection rdf:type owl:Class ;
                                   rdfs:subClassOf :MentalIllnessesDetection ,
                                                   <http://www.w3.org/ns/mls#Run> ;
@@ -761,7 +761,7 @@ dcterms:Standard rdf:type owl:Class .
                                              "Rilevamento Automatico Malattie Mentali"@it .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/DisorderType
+###  https://w3id.org/miao/DisorderType
 :DisorderType rdf:type owl:Class ;
               rdfs:subClassOf :MentalIlness ;
               rdfs:comment "This concept defines the types of disorder(s) related to a MentalIllness." ;
@@ -769,7 +769,7 @@ dcterms:Standard rdf:type owl:Class .
                          "Tipo Disordine"@it .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/ManualMentalIllnessesDetection
+###  https://w3id.org/miao/ManualMentalIllnessesDetection
 :ManualMentalIllnessesDetection rdf:type owl:Class ;
                                 rdfs:subClassOf :MentalIllnessesDetection ;
                                 rdfs:comment "A ManualMentalIllnessesDetection represents an analysis performed by a human expert to detect mental illnesses from a given source." ;
@@ -777,7 +777,7 @@ dcterms:Standard rdf:type owl:Class .
                                            "Rilevamento Manuale Malattie Mentali"@it .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/MentalIllnessesDetection
+###  https://w3id.org/miao/MentalIllnessesDetection
 :MentalIllnessesDetection rdf:type owl:Class ;
                           rdfs:subClassOf prov:Activity ,
                                           [ rdf:type owl:Restriction ;
@@ -799,7 +799,7 @@ dcterms:Standard rdf:type owl:Class .
                                      "Rilevamento Malattie Mentali"@it .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/MentalIlness
+###  https://w3id.org/miao/MentalIlness
 :MentalIlness rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
                                 owl:onProperty :belongsToMentalIllnessesSet ;
@@ -816,7 +816,7 @@ dcterms:Standard rdf:type owl:Class .
                          "Mental Illness"@en .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/MentalIlnessCategory
+###  https://w3id.org/miao/MentalIlnessCategory
 :MentalIlnessCategory rdf:type owl:Class ;
                       rdfs:subClassOf [ rdf:type owl:Restriction ;
                                         owl:onProperty :referredToMentalIllness ;
@@ -832,7 +832,7 @@ dcterms:Standard rdf:type owl:Class .
                                  "Mental Illness Category"@en .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/MentalIlnessesSchema
+###  https://w3id.org/miao/MentalIlnessesSchema
 :MentalIlnessesSchema rdf:type owl:Class ;
                       rdfs:subClassOf [ rdf:type owl:Restriction ;
                                         owl:onProperty :hasMentalIlnessCategory ;
@@ -848,7 +848,7 @@ dcterms:Standard rdf:type owl:Class .
                                  "Schema Malattie Mentali"@it .
 
 
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology/MentalIlnessesSet
+###  https://w3id.org/miao/MentalIlnessesSet
 :MentalIlnessesSet rdf:type owl:Class ;
                    rdfs:subClassOf prov:Entity ,
                                    [ rdf:type owl:Restriction ;
@@ -1442,10 +1442,6 @@ dcterms:type rdf:type owl:NamedIndividual ;
 ###  http://purl.org/dc/terms/valid
 dcterms:valid rdf:type owl:NamedIndividual ;
               dcterms:issued "2000-07-11"^^xsd:date .
-
-
-###  http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology
-<http://www.semanticweb.org/sanar/ontologies/2025/9/MentalIllnessesAnalysisOntology> rdf:type owl:NamedIndividual .
 
 
 #################################################################
