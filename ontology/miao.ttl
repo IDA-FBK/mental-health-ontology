@@ -13,7 +13,7 @@
                                                                                       owl:imports <http://www.w3.org/2016/03/mls#> ;
                                                                                       dcterms:publisher "Intelligent Digital Agents Research Group <https://ida.fbk.eu> @ Digital Health and Wellbeing Center, Fondazione Bruno Kessler <https://digitalhealthcenter-en.fbk.eu/home>  and GSI - Universidad Politécnica de Madrid <https://www.gsi.upm.es/es/>" ;
                                                                                       dcterms:rights "CreativeCommons 4.0 NonCommercial-ShareAlike <https://creativecommons.org/licenses/by-nc-sa/4.0/>" ;
-                                                                                      dcterms:title "MIAO: An ontology for manual and automatic mental illness analysis"@en ;
+                                                                                      dcterms:title "MIAO: A Mental Illness Analysis Ontology for Detecting Mental Health Conditions"@en ;
                                                                                       dcterms:created "2025-10-27"^^xsd:date ;
 																					  dcterms:modified "2025-10-27"^^xsd:date ;
                                                                                       dcterms:creator "Carlos Á. Iglesias" ,
