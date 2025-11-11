@@ -1,25 +1,34 @@
-# MIAO: Mental Illness Analysis Ontology
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa] [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](TBD)
+
+[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
+[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
+
+# MIAO: A Mental Illness Analysis Ontology for Detecting Mental Health Conditions
 
 ## Introduction
 
-**MIAO** formally represents the detection and analysis of mental illnesses, both manually and automatically.  
+We introduce the Mental Illness Analysis Ontology (**MIAO**), an ontology designed to model the detection process of mental illness. MIAO has two key characteristics: (i) it provides a conceptual framework for the detection process, regardless of the detection method, allowing for both human and
+AI-driven detection approaches, and (ii) it separates the detection process from the underlying mental illness model (e.g., ontology) used to represent mental health conditions, enabling the use of different mental illness models, depending
+on the needs of the user or application. Two research questions guide our investigation and the development of the MIAO ontology:
 
-It integrates:
-- PROV-O – provenance modeling
-- MLS – machine learning concepts
-- Dublin Core Terms – metadata
-- VANN – namespace management
-
-**Namespace URI:** `TBD`  
-**Preferred Prefix:** `miao`  
-**Version:** 1.00  
-**License:** CC BY-NC-SA 4.0  
-
+- **RQ<sub>1</sub>**: How can the detection process of mental illness be effectively modeled in a way that is agnostic to the specific detection method used (human or AI)?
+- **RQ<sub>2</sub>**: How can existing mental health models be integrated to support the detection process, ensuring compatibility across different detection systems and applications?
+  
 ---
 
 ## Ontology Overview
 
 ![MIAO Ontology Overview](diagrams/miao_conceptualization.png)
+
+MIAO integrates:
+- PROV-O – provenance modeling
+- MLS – machine learning concepts
+- Dublin Core Terms – metadata
+- VANN – namespace management
+
+**Namespace URI:** `https://w3id.org/miao`  
+**Preferred Prefix:** `miao`  
+**Version:** 1.00  
 
 ## Classes
 
@@ -64,5 +73,20 @@ It integrates:
 | `hasMentalIllnessLevel` | MentalIllness | string | Categorical intensity (Low, Medium, High) |
 
 ---
+
+## Authors
+- Gianluca Apriceno: apriceno@fbk.eu
+- Sergio Muñoz: sergio.munoz@upm.es
+- Tania Bailoni: tbailoni@fbk.eu
+- Mauro Dragoni: dragoni@fbk.eu
+- Carlos Á. Iglesias: carlosangel.iglesias@upm.es
+
+## License
+This work is licensed under a
+[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
+
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+
+[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
 
 
