@@ -90,7 +90,7 @@ $(function(){
 </div>
 <div class="status">
 <div>
-<span>Ontology Specification Draft</span>
+<span>Ontology Specification</span>
 </div>
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
 This is a placeholder text for the abstract. The abstract should contain a couple of sentences summarizing the ontology and its purpose.</span>
@@ -148,9 +148,6 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#/AutomaticMentalIlnessesDetection"
          title="https://w3id.org/miao/AutomaticMentalIlnessesDetection">Automatic Mental Illnesses Detection</a>
-   </li>
-   <li>
-      <a href="#/DisorderType" title="https://w3id.org/miao/DisorderType">Disorder Type</a>
    </li>
    <li>
       <a href="#http://www.w3.org/ns/prov#Entity" title="http://www.w3.org/ns/prov#Entity">
@@ -350,6 +347,11 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#/hasMentalIllnessScore" title="https://w3id.org/miao/hasMentalIllnessScore">
          <span>has Mental Illness Score</span>
+      </a>
+   </li>
+   <li>
+      <a href="#/refersToSample" title="https://w3id.org/miao/refersToSample">
+         <span>refers To Sample</span>
       </a>
    </li>
 </ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
@@ -743,7 +745,6 @@ This section provides details for each class and property defined by MIAO: A Men
   <li><a href="#http://www.w3.org/ns/prov#Activity" title="http://www.w3.org/ns/prov#Activity"> <span>Activity</span> </a></li>
   <li><a href="#http://purl.org/dc/terms/AgentClass" title="http://purl.org/dc/terms/AgentClass"> <span>Agent Class</span> </a></li>
   <li><a href="#/AutomaticMentalIlnessesDetection" title="https://w3id.org/miao/AutomaticMentalIlnessesDetection">Automatic Mental Illnesses Detection</a></li>
-  <li><a href="#/DisorderType" title="https://w3id.org/miao/DisorderType">Disorder Type</a></li>
   <li><a href="#http://www.w3.org/ns/prov#Entity" title="http://www.w3.org/ns/prov#Entity"> <span>Entity</span> </a></li>
   <li><a href="#http://purl.org/dc/terms/FileFormat" title="http://purl.org/dc/terms/FileFormat"> <span>File Format</span> </a></li>
   <li><a href="#http://purl.org/dc/terms/Jurisdiction" title="http://purl.org/dc/terms/Jurisdiction"> <span>Jurisdiction</span> </a></li>
@@ -817,21 +818,6 @@ This section provides details for each class and property defined by MIAO: A Men
    </dt>
    <dd>
     <a href="#/ManualMentalIllnessesDetection" title="https://w3id.org/miao/ManualMentalIllnessesDetection">Manual Detection Mental Illnesses</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="/DisorderType">
-  <h3>Disorder Type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/miao/DisorderType</p>
-  <div class="comment">
-   <span class="markdown">This concept defines the types of disorder(s) related to a MentalIllness.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="#/MentalIlness" title="https://w3id.org/miao/MentalIlness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -979,16 +965,10 @@ This section provides details for each class and property defined by MIAO: A Men
    </dt>
    <dd></dd>
    <dt>
-    has sub-classes
-   </dt>
-   <dd>
-    <a href="#/DisorderType" title="https://w3id.org/miao/DisorderType">Disorder Type</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#/belongsToMentalIllnessesSet" title="https://w3id.org/miao/belongsToMentalIllnessesSet">belongs To Mental Illnesses Set</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasMentalIllnessDetectionConfidence" title="https://w3id.org/miao/hasMentalIllnessDetectionConfidence">has Mental Illness Detection Confidence</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/hasMentalIllnessLevel" title="https://w3id.org/miao/hasMentalIllnessLevel">has Mental Illness Level</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/hasMentalIllnessScore" title="https://w3id.org/miao/hasMentalIllnessScore">has Mental Illness Score</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/referredToMentalIllnessCategory" title="https://w3id.org/miao/referredToMentalIllnessCategory">referred To Mental Illness Category</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#/belongsToMentalIllnessesSet" title="https://w3id.org/miao/belongsToMentalIllnessesSet">belongs To Mental Illnesses Set</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasMentalIllnessDetectionConfidence" title="https://w3id.org/miao/hasMentalIllnessDetectionConfidence">has Mental Illness Detection Confidence</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/hasMentalIllnessLevel" title="https://w3id.org/miao/hasMentalIllnessLevel">has Mental Illness Level</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/hasMentalIllnessScore" title="https://w3id.org/miao/hasMentalIllnessScore">has Mental Illness Score</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/referredToMentalIllnessCategory" title="https://w3id.org/miao/referredToMentalIllnessCategory">referred To Mental Illness Category</a> <sup class="type-op" title="object property">op</sup>, <a href="#/refersToSample" title="https://w3id.org/miao/refersToSample">refers To Sample</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is in range of
@@ -1544,6 +1524,7 @@ This section provides details for each class and property defined by MIAO: A Men
   <li><a href="#/hasMentalIllnessDetectionConfidence" title="https://w3id.org/miao/hasMentalIllnessDetectionConfidence"> <span>has Mental Illness Detection Confidence</span> </a></li>
   <li><a href="#/hasMentalIllnessLevel" title="https://w3id.org/miao/hasMentalIllnessLevel"> <span>has Mental Illness Level</span> </a></li>
   <li><a href="#/hasMentalIllnessScore" title="https://w3id.org/miao/hasMentalIllnessScore"> <span>has Mental Illness Score</span> </a></li>
+  <li><a href="#/refersToSample" title="https://w3id.org/miao/refersToSample"> <span>refers To Sample</span> </a></li>
  </ul>
  <div class="entity" id="http://purl.org/dc/terms/alternative">
   <h3>Alternative Title<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
@@ -3350,6 +3331,29 @@ This section provides details for each class and property defined by MIAO: A Men
     </dt>
     <dd>
      named individual
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/refersToSample">
+  <h3>refers To Sample<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/miao/refersToSample</p>
+  <div class="comment">
+   <span class="markdown">This data property represents the unique identifier of the specific data sample on which one or more mental illnesses have been detected. It is used to link a mental illness detection result to the original collected data instance.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/MentalIlness" title="https://w3id.org/miao/MentalIlness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#long" target="_blank" title="http://www.w3.org/2001/XMLSchema#long">long</a>
     </dd>
    </dl>
   </div>
