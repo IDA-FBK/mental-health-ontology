@@ -64,7 +64,7 @@ MIAO integrates:
 
 | Property | Domain | Range | Description |
 |----------|--------|-------|-------------|
-| `refersToSample` | MentalIllness | long | Numerical identifier of the data sample on which one or more mental illnesses were detected|
+| `refersToSample` | MentalIllness | string | Numerical identifier of the data sample on which one or more mental illnesses were detected|
 | `hasMentalIllnessDetectionConfidence` | MentalIllness | decimal | Confidence of detection (human or ML) |
 | `hasMentalIllnessScore` | MentalIllness | decimal | Numeric intensity (0–1) |
 | `hasMentalIllnessLevel` | MentalIllness | string | Categorical intensity (Low, Medium, High) |
