@@ -2,15 +2,10 @@
 
 This folder provides examples of representing **mental illness detection activities** using MIAO, including both **manual** and **automatic detection**. These examples are used to answer **competency questions**, 
 implemented in a Google Colab notebook, demonstrating how mental illness detection data can be queried and analyzed.
-
----
-
 This folder contains two examples:
 
 1. `ex1-manual.ttl` – manual detection by a clinical expert  
 2. `ex2-automatic.ttl` – automatic detection using machine/deep learning models  
-
-These examples are designed to support competency questions, such as identifying detected mental illnesses, linking them to datasets and models, and evaluating model performance.
 
 ---
 ## Example 1: Manual Detection
@@ -47,7 +42,6 @@ Each detection activity is linked to its input data, model implementation, gener
 | LSTM-based anxiety detection | EEG signals | PyTorch LSTM  | `AnxietySetLSTM` | 
 | Multi-modal transformer detection (anxiety, depression, neurocognitive) | Social media text + wearable sensors | PyTorch Multi-Modal Transformer | `MentalIllnessSetMultiModalTransformer` | 
 
----
 
 ### Input Data
 
@@ -57,7 +51,6 @@ Each detection activity is linked to its input data, model implementation, gener
 
 All datasets are represented as instances of `mls:Dataset` in the ontology.
 
----
 
 ### Models and Implementations
 
@@ -70,7 +63,6 @@ All datasets are represented as instances of `mls:Dataset` in the ontology.
 
 Each model is linked to its implementation (`mls:Implementation`) and its software package (`mls:Software`).
 
----
 
 ### Mental Illness Sets and Mental Illnesses Samlple Confidence Levels
 
@@ -81,7 +73,7 @@ EEGSignals_000004`
 ' with confidence 0.70
 - `MentalIllnessSetMultiModalTransformer` → detected depression, anxiety, and neurocognitive issues from data sample `socialmedia_000001_wearable_000002` with confidence 0.75  
 
----
+
 
 ### Evaluation Metrics
 
@@ -94,4 +86,10 @@ All models are evaluated using **predictive accuracy** (`mls:EvaluationMeasure`)
 | LSTM | 0.90 |
 | Multi-Modal Transformer | 0.95 |
 
----
+
+
+> **Interact with those files in the Notebook:**
+> 
+><a href="https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/notebook" style="text-decoration: none;">
+>  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
+></a>
