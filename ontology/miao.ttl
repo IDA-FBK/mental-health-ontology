@@ -616,13 +616,6 @@ dcterms:valid rdf:type owl:DatatypeProperty ;
               rdfs:subPropertyOf dcterms:date .
 
 
-###  https://w3id.org/miao#refersToSample
-:refersToSample rdf:type owl:DatatypeProperty ;
-                rdfs:domain :MentalIlness ;
-                rdfs:range xsd:long ;
-                rdfs:comment "This data property represents the unique identifier of the specific data sample on which one or more mental illnesses have been detected. It is used to link a mental illness detection result to the original collected data instance." .
-
-
 ###  https://w3id.org/miao/hasMentalIllnessDetectionConfidence
 :hasMentalIllnessDetectionConfidence rdf:type owl:DatatypeProperty ;
                                      rdfs:domain :MentalIlness ;
@@ -642,6 +635,13 @@ dcterms:valid rdf:type owl:DatatypeProperty ;
                        rdfs:domain :MentalIlness ;
                        rdfs:range xsd:decimal ;
                        rdfs:comment "Represents the intensity of the mental illness as a numeric score between 0 and 1." .
+
+
+###  https://w3id.org/miao/refersToSample
+:refersToSample rdf:type owl:DatatypeProperty ;
+                rdfs:domain :MentalIlness ;
+                rdfs:range xsd:string ;
+                rdfs:comment "This data property represents the unique identifier of the specific data sample on which one or more mental illnesses have been detected. It is used to link a mental illness detection result to the original collected data instance." .
 
 
 #################################################################
