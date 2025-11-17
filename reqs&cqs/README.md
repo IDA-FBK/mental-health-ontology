@@ -15,7 +15,7 @@ The requirements are grouped as **Functional Requirements (FR)** and **Non-Funct
 |----|------------|
 | **FR1** | The ontology shall represent both human-driven and AI-driven mental illness detection processes. |
 | **FR2** | The ontology shall link detection processes to their input data sources. |
-| **FR3** | The ontology shall support integration of multiple mental illness schemas (e.g., DSM-5, SNOMED CT) and link detected illnesses to their defined categories. |
+| **FR3** | The ontology shall support integration of multiple mental illness schemas and link detected illnesses to the categories defined in these schemas. |
 | **FR4** | The ontology shall represent detection results and include the confidence associated with each detection. |
 
 ---
@@ -24,7 +24,7 @@ The requirements are grouped as **Functional Requirements (FR)** and **Non-Funct
 
 | ID | Requirement |
 |----|------------|
-| **NFR1** | The ontology shall be flexible and extensible, allowing addition of new detection methods, disorders, or mental health models without major restructuring. |
+| **NFR1** | The ontology shall be flexible, allowing the inclusion of new detection methods, disorders, or mental health models without requiring major restructuring. |
 | **NFR2** | The ontology shall support traceability, enabling tracking of detection results back to their original data sources. |
 | **NFR3** | The ontology shall comply with Semantic Web standards to maximize compatibility with existing tooling and knowledge graphs. |
 | **NFR4** | The ontology shall include clear documentation and usage guidelines to ensure adoption by both AI researchers and mental health domain experts. |
