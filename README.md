@@ -5,8 +5,6 @@
 
 # MIAO: A Mental Illness Analysis Ontology for Detecting Mental Health Conditions
 
-## Introduction
-
 We introduce the Mental Illness Analysis Ontology (**MIAO**), an ontology designed to model the detection process of mental illness. MIAO has two key characteristics: (i) it provides a conceptual framework for the detection process, regardless of the detection method, allowing for both human and
 AI-driven detection approaches, and (ii) it separates the detection process from the underlying mental illness model (e.g., ontology) used to represent mental health conditions, enabling the use of different mental illness models, depending
 on the needs of the user or application. Two research questions guide our investigation and the development of the MIAO ontology:
@@ -14,6 +12,38 @@ on the needs of the user or application. Two research questions guide our invest
 - **RQ<sub>1</sub>**: How can the detection process of mental illness be effectively modeled in a way that is agnostic to the specific detection method used (human or AI)?
 - **RQ<sub>2</sub>**: How can existing mental health models be integrated to support the detection process, ensuring compatibility across different detection systems and applications?
   
+## Ontology Development
+<img src="diagrams/miao_development.png" width="950">
+
+The development of the MIAO schema follows a 4-step procedure:
+ 1. **Domain analysis**
+ 
+    The analysis of the domain of interest provides an overview of the state of the art, of the challenges, the strength and limitations
+    of modelling mental illness, and especially the lack of models conceptualizing mental illness detection. The results have been reported in the previous section;
+    this analysis also prompts the research questions (i.e., **RQ<sub>1</sub>** and **RQ<sub>2</sub>**) which guide our work.
+
+2. **Specification**
+     
+   After reviewing the literature and formulating the research questions, we defined a set of functional (**FR<sub>s</sub>**) and non-functional
+   (**NFR<sub>s</sub>**) requirements that the ontology should satisfy. These requirements provide guidance for the initial high-level conceptualization
+   of the ontology. Based on these requirements, we also defined a set of
+   competency questions (**CQ<sub>s</sub>**) to further refine the scope and intended use of the
+   ontology (see [REQs&CQs](https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/reqs%26cqs)).
+
+3. **Construction**
+     
+   The construction phase involves both the design andcformalization of the ontology. Starting from the CQs, we defined the concepts
+   needed to model the mental illness detection domain. Also, in accordance with established best practices in ontology development, we prioritized reusing existing
+   data models and vocabularies as a foundation, extending them to capturecdomain-specific classes and properties. Therefore, to express the concepts related
+   to automatic detection models, we integrated [ML Schema](https://ml-schema.github.io/documentation/ML%20Schema.html), which is used to represent and interchange information on data mining and machine learning
+   algorithms, datasets, and experiments. Subsequently, we designed the model
+   merging the concepts defined in our domain with those present in ML Schema.
+   After having finalized the model we formalized the ontology in Turtle TTL format
+   with the Protégé tool.
+
+4. **Validation**
+     
+     **OntOlogy Pitfall Scanner!**: [OOPS results](https://ida-fbk.github.io/mental-health-ontology/documentation/html-docs/OOPSevaluation/oopsEval)
 
 ## Ontology Overview
 
@@ -69,11 +99,28 @@ MIAO integrates:
 | `hasMentalIllnessScore` | MentalIllness | decimal | Numeric intensity (0–1) |
 | `hasMentalIllnessLevel` | MentalIllness | string | Categorical intensity (Low, Medium, High) |
 
+
+## 🚀 Google Colab Notebook
+
+We have implemented a Python **Colab Notebook** showing how to interact with MIAO ontology by performing SPARQL queries based on the CQ<sub>s</sub> of each REQ ([REQs&CQs](https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/reqs%26cqs)). 
+
+Click below to access the interactive notebook:
+
+<a href="https://github.com/IDA-FBK/FuS-KG/tree/main/notebook" style="text-decoration: none;">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
+</a>
+
+<p></p>
+
+> **⚠️ Important**
+> 
+> To load and run the notebook correctly, please follow the instructions in the [README.md](https://github.com/IDA-FBK/mental-health-ontology/blob/conceptualization-dev/notebook/README.md).
+
+
 ---
-## Validation
-
-**OntOlogy Pitfall Scanner!**: [OOPS results](https://ida-fbk.github.io/mental-health-ontology/documentation/html-docs/OOPSevaluation/oopsEval)
-
+> [!NOTE]  
+> - For more detailed information, please refer to the paper.
+> - Two Turtle files showing how to model manual and automatic mental illness detection activities using MIAO are available [here](/examples/) (also used in the notebook).
 
 ## Authors
 - Gianluca Apriceno: apriceno@fbk.eu
