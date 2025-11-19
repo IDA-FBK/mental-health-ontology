@@ -8,9 +8,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <https://w3id.org/miao> .
+@base <https://w3id.org/miao#> .
 
-<https://w3id.org/miao> rdf:type owl:Ontology ;
+<https://w3id.org/miao#> rdf:type owl:Ontology ;
                          owl:imports <http://www.w3.org/2016/03/mls#> ;
                          dcterms:created "2025-10-27"^^xsd:date ;
                          dcterms:creator "Carlos Á. Iglesias" ,
