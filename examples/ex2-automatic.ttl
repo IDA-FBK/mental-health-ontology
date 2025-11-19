@@ -9,7 +9,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix mls: <http://www.w3.org/2016/03/mls#> .
 
-@base <https://w3id.org/miao/ex2/> .
+@base <https://w3id.org/miao/ex2> .
 
 <https://w3id.org/miao/ex2> rdf:type owl:Ontology ;
 							owl:imports <https://raw.githubusercontent.com/IDA-FBK/mental-health-ontology/refs/heads/conceptualization-dev/ontology/miao.ttl> .
@@ -79,7 +79,7 @@ ex2:PytorchMultiModalTransformerModel a mls:Model .
 # Data Sources
 #################################################################
 
-ex2:SocialMediaText a mls:Dataser ; 
+ex2:SocialMediaText a mls:Dataset ; 
 	rdfs:label "Social media text posts"@en .
 ex2:EEGSignals a mls:Dataset ; 
 	rdfs:label "EEG recordings"@en .
