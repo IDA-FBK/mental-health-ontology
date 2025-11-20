@@ -11,7 +11,7 @@
 @base <https://w3id.org/miao#> .
 
 <https://w3id.org/miao#> rdf:type owl:Ontology ;
-                         owl:imports <http://www.w3.org/2016/03/mls#> ;
+                         owl:imports <https://raw.githubusercontent.com/ML-Schema/core/master/MLSchema.ttl> ;
                          dcterms:created "2025-10-27"^^xsd:date ;
                          dcterms:creator "Carlos Á. Iglesias" ,
                                          "Gianluca Apriceno" ,
@@ -24,7 +24,7 @@
                          dcterms:rights "CreativeCommons 4.0 NonCommercial-ShareAlike <https://creativecommons.org/licenses/by-nc-sa/4.0/>" ;
                          dcterms:title "MIAO: A Mental Illness Analysis Ontology for Detecting Mental Health Conditions"@en ;
                          vann:preferredNamespacePrefix "miao" ;
-                         vann:preferredNamespaceUri "https://w3id.org/miao" ;
+                         vann:preferredNamespaceUri "https://w3id.org/miao#" ;
                          owl:versionInfo 1.00 .
 
 #################################################################
