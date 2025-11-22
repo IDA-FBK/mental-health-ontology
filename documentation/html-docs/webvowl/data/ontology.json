@@ -2,11 +2,11 @@
   "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
   "header" : {
     "languages" : [ "en", "it", "undefined" ],
-    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/ns/mls", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/ns/prov", "http://purl.org/dc/terms", "http://www.w3.org/2001/XMLSchema", "https://w3id.org/miao", "http://purl.org/dc/dcam" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/ns/mls", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/ns/prov", "http://purl.org/dc/terms", "http://www.w3.org/2001/XMLSchema", "https://w3id.org/miao" ],
     "title" : {
       "en" : "MIAO: A Mental Illness Analysis Ontology for Detecting Mental Health Conditions"
     },
-    "iri" : "https://w3id.org/miao",
+    "iri" : "https://w3id.org/miao#",
     "version" : "1.00",
     "author" : [ "Tania Bailoni", "Carlos Á. Iglesias", "Mauro Dragoni", "Sergio Muñoz López", "Gianluca Apriceno" ],
     "other" : {
@@ -19,17 +19,7 @@
       "creator" : [ {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Sergio Muñoz López",
-        "type" : "label"
-      }, {
-        "identifier" : "creator",
-        "language" : "undefined",
-        "value" : "Gianluca Apriceno",
-        "type" : "label"
-      }, {
-        "identifier" : "creator",
-        "language" : "undefined",
-        "value" : "Tania Bailoni",
+        "value" : "Mauro Dragoni",
         "type" : "label"
       }, {
         "identifier" : "creator",
@@ -39,7 +29,17 @@
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Mauro Dragoni",
+        "value" : "Gianluca Apriceno",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Sergio Muñoz López",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Tania Bailoni",
         "type" : "label"
       } ],
       "created" : [ {
@@ -48,22 +48,16 @@
         "value" : "2025-10-27",
         "type" : "label"
       } ],
-      "preferredNamespacePrefix" : [ {
-        "identifier" : "preferredNamespacePrefix",
-        "language" : "undefined",
-        "value" : "miao",
-        "type" : "label"
-      } ],
       "rights" : [ {
         "identifier" : "rights",
         "language" : "undefined",
         "value" : "CreativeCommons 4.0 NonCommercial-ShareAlike <https://creativecommons.org/licenses/by-nc-sa/4.0/>",
         "type" : "label"
       } ],
-      "publisher" : [ {
-        "identifier" : "publisher",
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
         "language" : "undefined",
-        "value" : "Intelligent Digital Agents Research Group <https://ida.fbk.eu> @ Digital Health and Wellbeing Center, Fondazione Bruno Kessler <https://digitalhealthcenter-en.fbk.eu/home>  and GSI - Universidad Politécnica de Madrid <https://www.gsi.upm.es/es/>",
+        "value" : "miao",
         "type" : "label"
       } ],
       "modified" : [ {
@@ -72,16 +66,22 @@
         "value" : "2025-10-27",
         "type" : "label"
       } ],
-      "versionInfo" : [ {
-        "identifier" : "versionInfo",
+      "publisher" : [ {
+        "identifier" : "publisher",
         "language" : "undefined",
-        "value" : "1.00",
+        "value" : "Intelligent Digital Agents Research Group <https://ida.fbk.eu> @digital health and wellbeing center, fondazione bruno kessler <https://digitalhealthcenter-en.fbk.eu/home>  and gsi - universidad politécnica de madrid <https://www.gsi.upm.es/es/>",
         "type" : "label"
       } ],
       "preferredNamespaceUri" : [ {
         "identifier" : "preferredNamespaceUri",
         "language" : "undefined",
-        "value" : "https://w3id.org/miao",
+        "value" : "https://w3id.org/miao#",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.00",
         "type" : "label"
       } ],
       "title" : [ {
@@ -94,235 +94,105 @@
   },
   "namespace" : [ ],
   "class" : [ {
-    "id" : "3",
+    "id" : "10",
     "type" : "owl:Class"
   }, {
-    "id" : "4",
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "17",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "18",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "19",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "22",
     "type" : "owl:Class"
   }, {
     "id" : "8",
     "type" : "owl:Class"
   }, {
-    "id" : "9",
-    "type" : "owl:Class"
-  }, {
-    "id" : "10",
-    "type" : "owl:Class"
-  }, {
-    "id" : "31",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "32",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "34",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "23",
-    "type" : "owl:Class"
-  }, {
-    "id" : "20",
-    "type" : "owl:Class"
-  }, {
     "id" : "7",
     "type" : "owl:Class"
   }, {
-    "id" : "44",
+    "id" : "4",
     "type" : "owl:Class"
   }, {
-    "id" : "45",
+    "id" : "25",
     "type" : "owl:Class"
   }, {
-    "id" : "49",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "50",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "52",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "28",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "15",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "43",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "56",
+    "id" : "24",
     "type" : "owl:Class"
   }, {
-    "id" : "39",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "57",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "58",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "13",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "59",
+    "id" : "32",
     "type" : "owl:Class"
-  }, {
-    "id" : "36",
-    "type" : "owl:Class"
-  }, {
-    "id" : "26",
-    "type" : "owl:Class"
-  }, {
-    "id" : "62",
-    "type" : "owl:Class"
-  }, {
-    "id" : "17",
-    "type" : "owl:Class"
-  }, {
-    "id" : "64",
-    "type" : "owl:Class"
-  }, {
-    "id" : "63",
-    "type" : "owl:Class"
-  }, {
-    "id" : "6",
-    "type" : "owl:Class"
-  }, {
-    "id" : "74",
-    "type" : "owl:Class"
-  }, {
-    "id" : "83",
-    "type" : "owl:Class"
-  }, {
-    "id" : "85",
-    "type" : "owl:Class"
-  }, {
-    "id" : "47",
-    "type" : "owl:Class"
-  }, {
-    "id" : "30",
-    "type" : "owl:Class"
-  }, {
-    "id" : "67",
-    "type" : "owl:Class"
-  }, {
-    "id" : "87",
-    "type" : "owl:Class"
-  }, {
-    "id" : "88",
-    "type" : "owl:Class"
-  }, {
-    "id" : "68",
-    "type" : "owl:Class"
-  }, {
-    "id" : "81",
-    "type" : "owl:Class"
-  }, {
-    "id" : "22",
-    "type" : "owl:Class"
-  }, {
-    "id" : "19",
-    "type" : "owl:Class"
-  }, {
-    "id" : "2",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "61",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "95",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "12",
-    "type" : "owl:Thing"
   }, {
     "id" : "1",
     "type" : "owl:Class"
   }, {
-    "id" : "79",
-    "type" : "owl:Class"
-  }, {
-    "id" : "72",
-    "type" : "owl:Class"
-  }, {
-    "id" : "41",
-    "type" : "owl:Class"
-  }, {
-    "id" : "71",
+    "id" : "2",
     "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
-    "iri" : "http://purl.org/dc/terms/BibliographicResource",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "BibliographicResource",
-      "en" : "Bibliographic Resource"
-    },
-    "comment" : {
-      "en" : "A book, article, or other documentary resource."
-    },
-    "attributes" : [ "external" ],
-    "id" : "3"
-  }, {
-    "iri" : "https://w3id.org/miao/DisorderType",
-    "baseIri" : "https://w3id.org/miao",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "DisorderType",
-      "en" : "Disorder Type",
-      "it" : "Tipo Disordine"
-    },
-    "comment" : {
-      "undefined" : "This concept defines the types of disorder(s) related to a MentalIllness."
-    },
-    "attributes" : [ "external" ],
-    "id" : "4",
-    "superClasses" : [ "1" ]
-  }, {
     "iri" : "http://www.w3.org/ns/prov#Activity",
     "baseIri" : "http://www.w3.org/ns/prov",
     "instances" : 0,
     "label" : {
       "IRI-based" : "Activity"
     },
-    "subClasses" : [ "7" ],
+    "subClasses" : [ "2" ],
     "comment" : {
       "undefined" : "Ref: https://www.w3.org/TR/prov-o/#Activity"
     },
     "attributes" : [ "external" ],
-    "id" : "8"
+    "id" : "10"
   }, {
-    "iri" : "https://w3id.org/miao/MentalIlnessesSet",
+    "iri" : "https://w3id.org/miao#MentalIlness",
     "baseIri" : "https://w3id.org/miao",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "MentalIlnessesSet",
-      "en" : "Mental Illnesses Set",
-      "it" : "Insieme Malattie Mentali"
+      "IRI-based" : "MentalIlness",
+      "en" : "Mental Illness",
+      "it" : "Malattia Mentale"
     },
     "comment" : {
-      "undefined" : "Concept used to represent a set of detected mental illnesses."
+      "undefined" : "A MentalIllness represents a detected or predicted mental illness, typically as a result of a human or machine/deep learning analysis."
     },
-    "attributes" : [ "external" ],
-    "id" : "9",
-    "superClasses" : [ "10" ]
+    "id" : "11"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "16",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "17",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "18",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "19",
+    "label" : {
+      "IRI-based" : "string"
+    }
   }, {
     "iri" : "http://www.w3.org/ns/prov#Entity",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -330,285 +200,14 @@
     "label" : {
       "IRI-based" : "Entity"
     },
-    "subClasses" : [ "9" ],
+    "subClasses" : [ "1" ],
     "comment" : {
       "undefined" : "Ref: https://www.w3.org/TR/prov-o/#Entity"
     },
     "attributes" : [ "external" ],
-    "id" : "10"
+    "id" : "22"
   }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "31",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "32",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "34",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://purl.org/dc/terms/RightsStatement",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "RightsStatement",
-      "en" : "Rights Statement"
-    },
-    "subClasses" : [ "22" ],
-    "comment" : {
-      "en" : "A statement about the intellectual property rights (IPR) held in or over a resource, a legal document giving official permission to do something with a resource, or a statement about access rights."
-    },
-    "attributes" : [ "external" ],
-    "id" : "23"
-  }, {
-    "iri" : "http://purl.org/dc/terms/LocationPeriodOrJurisdiction",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "LocationPeriodOrJurisdiction",
-      "en" : "Location, Period, or Jurisdiction"
-    },
-    "subClasses" : [ "30", "26", "19" ],
-    "comment" : {
-      "en" : "A location, period of time, or jurisdiction."
-    },
-    "attributes" : [ "external" ],
-    "id" : "20"
-  }, {
-    "iri" : "https://w3id.org/miao/MentalIllnessesDetection",
-    "baseIri" : "https://w3id.org/miao",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "MentalIllnessesDetection",
-      "en" : "Mental Illnesses Detection",
-      "it" : "Rilevamento Malattie Mentali"
-    },
-    "subClasses" : [ "17", "6" ],
-    "comment" : {
-      "undefined" : "High-level concept used to represent a mental illness detection process regardless of the type (i.e., manual or automatic)."
-    },
-    "attributes" : [ "external" ],
-    "id" : "7",
-    "superClasses" : [ "8" ]
-  }, {
-    "iri" : "http://purl.org/dc/terms/MethodOfInstruction",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "MethodOfInstruction",
-      "en" : "Method of Instruction"
-    },
-    "comment" : {
-      "en" : "A process that is used to engender knowledge, attitudes, and skills."
-    },
-    "attributes" : [ "external" ],
-    "id" : "44"
-  }, {
-    "iri" : "http://purl.org/dc/terms/Policy",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Policy",
-      "en" : "Policy"
-    },
-    "comment" : {
-      "en" : "A plan or course of action by an authority, intended to influence and determine decisions, actions, and other matters."
-    },
-    "attributes" : [ "external" ],
-    "id" : "45"
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "49",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "50",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "52",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "28",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "15",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "43",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://purl.org/dc/terms/ProvenanceStatement",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "ProvenanceStatement",
-      "en" : "Provenance Statement"
-    },
-    "comment" : {
-      "en" : "Any changes in ownership and custody of a resource since its creation that are significant for its authenticity, integrity, and interpretation."
-    },
-    "attributes" : [ "external" ],
-    "id" : "56"
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "39",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "57",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "58",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "13",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://purl.org/dc/terms/PhysicalResource",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "PhysicalResource",
-      "en" : "Physical Resource"
-    },
-    "comment" : {
-      "en" : "A material thing."
-    },
-    "attributes" : [ "external" ],
-    "id" : "59"
-  }, {
-    "iri" : "https://w3id.org/miao/MentalIlnessCategory",
+    "iri" : "https://w3id.org/miao#MentalIlnessCategory",
     "baseIri" : "https://w3id.org/miao",
     "instances" : 0,
     "label" : {
@@ -619,461 +218,9 @@
     "comment" : {
       "undefined" : "A concept used to represent a mental illness category that belongs to a specific schema (e.g., ontology) used to represent mental illnesses"
     },
-    "attributes" : [ "external" ],
-    "id" : "36"
+    "id" : "8"
   }, {
-    "iri" : "http://purl.org/dc/terms/Location",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Location",
-      "en" : "Location"
-    },
-    "comment" : {
-      "en" : "A spatial region or named place."
-    },
-    "attributes" : [ "external" ],
-    "id" : "26",
-    "superClasses" : [ "20" ]
-  }, {
-    "iri" : "http://purl.org/dc/dcam/VocabularyEncodingScheme",
-    "baseIri" : "http://purl.org/dc/dcam",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "VocabularyEncodingScheme"
-    },
-    "individuals" : [ {
-      "iri" : "http://purl.org/dc/terms/DCMIType",
-      "baseIri" : "http://purl.org/dc/terms",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "http://purl.org/dc/terms/",
-          "type" : "iri"
-        } ],
-        "issued" : [ {
-          "identifier" : "issued",
-          "language" : "undefined",
-          "value" : "2000-07-11",
-          "type" : "label"
-        } ],
-        "seeAlso" : [ {
-          "identifier" : "seeAlso",
-          "language" : "undefined",
-          "value" : "http://purl.org/dc/dcmitype/",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "en" : "The set of classes specified by the DCMI Type Vocabulary, used to categorize the nature or genre of the resource."
-      },
-      "labels" : {
-        "IRI-based" : "DCMIType",
-        "en" : "DCMI Type Vocabulary"
-      }
-    }, {
-      "iri" : "http://purl.org/dc/terms/DDC",
-      "baseIri" : "http://purl.org/dc/terms",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "http://purl.org/dc/terms/",
-          "type" : "iri"
-        } ],
-        "issued" : [ {
-          "identifier" : "issued",
-          "language" : "undefined",
-          "value" : "2000-07-11",
-          "type" : "label"
-        } ],
-        "seeAlso" : [ {
-          "identifier" : "seeAlso",
-          "language" : "undefined",
-          "value" : "http://www.oclc.org/dewey/",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "en" : "The set of conceptual resources specified by the Dewey Decimal Classification."
-      },
-      "labels" : {
-        "IRI-based" : "DDC",
-        "en" : "DDC"
-      }
-    }, {
-      "iri" : "http://purl.org/dc/terms/IMT",
-      "baseIri" : "http://purl.org/dc/terms",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "http://purl.org/dc/terms/",
-          "type" : "iri"
-        } ],
-        "issued" : [ {
-          "identifier" : "issued",
-          "language" : "undefined",
-          "value" : "2000-07-11",
-          "type" : "label"
-        } ],
-        "seeAlso" : [ {
-          "identifier" : "seeAlso",
-          "language" : "undefined",
-          "value" : "http://www.iana.org/assignments/media-types/",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "en" : "The set of media types specified by the Internet Assigned Numbers Authority."
-      },
-      "labels" : {
-        "IRI-based" : "IMT",
-        "en" : "IMT"
-      }
-    }, {
-      "iri" : "http://purl.org/dc/terms/UDC",
-      "baseIri" : "http://purl.org/dc/terms",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "http://purl.org/dc/terms/",
-          "type" : "iri"
-        } ],
-        "issued" : [ {
-          "identifier" : "issued",
-          "language" : "undefined",
-          "value" : "2000-07-11",
-          "type" : "label"
-        } ],
-        "seeAlso" : [ {
-          "identifier" : "seeAlso",
-          "language" : "undefined",
-          "value" : "http://www.udcc.org/",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "en" : "The set of conceptual resources specified by the Universal Decimal Classification."
-      },
-      "labels" : {
-        "IRI-based" : "UDC",
-        "en" : "UDC"
-      }
-    }, {
-      "iri" : "http://purl.org/dc/terms/LCSH",
-      "baseIri" : "http://purl.org/dc/terms",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "http://purl.org/dc/terms/",
-          "type" : "iri"
-        } ],
-        "issued" : [ {
-          "identifier" : "issued",
-          "language" : "undefined",
-          "value" : "2000-07-11",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "The set of labeled concepts specified by the Library of Congress Subject Headings."
-      },
-      "labels" : {
-        "IRI-based" : "LCSH",
-        "en" : "LCSH"
-      }
-    }, {
-      "iri" : "http://purl.org/dc/terms/MESH",
-      "baseIri" : "http://purl.org/dc/terms",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "http://purl.org/dc/terms/",
-          "type" : "iri"
-        } ],
-        "issued" : [ {
-          "identifier" : "issued",
-          "language" : "undefined",
-          "value" : "2000-07-11",
-          "type" : "label"
-        } ],
-        "seeAlso" : [ {
-          "identifier" : "seeAlso",
-          "language" : "undefined",
-          "value" : "http://www.nlm.nih.gov/mesh/meshhome.html",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "en" : "The set of labeled concepts specified by the Medical Subject Headings."
-      },
-      "labels" : {
-        "IRI-based" : "MESH",
-        "en" : "MeSH"
-      }
-    }, {
-      "iri" : "http://purl.org/dc/terms/TGN",
-      "baseIri" : "http://purl.org/dc/terms",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "http://purl.org/dc/terms/",
-          "type" : "iri"
-        } ],
-        "issued" : [ {
-          "identifier" : "issued",
-          "language" : "undefined",
-          "value" : "2000-07-11",
-          "type" : "label"
-        } ],
-        "seeAlso" : [ {
-          "identifier" : "seeAlso",
-          "language" : "undefined",
-          "value" : "http://www.getty.edu/research/tools/vocabulary/tgn/index.html",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "en" : "The set of places specified by the Getty Thesaurus of Geographic Names."
-      },
-      "labels" : {
-        "IRI-based" : "TGN",
-        "en" : "TGN"
-      }
-    }, {
-      "iri" : "http://purl.org/dc/terms/NLM",
-      "baseIri" : "http://purl.org/dc/terms",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "http://purl.org/dc/terms/",
-          "type" : "iri"
-        } ],
-        "issued" : [ {
-          "identifier" : "issued",
-          "language" : "undefined",
-          "value" : "2005-06-13",
-          "type" : "label"
-        } ],
-        "seeAlso" : [ {
-          "identifier" : "seeAlso",
-          "language" : "undefined",
-          "value" : "http://wwwcf.nlm.nih.gov/class/",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "en" : "The set of conceptual resources specified by the National Library of Medicine Classification."
-      },
-      "labels" : {
-        "IRI-based" : "NLM",
-        "en" : "NLM"
-      }
-    }, {
-      "iri" : "http://purl.org/dc/terms/LCC",
-      "baseIri" : "http://purl.org/dc/terms",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "http://purl.org/dc/terms/",
-          "type" : "iri"
-        } ],
-        "issued" : [ {
-          "identifier" : "issued",
-          "language" : "undefined",
-          "value" : "2000-07-11",
-          "type" : "label"
-        } ],
-        "seeAlso" : [ {
-          "identifier" : "seeAlso",
-          "language" : "undefined",
-          "value" : "http://lcweb.loc.gov/catdir/cpso/lcco/lcco.html",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "en" : "The set of conceptual resources specified by the Library of Congress Classification."
-      },
-      "labels" : {
-        "IRI-based" : "LCC",
-        "en" : "LCC"
-      }
-    } ],
-    "attributes" : [ "external" ],
-    "id" : "62"
-  }, {
-    "iri" : "https://w3id.org/miao/AutomaticMentalIlnessesDetection",
-    "baseIri" : "https://w3id.org/miao",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "AutomaticMentalIlnessesDetection",
-      "en" : "Automatic Mental Illnesses Detection",
-      "it" : "Rilevamento Automatico Malattie Mentali"
-    },
-    "comment" : {
-      "undefined" : "An AutomaticMentalIllnessesDetection represents an analysis (i.e., a run) performed by a machine/deep learning model to detect mental illnesses from a given source."
-    },
-    "attributes" : [ "external" ],
-    "id" : "17",
-    "superClasses" : [ "63", "7" ]
-  }, {
-    "iri" : "http://purl.org/dc/terms/Standard",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Standard",
-      "en" : "Standard"
-    },
-    "comment" : {
-      "en" : "A reference point against which other things can be evaluated or compared."
-    },
-    "attributes" : [ "external" ],
-    "id" : "64"
-  }, {
-    "iri" : "http://www.w3.org/ns/mls#Run",
-    "baseIri" : "http://www.w3.org/ns/mls",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Run"
-    },
-    "subClasses" : [ "17" ],
-    "attributes" : [ "external" ],
-    "id" : "63"
-  }, {
-    "iri" : "https://w3id.org/miao/ManualMentalIllnessesDetection",
-    "baseIri" : "https://w3id.org/miao",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "ManualMentalIllnessesDetection",
-      "en" : "Manual Detection Mental Illnesses",
-      "it" : "Rilevamento Manuale Malattie Mentali"
-    },
-    "comment" : {
-      "undefined" : "A ManualMentalIllnessesDetection represents an analysis performed by a human expert to detect mental illnesses from a given source."
-    },
-    "attributes" : [ "external" ],
-    "id" : "6",
-    "superClasses" : [ "7" ]
-  }, {
-    "iri" : "http://purl.org/dc/terms/FileFormat",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "FileFormat",
-      "en" : "File Format"
-    },
-    "comment" : {
-      "en" : "A digital resource format."
-    },
-    "attributes" : [ "external" ],
-    "id" : "74",
-    "superClasses" : [ "67" ]
-  }, {
-    "iri" : "http://purl.org/dc/terms/Frequency",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Frequency",
-      "en" : "Frequency"
-    },
-    "comment" : {
-      "en" : "A rate at which something recurs."
-    },
-    "attributes" : [ "external" ],
-    "id" : "83"
-  }, {
-    "iri" : "http://purl.org/dc/terms/MethodOfAccrual",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "MethodOfAccrual",
-      "en" : "Method of Accrual"
-    },
-    "comment" : {
-      "en" : "A method by which resources are added to a collection."
-    },
-    "attributes" : [ "external" ],
-    "id" : "85"
-  }, {
-    "iri" : "https://w3id.org/miao/MentalIlnessesSchema",
+    "iri" : "https://w3id.org/miao#MentalIlnessesSchema",
     "baseIri" : "https://w3id.org/miao",
     "instances" : 0,
     "label" : {
@@ -1084,321 +231,7 @@
     "comment" : {
       "undefined" : "Represents a category of mental illness within a specific schema (e.g., an ontology or classification system)."
     },
-    "attributes" : [ "external" ],
-    "id" : "47"
-  }, {
-    "iri" : "http://purl.org/dc/terms/Jurisdiction",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Jurisdiction",
-      "en" : "Jurisdiction"
-    },
-    "comment" : {
-      "en" : "The extent or range of judicial, law enforcement, or other authority."
-    },
-    "attributes" : [ "external" ],
-    "id" : "30",
-    "superClasses" : [ "20" ]
-  }, {
-    "iri" : "http://purl.org/dc/terms/MediaType",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "MediaType",
-      "en" : "Media Type"
-    },
-    "subClasses" : [ "74", "81" ],
-    "comment" : {
-      "en" : "A file format or physical medium."
-    },
-    "attributes" : [ "external" ],
-    "id" : "67",
-    "superClasses" : [ "68" ]
-  }, {
-    "iri" : "http://purl.org/dc/terms/Agent",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Agent",
-      "en" : "Agent"
-    },
-    "comment" : {
-      "en" : "A resource that acts or has the power to act."
-    },
-    "attributes" : [ "external" ],
-    "id" : "87"
-  }, {
-    "iri" : "http://purl.org/dc/terms/LinguisticSystem",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "description" : {
-      "en" : "Written, spoken, sign, and computer languages are linguistic systems."
-    },
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "LinguisticSystem",
-      "en" : "Linguistic System"
-    },
-    "comment" : {
-      "en" : "A system of signs, symbols, sounds, gestures, or rules used in communication."
-    },
-    "attributes" : [ "external" ],
-    "id" : "88"
-  }, {
-    "iri" : "http://purl.org/dc/terms/MediaTypeOrExtent",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "MediaTypeOrExtent",
-      "en" : "Media Type or Extent"
-    },
-    "subClasses" : [ "79", "67" ],
-    "comment" : {
-      "en" : "A media type or extent."
-    },
-    "attributes" : [ "external" ],
-    "id" : "68"
-  }, {
-    "iri" : "http://purl.org/dc/terms/PhysicalMedium",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "description" : {
-      "en" : "Examples include paper, canvas, or DVD."
-    },
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "PhysicalMedium",
-      "en" : "Physical Medium"
-    },
-    "comment" : {
-      "en" : "A physical material or carrier."
-    },
-    "attributes" : [ "external" ],
-    "id" : "81",
-    "superClasses" : [ "67" ]
-  }, {
-    "iri" : "http://purl.org/dc/terms/LicenseDocument",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "LicenseDocument",
-      "en" : "License Document"
-    },
-    "comment" : {
-      "en" : "A legal document giving official permission to do something with a resource."
-    },
-    "attributes" : [ "external" ],
-    "id" : "22",
-    "superClasses" : [ "23" ]
-  }, {
-    "iri" : "http://purl.org/dc/terms/PeriodOfTime",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "PeriodOfTime",
-      "en" : "Period of Time"
-    },
-    "comment" : {
-      "en" : "An interval of time that is named or defined by its start and end dates."
-    },
-    "attributes" : [ "external" ],
-    "id" : "19",
-    "superClasses" : [ "20" ]
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "2",
-    "label" : {
-      "IRI-based" : "decimal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "61",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "95",
-    "label" : {
-      "IRI-based" : "decimal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "12",
-    "label" : {
-      "undefined" : "Thing"
-    }
-  }, {
-    "iri" : "https://w3id.org/miao/MentalIlness",
-    "baseIri" : "https://w3id.org/miao",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "MentalIlness",
-      "en" : "Mental Illness",
-      "it" : "Malattia Mentale"
-    },
-    "subClasses" : [ "4" ],
-    "comment" : {
-      "undefined" : "A MentalIllness represents a detected or predicted mental illness, typically as a result of a human or machine/deep learning analysis."
-    },
-    "attributes" : [ "external" ],
-    "id" : "1"
-  }, {
-    "iri" : "http://purl.org/dc/terms/SizeOrDuration",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "description" : {
-      "en" : "Examples include a number of pages, a specification of length, width, and breadth, or a period in hours, minutes, and seconds."
-    },
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "SizeOrDuration",
-      "en" : "Size or Duration"
-    },
-    "comment" : {
-      "en" : "A dimension or extent, or a time taken to play or execute."
-    },
-    "attributes" : [ "external" ],
-    "id" : "79",
-    "superClasses" : [ "68" ]
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Class",
-    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Class"
-    },
-    "subClasses" : [ "71" ],
-    "attributes" : [ "external" ],
-    "id" : "72"
+    "id" : "7"
   }, {
     "iri" : "http://www.w3.org/ns/mls#Data",
     "baseIri" : "http://www.w3.org/ns/mls",
@@ -1407,924 +240,449 @@
       "IRI-based" : "Data"
     },
     "attributes" : [ "external" ],
-    "id" : "41"
+    "id" : "4"
   }, {
-    "iri" : "http://purl.org/dc/terms/AgentClass",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 1,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
+    "iri" : "https://w3id.org/miao#ManualMentalIllnessesDetection",
+    "baseIri" : "https://w3id.org/miao",
+    "instances" : 0,
     "label" : {
-      "IRI-based" : "AgentClass",
-      "en" : "Agent Class"
+      "IRI-based" : "ManualMentalIllnessesDetection",
+      "en" : "Manual Detection Mental Illnesses",
+      "it" : "Rilevamento Manuale Malattie Mentali"
     },
     "comment" : {
-      "en" : "A group of agents."
+      "undefined" : "A ManualMentalIllnessesDetection represents an analysis performed by a human expert to detect mental illnesses from a given source."
     },
+    "id" : "25",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/miao#AutomaticMentalIlnessesDetection",
+    "baseIri" : "https://w3id.org/miao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AutomaticMentalIlnessesDetection",
+      "en" : "Automatic Mental Illnesses Detection",
+      "it" : "Rilevamento Automatico Malattie Mentali"
+    },
+    "comment" : {
+      "undefined" : "An AutomaticMentalIllnessesDetection represents an analysis (i.e., a run) performed by a machine/deep learning model to detect mental illnesses from a given source."
+    },
+    "id" : "24",
+    "superClasses" : [ "32", "2" ]
+  }, {
+    "iri" : "http://www.w3.org/ns/mls#Run",
+    "baseIri" : "http://www.w3.org/ns/mls",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Run"
+    },
+    "subClasses" : [ "24" ],
     "attributes" : [ "external" ],
-    "id" : "71",
-    "superClasses" : [ "72" ]
+    "id" : "32"
+  }, {
+    "iri" : "https://w3id.org/miao#MentalIlnessesSet",
+    "baseIri" : "https://w3id.org/miao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MentalIlnessesSet",
+      "en" : "Mental Illnesses Set",
+      "it" : "Insieme Malattie Mentali"
+    },
+    "comment" : {
+      "undefined" : "Concept used to represent a set of detected mental illnesses."
+    },
+    "id" : "1",
+    "superClasses" : [ "22" ]
+  }, {
+    "iri" : "https://w3id.org/miao#MentalIllnessesDetection",
+    "baseIri" : "https://w3id.org/miao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MentalIllnessesDetection",
+      "en" : "Mental Illnesses Detection",
+      "it" : "Rilevamento Malattie Mentali"
+    },
+    "subClasses" : [ "24", "25" ],
+    "comment" : {
+      "undefined" : "High-level concept used to represent a mental illness detection process regardless of the type (i.e., manual or automatic)."
+    },
+    "id" : "2",
+    "superClasses" : [ "10" ]
   } ],
   "property" : [ {
     "id" : "0",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
-    "id" : "5",
-    "type" : "rdfs:SubClassOf"
+    "id" : "3",
+    "type" : "owl:objectProperty"
   }, {
-    "id" : "11",
-    "type" : "owl:datatypeProperty"
+    "id" : "6",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "12",
+    "type" : "owl:someValuesFrom"
   }, {
     "id" : "14",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:someValuesFrom"
   }, {
-    "id" : "16",
-    "type" : "rdfs:SubClassOf"
+    "id" : "15",
+    "type" : "owl:someValuesFrom"
   }, {
-    "id" : "18",
+    "id" : "20",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "21",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:datatypeProperty"
   }, {
-    "id" : "24",
-    "type" : "rdfs:SubClassOf"
+    "id" : "23",
+    "type" : "owl:disjointWith"
   }, {
-    "id" : "25",
-    "type" : "rdfs:SubClassOf"
+    "id" : "9",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:someValuesFrom"
   }, {
     "id" : "27",
     "type" : "owl:datatypeProperty"
   }, {
+    "id" : "13",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "5",
+    "type" : "owl:objectProperty"
+  }, {
     "id" : "29",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "30",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "31",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "33",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "35",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "38",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "40",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "42",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "46",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "48",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "51",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "53",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "54",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "60",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "65",
+    "id" : "36",
     "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "66",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "69",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "70",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "73",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "75",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "76",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "77",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "78",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "80",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "82",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "84",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "55",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "86",
-    "type" : "owl:datatypeProperty"
   }, {
     "id" : "37",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "89",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "90",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "91",
-    "type" : "owl:someValuesFrom"
-  }, {
-    "id" : "92",
-    "type" : "owl:someValuesFrom"
-  }, {
-    "id" : "94",
-    "type" : "owl:someValuesFrom"
-  }, {
-    "id" : "93",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "96",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "97",
-    "type" : "rdf:Property"
-  }, {
-    "id" : "98",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "99",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "100",
-    "type" : "owl:someValuesFrom"
-  }, {
-    "id" : "101",
     "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "34",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "38",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "39",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "40",
+    "type" : "rdfs:SubClassOf"
   } ],
   "propertyAttribute" : [ {
-    "iri" : "https://w3id.org/miao/hasMentalIllnessDetectionConfidence",
-    "baseIri" : "https://w3id.org/miao",
-    "range" : "2",
-    "label" : {
-      "IRI-based" : "hasMentalIllnessDetectionConfidence"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "Data Property used to represent the confidence of both an human expert or a machine/deep learning model about the presence of a mental illness."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "0"
-  }, {
-    "range" : "7",
-    "domain" : "6",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "5"
-  }, {
-    "iri" : "http://purl.org/dc/terms/modified",
-    "baseIri" : "http://purl.org/dc/terms",
-    "range" : "13",
-    "description" : {
-      "en" : "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."
-    },
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2000-07-11",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "modified",
-      "en" : "Date Modified"
-    },
-    "domain" : "12",
-    "comment" : {
-      "en" : "Date on which the resource was changed."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "11"
-  }, {
-    "iri" : "http://purl.org/dc/terms/date",
-    "baseIri" : "http://purl.org/dc/terms",
-    "range" : "15",
-    "description" : {
-      "en" : "Date may be used to express temporal information at any level of granularity.  Recommended practice is to express the date, date/time, or period of time according to ISO 8601-1 [[ISO 8601-1](https://www.iso.org/iso-8601-date-and-time-format.html)] or a published profile of the ISO standard, such as the W3C Note on Date and Time Formats [[W3CDTF](https://www.w3.org/TR/NOTE-datetime)] or the Extended Date/Time Format Specification [[EDTF](http://www.loc.gov/standards/datetime/)].  If the full date is unknown, month and year (YYYY-MM) or just year (YYYY) may be used. Date ranges may be specified using ISO 8601 period of time specification in which start and end dates are separated by a '/' (slash) character.  Either the start or end date may be missing."
-    },
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "date",
-      "en" : "Date"
-    },
-    "domain" : "12",
-    "comment" : {
-      "en" : "A point or period of time associated with an event in the lifecycle of the resource."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "14"
-  }, {
-    "range" : "7",
-    "domain" : "17",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "16"
-  }, {
-    "range" : "20",
-    "domain" : "19",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "18"
-  }, {
-    "range" : "23",
-    "domain" : "22",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "21"
-  }, {
-    "range" : "10",
-    "domain" : "9",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "24"
-  }, {
-    "range" : "20",
-    "domain" : "26",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "25"
-  }, {
-    "iri" : "http://purl.org/dc/terms/available",
-    "baseIri" : "http://purl.org/dc/terms",
-    "range" : "28",
-    "description" : {
-      "en" : "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."
-    },
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2000-07-11",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "available",
-      "en" : "Date Available"
-    },
-    "domain" : "12",
-    "comment" : {
-      "en" : "Date that the resource became or will become available."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "27"
-  }, {
-    "range" : "20",
-    "domain" : "30",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "29"
-  }, {
-    "range" : "8",
-    "domain" : "7",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "33"
-  }, {
-    "iri" : "https://w3id.org/miao/referredToMentalIllness",
-    "inverse" : "37",
-    "baseIri" : "https://w3id.org/miao",
-    "range" : "1",
-    "label" : {
-      "IRI-based" : "referredToMentalIllness"
-    },
-    "domain" : "36",
-    "comment" : {
-      "undefined" : "Inverse relation of referredToMentalIllnessCategory used to represent to which MentalIlness (predicted) a MentalIlnessCategoy (from the literature) corresponds to."
-    },
-    "attributes" : [ "external", "object", "inverse functional" ],
-    "id" : "35"
-  }, {
-    "iri" : "http://purl.org/dc/terms/valid",
-    "baseIri" : "http://purl.org/dc/terms",
-    "range" : "39",
-    "description" : {
-      "en" : "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."
-    },
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2000-07-11",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "valid",
-      "en" : "Date Valid"
-    },
-    "domain" : "12",
-    "comment" : {
-      "en" : "Date (often a range) of validity of a resource."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "38"
-  }, {
-    "iri" : "https://w3id.org/miao/isInputOfMentalIlnessesDetection",
-    "baseIri" : "https://w3id.org/miao",
-    "range" : "7",
-    "label" : {
-      "IRI-based" : "isInputOfMentalIlnessesDetection"
-    },
-    "domain" : "41",
-    "attributes" : [ "external", "object" ],
-    "id" : "40"
-  }, {
-    "iri" : "http://purl.org/dc/terms/dateSubmitted",
-    "baseIri" : "http://purl.org/dc/terms",
-    "range" : "43",
-    "description" : {
-      "en" : "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty.  Examples of resources to which a 'Date Submitted' may be relevant include a thesis (submitted to a university department) or an article (submitted to a journal)."
-    },
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2002-07-13",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "dateSubmitted",
-      "en" : "Date Submitted"
-    },
-    "domain" : "12",
-    "comment" : {
-      "en" : "Date of submission of the resource."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "42"
-  }, {
-    "iri" : "https://w3id.org/miao/usedInMentalIllnessesDetection",
-    "inverse" : "48",
-    "baseIri" : "https://w3id.org/miao",
-    "range" : "7",
-    "label" : {
-      "IRI-based" : "usedInMentalIllnessesDetection"
-    },
-    "domain" : "47",
-    "comment" : {
-      "undefined" : "Inverse relation of usedMentalIlnessesSchema used to indicate which MentalIllnessesDetection a specific MentalIllnessesSchema (from the literature) refers to."
-    },
-    "attributes" : [ "external", "object" ],
-    "id" : "46"
-  }, {
-    "iri" : "https://w3id.org/miao/usedMentalIllnessesSchema",
-    "baseIri" : "https://w3id.org/miao",
-    "range" : "47",
-    "label" : {
-      "IRI-based" : "usedMentalIllnessesSchema"
-    },
-    "domain" : "7",
-    "comment" : {
-      "undefined" : "Relations used to indicate to which MentalIllnessesSchema (from the literature) a MentalIllnessesDetection is based on."
-    },
-    "attributes" : [ "external", "object", "functional" ],
-    "id" : "48"
-  }, {
-    "iri" : "http://purl.org/dc/terms/created",
-    "baseIri" : "http://purl.org/dc/terms",
-    "range" : "49",
-    "description" : {
-      "en" : "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."
-    },
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2000-07-11",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "created",
-      "en" : "Date Created"
-    },
-    "domain" : "12",
-    "comment" : {
-      "en" : "Date of creation of the resource."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "51"
-  }, {
-    "iri" : "http://purl.org/dc/terms/dateAccepted",
-    "baseIri" : "http://purl.org/dc/terms",
-    "range" : "52",
-    "description" : {
-      "en" : "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty.  Examples of resources to which a date of acceptance may be relevant are a thesis (accepted by a university department) or an article (accepted by a journal)."
-    },
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2002-07-13",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "dateAccepted",
-      "en" : "Date Accepted"
-    },
-    "domain" : "12",
-    "comment" : {
-      "en" : "Date of acceptance of the resource."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "53"
-  }, {
-    "iri" : "https://w3id.org/miao/belongsToMentalIllnessesSet",
-    "inverse" : "55",
-    "baseIri" : "https://w3id.org/miao",
-    "range" : "9",
-    "label" : {
-      "IRI-based" : "belongsToMentalIllnessesSet"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "Inverse relation of hasMentalIlness. This relation connect a MentalIllness with its corresponding MentalIlnessSet."
-    },
-    "attributes" : [ "external", "object" ],
-    "id" : "54"
-  }, {
-    "iri" : "https://w3id.org/miao/hasMentalIllnessLevel",
-    "baseIri" : "https://w3id.org/miao",
-    "range" : "61",
-    "label" : {
-      "IRI-based" : "hasMentalIllnessLevel"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "Represents the intensity of the mental illness as a categorical value, e.g., Low, Medium, or High."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "60"
-  }, {
-    "range" : "1",
-    "domain" : "4",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "65"
-  }, {
-    "range" : "68",
-    "domain" : "67",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "66"
-  }, {
-    "iri" : "http://purl.org/dc/terms/alternative",
-    "baseIri" : "http://purl.org/dc/terms",
-    "range" : "32",
-    "description" : {
-      "en" : "The distinction between titles and alternative titles is application-specific."
-    },
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2000-07-11",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "alternative",
-      "en" : "Alternative Title"
-    },
-    "domain" : "12",
-    "comment" : {
-      "en" : "An alternative name for the resource."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "69"
-  }, {
-    "range" : "72",
-    "domain" : "71",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "70"
-  }, {
-    "range" : "67",
-    "domain" : "74",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "73"
-  }, {
-    "iri" : "http://purl.org/dc/terms/title",
-    "baseIri" : "http://purl.org/dc/terms",
-    "range" : "31",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "title",
-      "en" : "Title"
-    },
-    "domain" : "12",
-    "comment" : {
-      "en" : "A name given to the resource."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "75"
-  }, {
-    "range" : "63",
-    "domain" : "17",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "76"
-  }, {
-    "iri" : "http://purl.org/dc/terms/dateCopyrighted",
-    "baseIri" : "http://purl.org/dc/terms",
-    "range" : "34",
-    "description" : {
-      "en" : "Typically a year.  Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."
-    },
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2002-07-13",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "dateCopyrighted",
-      "en" : "Date Copyrighted"
-    },
-    "domain" : "12",
-    "comment" : {
-      "en" : "Date of copyright of the resource."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "77"
-  }, {
-    "range" : "68",
-    "domain" : "79",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "78"
-  }, {
-    "range" : "67",
-    "domain" : "81",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "80"
-  }, {
-    "iri" : "http://purl.org/dc/terms/issued",
-    "baseIri" : "http://purl.org/dc/terms",
-    "range" : "57",
-    "description" : {
-      "en" : "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."
-    },
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2000-07-11",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "issued",
-      "en" : "Date Issued"
-    },
-    "domain" : "12",
-    "comment" : {
-      "en" : "Date of formal issuance of the resource."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "82"
-  }, {
-    "iri" : "http://purl.org/dc/terms/bibliographicCitation",
-    "baseIri" : "http://purl.org/dc/terms",
-    "range" : "58",
-    "description" : {
-      "en" : "Recommended practice is to include sufficient bibliographic detail to identify the resource as unambiguously as possible."
-    },
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2003-02-15",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "bibliographicCitation",
-      "en" : "Bibliographic Citation"
-    },
-    "domain" : "12",
-    "comment" : {
-      "en" : "A bibliographic reference for the resource."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "84"
-  }, {
-    "iri" : "https://w3id.org/miao/hasMentalIllness",
-    "baseIri" : "https://w3id.org/miao",
-    "range" : "1",
-    "label" : {
-      "IRI-based" : "hasMentalIllness"
-    },
-    "domain" : "9",
-    "comment" : {
-      "undefined" : "Relation connecting a MentalIllnessesSet with its corresponding MentalIlnesses."
-    },
-    "attributes" : [ "external", "object" ],
-    "id" : "55"
-  }, {
-    "iri" : "http://purl.org/dc/terms/identifier",
-    "baseIri" : "http://purl.org/dc/terms",
-    "range" : "50",
-    "description" : {
-      "en" : "Recommended practice is to identify the resource by means of a string conforming to an identification system. Examples include International Standard Book Number (ISBN), Digital Object Identifier (DOI), and Uniform Resource Name (URN).  Persistent identifiers should be provided as HTTP URIs."
-    },
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2008-01-14",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "identifier",
-      "en" : "Identifier"
-    },
-    "domain" : "12",
-    "comment" : {
-      "en" : "An unambiguous reference to the resource within a given context."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "86"
-  }, {
-    "iri" : "https://w3id.org/miao/referredToMentalIllnessCategory",
-    "baseIri" : "https://w3id.org/miao",
-    "range" : "36",
-    "label" : {
-      "IRI-based" : "referredToMentalIllnessCategory"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "Relation used to represent to which MentalIlnessCategoy (from the literature) a MentalIlness (predicted) corresponds to."
-    },
-    "attributes" : [ "external", "object", "functional" ],
-    "id" : "37"
-  }, {
-    "iri" : "http://www.w3.org/ns/prov#generated",
-    "inverse" : "90",
-    "baseIri" : "http://www.w3.org/ns/prov",
-    "range" : "9",
-    "label" : {
-      "IRI-based" : "generated"
-    },
-    "domain" : "7",
-    "comment" : {
-      "undefined" : "Relation taken from the Prov ontology that is used to represent the relation between a MentalIlnessesDetection and the generated set of MentalIllnessesSet."
-    },
-    "attributes" : [ "external", "object", "functional" ],
-    "id" : "89"
-  }, {
     "iri" : "http://www.w3.org/ns/prov#wasGeneratedBy",
     "baseIri" : "http://www.w3.org/ns/prov",
-    "range" : "7",
+    "range" : "2",
     "label" : {
       "IRI-based" : "wasGeneratedBy"
     },
-    "domain" : "9",
+    "domain" : "1",
     "comment" : {
       "undefined" : "Ref: https://www.w3.org/TR/prov-o/#wasGeneratedBy"
     },
-    "attributes" : [ "external", "object", "inverse functional" ],
-    "id" : "90"
+    "attributes" : [ "external", "inverse functional", "object" ],
+    "id" : "0"
   }, {
-    "iri" : "https://w3id.org/miao/referredToMentalIllness",
-    "inverse" : "37",
+    "iri" : "https://w3id.org/miao#hasInputData",
+    "inverse" : "5",
     "baseIri" : "https://w3id.org/miao",
-    "range" : "1",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "hasInputData"
+    },
+    "domain" : "2",
+    "comment" : {
+      "undefined" : "A relation between a MentalIllnessesDetection and data that is taken as input to the MentalIllnessesDetection."
+    },
+    "attributes" : [ "object" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://w3id.org/miao#hasMentalIlnessCategory",
+    "inverse" : "9",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "hasMentalIlnessCategory"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "A relation between a MentalIllnessesModel and its Mental Illness categories."
+    },
+    "attributes" : [ "object" ],
+    "id" : "6"
+  }, {
+    "iri" : "https://w3id.org/miao#referredToMentalIllness",
+    "inverse" : "13",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "11",
     "label" : {
       "IRI-based" : "referredToMentalIllness"
     },
-    "domain" : "36",
+    "domain" : "8",
     "comment" : {
       "undefined" : "Inverse relation of referredToMentalIllnessCategory used to represent to which MentalIlness (predicted) a MentalIlnessCategoy (from the literature) corresponds to."
     },
-    "attributes" : [ "someValues", "external", "object", "inverse functional" ],
-    "id" : "91"
+    "attributes" : [ "inverse functional", "someValues", "object" ],
+    "id" : "12"
   }, {
-    "iri" : "https://w3id.org/miao/hasMentalIlnessCategory",
-    "inverse" : "93",
+    "iri" : "https://w3id.org/miao#hasMentalIlnessCategory",
+    "inverse" : "9",
     "baseIri" : "https://w3id.org/miao",
-    "range" : "36",
+    "range" : "8",
     "label" : {
       "IRI-based" : "hasMentalIlnessCategory"
     },
-    "domain" : "47",
+    "domain" : "7",
     "comment" : {
       "undefined" : "A relation between a MentalIllnessesModel and its Mental Illness categories."
     },
-    "attributes" : [ "someValues", "external", "object" ],
-    "id" : "92"
+    "attributes" : [ "someValues", "object" ],
+    "id" : "14"
   }, {
-    "iri" : "https://w3id.org/miao/hasMentalIllness",
+    "iri" : "https://w3id.org/miao#hasMentalIllness",
     "baseIri" : "https://w3id.org/miao",
-    "range" : "1",
+    "range" : "11",
     "label" : {
       "IRI-based" : "hasMentalIllness"
     },
-    "domain" : "9",
+    "domain" : "1",
     "comment" : {
       "undefined" : "Relation connecting a MentalIllnessesSet with its corresponding MentalIlnesses."
     },
-    "attributes" : [ "someValues", "external", "object" ],
-    "id" : "94"
+    "attributes" : [ "someValues", "object" ],
+    "id" : "15"
   }, {
-    "iri" : "https://w3id.org/miao/isMentalIlnessCategoryOf",
+    "range" : "10",
+    "domain" : "2",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "20"
+  }, {
+    "iri" : "https://w3id.org/miao#hasMentalIllnessLevel",
     "baseIri" : "https://w3id.org/miao",
-    "range" : "47",
+    "range" : "17",
+    "label" : {
+      "IRI-based" : "hasMentalIllnessLevel"
+    },
+    "domain" : "11",
+    "comment" : {
+      "undefined" : "Represents the intensity of the mental illness as a categorical value, e.g., Low, Medium, or High."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "21"
+  }, {
+    "range" : "25",
+    "domain" : "24",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "23"
+  }, {
+    "iri" : "https://w3id.org/miao#isMentalIlnessCategoryOf",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "7",
     "label" : {
       "IRI-based" : "isMentalIlnessCategoryOf"
     },
-    "domain" : "36",
+    "domain" : "8",
     "comment" : {
       "undefined" : "Inverse relation of hasMentalIllnessCategory object propery that represents the relation between a MentalIllnessCategory and its corresponding MentalIllnessesModel."
     },
-    "attributes" : [ "external", "object" ],
-    "id" : "93"
+    "attributes" : [ "object" ],
+    "id" : "9"
   }, {
-    "iri" : "https://w3id.org/miao/hasInputData",
-    "inverse" : "40",
+    "iri" : "https://w3id.org/miao#hasInputData",
+    "inverse" : "5",
     "baseIri" : "https://w3id.org/miao",
-    "range" : "41",
+    "range" : "4",
     "label" : {
       "IRI-based" : "hasInputData"
     },
-    "domain" : "7",
+    "domain" : "2",
     "comment" : {
       "undefined" : "A relation between a MentalIllnessesDetection and data that is taken as input to the MentalIllnessesDetection."
     },
-    "attributes" : [ "external", "object" ],
-    "id" : "96"
+    "attributes" : [ "someValues", "object" ],
+    "id" : "26"
   }, {
-    "domain" : "71",
-    "range" : "87",
-    "id" : "97",
-    "label" : {
-      "IRI-based" : "8",
-      "undefined" : "is a"
-    }
-  }, {
-    "iri" : "https://w3id.org/miao/hasMentalIlnessCategory",
-    "inverse" : "93",
+    "iri" : "https://w3id.org/miao#hasMentalIllnessScore",
     "baseIri" : "https://w3id.org/miao",
-    "range" : "36",
-    "label" : {
-      "IRI-based" : "hasMentalIlnessCategory"
-    },
-    "domain" : "47",
-    "comment" : {
-      "undefined" : "A relation between a MentalIllnessesModel and its Mental Illness categories."
-    },
-    "attributes" : [ "external", "object" ],
-    "id" : "98"
-  }, {
-    "range" : "6",
-    "domain" : "17",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "99"
-  }, {
-    "iri" : "https://w3id.org/miao/hasInputData",
-    "inverse" : "40",
-    "baseIri" : "https://w3id.org/miao",
-    "range" : "41",
-    "label" : {
-      "IRI-based" : "hasInputData"
-    },
-    "domain" : "7",
-    "comment" : {
-      "undefined" : "A relation between a MentalIllnessesDetection and data that is taken as input to the MentalIllnessesDetection."
-    },
-    "attributes" : [ "someValues", "external", "object" ],
-    "id" : "100"
-  }, {
-    "iri" : "https://w3id.org/miao/hasMentalIllnessScore",
-    "baseIri" : "https://w3id.org/miao",
-    "range" : "95",
+    "range" : "18",
     "label" : {
       "IRI-based" : "hasMentalIllnessScore"
     },
-    "domain" : "1",
+    "domain" : "11",
     "comment" : {
       "undefined" : "Represents the intensity of the mental illness as a numeric score between 0 and 1."
     },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "101"
+    "attributes" : [ "datatype" ],
+    "id" : "27"
+  }, {
+    "iri" : "https://w3id.org/miao#referredToMentalIllnessCategory",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "referredToMentalIllnessCategory"
+    },
+    "domain" : "11",
+    "comment" : {
+      "undefined" : "Relation used to represent to which MentalIlnessCategoy (from the literature) a MentalIlness (predicted) corresponds to."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "13"
+  }, {
+    "iri" : "https://w3id.org/miao#usedMentalIllnessesSchema",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "usedMentalIllnessesSchema"
+    },
+    "domain" : "2",
+    "comment" : {
+      "undefined" : "Relations used to indicate to which MentalIllnessesSchema (from the literature) a MentalIllnessesDetection is based on."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "28"
+  }, {
+    "iri" : "https://w3id.org/miao#isInputOfMentalIlnessesDetection",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "isInputOfMentalIlnessesDetection"
+    },
+    "domain" : "4",
+    "attributes" : [ "object" ],
+    "id" : "5"
+  }, {
+    "iri" : "https://w3id.org/miao#refersToSample",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "19",
+    "label" : {
+      "IRI-based" : "refersToSample"
+    },
+    "domain" : "11",
+    "comment" : {
+      "undefined" : "This data property represents the unique identifier of the specific data sample on which one or more mental illnesses have been detected. It is used to link a mental illness detection result to the original collected data instance."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "29"
+  }, {
+    "iri" : "https://w3id.org/miao#referredToMentalIllness",
+    "inverse" : "13",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "referredToMentalIllness"
+    },
+    "domain" : "8",
+    "comment" : {
+      "undefined" : "Inverse relation of referredToMentalIllnessCategory used to represent to which MentalIlness (predicted) a MentalIlnessCategoy (from the literature) corresponds to."
+    },
+    "attributes" : [ "inverse functional", "object" ],
+    "id" : "30"
+  }, {
+    "iri" : "https://w3id.org/miao#usedInMentalIllnessesDetection",
+    "inverse" : "28",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "usedInMentalIllnessesDetection"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "Inverse relation of usedMentalIlnessesSchema used to indicate which MentalIllnessesDetection a specific MentalIllnessesSchema (from the literature) refers to."
+    },
+    "attributes" : [ "object" ],
+    "id" : "31"
+  }, {
+    "iri" : "https://w3id.org/miao#belongsToMentalIllnessesSet",
+    "inverse" : "34",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "belongsToMentalIllnessesSet"
+    },
+    "domain" : "11",
+    "comment" : {
+      "undefined" : "Inverse relation of hasMentalIlness. This relation connect a MentalIllness with its corresponding MentalIlnessSet."
+    },
+    "attributes" : [ "object" ],
+    "id" : "33"
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#generated",
+    "inverse" : "0",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "generated"
+    },
+    "domain" : "2",
+    "comment" : {
+      "undefined" : "Relation taken from the Prov ontology that is used to represent the relation between a MentalIlnessesDetection and the generated set of MentalIllnessesSet."
+    },
+    "attributes" : [ "functional", "external", "object" ],
+    "id" : "35"
+  }, {
+    "range" : "2",
+    "domain" : "25",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "36"
+  }, {
+    "iri" : "https://w3id.org/miao#hasMentalIllnessDetectionConfidence",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "hasMentalIllnessDetectionConfidence"
+    },
+    "domain" : "11",
+    "comment" : {
+      "undefined" : "Data Property used to represent the confidence of both an human expert or a machine/deep learning model about the presence of a mental illness."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "37"
+  }, {
+    "iri" : "https://w3id.org/miao#hasMentalIllness",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "hasMentalIllness"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "Relation connecting a MentalIllnessesSet with its corresponding MentalIlnesses."
+    },
+    "attributes" : [ "object" ],
+    "id" : "34"
+  }, {
+    "range" : "22",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "38"
+  }, {
+    "range" : "2",
+    "domain" : "24",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "39"
+  }, {
+    "range" : "32",
+    "domain" : "24",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "40"
   } ]
 }
