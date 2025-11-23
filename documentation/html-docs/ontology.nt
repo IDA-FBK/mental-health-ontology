@@ -79,81 +79,81 @@
 <http://www.w3.org/ns/prov#generated> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/ns/prov#wasGeneratedBy> .
 <http://www.w3.org/ns/prov#generated> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://www.w3.org/ns/prov#generated> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIllnessesDetection> .
-<http://www.w3.org/ns/prov#generated> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIlnessesSet> .
-<http://www.w3.org/ns/prov#generated> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation taken from the Prov ontology that is used to represent the relation between a MentalIlnessesDetection and the generated set of MentalIllnessesSet." .
+<http://www.w3.org/ns/prov#generated> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIllnessesSet> .
+<http://www.w3.org/ns/prov#generated> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation taken from the Prov ontology that is used to represent the relation between a MentalIllnessesDetection and the generated set of MentalIllnessesSet." .
 # 
 # http://www.w3.org/ns/prov#wasGeneratedBy
 <http://www.w3.org/ns/prov#wasGeneratedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://www.w3.org/ns/prov#wasGeneratedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
-<http://www.w3.org/ns/prov#wasGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIlnessesSet> .
+<http://www.w3.org/ns/prov#wasGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIllnessesSet> .
 <http://www.w3.org/ns/prov#wasGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIllnessesDetection> .
 <http://www.w3.org/ns/prov#wasGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Ref: https://www.w3.org/TR/prov-o/#wasGeneratedBy" .
 # 
 # https://w3id.org/miao#belongsToMentalIllnessesSet
 <https://w3id.org/miao#belongsToMentalIllnessesSet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/miao#belongsToMentalIllnessesSet> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/miao#hasMentalIllness> .
-<https://w3id.org/miao#belongsToMentalIllnessesSet> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIlness> .
-<https://w3id.org/miao#belongsToMentalIllnessesSet> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIlnessesSet> .
-<https://w3id.org/miao#belongsToMentalIllnessesSet> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse relation of hasMentalIlness. This relation connect a MentalIllness with its corresponding MentalIlnessSet." .
+<https://w3id.org/miao#belongsToMentalIllnessesSet> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIllness> .
+<https://w3id.org/miao#belongsToMentalIllnessesSet> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIllnessesSet> .
+<https://w3id.org/miao#belongsToMentalIllnessesSet> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse relation of hasMentalIllness. This relation connect a MentalIllness with its corresponding MentalIllnessesSet." .
 # 
 # https://w3id.org/miao#hasInputData
 <https://w3id.org/miao#hasInputData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/miao#hasInputData> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/miao#isInputOfMentalIlnessesDetection> .
+<https://w3id.org/miao#hasInputData> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/miao#isInputOfMentalIllnessesDetection> .
 <https://w3id.org/miao#hasInputData> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIllnessesDetection> .
 <https://w3id.org/miao#hasInputData> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/mls#Data> .
 <https://w3id.org/miao#hasInputData> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between a MentalIllnessesDetection and data that is taken as input to the MentalIllnessesDetection." .
 # 
 # https://w3id.org/miao#hasMentalIllness
 <https://w3id.org/miao#hasMentalIllness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/miao#hasMentalIllness> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIlnessesSet> .
-<https://w3id.org/miao#hasMentalIllness> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIlness> .
-<https://w3id.org/miao#hasMentalIllness> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation connecting a MentalIllnessesSet with its corresponding MentalIlnesses." .
+<https://w3id.org/miao#hasMentalIllness> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIllnessesSet> .
+<https://w3id.org/miao#hasMentalIllness> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIllness> .
+<https://w3id.org/miao#hasMentalIllness> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation connecting a MentalIllnessesSet with its corresponding MentalIllnesses." .
 # 
-# https://w3id.org/miao#hasMentalIlnessCategory
-<https://w3id.org/miao#hasMentalIlnessCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/miao#hasMentalIlnessCategory> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/miao#isMentalIlnessCategoryOf> .
-<https://w3id.org/miao#hasMentalIlnessCategory> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIlnessesSchema> .
-<https://w3id.org/miao#hasMentalIlnessCategory> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIlnessCategory> .
-<https://w3id.org/miao#hasMentalIlnessCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between a MentalIllnessesModel and its Mental Illness categories." .
+# https://w3id.org/miao#hasMentalIllnessCategory
+<https://w3id.org/miao#hasMentalIllnessCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/miao#hasMentalIllnessCategory> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/miao#isMentalIllnessCategoryOf> .
+<https://w3id.org/miao#hasMentalIllnessCategory> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIllnessesSchema> .
+<https://w3id.org/miao#hasMentalIllnessCategory> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIllnessCategory> .
+<https://w3id.org/miao#hasMentalIllnessCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between a MentalIllnessesModel and its Mental Illness categories." .
 # 
-# https://w3id.org/miao#isInputOfMentalIlnessesDetection
-<https://w3id.org/miao#isInputOfMentalIlnessesDetection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/miao#isInputOfMentalIlnessesDetection> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/mls#Data> .
-<https://w3id.org/miao#isInputOfMentalIlnessesDetection> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIllnessesDetection> .
+# https://w3id.org/miao#isInputOfMentalIllnessesDetection
+<https://w3id.org/miao#isInputOfMentalIllnessesDetection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/miao#isInputOfMentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/mls#Data> .
+<https://w3id.org/miao#isInputOfMentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIllnessesDetection> .
 # 
-# https://w3id.org/miao#isMentalIlnessCategoryOf
-<https://w3id.org/miao#isMentalIlnessCategoryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/miao#isMentalIlnessCategoryOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIlnessCategory> .
-<https://w3id.org/miao#isMentalIlnessCategoryOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIlnessesSchema> .
-<https://w3id.org/miao#isMentalIlnessCategoryOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse relation of hasMentalIllnessCategory object propery that represents the relation between a MentalIllnessCategory and its corresponding MentalIllnessesModel." .
+# https://w3id.org/miao#isMentalIllnessCategoryOf
+<https://w3id.org/miao#isMentalIllnessCategoryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/miao#isMentalIllnessCategoryOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIllnessCategory> .
+<https://w3id.org/miao#isMentalIllnessCategoryOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIllnessesSchema> .
+<https://w3id.org/miao#isMentalIllnessCategoryOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse relation of hasMentalIllnessCategory object propery that represents the relation between a MentalIllnessCategory and its corresponding MentalIllnessesModel." .
 # 
 # https://w3id.org/miao#referredToMentalIllness
 <https://w3id.org/miao#referredToMentalIllness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/miao#referredToMentalIllness> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/miao#referredToMentalIllnessCategory> .
 <https://w3id.org/miao#referredToMentalIllness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
-<https://w3id.org/miao#referredToMentalIllness> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIlnessCategory> .
-<https://w3id.org/miao#referredToMentalIllness> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIlness> .
-<https://w3id.org/miao#referredToMentalIllness> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse relation of referredToMentalIllnessCategory used to represent to which MentalIlness (predicted) a MentalIlnessCategoy (from the literature) corresponds to." .
+<https://w3id.org/miao#referredToMentalIllness> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIllnessCategory> .
+<https://w3id.org/miao#referredToMentalIllness> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIllness> .
+<https://w3id.org/miao#referredToMentalIllness> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse relation of referredToMentalIllnessCategory used to represent to which MentalIllness (predicted) a MentalIllnessCategoy (from the literature) corresponds to." .
 # 
 # https://w3id.org/miao#referredToMentalIllnessCategory
 <https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIlness> .
-<https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIlnessCategory> .
-<https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation used to represent to which MentalIlnessCategoy (from the literature) a MentalIlness (predicted) corresponds to." .
+<https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIllness> .
+<https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIllnessCategory> .
+<https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation used to represent to which MentalIllnessCategoy (from the literature) a MentalIllness (predicted) corresponds to." .
 # 
 # https://w3id.org/miao#usedInMentalIllnessesDetection
 <https://w3id.org/miao#usedInMentalIllnessesDetection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/miao#usedInMentalIllnessesDetection> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/miao#usedMentalIllnessesSchema> .
-<https://w3id.org/miao#usedInMentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIlnessesSchema> .
+<https://w3id.org/miao#usedInMentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIllnessesSchema> .
 <https://w3id.org/miao#usedInMentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIllnessesDetection> .
-<https://w3id.org/miao#usedInMentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse relation of usedMentalIlnessesSchema used to indicate which MentalIllnessesDetection a specific MentalIllnessesSchema (from the literature) refers to." .
+<https://w3id.org/miao#usedInMentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse relation of usedMentalIllnessesSchema used to indicate which MentalIllnessesDetection a specific MentalIllnessesSchema (from the literature) refers to." .
 # 
 # https://w3id.org/miao#usedMentalIllnessesSchema
 <https://w3id.org/miao#usedMentalIllnessesSchema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/miao#usedMentalIllnessesSchema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <https://w3id.org/miao#usedMentalIllnessesSchema> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIllnessesDetection> .
-<https://w3id.org/miao#usedMentalIllnessesSchema> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIlnessesSchema> .
+<https://w3id.org/miao#usedMentalIllnessesSchema> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/miao#MentalIllnessesSchema> .
 <https://w3id.org/miao#usedMentalIllnessesSchema> <http://www.w3.org/2000/01/rdf-schema#comment> "Relations used to indicate to which MentalIllnessesSchema (from the literature) a MentalIllnessesDetection is based on." .
 # 
 # 
@@ -167,25 +167,25 @@
 # 
 # https://w3id.org/miao#hasMentalIllnessDetectionConfidence
 <https://w3id.org/miao#hasMentalIllnessDetectionConfidence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/miao#hasMentalIllnessDetectionConfidence> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIlness> .
+<https://w3id.org/miao#hasMentalIllnessDetectionConfidence> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIllness> .
 <https://w3id.org/miao#hasMentalIllnessDetectionConfidence> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
 <https://w3id.org/miao#hasMentalIllnessDetectionConfidence> <http://www.w3.org/2000/01/rdf-schema#comment> "Data Property used to represent the confidence of both an human expert or a machine/deep learning model about the presence of a mental illness." .
 # 
 # https://w3id.org/miao#hasMentalIllnessLevel
 <https://w3id.org/miao#hasMentalIllnessLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/miao#hasMentalIllnessLevel> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIlness> .
+<https://w3id.org/miao#hasMentalIllnessLevel> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIllness> .
 <https://w3id.org/miao#hasMentalIllnessLevel> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/miao#hasMentalIllnessLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the intensity of the mental illness as a categorical value, e.g., Low, Medium, or High." .
 # 
 # https://w3id.org/miao#hasMentalIllnessScore
 <https://w3id.org/miao#hasMentalIllnessScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/miao#hasMentalIllnessScore> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIlness> .
+<https://w3id.org/miao#hasMentalIllnessScore> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIllness> .
 <https://w3id.org/miao#hasMentalIllnessScore> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
 <https://w3id.org/miao#hasMentalIllnessScore> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the intensity of the mental illness as a numeric score between 0 and 1." .
 # 
 # https://w3id.org/miao#refersToSample
 <https://w3id.org/miao#refersToSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/miao#refersToSample> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIlness> .
+<https://w3id.org/miao#refersToSample> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/miao#MentalIllness> .
 <https://w3id.org/miao#refersToSample> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/miao#refersToSample> <http://www.w3.org/2000/01/rdf-schema#comment> "This data property represents the unique identifier of the specific data sample on which one or more mental illnesses have been detected. It is used to link a mental illness detection result to the original collected data instance." .
 # 
@@ -212,14 +212,14 @@
 <http://www.w3.org/ns/prov#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.w3.org/ns/prov#Entity> <http://www.w3.org/2000/01/rdf-schema#comment> "Ref: https://www.w3.org/TR/prov-o/#Entity" .
 # 
-# https://w3id.org/miao#AutomaticMentalIlnessesDetection
-<https://w3id.org/miao#AutomaticMentalIlnessesDetection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/miao#AutomaticMentalIlnessesDetection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/mls#Run> .
-<https://w3id.org/miao#AutomaticMentalIlnessesDetection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/miao#MentalIllnessesDetection> .
-<https://w3id.org/miao#AutomaticMentalIlnessesDetection> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/miao#ManualMentalIllnessesDetection> .
-<https://w3id.org/miao#AutomaticMentalIlnessesDetection> <http://www.w3.org/2000/01/rdf-schema#comment> "An AutomaticMentalIllnessesDetection represents an analysis (i.e., a run) performed by a machine/deep learning model to detect mental illnesses from a given source." .
-<https://w3id.org/miao#AutomaticMentalIlnessesDetection> <http://www.w3.org/2000/01/rdf-schema#label> "Automatic Mental Illnesses Detection"@en .
-<https://w3id.org/miao#AutomaticMentalIlnessesDetection> <http://www.w3.org/2000/01/rdf-schema#label> "Rilevamento Automatico Malattie Mentali"@it .
+# https://w3id.org/miao#AutomaticMentalIllnessesDetection
+<https://w3id.org/miao#AutomaticMentalIllnessesDetection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/miao#AutomaticMentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/mls#Run> .
+<https://w3id.org/miao#AutomaticMentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/miao#MentalIllnessesDetection> .
+<https://w3id.org/miao#AutomaticMentalIllnessesDetection> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/miao#ManualMentalIllnessesDetection> .
+<https://w3id.org/miao#AutomaticMentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#comment> "An AutomaticMentalIllnessesDetection represents an analysis (i.e., a run) performed by a machine/deep learning model to detect mental illnesses from a given source." .
+<https://w3id.org/miao#AutomaticMentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#label> "Automatic Mental Illnesses Detection"@en .
+<https://w3id.org/miao#AutomaticMentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#label> "Rilevamento Automatico Malattie Mentali"@it .
 # 
 # https://w3id.org/miao#ManualMentalIllnessesDetection
 <https://w3id.org/miao#ManualMentalIllnessesDetection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -228,87 +228,90 @@
 <https://w3id.org/miao#ManualMentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#label> "Manual Detection Mental Illnesses"@en .
 <https://w3id.org/miao#ManualMentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#label> "Rilevamento Manuale Malattie Mentali"@it .
 # 
+# https://w3id.org/miao#MentalIIlnessesSchema
+<https://w3id.org/miao#MentalIIlnessesSchema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/miao#MentalIllness
+<https://w3id.org/miao#MentalIllness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/miao#MentalIllness> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/miao#MentalIllnessesSet> .
+_:genid1 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/miao#belongsToMentalIllnessesSet> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/miao#MentalIllness> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/miao#MentalIllnessCategory> .
+_:genid2 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/miao#referredToMentalIllnessCategory> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/miao#MentalIllness> <http://www.w3.org/2000/01/rdf-schema#comment> "A MentalIllness represents a detected or predicted mental illness, typically as a result of a human or machine/deep learning analysis." .
+<https://w3id.org/miao#MentalIllness> <http://www.w3.org/2000/01/rdf-schema#label> "Malattia Mentale"@it .
+<https://w3id.org/miao#MentalIllness> <http://www.w3.org/2000/01/rdf-schema#label> "Mental Illness"@en .
+# 
+# https://w3id.org/miao#MentalIllnessCategory
+<https://w3id.org/miao#MentalIllnessCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/miao#MentalIllnessCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/miao#MentalIllness> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/miao#referredToMentalIllness> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/miao#MentalIllnessCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/miao#MentalIIlnessesSchema> .
+_:genid4 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/miao#isMentalIllnessCategoryOf> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/miao#MentalIllnessCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "A concept used to represent a mental illness category that belongs to a specific schema (e.g., ontology) used to represent mental illnesses" .
+<https://w3id.org/miao#MentalIllnessCategory> <http://www.w3.org/2000/01/rdf-schema#label> "Categoria Malattia Mentale"@it .
+<https://w3id.org/miao#MentalIllnessCategory> <http://www.w3.org/2000/01/rdf-schema#label> "Mental Illness Category"@en .
+# 
 # https://w3id.org/miao#MentalIllnessesDetection
 <https://w3id.org/miao#MentalIllnessesDetection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/miao#MentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Activity> .
-<https://w3id.org/miao#MentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
-_:genid1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/ns/mls#Data> .
-_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/miao#hasInputData> .
-_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/miao#MentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
-_:genid2 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/miao#MentalIlnessesSet> .
-_:genid2 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#generated> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/miao#MentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
-_:genid3 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/miao#MentalIlnessesSchema> .
-_:genid3 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/miao#usedMentalIllnessesSchema> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/miao#MentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/ns/mls#Data> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/miao#hasInputData> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/miao#MentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/miao#MentalIllnessesSet> .
+_:genid6 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#generated> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/miao#MentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/miao#MentalIllnessesSchema> .
+_:genid7 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/miao#usedMentalIllnessesSchema> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/miao#MentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#comment> "High-level concept used to represent a mental illness detection process regardless of the type (i.e., manual or automatic)." .
 <https://w3id.org/miao#MentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#label> "Mental Illnesses Detection"@en .
 <https://w3id.org/miao#MentalIllnessesDetection> <http://www.w3.org/2000/01/rdf-schema#label> "Rilevamento Malattie Mentali"@it .
 # 
-# https://w3id.org/miao#MentalIlness
-<https://w3id.org/miao#MentalIlness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/miao#MentalIlness> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
-_:genid4 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/miao#MentalIlnessesSet> .
-_:genid4 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/miao#belongsToMentalIllnessesSet> .
-_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/miao#MentalIlness> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
-_:genid5 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/miao#MentalIlnessCategory> .
-_:genid5 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/miao#referredToMentalIllnessCategory> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/miao#MentalIlness> <http://www.w3.org/2000/01/rdf-schema#comment> "A MentalIllness represents a detected or predicted mental illness, typically as a result of a human or machine/deep learning analysis." .
-<https://w3id.org/miao#MentalIlness> <http://www.w3.org/2000/01/rdf-schema#label> "Malattia Mentale"@it .
-<https://w3id.org/miao#MentalIlness> <http://www.w3.org/2000/01/rdf-schema#label> "Mental Illness"@en .
-# 
-# https://w3id.org/miao#MentalIlnessCategory
-<https://w3id.org/miao#MentalIlnessCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/miao#MentalIlnessCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
-_:genid6 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/miao#MentalIlness> .
-_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/miao#referredToMentalIllness> .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/miao#MentalIlnessCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
-_:genid7 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/miao#MentalIlnessesSchema> .
-_:genid7 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/miao#isMentalIlnessCategoryOf> .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/miao#MentalIlnessCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "A concept used to represent a mental illness category that belongs to a specific schema (e.g., ontology) used to represent mental illnesses" .
-<https://w3id.org/miao#MentalIlnessCategory> <http://www.w3.org/2000/01/rdf-schema#label> "Categoria Malattia Mentale"@it .
-<https://w3id.org/miao#MentalIlnessCategory> <http://www.w3.org/2000/01/rdf-schema#label> "Mental Illness Category"@en .
-# 
-# https://w3id.org/miao#MentalIlnessesSchema
-<https://w3id.org/miao#MentalIlnessesSchema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/miao#MentalIlnessesSchema> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
-_:genid8 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/miao#MentalIlnessCategory> .
-_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/miao#hasMentalIlnessCategory> .
+# https://w3id.org/miao#MentalIllnessesSchema
+<https://w3id.org/miao#MentalIllnessesSchema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/miao#MentalIllnessesSchema> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/miao#MentalIllnessCategory> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/miao#hasMentalIllnessCategory> .
 _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/miao#MentalIlnessesSchema> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+<https://w3id.org/miao#MentalIllnessesSchema> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
 _:genid9 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/miao#MentalIllnessesDetection> .
 _:genid9 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 _:genid9 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/miao#usedInMentalIllnessesDetection> .
 _:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/miao#MentalIlnessesSchema> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a category of mental illness within a specific schema (e.g., an ontology or classification system)." .
-<https://w3id.org/miao#MentalIlnessesSchema> <http://www.w3.org/2000/01/rdf-schema#label> "Mental Illnesses Schema"@en .
-<https://w3id.org/miao#MentalIlnessesSchema> <http://www.w3.org/2000/01/rdf-schema#label> "Schema Malattie Mentali"@it .
+<https://w3id.org/miao#MentalIllnessesSchema> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a category of mental illness within a specific schema (e.g., an ontology or classification system)." .
+<https://w3id.org/miao#MentalIllnessesSchema> <http://www.w3.org/2000/01/rdf-schema#label> "Mental Illnesses Schema"@en .
+<https://w3id.org/miao#MentalIllnessesSchema> <http://www.w3.org/2000/01/rdf-schema#label> "Schema Malattie Mentali"@it .
 # 
-# https://w3id.org/miao#MentalIlnessesSet
-<https://w3id.org/miao#MentalIlnessesSet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/miao#MentalIlnessesSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Entity> .
-<https://w3id.org/miao#MentalIlnessesSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
-_:genid10 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/miao#MentalIlness> .
+# https://w3id.org/miao#MentalIllnessesSet
+<https://w3id.org/miao#MentalIllnessesSet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/miao#MentalIllnessesSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Entity> .
+<https://w3id.org/miao#MentalIllnessesSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/miao#MentalIllness> .
 _:genid10 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/miao#hasMentalIllness> .
 _:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/miao#MentalIlnessesSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+<https://w3id.org/miao#MentalIllnessesSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
 _:genid11 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/miao#MentalIllnessesDetection> .
 _:genid11 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 _:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasGeneratedBy> .
 _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/miao#MentalIlnessesSet> <http://www.w3.org/2000/01/rdf-schema#comment> "Concept used to represent a set of detected mental illnesses." .
-<https://w3id.org/miao#MentalIlnessesSet> <http://www.w3.org/2000/01/rdf-schema#label> "Insieme Malattie Mentali"@it .
-<https://w3id.org/miao#MentalIlnessesSet> <http://www.w3.org/2000/01/rdf-schema#label> "Mental Illnesses Set"@en .
+<https://w3id.org/miao#MentalIllnessesSet> <http://www.w3.org/2000/01/rdf-schema#comment> "Concept used to represent a set of detected mental illnesses." .
+<https://w3id.org/miao#MentalIllnessesSet> <http://www.w3.org/2000/01/rdf-schema#label> "Insieme Malattie Mentali"@it .
+<https://w3id.org/miao#MentalIllnessesSet> <http://www.w3.org/2000/01/rdf-schema#label> "Mental Illnesses Set"@en .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

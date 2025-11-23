@@ -97,8 +97,7 @@ This is a placeholder text for the abstract. The abstract should contain a coupl
 </div>
 <div id="toc"></div> 
 
-<!--INTRODUCTION SECTION-->
-    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
 The Mental Illness Analysis Ontology (MIAO), is an ontology designed to model the detection process of mental illness. 
 MIAO has two key characteristics: (i) it provides a conceptual framework for the detection process, regardless of the detection method, 
@@ -142,8 +141,8 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#AutomaticMentalIlnessesDetection"
-         title="https://w3id.org/miao#AutomaticMentalIlnessesDetection">Automatic Mental Illnesses Detection</a>
+      <a href="#AutomaticMentalIllnessesDetection"
+         title="https://w3id.org/miao#AutomaticMentalIllnessesDetection">Automatic Mental Illnesses Detection</a>
    </li>
    <li>
       <a href="#http://www.w3.org/ns/prov#Entity" title="http://www.w3.org/ns/prov#Entity">
@@ -155,19 +154,19 @@ This ontology has the following classes and properties.</span>
          title="https://w3id.org/miao#ManualMentalIllnessesDetection">Manual Detection Mental Illnesses</a>
    </li>
    <li>
-      <a href="#MentalIlness" title="https://w3id.org/miao#MentalIlness">Mental Illness</a>
+      <a href="#MentalIllness" title="https://w3id.org/miao#MentalIllness">Mental Illness</a>
    </li>
    <li>
-      <a href="#MentalIlnessCategory" title="https://w3id.org/miao#MentalIlnessCategory">Mental Illness Category</a>
+      <a href="#MentalIllnessCategory" title="https://w3id.org/miao#MentalIllnessCategory">Mental Illness Category</a>
    </li>
    <li>
       <a href="#MentalIllnessesDetection" title="https://w3id.org/miao#MentalIllnessesDetection">Mental Illnesses Detection</a>
    </li>
    <li>
-      <a href="#MentalIlnessesSchema" title="https://w3id.org/miao#MentalIlnessesSchema">Mental Illnesses Schema</a>
+      <a href="#MentalIllnessesSchema" title="https://w3id.org/miao#MentalIllnessesSchema">Mental Illnesses Schema</a>
    </li>
    <li>
-      <a href="#MentalIlnessesSet" title="https://w3id.org/miao#MentalIlnessesSet">Mental Illnesses Set</a>
+      <a href="#MentalIllnessesSet" title="https://w3id.org/miao#MentalIllnessesSet">Mental Illnesses Set</a>
    </li>
 </ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -194,19 +193,19 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#hasMentalIlnessCategory" title="https://w3id.org/miao#hasMentalIlnessCategory">
-         <span>has Mental Ilness Category</span>
+      <a href="#hasMentalIllnessCategory" title="https://w3id.org/miao#hasMentalIllnessCategory">
+         <span>has Mental Illness Category</span>
       </a>
    </li>
    <li>
-      <a href="#isInputOfMentalIlnessesDetection"
-         title="https://w3id.org/miao#isInputOfMentalIlnessesDetection">
-         <span>is Input Of Mental Ilnesses Detection</span>
+      <a href="#isInputOfMentalIllnessesDetection"
+         title="https://w3id.org/miao#isInputOfMentalIllnessesDetection">
+         <span>is Input Of Mental Illnesses Detection</span>
       </a>
    </li>
    <li>
-      <a href="#isMentalIlnessCategoryOf" title="https://w3id.org/miao#isMentalIlnessCategoryOf">
-         <span>is Mental Ilness Category Of</span>
+      <a href="#isMentalIllnessCategoryOf" title="https://w3id.org/miao#isMentalIllnessCategoryOf">
+         <span>is Mental Illness Category Of</span>
       </a>
    </li>
    <li>
@@ -293,8 +292,8 @@ and use by both humans and automated systems.
 - [usedInMentalIllnessesDetection](#usedInMentalIllnessesDetection): Indicates which detection activities make use of a particular schema. <br>
 - [hasInputData](#hasInputData): Links a detection activity to the input data it analyzes.<br>
 - [isInputOfMentalIllnessesDetection](#isInputOfMentalIllnessesDetection): Shows which detection activities a piece of input data is used in. <br>
-- [prov:generated](#prov:generated): Indicates the set of mental illnesses produced by a detection activity.<br>
-- [prov:wasGeneratedBy](#rov:wasGeneratedBy): Shows which detection activity generated a given set of mental illnesses. <br>
+- [prov:generated](#http://www.w3.org/ns/prov#generated): Indicates the set of mental illnesses produced by a detection activity.<br>
+- [prov:wasGeneratedBy](#http://www.w3.org/ns/prov#wasGeneratedBy): Shows which detection activity generated a given set of mental illnesses. <br>
 - [hasMentalIllness](#hasMentalIllness): Connects a set of detected mental illnesses to the individual mental illness instances it contains.<br>
 - [belongsToMentalIllnessesSet](#belongsToMentalIllnessesSet): Indicates which set an individual mental illness belongs to. <br>
 - [referredToMentalIllnessCategory](#referredToMentalIllnessCategory): Connects a mental illness instance to the category it belongs to in the schema.<br>
@@ -320,14 +319,14 @@ This section provides details for each class and property defined by MIAO: A Men
  <h3 id="classes-headline" class="list">Classes</h3>
  <ul class="hlist">
   <li><a href="#http://www.w3.org/ns/prov#Activity" title="http://www.w3.org/ns/prov#Activity"> <span>Activity</span> </a></li>
-  <li><a href="#AutomaticMentalIlnessesDetection" title="https://w3id.org/miao#AutomaticMentalIlnessesDetection">Automatic Mental Illnesses Detection</a></li>
+  <li><a href="#AutomaticMentalIllnessesDetection" title="https://w3id.org/miao#AutomaticMentalIllnessesDetection">Automatic Mental Illnesses Detection</a></li>
   <li><a href="#http://www.w3.org/ns/prov#Entity" title="http://www.w3.org/ns/prov#Entity"> <span>Entity</span> </a></li>
   <li><a href="#ManualMentalIllnessesDetection" title="https://w3id.org/miao#ManualMentalIllnessesDetection">Manual Detection Mental Illnesses</a></li>
-  <li><a href="#MentalIlness" title="https://w3id.org/miao#MentalIlness">Mental Illness</a></li>
-  <li><a href="#MentalIlnessCategory" title="https://w3id.org/miao#MentalIlnessCategory">Mental Illness Category</a></li>
+  <li><a href="#MentalIllness" title="https://w3id.org/miao#MentalIllness">Mental Illness</a></li>
+  <li><a href="#MentalIllnessCategory" title="https://w3id.org/miao#MentalIllnessCategory">Mental Illness Category</a></li>
   <li><a href="#MentalIllnessesDetection" title="https://w3id.org/miao#MentalIllnessesDetection">Mental Illnesses Detection</a></li>
-  <li><a href="#MentalIlnessesSchema" title="https://w3id.org/miao#MentalIlnessesSchema">Mental Illnesses Schema</a></li>
-  <li><a href="#MentalIlnessesSet" title="https://w3id.org/miao#MentalIlnessesSet">Mental Illnesses Set</a></li>
+  <li><a href="#MentalIllnessesSchema" title="https://w3id.org/miao#MentalIllnessesSchema">Mental Illnesses Schema</a></li>
+  <li><a href="#MentalIllnessesSet" title="https://w3id.org/miao#MentalIllnessesSet">Mental Illnesses Set</a></li>
  </ul>
  <div class="entity" id="http://www.w3.org/ns/prov#Activity">
   <h3>Activity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
@@ -344,9 +343,9 @@ This section provides details for each class and property defined by MIAO: A Men
    </dd>
   </dl>
  </div>
- <div class="entity" id="AutomaticMentalIlnessesDetection">
+ <div class="entity" id="AutomaticMentalIllnessesDetection">
   <h3>Automatic Mental Illnesses Detection<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/miao#AutomaticMentalIlnessesDetection</p>
+  <p><strong>IRI:</strong> https://w3id.org/miao#AutomaticMentalIllnessesDetection</p>
   <div class="comment">
    <span class="markdown">An AutomaticMentalIllnessesDetection represents an analysis (i.e., a run) performed by a machine/deep learning model to detect mental illnesses from a given source.</span>
   </div>
@@ -376,7 +375,7 @@ This section provides details for each class and property defined by MIAO: A Men
     has sub-classes
    </dt>
    <dd>
-    <a href="#MentalIlnessesSet" title="https://w3id.org/miao#MentalIlnessesSet">Mental Illnesses Set</a> <sup class="type-c" title="class">c</sup>
+    <a href="#MentalIllnessesSet" title="https://w3id.org/miao#MentalIllnessesSet">Mental Illnesses Set</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -397,13 +396,13 @@ This section provides details for each class and property defined by MIAO: A Men
     is disjoint with
    </dt>
    <dd>
-    <a href="#AutomaticMentalIlnessesDetection" title="https://w3id.org/miao#AutomaticMentalIlnessesDetection">Automatic Mental Illnesses Detection</a> <sup class="type-c" title="class">c</sup>
+    <a href="#AutomaticMentalIllnessesDetection" title="https://w3id.org/miao#AutomaticMentalIllnessesDetection">Automatic Mental Illnesses Detection</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
- <div class="entity" id="MentalIlness">
+ <div class="entity" id="MentalIllness">
   <h3>Mental Illness<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/miao#MentalIlness</p>
+  <p><strong>IRI:</strong> https://w3id.org/miao#MentalIllness</p>
   <div class="comment">
    <span class="markdown">A MentalIllness represents a detected or predicted mental illness, typically as a result of a human or machine/deep learning analysis.</span>
   </div>
@@ -426,9 +425,9 @@ This section provides details for each class and property defined by MIAO: A Men
    </dd>
   </dl>
  </div>
- <div class="entity" id="MentalIlnessCategory">
+ <div class="entity" id="MentalIllnessCategory">
   <h3>Mental Illness Category<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/miao#MentalIlnessCategory</p>
+  <p><strong>IRI:</strong> https://w3id.org/miao#MentalIllnessCategory</p>
   <div class="comment">
    <span class="markdown">A concept used to represent a mental illness category that belongs to a specific schema (e.g., ontology) used to represent mental illnesses</span>
   </div>
@@ -441,13 +440,13 @@ This section provides details for each class and property defined by MIAO: A Men
     is in domain of
    </dt>
    <dd>
-    <a href="#isMentalIlnessCategoryOf" title="https://w3id.org/miao#isMentalIlnessCategoryOf">is Mental Ilness Category Of</a> <sup class="type-op" title="object property">op</sup>, <a href="#referredToMentalIllness" title="https://w3id.org/miao#referredToMentalIllness">referred To Mental Illness</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#isMentalIllnessCategoryOf" title="https://w3id.org/miao#isMentalIllnessCategoryOf">is Mental Illness Category Of</a> <sup class="type-op" title="object property">op</sup>, <a href="#referredToMentalIllness" title="https://w3id.org/miao#referredToMentalIllness">referred To Mental Illness</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#hasMentalIlnessCategory" title="https://w3id.org/miao#hasMentalIlnessCategory">has Mental Ilness Category</a> <sup class="type-op" title="object property">op</sup>, <a href="#referredToMentalIllnessCategory" title="https://w3id.org/miao#referredToMentalIllnessCategory">referred To Mental Illness Category</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasMentalIllnessCategory" title="https://w3id.org/miao#hasMentalIllnessCategory">has Mental Illness Category</a> <sup class="type-op" title="object property">op</sup>, <a href="#referredToMentalIllnessCategory" title="https://w3id.org/miao#referredToMentalIllnessCategory">referred To Mental Illness Category</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -468,7 +467,7 @@ This section provides details for each class and property defined by MIAO: A Men
     has sub-classes
    </dt>
    <dd>
-    <a href="#AutomaticMentalIlnessesDetection" title="https://w3id.org/miao#AutomaticMentalIlnessesDetection">Automatic Mental Illnesses Detection</a> <sup class="type-c" title="class">c</sup>, <a href="#ManualMentalIllnessesDetection" title="https://w3id.org/miao#ManualMentalIllnessesDetection">Manual Detection Mental Illnesses</a> <sup class="type-c" title="class">c</sup>
+    <a href="#AutomaticMentalIllnessesDetection" title="https://w3id.org/miao#AutomaticMentalIllnessesDetection">Automatic Mental Illnesses Detection</a> <sup class="type-c" title="class">c</sup>, <a href="#ManualMentalIllnessesDetection" title="https://w3id.org/miao#ManualMentalIllnessesDetection">Manual Detection Mental Illnesses</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -480,13 +479,13 @@ This section provides details for each class and property defined by MIAO: A Men
     is in range of
    </dt>
    <dd>
-    <a href="#isInputOfMentalIlnessesDetection" title="https://w3id.org/miao#isInputOfMentalIlnessesDetection">is Input Of Mental Ilnesses Detection</a> <sup class="type-op" title="object property">op</sup>, <a href="#usedInMentalIllnessesDetection" title="https://w3id.org/miao#usedInMentalIllnessesDetection">used In Mental Illnesses Detection</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/ns/prov#wasGeneratedBy" title="http://www.w3.org/ns/prov#wasGeneratedBy">was Generated By</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#isInputOfMentalIllnessesDetection" title="https://w3id.org/miao#isInputOfMentalIllnessesDetection">is Input Of Mental Illnesses Detection</a> <sup class="type-op" title="object property">op</sup>, <a href="#usedInMentalIllnessesDetection" title="https://w3id.org/miao#usedInMentalIllnessesDetection">used In Mental Illnesses Detection</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/ns/prov#wasGeneratedBy" title="http://www.w3.org/ns/prov#wasGeneratedBy">was Generated By</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
- <div class="entity" id="MentalIlnessesSchema">
+ <div class="entity" id="MentalIllnessesSchema">
   <h3>Mental Illnesses Schema<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/miao#MentalIlnessesSchema</p>
+  <p><strong>IRI:</strong> https://w3id.org/miao#MentalIllnessesSchema</p>
   <div class="comment">
    <span class="markdown">Represents a category of mental illness within a specific schema (e.g., an ontology or classification system).</span>
   </div>
@@ -499,19 +498,19 @@ This section provides details for each class and property defined by MIAO: A Men
     is in domain of
    </dt>
    <dd>
-    <a href="#hasMentalIlnessCategory" title="https://w3id.org/miao#hasMentalIlnessCategory">has Mental Ilness Category</a> <sup class="type-op" title="object property">op</sup>, <a href="#usedInMentalIllnessesDetection" title="https://w3id.org/miao#usedInMentalIllnessesDetection">used In Mental Illnesses Detection</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasMentalIllnessCategory" title="https://w3id.org/miao#hasMentalIllnessCategory">has Mental Illness Category</a> <sup class="type-op" title="object property">op</sup>, <a href="#usedInMentalIllnessesDetection" title="https://w3id.org/miao#usedInMentalIllnessesDetection">used In Mental Illnesses Detection</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#isMentalIlnessCategoryOf" title="https://w3id.org/miao#isMentalIlnessCategoryOf">is Mental Ilness Category Of</a> <sup class="type-op" title="object property">op</sup>, <a href="#usedMentalIllnessesSchema" title="https://w3id.org/miao#usedMentalIllnessesSchema">used Mental Illnesses Schema</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#isMentalIllnessCategoryOf" title="https://w3id.org/miao#isMentalIllnessCategoryOf">is Mental Illness Category Of</a> <sup class="type-op" title="object property">op</sup>, <a href="#usedMentalIllnessesSchema" title="https://w3id.org/miao#usedMentalIllnessesSchema">used Mental Illnesses Schema</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
- <div class="entity" id="MentalIlnessesSet">
+ <div class="entity" id="MentalIllnessesSet">
   <h3>Mental Illnesses Set<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/miao#MentalIlnessesSet</p>
+  <p><strong>IRI:</strong> https://w3id.org/miao#MentalIllnessesSet</p>
   <div class="comment">
    <span class="markdown">Concept used to represent a set of detected mental illnesses.</span>
   </div>
@@ -543,9 +542,9 @@ This section provides details for each class and property defined by MIAO: A Men
   <li><a href="#http://www.w3.org/ns/prov#generated" title="http://www.w3.org/ns/prov#generated"> <span>generated</span> </a></li>
   <li><a href="#hasInputData" title="https://w3id.org/miao#hasInputData"> <span>has Input Data</span> </a></li>
   <li><a href="#hasMentalIllness" title="https://w3id.org/miao#hasMentalIllness"> <span>has Mental Illness</span> </a></li>
-  <li><a href="#hasMentalIlnessCategory" title="https://w3id.org/miao#hasMentalIlnessCategory"> <span>has Mental Ilness Category</span> </a></li>
-  <li><a href="#isInputOfMentalIlnessesDetection" title="https://w3id.org/miao#isInputOfMentalIlnessesDetection"> <span>is Input Of Mental Ilnesses Detection</span> </a></li>
-  <li><a href="#isMentalIlnessCategoryOf" title="https://w3id.org/miao#isMentalIlnessCategoryOf"> <span>is Mental Ilness Category Of</span> </a></li>
+  <li><a href="#hasMentalIllnessCategory" title="https://w3id.org/miao#hasMentalIllnessCategory"> <span>has Mental Illness Category</span> </a></li>
+  <li><a href="#isInputOfMentalIllnessesDetection" title="https://w3id.org/miao#isInputOfMentalIllnessesDetection"> <span>is Input Of Mental Illnesses Detection</span> </a></li>
+  <li><a href="#isMentalIllnessCategoryOf" title="https://w3id.org/miao#isMentalIllnessCategoryOf"> <span>is Mental Illness Category Of</span> </a></li>
   <li><a href="#referredToMentalIllness" title="https://w3id.org/miao#referredToMentalIllness"> <span>referred To Mental Illness</span> </a></li>
   <li><a href="#referredToMentalIllnessCategory" title="https://w3id.org/miao#referredToMentalIllnessCategory"> <span>referred To Mental Illness Category</span> </a></li>
   <li><a href="#usedInMentalIllnessesDetection" title="https://w3id.org/miao#usedInMentalIllnessesDetection"> <span>used In Mental Illnesses Detection</span> </a></li>
@@ -556,7 +555,7 @@ This section provides details for each class and property defined by MIAO: A Men
   <h3>belongs To Mental Illnesses Set<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/miao#belongsToMentalIllnessesSet</p>
   <div class="comment">
-   <span class="markdown">Inverse relation of hasMentalIlness. This relation connect a MentalIllness with its corresponding MentalIlnessSet.</span>
+   <span class="markdown">Inverse relation of hasMentalIllness. This relation connect a MentalIllness with its corresponding MentalIllnessesSet.</span>
   </div>
   <div class="description">
    <dl>
@@ -564,13 +563,13 @@ This section provides details for each class and property defined by MIAO: A Men
      has domain
     </dt>
     <dd>
-     <a href="#MentalIlness" title="https://w3id.org/miao#MentalIlness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllness" title="https://w3id.org/miao#MentalIllness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#MentalIlnessesSet" title="https://w3id.org/miao#MentalIlnessesSet">Mental Illnesses Set</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllnessesSet" title="https://w3id.org/miao#MentalIllnessesSet">Mental Illnesses Set</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      is inverse of
@@ -585,7 +584,7 @@ This section provides details for each class and property defined by MIAO: A Men
   <h3>generated<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://www.w3.org/ns/prov#generated</p>
   <div class="comment">
-   <span class="markdown">Relation taken from the Prov ontology that is used to represent the relation between a MentalIlnessesDetection and the generated set of MentalIllnessesSet.</span>
+   <span class="markdown">Relation taken from the Prov ontology that is used to represent the relation between a MentalIllnessesDetection and the generated set of MentalIllnessesSet.</span>
   </div>
   <div class="description">
    <p><strong>has characteristics: </strong> functional</p>
@@ -600,7 +599,7 @@ This section provides details for each class and property defined by MIAO: A Men
      has range
     </dt>
     <dd>
-     <a href="#MentalIlnessesSet" title="https://w3id.org/miao#MentalIlnessesSet">Mental Illnesses Set</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllnessesSet" title="https://w3id.org/miao#MentalIllnessesSet">Mental Illnesses Set</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      is inverse of
@@ -635,7 +634,7 @@ This section provides details for each class and property defined by MIAO: A Men
      is inverse of
     </dt>
     <dd>
-     <a href="#isInputOfMentalIlnessesDetection" title="https://w3id.org/miao#isInputOfMentalIlnessesDetection">is Input Of Mental Ilnesses Detection</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#isInputOfMentalIllnessesDetection" title="https://w3id.org/miao#isInputOfMentalIllnessesDetection">is Input Of Mental Illnesses Detection</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -644,7 +643,7 @@ This section provides details for each class and property defined by MIAO: A Men
   <h3>has Mental Illness<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/miao#hasMentalIllness</p>
   <div class="comment">
-   <span class="markdown">Relation connecting a MentalIllnessesSet with its corresponding MentalIlnesses.</span>
+   <span class="markdown">Relation connecting a MentalIllnessesSet with its corresponding MentalIllnesses.</span>
   </div>
   <div class="description">
    <dl>
@@ -652,13 +651,13 @@ This section provides details for each class and property defined by MIAO: A Men
      has domain
     </dt>
     <dd>
-     <a href="#MentalIlnessesSet" title="https://w3id.org/miao#MentalIlnessesSet">Mental Illnesses Set</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllnessesSet" title="https://w3id.org/miao#MentalIllnessesSet">Mental Illnesses Set</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#MentalIlness" title="https://w3id.org/miao#MentalIlness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllness" title="https://w3id.org/miao#MentalIllness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      is inverse of
@@ -669,9 +668,9 @@ This section provides details for each class and property defined by MIAO: A Men
    </dl>
   </div>
  </div>
- <div class="entity" id="hasMentalIlnessCategory">
-  <h3>has Mental Ilness Category<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/miao#hasMentalIlnessCategory</p>
+ <div class="entity" id="hasMentalIllnessCategory">
+  <h3>has Mental Illness Category<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/miao#hasMentalIllnessCategory</p>
   <div class="comment">
    <span class="markdown">A relation between a MentalIllnessesModel and its Mental Illness categories.</span>
   </div>
@@ -681,26 +680,26 @@ This section provides details for each class and property defined by MIAO: A Men
      has domain
     </dt>
     <dd>
-     <a href="#MentalIlnessesSchema" title="https://w3id.org/miao#MentalIlnessesSchema">Mental Illnesses Schema</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllnessesSchema" title="https://w3id.org/miao#MentalIllnessesSchema">Mental Illnesses Schema</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#MentalIlnessCategory" title="https://w3id.org/miao#MentalIlnessCategory">Mental Illness Category</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllnessCategory" title="https://w3id.org/miao#MentalIllnessCategory">Mental Illness Category</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      is inverse of
     </dt>
     <dd>
-     <a href="#isMentalIlnessCategoryOf" title="https://w3id.org/miao#isMentalIlnessCategoryOf">is Mental Ilness Category Of</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#isMentalIllnessCategoryOf" title="https://w3id.org/miao#isMentalIllnessCategoryOf">is Mental Illness Category Of</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
  </div>
- <div class="entity" id="isInputOfMentalIlnessesDetection">
-  <h3>is Input Of Mental Ilnesses Detection<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/miao#isInputOfMentalIlnessesDetection</p>
+ <div class="entity" id="isInputOfMentalIllnessesDetection">
+  <h3>is Input Of Mental Illnesses Detection<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/miao#isInputOfMentalIllnessesDetection</p>
   <div class="description">
    <dl>
     <dt>
@@ -724,9 +723,9 @@ This section provides details for each class and property defined by MIAO: A Men
    </dl>
   </div>
  </div>
- <div class="entity" id="isMentalIlnessCategoryOf">
-  <h3>is Mental Ilness Category Of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/miao#isMentalIlnessCategoryOf</p>
+ <div class="entity" id="isMentalIllnessCategoryOf">
+  <h3>is Mental Illness Category Of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/miao#isMentalIllnessCategoryOf</p>
   <div class="comment">
    <span class="markdown">Inverse relation of hasMentalIllnessCategory object propery that represents the relation between a MentalIllnessCategory and its corresponding MentalIllnessesModel.</span>
   </div>
@@ -736,19 +735,19 @@ This section provides details for each class and property defined by MIAO: A Men
      has domain
     </dt>
     <dd>
-     <a href="#MentalIlnessCategory" title="https://w3id.org/miao#MentalIlnessCategory">Mental Illness Category</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllnessCategory" title="https://w3id.org/miao#MentalIllnessCategory">Mental Illness Category</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#MentalIlnessesSchema" title="https://w3id.org/miao#MentalIlnessesSchema">Mental Illnesses Schema</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllnessesSchema" title="https://w3id.org/miao#MentalIllnessesSchema">Mental Illnesses Schema</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      is inverse of
     </dt>
     <dd>
-     <a href="#hasMentalIlnessCategory" title="https://w3id.org/miao#hasMentalIlnessCategory">has Mental Ilness Category</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#hasMentalIllnessCategory" title="https://w3id.org/miao#hasMentalIllnessCategory">has Mental Illness Category</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -757,7 +756,7 @@ This section provides details for each class and property defined by MIAO: A Men
   <h3>referred To Mental Illness<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/miao#referredToMentalIllness</p>
   <div class="comment">
-   <span class="markdown">Inverse relation of referredToMentalIllnessCategory used to represent to which MentalIlness (predicted) a MentalIlnessCategoy (from the literature) corresponds to.</span>
+   <span class="markdown">Inverse relation of referredToMentalIllnessCategory used to represent to which MentalIllness (predicted) a MentalIllnessCategoy (from the literature) corresponds to.</span>
   </div>
   <div class="description">
    <p><strong>has characteristics: </strong> inverse functional</p>
@@ -766,13 +765,13 @@ This section provides details for each class and property defined by MIAO: A Men
      has domain
     </dt>
     <dd>
-     <a href="#MentalIlnessCategory" title="https://w3id.org/miao#MentalIlnessCategory">Mental Illness Category</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllnessCategory" title="https://w3id.org/miao#MentalIllnessCategory">Mental Illness Category</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#MentalIlness" title="https://w3id.org/miao#MentalIlness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllness" title="https://w3id.org/miao#MentalIllness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      is inverse of
@@ -787,7 +786,7 @@ This section provides details for each class and property defined by MIAO: A Men
   <h3>referred To Mental Illness Category<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/miao#referredToMentalIllnessCategory</p>
   <div class="comment">
-   <span class="markdown">Relation used to represent to which MentalIlnessCategoy (from the literature) a MentalIlness (predicted) corresponds to.</span>
+   <span class="markdown">Relation used to represent to which MentalIllnessCategoy (from the literature) a MentalIllness (predicted) corresponds to.</span>
   </div>
   <div class="description">
    <p><strong>has characteristics: </strong> functional</p>
@@ -796,13 +795,13 @@ This section provides details for each class and property defined by MIAO: A Men
      has domain
     </dt>
     <dd>
-     <a href="#MentalIlness" title="https://w3id.org/miao#MentalIlness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllness" title="https://w3id.org/miao#MentalIllness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#MentalIlnessCategory" title="https://w3id.org/miao#MentalIlnessCategory">Mental Illness Category</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllnessCategory" title="https://w3id.org/miao#MentalIllnessCategory">Mental Illness Category</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      is inverse of
@@ -817,7 +816,7 @@ This section provides details for each class and property defined by MIAO: A Men
   <h3>used In Mental Illnesses Detection<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/miao#usedInMentalIllnessesDetection</p>
   <div class="comment">
-   <span class="markdown">Inverse relation of usedMentalIlnessesSchema used to indicate which MentalIllnessesDetection a specific MentalIllnessesSchema (from the literature) refers to.</span>
+   <span class="markdown">Inverse relation of usedMentalIllnessesSchema used to indicate which MentalIllnessesDetection a specific MentalIllnessesSchema (from the literature) refers to.</span>
   </div>
   <div class="description">
    <dl>
@@ -825,7 +824,7 @@ This section provides details for each class and property defined by MIAO: A Men
      has domain
     </dt>
     <dd>
-     <a href="#MentalIlnessesSchema" title="https://w3id.org/miao#MentalIlnessesSchema">Mental Illnesses Schema</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllnessesSchema" title="https://w3id.org/miao#MentalIllnessesSchema">Mental Illnesses Schema</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -861,7 +860,7 @@ This section provides details for each class and property defined by MIAO: A Men
      has range
     </dt>
     <dd>
-     <a href="#MentalIlnessesSchema" title="https://w3id.org/miao#MentalIlnessesSchema">Mental Illnesses Schema</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllnessesSchema" title="https://w3id.org/miao#MentalIllnessesSchema">Mental Illnesses Schema</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      is inverse of
@@ -885,7 +884,7 @@ This section provides details for each class and property defined by MIAO: A Men
      has domain
     </dt>
     <dd>
-     <a href="#MentalIlnessesSet" title="https://w3id.org/miao#MentalIlnessesSet">Mental Illnesses Set</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllnessesSet" title="https://w3id.org/miao#MentalIllnessesSet">Mental Illnesses Set</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -922,7 +921,7 @@ This section provides details for each class and property defined by MIAO: A Men
      has domain
     </dt>
     <dd>
-     <a href="#MentalIlness" title="https://w3id.org/miao#MentalIlness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllness" title="https://w3id.org/miao#MentalIllness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -945,7 +944,7 @@ This section provides details for each class and property defined by MIAO: A Men
      has domain
     </dt>
     <dd>
-     <a href="#MentalIlness" title="https://w3id.org/miao#MentalIlness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllness" title="https://w3id.org/miao#MentalIllness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -968,7 +967,7 @@ This section provides details for each class and property defined by MIAO: A Men
      has domain
     </dt>
     <dd>
-     <a href="#MentalIlness" title="https://w3id.org/miao#MentalIlness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllness" title="https://w3id.org/miao#MentalIllness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -991,7 +990,7 @@ This section provides details for each class and property defined by MIAO: A Men
      has domain
     </dt>
     <dd>
-     <a href="#MentalIlness" title="https://w3id.org/miao#MentalIlness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MentalIllness" title="https://w3id.org/miao#MentalIllness">Mental Illness</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -1013,6 +1012,7 @@ This section provides details for each class and property defined by MIAO: A Men
 </div>
     
 
+
 <!--REFERENCES SECTION-->
 <!--   <div id="references">
 <h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
@@ -1020,6 +1020,8 @@ This section provides details for each class and property defined by MIAO: A Men
 Add your references here. It is recommended to have them as a list.</span>
 
 </div>-->
+
+</div>
 <div id="acknowledgments">
 <h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <p>

@@ -19,12 +19,12 @@
       "creator" : [ {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Mauro Dragoni",
+        "value" : "Carlos Á. Iglesias",
         "type" : "label"
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Carlos Á. Iglesias",
+        "value" : "Tania Bailoni",
         "type" : "label"
       }, {
         "identifier" : "creator",
@@ -34,12 +34,12 @@
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Sergio Muñoz López",
+        "value" : "Mauro Dragoni",
         "type" : "label"
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Tania Bailoni",
+        "value" : "Sergio Muñoz López",
         "type" : "label"
       } ],
       "created" : [ {
@@ -48,28 +48,28 @@
         "value" : "2025-10-27",
         "type" : "label"
       } ],
-      "rights" : [ {
-        "identifier" : "rights",
-        "language" : "undefined",
-        "value" : "CreativeCommons 4.0 NonCommercial-ShareAlike <https://creativecommons.org/licenses/by-nc-sa/4.0/>",
-        "type" : "label"
-      } ],
       "preferredNamespacePrefix" : [ {
         "identifier" : "preferredNamespacePrefix",
         "language" : "undefined",
         "value" : "miao",
         "type" : "label"
       } ],
-      "modified" : [ {
-        "identifier" : "modified",
+      "rights" : [ {
+        "identifier" : "rights",
         "language" : "undefined",
-        "value" : "2025-10-27",
+        "value" : "CreativeCommons 4.0 NonCommercial-ShareAlike <https://creativecommons.org/licenses/by-nc-sa/4.0/>",
         "type" : "label"
       } ],
       "publisher" : [ {
         "identifier" : "publisher",
         "language" : "undefined",
         "value" : "Intelligent Digital Agents Research Group <https://ida.fbk.eu> @digital health and wellbeing center, fondazione bruno kessler <https://digitalhealthcenter-en.fbk.eu/home>  and gsi - universidad politécnica de madrid <https://www.gsi.upm.es/es/>",
+        "type" : "label"
+      } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "undefined",
+        "value" : "2025-10-27",
         "type" : "label"
       } ],
       "preferredNamespaceUri" : [ {
@@ -94,11 +94,14 @@
   },
   "namespace" : [ ],
   "class" : [ {
-    "id" : "10",
+    "id" : "6",
     "type" : "owl:Class"
   }, {
-    "id" : "11",
-    "type" : "owl:Class"
+    "id" : "14",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "15",
+    "type" : "rdfs:Datatype"
   }, {
     "id" : "16",
     "type" : "rdfs:Datatype"
@@ -106,34 +109,34 @@
     "id" : "17",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "18",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "19",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "22",
+    "id" : "20",
     "type" : "owl:Class"
   }, {
-    "id" : "8",
+    "id" : "13",
     "type" : "owl:Class"
   }, {
-    "id" : "7",
+    "id" : "1",
     "type" : "owl:Class"
   }, {
     "id" : "4",
     "type" : "owl:Class"
   }, {
-    "id" : "25",
+    "id" : "28",
     "type" : "owl:Class"
   }, {
-    "id" : "24",
+    "id" : "23",
     "type" : "owl:Class"
   }, {
-    "id" : "32",
+    "id" : "9",
     "type" : "owl:Class"
   }, {
-    "id" : "1",
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
     "type" : "owl:Class"
   }, {
     "id" : "2",
@@ -151,20 +154,21 @@
       "undefined" : "Ref: https://www.w3.org/TR/prov-o/#Activity"
     },
     "attributes" : [ "external" ],
-    "id" : "10"
+    "id" : "6"
   }, {
-    "iri" : "https://w3id.org/miao#MentalIlness",
-    "baseIri" : "https://w3id.org/miao",
-    "instances" : 0,
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "14",
     "label" : {
-      "IRI-based" : "MentalIlness",
-      "en" : "Mental Illness",
-      "it" : "Malattia Mentale"
-    },
-    "comment" : {
-      "undefined" : "A MentalIllness represents a detected or predicted mental illness, typically as a result of a human or machine/deep learning analysis."
-    },
-    "id" : "11"
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "15",
+    "label" : {
+      "IRI-based" : "string"
+    }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
@@ -180,20 +184,6 @@
       "IRI-based" : "string"
     }
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "18",
-    "label" : {
-      "IRI-based" : "decimal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "19",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
     "iri" : "http://www.w3.org/ns/prov#Entity",
     "baseIri" : "http://www.w3.org/ns/prov",
     "instances" : 0,
@@ -205,33 +195,34 @@
       "undefined" : "Ref: https://www.w3.org/TR/prov-o/#Entity"
     },
     "attributes" : [ "external" ],
-    "id" : "22"
+    "id" : "20"
   }, {
-    "iri" : "https://w3id.org/miao#MentalIlnessCategory",
+    "iri" : "https://w3id.org/miao#MentalIllness",
     "baseIri" : "https://w3id.org/miao",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "MentalIlnessCategory",
-      "en" : "Mental Illness Category",
-      "it" : "Categoria Malattia Mentale"
+      "IRI-based" : "MentalIllness",
+      "en" : "Mental Illness",
+      "it" : "Malattia Mentale"
     },
     "comment" : {
-      "undefined" : "A concept used to represent a mental illness category that belongs to a specific schema (e.g., ontology) used to represent mental illnesses"
+      "undefined" : "A MentalIllness represents a detected or predicted mental illness, typically as a result of a human or machine/deep learning analysis."
     },
-    "id" : "8"
+    "id" : "13"
   }, {
-    "iri" : "https://w3id.org/miao#MentalIlnessesSchema",
+    "iri" : "https://w3id.org/miao#MentalIllnessesSet",
     "baseIri" : "https://w3id.org/miao",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "MentalIlnessesSchema",
-      "en" : "Mental Illnesses Schema",
-      "it" : "Schema Malattie Mentali"
+      "IRI-based" : "MentalIllnessesSet",
+      "en" : "Mental Illnesses Set",
+      "it" : "Insieme Malattie Mentali"
     },
     "comment" : {
-      "undefined" : "Represents a category of mental illness within a specific schema (e.g., an ontology or classification system)."
+      "undefined" : "Concept used to represent a set of detected mental illnesses."
     },
-    "id" : "7"
+    "id" : "1",
+    "superClasses" : [ "20" ]
   }, {
     "iri" : "http://www.w3.org/ns/mls#Data",
     "baseIri" : "http://www.w3.org/ns/mls",
@@ -241,6 +232,14 @@
     },
     "attributes" : [ "external" ],
     "id" : "4"
+  }, {
+    "iri" : "https://w3id.org/miao#MentalIIlnessesSchema",
+    "baseIri" : "https://w3id.org/miao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MentalIIlnessesSchema"
+    },
+    "id" : "28"
   }, {
     "iri" : "https://w3id.org/miao#ManualMentalIllnessesDetection",
     "baseIri" : "https://w3id.org/miao",
@@ -253,22 +252,34 @@
     "comment" : {
       "undefined" : "A ManualMentalIllnessesDetection represents an analysis performed by a human expert to detect mental illnesses from a given source."
     },
-    "id" : "25",
+    "id" : "23",
     "superClasses" : [ "2" ]
   }, {
-    "iri" : "https://w3id.org/miao#AutomaticMentalIlnessesDetection",
+    "iri" : "https://w3id.org/miao#MentalIllnessesSchema",
     "baseIri" : "https://w3id.org/miao",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "AutomaticMentalIlnessesDetection",
-      "en" : "Automatic Mental Illnesses Detection",
-      "it" : "Rilevamento Automatico Malattie Mentali"
+      "IRI-based" : "MentalIllnessesSchema",
+      "en" : "Mental Illnesses Schema",
+      "it" : "Schema Malattie Mentali"
     },
     "comment" : {
-      "undefined" : "An AutomaticMentalIllnessesDetection represents an analysis (i.e., a run) performed by a machine/deep learning model to detect mental illnesses from a given source."
+      "undefined" : "Represents a category of mental illness within a specific schema (e.g., an ontology or classification system)."
     },
-    "id" : "24",
-    "superClasses" : [ "32", "2" ]
+    "id" : "9"
+  }, {
+    "iri" : "https://w3id.org/miao#MentalIllnessCategory",
+    "baseIri" : "https://w3id.org/miao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MentalIllnessCategory",
+      "en" : "Mental Illness Category",
+      "it" : "Categoria Malattia Mentale"
+    },
+    "comment" : {
+      "undefined" : "A concept used to represent a mental illness category that belongs to a specific schema (e.g., ontology) used to represent mental illnesses"
+    },
+    "id" : "10"
   }, {
     "iri" : "http://www.w3.org/ns/mls#Run",
     "baseIri" : "http://www.w3.org/ns/mls",
@@ -276,23 +287,23 @@
     "label" : {
       "IRI-based" : "Run"
     },
-    "subClasses" : [ "24" ],
+    "subClasses" : [ "22" ],
     "attributes" : [ "external" ],
-    "id" : "32"
+    "id" : "36"
   }, {
-    "iri" : "https://w3id.org/miao#MentalIlnessesSet",
+    "iri" : "https://w3id.org/miao#AutomaticMentalIllnessesDetection",
     "baseIri" : "https://w3id.org/miao",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "MentalIlnessesSet",
-      "en" : "Mental Illnesses Set",
-      "it" : "Insieme Malattie Mentali"
+      "IRI-based" : "AutomaticMentalIllnessesDetection",
+      "en" : "Automatic Mental Illnesses Detection",
+      "it" : "Rilevamento Automatico Malattie Mentali"
     },
     "comment" : {
-      "undefined" : "Concept used to represent a set of detected mental illnesses."
+      "undefined" : "An AutomaticMentalIllnessesDetection represents an analysis (i.e., a run) performed by a machine/deep learning model to detect mental illnesses from a given source."
     },
-    "id" : "1",
-    "superClasses" : [ "22" ]
+    "id" : "22",
+    "superClasses" : [ "36", "2" ]
   }, {
     "iri" : "https://w3id.org/miao#MentalIllnessesDetection",
     "baseIri" : "https://w3id.org/miao",
@@ -302,12 +313,12 @@
       "en" : "Mental Illnesses Detection",
       "it" : "Rilevamento Malattie Mentali"
     },
-    "subClasses" : [ "24", "25" ],
+    "subClasses" : [ "23", "22" ],
     "comment" : {
       "undefined" : "High-level concept used to represent a mental illness detection process regardless of the type (i.e., manual or automatic)."
     },
     "id" : "2",
-    "superClasses" : [ "10" ]
+    "superClasses" : [ "6" ]
   } ],
   "property" : [ {
     "id" : "0",
@@ -316,43 +327,40 @@
     "id" : "3",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "6",
+    "id" : "5",
     "type" : "owl:objectProperty"
+  }, {
+    "id" : "7",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "8",
+    "type" : "owl:someValuesFrom"
   }, {
     "id" : "12",
     "type" : "owl:someValuesFrom"
   }, {
-    "id" : "14",
-    "type" : "owl:someValuesFrom"
-  }, {
-    "id" : "15",
-    "type" : "owl:someValuesFrom"
-  }, {
-    "id" : "20",
+    "id" : "18",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "21",
+    "id" : "19",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "23",
+    "id" : "21",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "9",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "26",
+    "id" : "24",
     "type" : "owl:someValuesFrom"
   }, {
-    "id" : "27",
+    "id" : "26",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "13",
+    "id" : "25",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "28",
+    "id" : "27",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "5",
+    "id" : "11",
     "type" : "owl:objectProperty"
   }, {
     "id" : "29",
@@ -364,28 +372,31 @@
     "id" : "31",
     "type" : "owl:objectProperty"
   }, {
+    "id" : "32",
+    "type" : "owl:objectProperty"
+  }, {
     "id" : "33",
     "type" : "owl:objectProperty"
   }, {
     "id" : "35",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "36",
-    "type" : "rdfs:SubClassOf"
-  }, {
     "id" : "37",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "34",
     "type" : "owl:objectProperty"
   }, {
     "id" : "38",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "39",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "40",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "41",
     "type" : "rdfs:SubClassOf"
   } ],
   "propertyAttribute" : [ {
@@ -399,7 +410,7 @@
     "comment" : {
       "undefined" : "Ref: https://www.w3.org/TR/prov-o/#wasGeneratedBy"
     },
-    "attributes" : [ "external", "inverse functional", "object" ],
+    "attributes" : [ "object", "external", "inverse functional" ],
     "id" : "0"
   }, {
     "iri" : "https://w3id.org/miao#hasInputData",
@@ -416,96 +427,15 @@
     "attributes" : [ "object" ],
     "id" : "3"
   }, {
-    "iri" : "https://w3id.org/miao#hasMentalIlnessCategory",
-    "inverse" : "9",
+    "iri" : "https://w3id.org/miao#isInputOfMentalIllnessesDetection",
     "baseIri" : "https://w3id.org/miao",
-    "range" : "8",
+    "range" : "2",
     "label" : {
-      "IRI-based" : "hasMentalIlnessCategory"
+      "IRI-based" : "isInputOfMentalIllnessesDetection"
     },
-    "domain" : "7",
-    "comment" : {
-      "undefined" : "A relation between a MentalIllnessesModel and its Mental Illness categories."
-    },
+    "domain" : "4",
     "attributes" : [ "object" ],
-    "id" : "6"
-  }, {
-    "iri" : "https://w3id.org/miao#referredToMentalIllness",
-    "inverse" : "13",
-    "baseIri" : "https://w3id.org/miao",
-    "range" : "11",
-    "label" : {
-      "IRI-based" : "referredToMentalIllness"
-    },
-    "domain" : "8",
-    "comment" : {
-      "undefined" : "Inverse relation of referredToMentalIllnessCategory used to represent to which MentalIlness (predicted) a MentalIlnessCategoy (from the literature) corresponds to."
-    },
-    "attributes" : [ "inverse functional", "someValues", "object" ],
-    "id" : "12"
-  }, {
-    "iri" : "https://w3id.org/miao#hasMentalIlnessCategory",
-    "inverse" : "9",
-    "baseIri" : "https://w3id.org/miao",
-    "range" : "8",
-    "label" : {
-      "IRI-based" : "hasMentalIlnessCategory"
-    },
-    "domain" : "7",
-    "comment" : {
-      "undefined" : "A relation between a MentalIllnessesModel and its Mental Illness categories."
-    },
-    "attributes" : [ "someValues", "object" ],
-    "id" : "14"
-  }, {
-    "iri" : "https://w3id.org/miao#hasMentalIllness",
-    "baseIri" : "https://w3id.org/miao",
-    "range" : "11",
-    "label" : {
-      "IRI-based" : "hasMentalIllness"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "Relation connecting a MentalIllnessesSet with its corresponding MentalIlnesses."
-    },
-    "attributes" : [ "someValues", "object" ],
-    "id" : "15"
-  }, {
-    "range" : "10",
-    "domain" : "2",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "20"
-  }, {
-    "iri" : "https://w3id.org/miao#hasMentalIllnessLevel",
-    "baseIri" : "https://w3id.org/miao",
-    "range" : "17",
-    "label" : {
-      "IRI-based" : "hasMentalIllnessLevel"
-    },
-    "domain" : "11",
-    "comment" : {
-      "undefined" : "Represents the intensity of the mental illness as a categorical value, e.g., Low, Medium, or High."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "21"
-  }, {
-    "range" : "25",
-    "domain" : "24",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "23"
-  }, {
-    "iri" : "https://w3id.org/miao#isMentalIlnessCategoryOf",
-    "baseIri" : "https://w3id.org/miao",
-    "range" : "7",
-    "label" : {
-      "IRI-based" : "isMentalIlnessCategoryOf"
-    },
-    "domain" : "8",
-    "comment" : {
-      "undefined" : "Inverse relation of hasMentalIllnessCategory object propery that represents the relation between a MentalIllnessCategory and its corresponding MentalIllnessesModel."
-    },
-    "attributes" : [ "object" ],
-    "id" : "9"
+    "id" : "5"
   }, {
     "iri" : "https://w3id.org/miao#hasInputData",
     "inverse" : "5",
@@ -518,38 +448,102 @@
     "comment" : {
       "undefined" : "A relation between a MentalIllnessesDetection and data that is taken as input to the MentalIllnessesDetection."
     },
-    "attributes" : [ "someValues", "object" ],
-    "id" : "26"
+    "attributes" : [ "object", "someValues" ],
+    "id" : "7"
+  }, {
+    "iri" : "https://w3id.org/miao#hasMentalIllnessCategory",
+    "inverse" : "11",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "hasMentalIllnessCategory"
+    },
+    "domain" : "9",
+    "comment" : {
+      "undefined" : "A relation between a MentalIllnessesModel and its Mental Illness categories."
+    },
+    "attributes" : [ "object", "someValues" ],
+    "id" : "8"
+  }, {
+    "iri" : "https://w3id.org/miao#hasMentalIllness",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "hasMentalIllness"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "Relation connecting a MentalIllnessesSet with its corresponding MentalIllnesses."
+    },
+    "attributes" : [ "object", "someValues" ],
+    "id" : "12"
+  }, {
+    "range" : "6",
+    "domain" : "2",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "18"
+  }, {
+    "iri" : "https://w3id.org/miao#hasMentalIllnessLevel",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "15",
+    "label" : {
+      "IRI-based" : "hasMentalIllnessLevel"
+    },
+    "domain" : "13",
+    "comment" : {
+      "undefined" : "Represents the intensity of the mental illness as a categorical value, e.g., Low, Medium, or High."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "19"
+  }, {
+    "range" : "23",
+    "domain" : "22",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "21"
+  }, {
+    "iri" : "https://w3id.org/miao#referredToMentalIllness",
+    "inverse" : "25",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "referredToMentalIllness"
+    },
+    "domain" : "10",
+    "comment" : {
+      "undefined" : "Inverse relation of referredToMentalIllnessCategory used to represent to which MentalIllness (predicted) a MentalIllnessCategoy (from the literature) corresponds to."
+    },
+    "attributes" : [ "object", "someValues", "inverse functional" ],
+    "id" : "24"
   }, {
     "iri" : "https://w3id.org/miao#hasMentalIllnessScore",
     "baseIri" : "https://w3id.org/miao",
-    "range" : "18",
+    "range" : "16",
     "label" : {
       "IRI-based" : "hasMentalIllnessScore"
     },
-    "domain" : "11",
+    "domain" : "13",
     "comment" : {
       "undefined" : "Represents the intensity of the mental illness as a numeric score between 0 and 1."
     },
     "attributes" : [ "datatype" ],
-    "id" : "27"
+    "id" : "26"
   }, {
     "iri" : "https://w3id.org/miao#referredToMentalIllnessCategory",
     "baseIri" : "https://w3id.org/miao",
-    "range" : "8",
+    "range" : "10",
     "label" : {
       "IRI-based" : "referredToMentalIllnessCategory"
     },
-    "domain" : "11",
+    "domain" : "13",
     "comment" : {
-      "undefined" : "Relation used to represent to which MentalIlnessCategoy (from the literature) a MentalIlness (predicted) corresponds to."
+      "undefined" : "Relation used to represent to which MentalIllnessCategoy (from the literature) a MentalIllness (predicted) corresponds to."
     },
-    "attributes" : [ "functional", "object" ],
-    "id" : "13"
+    "attributes" : [ "object", "functional" ],
+    "id" : "25"
   }, {
     "iri" : "https://w3id.org/miao#usedMentalIllnessesSchema",
     "baseIri" : "https://w3id.org/miao",
-    "range" : "7",
+    "range" : "9",
     "label" : {
       "IRI-based" : "usedMentalIllnessesSchema"
     },
@@ -557,59 +551,76 @@
     "comment" : {
       "undefined" : "Relations used to indicate to which MentalIllnessesSchema (from the literature) a MentalIllnessesDetection is based on."
     },
-    "attributes" : [ "functional", "object" ],
-    "id" : "28"
+    "attributes" : [ "object", "functional" ],
+    "id" : "27"
   }, {
-    "iri" : "https://w3id.org/miao#isInputOfMentalIlnessesDetection",
+    "iri" : "https://w3id.org/miao#isMentalIllnessCategoryOf",
     "baseIri" : "https://w3id.org/miao",
-    "range" : "2",
+    "range" : "9",
     "label" : {
-      "IRI-based" : "isInputOfMentalIlnessesDetection"
+      "IRI-based" : "isMentalIllnessCategoryOf"
     },
-    "domain" : "4",
+    "domain" : "10",
+    "comment" : {
+      "undefined" : "Inverse relation of hasMentalIllnessCategory object propery that represents the relation between a MentalIllnessCategory and its corresponding MentalIllnessesModel."
+    },
     "attributes" : [ "object" ],
-    "id" : "5"
+    "id" : "11"
   }, {
     "iri" : "https://w3id.org/miao#refersToSample",
     "baseIri" : "https://w3id.org/miao",
-    "range" : "19",
+    "range" : "17",
     "label" : {
       "IRI-based" : "refersToSample"
     },
-    "domain" : "11",
+    "domain" : "13",
     "comment" : {
       "undefined" : "This data property represents the unique identifier of the specific data sample on which one or more mental illnesses have been detected. It is used to link a mental illness detection result to the original collected data instance."
     },
     "attributes" : [ "datatype" ],
     "id" : "29"
   }, {
-    "iri" : "https://w3id.org/miao#referredToMentalIllness",
-    "inverse" : "13",
+    "iri" : "https://w3id.org/miao#hasMentalIllnessCategory",
+    "inverse" : "11",
     "baseIri" : "https://w3id.org/miao",
-    "range" : "11",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "hasMentalIllnessCategory"
+    },
+    "domain" : "9",
+    "comment" : {
+      "undefined" : "A relation between a MentalIllnessesModel and its Mental Illness categories."
+    },
+    "attributes" : [ "object" ],
+    "id" : "30"
+  }, {
+    "iri" : "https://w3id.org/miao#referredToMentalIllness",
+    "inverse" : "25",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "13",
     "label" : {
       "IRI-based" : "referredToMentalIllness"
     },
-    "domain" : "8",
+    "domain" : "10",
     "comment" : {
-      "undefined" : "Inverse relation of referredToMentalIllnessCategory used to represent to which MentalIlness (predicted) a MentalIlnessCategoy (from the literature) corresponds to."
+      "undefined" : "Inverse relation of referredToMentalIllnessCategory used to represent to which MentalIllness (predicted) a MentalIllnessCategoy (from the literature) corresponds to."
     },
-    "attributes" : [ "inverse functional", "object" ],
-    "id" : "30"
+    "attributes" : [ "object", "inverse functional" ],
+    "id" : "31"
   }, {
     "iri" : "https://w3id.org/miao#usedInMentalIllnessesDetection",
-    "inverse" : "28",
+    "inverse" : "27",
     "baseIri" : "https://w3id.org/miao",
     "range" : "2",
     "label" : {
       "IRI-based" : "usedInMentalIllnessesDetection"
     },
-    "domain" : "7",
+    "domain" : "9",
     "comment" : {
-      "undefined" : "Inverse relation of usedMentalIlnessesSchema used to indicate which MentalIllnessesDetection a specific MentalIllnessesSchema (from the literature) refers to."
+      "undefined" : "Inverse relation of usedMentalIllnessesSchema used to indicate which MentalIllnessesDetection a specific MentalIllnessesSchema (from the literature) refers to."
     },
     "attributes" : [ "object" ],
-    "id" : "31"
+    "id" : "32"
   }, {
     "iri" : "https://w3id.org/miao#belongsToMentalIllnessesSet",
     "inverse" : "34",
@@ -618,9 +629,9 @@
     "label" : {
       "IRI-based" : "belongsToMentalIllnessesSet"
     },
-    "domain" : "11",
+    "domain" : "13",
     "comment" : {
-      "undefined" : "Inverse relation of hasMentalIlness. This relation connect a MentalIllness with its corresponding MentalIlnessSet."
+      "undefined" : "Inverse relation of hasMentalIllness. This relation connect a MentalIllness with its corresponding MentalIllnessesSet."
     },
     "attributes" : [ "object" ],
     "id" : "33"
@@ -634,55 +645,55 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "Relation taken from the Prov ontology that is used to represent the relation between a MentalIlnessesDetection and the generated set of MentalIllnessesSet."
+      "undefined" : "Relation taken from the Prov ontology that is used to represent the relation between a MentalIllnessesDetection and the generated set of MentalIllnessesSet."
     },
-    "attributes" : [ "functional", "external", "object" ],
+    "attributes" : [ "object", "external", "functional" ],
     "id" : "35"
   }, {
     "range" : "2",
-    "domain" : "25",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "36"
-  }, {
-    "iri" : "https://w3id.org/miao#hasMentalIllnessDetectionConfidence",
-    "baseIri" : "https://w3id.org/miao",
-    "range" : "16",
-    "label" : {
-      "IRI-based" : "hasMentalIllnessDetectionConfidence"
-    },
-    "domain" : "11",
-    "comment" : {
-      "undefined" : "Data Property used to represent the confidence of both an human expert or a machine/deep learning model about the presence of a mental illness."
-    },
-    "attributes" : [ "datatype" ],
+    "domain" : "22",
+    "attributes" : [ "object", "anonymous" ],
     "id" : "37"
   }, {
     "iri" : "https://w3id.org/miao#hasMentalIllness",
     "baseIri" : "https://w3id.org/miao",
-    "range" : "11",
+    "range" : "13",
     "label" : {
       "IRI-based" : "hasMentalIllness"
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "Relation connecting a MentalIllnessesSet with its corresponding MentalIlnesses."
+      "undefined" : "Relation connecting a MentalIllnessesSet with its corresponding MentalIllnesses."
     },
     "attributes" : [ "object" ],
     "id" : "34"
   }, {
-    "range" : "22",
-    "domain" : "1",
-    "attributes" : [ "anonymous", "object" ],
+    "iri" : "https://w3id.org/miao#hasMentalIllnessDetectionConfidence",
+    "baseIri" : "https://w3id.org/miao",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "hasMentalIllnessDetectionConfidence"
+    },
+    "domain" : "13",
+    "comment" : {
+      "undefined" : "Data Property used to represent the confidence of both an human expert or a machine/deep learning model about the presence of a mental illness."
+    },
+    "attributes" : [ "datatype" ],
     "id" : "38"
   }, {
-    "range" : "2",
-    "domain" : "24",
-    "attributes" : [ "anonymous", "object" ],
+    "range" : "20",
+    "domain" : "1",
+    "attributes" : [ "object", "anonymous" ],
     "id" : "39"
   }, {
-    "range" : "32",
-    "domain" : "24",
-    "attributes" : [ "anonymous", "object" ],
+    "range" : "2",
+    "domain" : "23",
+    "attributes" : [ "object", "anonymous" ],
     "id" : "40"
+  }, {
+    "range" : "36",
+    "domain" : "22",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "41"
   } ]
 }
