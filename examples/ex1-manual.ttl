@@ -52,16 +52,16 @@ ex1:Dr_Garcia a prov:Agent , prov:Person ;
 # Schema and Categories
 #################################################################
 
-ex1:DSM5_Schema a miao:MentalIlnessesSchema ;
+ex1:DSM5_Schema a miao:MentalIllnessesSchema ;
     dcterms:title "DSM-5: Diagnostic and Statistical Manual, 5th Edition"@en ;
     dcterms:publisher "American Psychiatric Association" ;
     dcterms:issued "2013"^^xsd:gYear ;
-    miao:hasMentalIlnessCategory ex1:DSM5_MDD .
+    miao:hasMentalIllnessCategory ex1:DSM5_MDD .
 
-ex1:DSM5_MDD a miao:MentalIlnessCategory ;
+ex1:DSM5_MDD a miao:MentalIllnessCategory ;
     dcterms:title "Major Depressive Disorder, Recurrent Episode, Mild"@en ;
     dcterms:description "At least two episodes of major depression, currently mild severity." ;
-    miao:isMentalIlnessCategoryOf ex1:DSM5_Schema .
+    miao:isMentalIllnessCategoryOf ex1:DSM5_Schema .
 
 #################################################################
 # Detected Mental Illness
@@ -69,7 +69,7 @@ ex1:DSM5_MDD a miao:MentalIlnessCategory ;
 
 ex1:Depression rdfs:subClassOf miao:MentalIllness .
 
-ex1:MentalIllnessesSetGarciaP00010 a miao:MentalIlnessesSet ;
+ex1:MentalIllnessesSetGarciaP00010 a miao:MentalIllnessesSet ;
     miao:hasMentalIllness ex1:DepressionP00010 ;
     prov:wasGeneratedBy ex1:ManualDetectionGarciaP00010 ;
 	rdfs:label "MentalIllnessesSetGarciaP00010"@en .
