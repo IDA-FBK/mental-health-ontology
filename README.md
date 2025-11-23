@@ -106,7 +106,7 @@ We have implemented a Python **Colab Notebook** showing how to interact with MIA
 
 Click below to access the interactive notebook:
 
-<a href="https://github.com/IDA-FBK/FuS-KG/tree/main/notebook" style="text-decoration: none;">
+<a href="https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/notebook" style="text-decoration: none;">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
 </a>
 
@@ -114,7 +114,7 @@ Click below to access the interactive notebook:
 
 > **⚠️ Important**
 > 
-> To load and run the notebook correctly, please follow the instructions in the [README.md](https://github.com/IDA-FBK/mental-health-ontology/blob/conceptualization-dev/notebook/README.md).
+> To load and run the notebook correctly, please follow the instructions in the [README.md](https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/notebook/README.md).
 
 
 ---
