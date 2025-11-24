@@ -1,4 +1,3 @@
-@prefix : <https://w3id.org/miao#> .
 @prefix mls: <http://www.w3.org/ns/mls#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -12,7 +11,7 @@
 @base <https://w3id.org/miao#> .
 
 <https://w3id.org/miao#> rdf:type owl:Ontology ;
-                          owl:imports <http://www.w3.org/2016/03/mls#> ;
+                          owl:imports <https://raw.githubusercontent.com/ML-Schema/core/master/MLSchema.ttl> ;
                           dcterms:created "2025-10-27"^^xsd:date ;
                           dcterms:creator "Carlos Á. Iglesias" ,
                                           "Gianluca Apriceno" ,
