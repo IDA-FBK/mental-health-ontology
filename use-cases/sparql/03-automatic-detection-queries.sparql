@@ -1,0 +1,162 @@
+#################################################################
+# SECTION 3: AUTOMATIC ML-BASED DETECTION QUERIES
+#################################################################
+
+PREFIX ex: <https://w3id.org/miao/ex#>
+PREFIX miao: <https://w3id.org/miao#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX mls: <http://www.w3.org/ns/mls#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Query 3.1: List all automatic detection runs with models and accuracy
+# Purpose: Overview of ML pipeline performance
+SELECT ?run ?runLabel ?model ?implementation ?accuracy ?date
+WHERE {
+  ?run a miao:AutomaticMentalIllnessesDetection, mls:Run ;
+       rdfs:label ?runLabel ;
+       mls:executes ?implementation ;
+       mls:hasOutput ?model, ?evaluation ;
+       dcterms:created ?date .
+  
+  ?evaluation a mls:ModelEvaluation ;
+              mls:specifiedBy ex:predictiveAccuracy ;
+              mls:hasValue ?accuracy .
+}
+ORDER BY DESC(?accuracy)
+
+# Query 3.2: Compare model performance across different approaches
+# Purpose: Benchmark different architectures
+SELECT ?implementation ?accuracy ?f1Score
+WHERE {
+  ?run a miao:AutomaticMentalIllnessesDetection, mls:Run ;
+       mls:executes ?implementation ;
+       mls:hasOutput ?eval1, ?eval2 .
+  
+  ?eval1 mls:specifiedBy ex:predictiveAccuracy ;
+         mls:hasValue ?accuracy .
+  
+  ?eval2 mls:specifiedBy ex:f1Score ;
+         mls:hasValue ?f1Score .
+}
+ORDER BY DESC(?accuracy)
+
+# Query 3.3: Find all predictions for a specific sample
+# Purpose: Retrieve all model outputs for cross-model comparison
+SELECT ?sample ?illness ?category ?confidence ?model ?date
+WHERE {
+  ?run a miao:AutomaticMentalIllnessesDetection ;
+       mls:executes ?model ;
+       prov:generated ?illnessSet ;
+       dcterms:created ?date .
+  
+  ?illnessSet miao:hasMentalIllness ?illness .
+  
+  ?illness miao:referredToMentalIllnessCategory ?category ;
+           miao:hasMentalIllnessDetectionConfidence ?confidence ;
+           miao:refersToSample ?sample .
+  
+  FILTER(?sample = "socialmedia_000001")
+}
+ORDER BY DESC(?confidence)
+
+# Query 3.4: Retrieve multimodal detection results
+# Purpose: Find predictions using multiple data modalities
+SELECT ?run ?runLabel ?inputData1 ?inputData2 ?illness ?category ?confidence
+WHERE {
+  ?run a miao:AutomaticMentalIllnessesDetection, mls:Run ;
+       rdfs:label ?runLabel ;
+       miao:hasInputData ?inputData1, ?inputData2 ;
+       prov:generated ?illnessSet .
+  
+  ?illnessSet miao:hasMentalIllness ?illness .
+  
+  ?illness miao:referredToMentalIllnessCategory ?category ;
+           miao:hasMentalIllnessDetectionConfidence ?confidence .
+  
+  FILTER(?inputData1 != ?inputData2)
+}
+ORDER BY DESC(?confidence)
+
+# Query 3.5: Find depression predictions by severity level
+# Purpose: Retrieve predictions within a specific severity range
+SELECT ?sample ?illness ?severityCategory ?confidence ?model
+WHERE {
+  ?run a miao:AutomaticMentalIllnessesDetection ;
+       mls:executes ?model ;
+       miao:usedMentalIllnessesSchema ex:DepressionSeveritySchema_Research ;
+       prov:generated ?illnessSet .
+  
+  ?illnessSet miao:hasMentalIllness ?illness .
+  
+  ?illness a ex:Depression ;
+           miao:referredToMentalIllnessCategory ?severityCategory ;
+           miao:hasMentalIllnessDetectionConfidence ?confidence ;
+           miao:refersToSample ?sample .
+  
+  FILTER(?severityCategory IN (ex:Moderate, ex:Severe))
+}
+ORDER BY DESC(?confidence)
+
+# Query 3.6: Get model hyperparameters for reproducibility
+# Purpose: Extract training configuration details
+SELECT ?implementation ?hyperParam ?value
+WHERE {
+  ?run a miao:AutomaticMentalIllnessesDetection, mls:Run ;
+       mls:executes ?implementation .
+  
+  ?implementation mls:hasHyperParameter ?hyperParam .
+  ?hyperParam rdfs:label ?paramName ;
+              mls:hasValue ?value .
+}
+ORDER BY ?implementation ?paramName
+
+# Query 3.7: Find all predictions with confidence above threshold
+# Purpose: High-confidence automatic detections for clinical review
+SELECT ?sample ?illness ?category ?confidence ?model ?date
+WHERE {
+  ?run a miao:AutomaticMentalIllnessesDetection ;
+       mls:executes ?model ;
+       prov:generated ?illnessSet ;
+       dcterms:created ?date .
+  
+  ?illnessSet miao:hasMentalIllness ?illness .
+  
+  ?illness miao:referredToMentalIllnessCategory ?category ;
+           miao:hasMentalIllnessDetectionConfidence ?confidence ;
+           miao:refersToSample ?sample .
+  
+  FILTER(?confidence >= 0.80)
+}
+ORDER BY DESC(?confidence)
+
+# Query 3.8: Compare text-only vs multimodal predictions
+# Purpose: Assess value added by multimodal fusion
+SELECT ?sample 
+       ?textOnlyCategory ?textOnlyConfidence 
+       ?multimodalCategory ?multimodalConfidence
+WHERE {
+  # Text-only prediction
+  ?textRun a miao:AutomaticMentalIllnessesDetection ;
+           miao:hasInputData ex:SocialMediaText ;
+           prov:generated ?textSet .
+  
+  ?textSet miao:hasMentalIllness ?textIllness .
+  ?textIllness miao:referredToMentalIllnessCategory ?textOnlyCategory ;
+               miao:hasMentalIllnessDetectionConfidence ?textOnlyConfidence ;
+               miao:refersToSample ?sample .
+  
+  # Multimodal prediction on same sample
+  ?multiRun a miao:AutomaticMentalIllnessesDetection ;
+            miao:hasInputData ex:SocialMediaText, ex:WearableSensors ;
+            prov:generated ?multiSet .
+  
+  ?multiSet miao:hasMentalIllness ?multiIllness .
+  ?multiIllness miao:referredToMentalIllnessCategory ?multimodalCategory ;
+                miao:hasMentalIllnessDetectionConfidence ?multimodalConfidence ;
+                miao:refersToSample ?sample .
+  
+  # Same base sample identifier
+  FILTER(STRSTARTS(?sample, "socialmedia_"))
+}

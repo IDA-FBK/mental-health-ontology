@@ -1,0 +1,62 @@
+#################################################################
+# SECTION 7: FEDERATED AND INTEGRATION QUERIES
+#################################################################
+
+PREFIX ex: <https://w3id.org/miao/ex#>
+PREFIX miao: <https://w3id.org/miao#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX mls: <http://www.w3.org/ns/mls#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Query 7.1: Export predictions in standardized format
+# Purpose: Data extraction for external systems
+SELECT ?sample ?detectionDate ?category ?severity ?confidence ?method
+WHERE {
+  ?detection prov:generated ?illnessSet ;
+             dcterms:created ?detectionDate .
+  
+  ?illnessSet miao:hasMentalIllness ?illness .
+  
+  ?illness miao:referredToMentalIllnessCategory ?category ;
+           miao:hasMentalIllnessDetectionConfidence ?confidence ;
+           miao:refersToSample ?sample .
+  
+  OPTIONAL { ?illness miao:hasMentalIllnessLevel ?severity }
+  OPTIONAL { ?detection mls:executes ?method }
+}
+ORDER BY ?detectionDate
+
+# Query 7.2: Generate training dataset with labels
+# Purpose: Create ML training data from annotations
+CONSTRUCT {
+  ?sample a mls:DataInstance ;
+          miao:hasLabel ?category ;
+          miao:hasConfidence ?confidence ;
+          miao:hasSeverity ?severity .
+}
+WHERE {
+  ?illness miao:referredToMentalIllnessCategory ?category ;
+           miao:hasMentalIllnessDetectionConfidence ?confidence ;
+           miao:refersToSample ?sample .
+  
+  OPTIONAL { ?illness miao:hasMentalIllnessLevel ?severity }
+  
+  FILTER(?confidence >= 0.80)
+}
+
+# Query 7.3: Find samples for active learning
+# Purpose: Identify uncertain cases for expert annotation
+SELECT ?sample (AVG(?confidence) AS ?avgConfidence) (STDEV(?confidence) AS ?stdConfidence)
+WHERE {
+  ?illness miao:hasMentalIllnessDetectionConfidence ?confidence ;
+           miao:refersToSample ?sample .
+  
+  ?detection a miao:AutomaticMentalIllnessesDetection ;
+             prov:generated ?illnessSet .
+  ?illnessSet miao:hasMentalIllness ?illness .
+}
+GROUP BY ?sample
+HAVING(?avgConfidence < 0.75 && ?stdConfidence > 0.1)
+ORDER BY ?avgConfidence

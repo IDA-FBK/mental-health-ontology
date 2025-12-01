@@ -1,0 +1,56 @@
+PREFIX ex: <https://w3id.org/miao/ex#>
+PREFIX miao: <https://w3id.org/miao#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX mls: <http://www.w3.org/ns/mls#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+#################################################################
+# SECTION 1: SCHEMA AND CATEGORY QUERIES
+#################################################################
+
+# Query 1.1: List all mental health schemas with their categories
+# Purpose: Overview of available diagnostic frameworks
+SELECT ?schema ?schemaTitle ?category ?categoryTitle
+WHERE {
+  ?schema a miao:MentalIllnessesSchema ;
+          dcterms:title ?schemaTitle ;
+          miao:hasMentalIllnessCategory ?category .
+  ?category dcterms:title ?categoryTitle .
+}
+ORDER BY ?schemaTitle ?categoryTitle
+
+# Query 1.2: Get detailed information about DSM-5 schema
+# Purpose: Inspect a specific classification system
+SELECT ?category ?title ?description ?identifier
+WHERE {
+  ex:DSM5_Schema miao:hasMentalIllnessCategory ?category .
+  ?category dcterms:title ?title .
+  OPTIONAL { ?category dcterms:description ?description }
+  OPTIONAL { ?category dcterms:identifier ?identifier }
+}
+ORDER BY ?title
+
+# Query 1.3: Find all ordinal severity categories
+# Purpose: Retrieve severity scales for research applications
+SELECT ?schema ?schemaTitle ?category ?categoryTitle
+WHERE {
+  ?schema a miao:MentalIllnessesSchema ;
+          dcterms:title ?schemaTitle ;
+          miao:hasMentalIllnessCategory ?category .
+  ?category dcterms:title ?categoryTitle .
+  FILTER(CONTAINS(LCASE(?schemaTitle), "severity"))
+}
+ORDER BY ?categoryTitle
+
+# Query 1.4: Count categories per schema
+# Purpose: Statistical overview of schema complexity
+SELECT ?schema ?schemaTitle (COUNT(?category) AS ?categoryCount)
+WHERE {
+  ?schema a miao:MentalIllnessesSchema ;
+          dcterms:title ?schemaTitle ;
+          miao:hasMentalIllnessCategory ?category .
+}
+GROUP BY ?schema ?schemaTitle
+ORDER BY DESC(?categoryCount)

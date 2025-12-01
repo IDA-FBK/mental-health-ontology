@@ -1,0 +1,92 @@
+#################################################################
+# SECTION 2: MANUAL ANNOTATION QUERIES
+#################################################################
+
+PREFIX ex: <https://w3id.org/miao/ex#>
+PREFIX miao: <https://w3id.org/miao#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX mls: <http://www.w3.org/ns/mls#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Query 2.1: List all manual detections with clinician and patient info
+# Purpose: Audit trail of clinical assessments
+SELECT ?detection ?clinician ?clinicianName ?patient ?createdDate
+WHERE {
+  ?detection a miao:ManualMentalIllnessesDetection ;
+             prov:wasAssociatedWith ?clinician ;
+             dcterms:created ?createdDate .
+  ?clinician rdfs:label ?clinicianName .
+  ?detection miao:refersToSample ?patient .
+}
+ORDER BY DESC(?createdDate)
+
+# Query 2.2: Find all diagnoses by Dr. Martin
+# Purpose: Retrieve work of a specific clinician
+SELECT ?detection ?patient ?illness ?category ?severity ?confidence ?date
+WHERE {
+  ?detection a miao:ManualMentalIllnessesDetection ;
+             prov:wasAssociatedWith ex:Dr_Martin ;
+             prov:generated ?illnessSet ;
+             dcterms:created ?date .
+  ?illnessSet miao:hasMentalIllness ?illness .
+  ?illness miao:referredToMentalIllnessCategory ?category ;
+           miao:refersToSample ?patient .
+  OPTIONAL { ?illness miao:hasMentalIllnessLevel ?severity }
+  OPTIONAL { ?illness miao:hasMentalIllnessDetectionConfidence ?confidence }
+}
+ORDER BY DESC(?date)
+
+# Query 2.3: Identify patients with comorbid conditions
+# Purpose: Find cases with multiple simultaneous diagnoses
+SELECT ?patient ?illness1 ?category1 ?illness2 ?category2
+WHERE {
+  ?illnessSet a miao:MentalIllnessesSet ;
+              miao:hasMentalIllness ?illness1, ?illness2 .
+  
+  ?illness1 miao:referredToMentalIllnessCategory ?category1 ;
+            miao:refersToSample ?patient .
+  
+  ?illness2 miao:referredToMentalIllnessCategory ?category2 ;
+            miao:refersToSample ?patient .
+  
+  FILTER(?illness1 != ?illness2)
+  FILTER(?category1 != ?category2)
+}
+
+# Query 2.4: Get manual annotations with data sources
+# Purpose: Track which assessment instruments were used
+SELECT ?detection ?patient ?inputData ?dataDescription ?illness ?category ?severity
+WHERE {
+  ?detection a miao:ManualMentalIllnessesDetection ;
+             miao:hasInputData ?inputData ;
+             prov:generated ?illnessSet .
+  
+  ?inputData dcterms:description ?dataDescription .
+  
+  ?illnessSet miao:hasMentalIllness ?illness .
+  ?illness miao:referredToMentalIllnessCategory ?category ;
+           miao:refersToSample ?patient .
+  
+  OPTIONAL { ?illness miao:hasMentalIllnessLevel ?severity }
+}
+
+# Query 2.5: Find high-confidence manual diagnoses
+# Purpose: Retrieve only well-established clinical assessments
+SELECT ?patient ?illness ?category ?confidence ?clinician ?date
+WHERE {
+  ?detection a miao:ManualMentalIllnessesDetection ;
+             prov:wasAssociatedWith ?clinician ;
+             prov:generated ?illnessSet ;
+             dcterms:created ?date .
+  
+  ?illnessSet miao:hasMentalIllness ?illness .
+  
+  ?illness miao:referredToMentalIllnessCategory ?category ;
+           miao:hasMentalIllnessDetectionConfidence ?confidence ;
+           miao:refersToSample ?patient .
+  
+  FILTER(?confidence >= 0.85)
+}
+ORDER BY DESC(?confidence)
