@@ -1,0 +1,393 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <http://example.org/miao/> .
+@prefix miao: <https://w3id.org/miao#> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix snomed: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:BERT_Depression_Classifier_Prediction_0 a miao:Prediction ;
+    miao:confidence "0.94"^^xsd:float ;
+    miao:forSample ex:Sample_0 ;
+    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
+    miao:groundTruthCategory ex:MinimalDepression ;
+    miao:predictedCategory ex:MinimalDepression .
+
+ex:BERT_Depression_Classifier_Prediction_1 a miao:Prediction ;
+    miao:confidence "0.85"^^xsd:float ;
+    miao:forSample ex:Sample_1 ;
+    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
+    miao:groundTruthCategory ex:MildDepression ;
+    miao:predictedCategory ex:MildDepression .
+
+ex:BERT_Depression_Classifier_Prediction_2 a miao:Prediction ;
+    miao:confidence "0.74"^^xsd:float ;
+    miao:forSample ex:Sample_2 ;
+    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
+    miao:groundTruthCategory ex:ModerateDepression ;
+    miao:predictedCategory ex:ModerateDepression .
+
+ex:BERT_Depression_Classifier_Prediction_3 a miao:Prediction ;
+    miao:confidence "0.62"^^xsd:float ;
+    miao:forSample ex:Sample_3 ;
+    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
+    miao:groundTruthCategory ex:SevereDepression ;
+    miao:predictedCategory ex:MinimalDepression .
+
+ex:BERT_Depression_Classifier_Prediction_4 a miao:Prediction ;
+    miao:confidence "0.71"^^xsd:float ;
+    miao:forSample ex:Sample_4 ;
+    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
+    miao:groundTruthCategory ex:MinimalDepression ;
+    miao:predictedCategory ex:MinimalDepression .
+
+ex:BERT_Depression_Classifier_Prediction_5 a miao:Prediction ;
+    miao:confidence "0.91"^^xsd:float ;
+    miao:forSample ex:Sample_5 ;
+    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
+    miao:groundTruthCategory ex:MildDepression ;
+    miao:predictedCategory ex:MildDepression .
+
+ex:BERT_Depression_Classifier_Prediction_6 a miao:Prediction ;
+    miao:confidence "0.75"^^xsd:float ;
+    miao:forSample ex:Sample_6 ;
+    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
+    miao:groundTruthCategory ex:ModerateDepression ;
+    miao:predictedCategory ex:ModerateDepression .
+
+ex:BERT_Depression_Classifier_Prediction_7 a miao:Prediction ;
+    miao:confidence "0.78"^^xsd:float ;
+    miao:forSample ex:Sample_7 ;
+    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
+    miao:groundTruthCategory ex:SevereDepression ;
+    miao:predictedCategory ex:SevereDepression .
+
+ex:BERT_Depression_Classifier_Prediction_8 a miao:Prediction ;
+    miao:confidence "0.81"^^xsd:float ;
+    miao:forSample ex:Sample_8 ;
+    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
+    miao:groundTruthCategory ex:MinimalDepression ;
+    miao:predictedCategory ex:MinimalDepression .
+
+ex:BERT_Depression_Classifier_Prediction_9 a miao:Prediction ;
+    miao:confidence "0.85"^^xsd:float ;
+    miao:forSample ex:Sample_9 ;
+    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
+    miao:groundTruthCategory ex:ModerateDepression ;
+    miao:predictedCategory ex:ModerateDepression .
+
+ex:Feature_Framework_Model_Prediction_0 a miao:Prediction ;
+    miao:confidence "0.59"^^xsd:float ;
+    miao:forSample ex:Sample_0 ;
+    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
+    miao:groundTruthCategory ex:MinimalDepression ;
+    miao:predictedCategory ex:SevereDepression .
+
+ex:Feature_Framework_Model_Prediction_1 a miao:Prediction ;
+    miao:confidence "0.75"^^xsd:float ;
+    miao:forSample ex:Sample_1 ;
+    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
+    miao:groundTruthCategory ex:MildDepression ;
+    miao:predictedCategory ex:MildDepression .
+
+ex:Feature_Framework_Model_Prediction_2 a miao:Prediction ;
+    miao:confidence "0.85"^^xsd:float ;
+    miao:forSample ex:Sample_2 ;
+    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
+    miao:groundTruthCategory ex:ModerateDepression ;
+    miao:predictedCategory ex:ModerateDepression .
+
+ex:Feature_Framework_Model_Prediction_3 a miao:Prediction ;
+    miao:confidence "0.64"^^xsd:float ;
+    miao:forSample ex:Sample_3 ;
+    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
+    miao:groundTruthCategory ex:SevereDepression ;
+    miao:predictedCategory ex:ModerateDepression .
+
+ex:Feature_Framework_Model_Prediction_4 a miao:Prediction ;
+    miao:confidence "0.7"^^xsd:float ;
+    miao:forSample ex:Sample_4 ;
+    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
+    miao:groundTruthCategory ex:MinimalDepression ;
+    miao:predictedCategory ex:MinimalDepression .
+
+ex:Feature_Framework_Model_Prediction_5 a miao:Prediction ;
+    miao:confidence "0.84"^^xsd:float ;
+    miao:forSample ex:Sample_5 ;
+    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
+    miao:groundTruthCategory ex:MildDepression ;
+    miao:predictedCategory ex:MildDepression .
+
+ex:Feature_Framework_Model_Prediction_6 a miao:Prediction ;
+    miao:confidence "0.7"^^xsd:float ;
+    miao:forSample ex:Sample_6 ;
+    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
+    miao:groundTruthCategory ex:ModerateDepression ;
+    miao:predictedCategory ex:ModerateDepression .
+
+ex:Feature_Framework_Model_Prediction_7 a miao:Prediction ;
+    miao:confidence "0.76"^^xsd:float ;
+    miao:forSample ex:Sample_7 ;
+    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
+    miao:groundTruthCategory ex:SevereDepression ;
+    miao:predictedCategory ex:SevereDepression .
+
+ex:Feature_Framework_Model_Prediction_8 a miao:Prediction ;
+    miao:confidence "0.85"^^xsd:float ;
+    miao:forSample ex:Sample_8 ;
+    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
+    miao:groundTruthCategory ex:MinimalDepression ;
+    miao:predictedCategory ex:MinimalDepression .
+
+ex:Feature_Framework_Model_Prediction_9 a miao:Prediction ;
+    miao:confidence "0.74"^^xsd:float ;
+    miao:forSample ex:Sample_9 ;
+    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
+    miao:groundTruthCategory ex:ModerateDepression ;
+    miao:predictedCategory ex:ModerateDepression .
+
+ex:BERT_Depression_Classifier a mls:Model ;
+    dcterms:title "BERT Depression Classifier" ;
+    mls:hasQuality ex:BERT_Depression_Classifier_Metric_accuracy,
+        ex:BERT_Depression_Classifier_Metric_avg_confidence,
+        ex:BERT_Depression_Classifier_Metric_f1_score,
+        ex:BERT_Depression_Classifier_Metric_precision,
+        ex:BERT_Depression_Classifier_Metric_recall ;
+    mls:implements ex:BERT_Depression_Classifier_Implementation .
+
+ex:BERT_Depression_Classifier_EvalMetric_accuracy a miao:PerformanceMetric ;
+    rdfs:label "accuracy" ;
+    miao:hasValue "0.9"^^xsd:float .
+
+ex:BERT_Depression_Classifier_EvalMetric_avg_confidence a miao:PerformanceMetric ;
+    rdfs:label "avg_confidence" ;
+    miao:hasValue "0.796"^^xsd:float .
+
+ex:BERT_Depression_Classifier_EvalMetric_f1_score a miao:PerformanceMetric ;
+    rdfs:label "f1_score" ;
+    miao:hasValue "0.881"^^xsd:float .
+
+ex:BERT_Depression_Classifier_EvalMetric_precision a miao:PerformanceMetric ;
+    rdfs:label "precision" ;
+    miao:hasValue "0.9375"^^xsd:float .
+
+ex:BERT_Depression_Classifier_EvalMetric_recall a miao:PerformanceMetric ;
+    rdfs:label "recall" ;
+    miao:hasValue "0.875"^^xsd:float .
+
+ex:BERT_Depression_Classifier_Evaluation a miao:Evaluation ;
+    dcterms:title "Evaluation - BERT Depression Classifier" ;
+    miao:hasMetric ex:BERT_Depression_Classifier_EvalMetric_accuracy,
+        ex:BERT_Depression_Classifier_EvalMetric_avg_confidence,
+        ex:BERT_Depression_Classifier_EvalMetric_f1_score,
+        ex:BERT_Depression_Classifier_EvalMetric_precision,
+        ex:BERT_Depression_Classifier_EvalMetric_recall .
+
+ex:BERT_Depression_Classifier_Implementation a mls:Implementation ;
+    dcterms:title "BERT Depression Classifier" .
+
+ex:BERT_Depression_Classifier_Metric_accuracy a mls:ModelPerformance ;
+    rdfs:label "accuracy" ;
+    mls:hasValue "0.9"^^xsd:float .
+
+ex:BERT_Depression_Classifier_Metric_avg_confidence a mls:ModelPerformance ;
+    rdfs:label "avg_confidence" ;
+    mls:hasValue "0.796"^^xsd:float .
+
+ex:BERT_Depression_Classifier_Metric_f1_score a mls:ModelPerformance ;
+    rdfs:label "f1_score" ;
+    mls:hasValue "0.881"^^xsd:float .
+
+ex:BERT_Depression_Classifier_Metric_precision a mls:ModelPerformance ;
+    rdfs:label "precision" ;
+    mls:hasValue "0.9375"^^xsd:float .
+
+ex:BERT_Depression_Classifier_Metric_recall a mls:ModelPerformance ;
+    rdfs:label "recall" ;
+    mls:hasValue "0.875"^^xsd:float .
+
+ex:Depression_Severity_Dataset_Distribution_Level0 a miao:ClassDistribution ;
+    miao:hasClass ex:MinimalDepression ;
+    miao:numberOfInstances 3 .
+
+ex:Depression_Severity_Dataset_Distribution_Level1 a miao:ClassDistribution ;
+    miao:hasClass ex:MildDepression ;
+    miao:numberOfInstances 2 .
+
+ex:Depression_Severity_Dataset_Distribution_Level2 a miao:ClassDistribution ;
+    miao:hasClass ex:ModerateDepression ;
+    miao:numberOfInstances 3 .
+
+ex:Depression_Severity_Dataset_Distribution_Level3 a miao:ClassDistribution ;
+    miao:hasClass ex:SevereDepression ;
+    miao:numberOfInstances 2 .
+
+ex:Feature_Framework_Model a mls:Model ;
+    dcterms:title "Feature Framework Model" ;
+    mls:hasQuality ex:Feature_Framework_Model_Metric_accuracy,
+        ex:Feature_Framework_Model_Metric_avg_confidence,
+        ex:Feature_Framework_Model_Metric_f1_score,
+        ex:Feature_Framework_Model_Metric_precision,
+        ex:Feature_Framework_Model_Metric_recall ;
+    mls:implements ex:Feature_Framework_Model_Implementation .
+
+ex:Feature_Framework_Model_EvalMetric_accuracy a miao:PerformanceMetric ;
+    rdfs:label "accuracy" ;
+    miao:hasValue "0.8"^^xsd:float .
+
+ex:Feature_Framework_Model_EvalMetric_avg_confidence a miao:PerformanceMetric ;
+    rdfs:label "avg_confidence" ;
+    miao:hasValue "0.742"^^xsd:float .
+
+ex:Feature_Framework_Model_EvalMetric_f1_score a miao:PerformanceMetric ;
+    rdfs:label "f1_score" ;
+    miao:hasValue "0.7893"^^xsd:float .
+
+ex:Feature_Framework_Model_EvalMetric_precision a miao:PerformanceMetric ;
+    rdfs:label "precision" ;
+    miao:hasValue "0.8125"^^xsd:float .
+
+ex:Feature_Framework_Model_EvalMetric_recall a miao:PerformanceMetric ;
+    rdfs:label "recall" ;
+    miao:hasValue "0.7917"^^xsd:float .
+
+ex:Feature_Framework_Model_Evaluation a miao:Evaluation ;
+    dcterms:title "Evaluation - Feature Framework Model" ;
+    miao:hasMetric ex:Feature_Framework_Model_EvalMetric_accuracy,
+        ex:Feature_Framework_Model_EvalMetric_avg_confidence,
+        ex:Feature_Framework_Model_EvalMetric_f1_score,
+        ex:Feature_Framework_Model_EvalMetric_precision,
+        ex:Feature_Framework_Model_EvalMetric_recall .
+
+ex:Feature_Framework_Model_Implementation a mls:Implementation ;
+    dcterms:title "Feature Framework Model" .
+
+ex:Feature_Framework_Model_Metric_accuracy a mls:ModelPerformance ;
+    rdfs:label "accuracy" ;
+    mls:hasValue "0.8"^^xsd:float .
+
+ex:Feature_Framework_Model_Metric_avg_confidence a mls:ModelPerformance ;
+    rdfs:label "avg_confidence" ;
+    mls:hasValue "0.742"^^xsd:float .
+
+ex:Feature_Framework_Model_Metric_f1_score a mls:ModelPerformance ;
+    rdfs:label "f1_score" ;
+    mls:hasValue "0.7893"^^xsd:float .
+
+ex:Feature_Framework_Model_Metric_precision a mls:ModelPerformance ;
+    rdfs:label "precision" ;
+    mls:hasValue "0.8125"^^xsd:float .
+
+ex:Feature_Framework_Model_Metric_recall a mls:ModelPerformance ;
+    rdfs:label "recall" ;
+    mls:hasValue "0.7917"^^xsd:float .
+
+ex:Depression_Severity_Dataset a miao:Dataset ;
+    dcterms:created "2025-12-03"^^xsd:date ;
+    dcterms:description "Text dataset with 10 samples annotated with depression severity labels (0-3) based on PHQ-9 criteria." ;
+    dcterms:title "Depression Severity Dataset" ;
+    miao:hasClassDistribution ex:Depression_Severity_Dataset_Distribution_Level0,
+        ex:Depression_Severity_Dataset_Distribution_Level1,
+        ex:Depression_Severity_Dataset_Distribution_Level2,
+        ex:Depression_Severity_Dataset_Distribution_Level3 ;
+    miao:numberOfSamples 10 ;
+    miao:usesSchema ex:DepressionSeveritySchema_Research .
+
+ex:Sample_0 a miao:Sample ;
+    dcterms:description "Feeling okay today, nothing special but managing fine" ;
+    dcterms:identifier 0 .
+
+ex:Sample_1 a miao:Sample ;
+    dcterms:description "Sometimes I feel a bit down but it passes quickly" ;
+    dcterms:identifier 1 .
+
+ex:Sample_2 a miao:Sample ;
+    dcterms:description "Having trouble getting out of bed, everything feels heavy" ;
+    dcterms:identifier 2 .
+
+ex:Sample_3 a miao:Sample ;
+    dcterms:description "I can't remember the last time I felt happy, constant despair" ;
+    dcterms:identifier 3 .
+
+ex:Sample_4 a miao:Sample ;
+    dcterms:description "Life is good, enjoying my hobbies and social activities" ;
+    dcterms:identifier 4 .
+
+ex:Sample_5 a miao:Sample ;
+    dcterms:description "Feel slightly sad occasionally but cope well overall" ;
+    dcterms:identifier 5 .
+
+ex:Sample_6 a miao:Sample ;
+    dcterms:description "Struggling to concentrate, lost interest in most things" ;
+    dcterms:identifier 6 .
+
+ex:Sample_7 a miao:Sample ;
+    dcterms:description "Complete hopelessness, thoughts of ending it all" ;
+    dcterms:identifier 7 .
+
+ex:Sample_8 a miao:Sample ;
+    dcterms:description "Pretty content with life, normal ups and downs" ;
+    dcterms:identifier 8 .
+
+ex:Sample_9 a miao:Sample ;
+    dcterms:description "Persistent sadness affecting work and relationships" ;
+    dcterms:identifier 9 .
+
+ex:DepressionSeveritySchema_Research a miao:MentalIllnessesSchema ;
+    dcterms:created "2025-12-02"^^xsd:date ;
+    dcterms:description "Ordinal taxonomy of depression severity (Minimal, Mild, Moderate, Severe) used in social media corpora and text-based computational research on depression detection. Based on PHQ-9 severity thresholds."@en ;
+    dcterms:source "Kroenke K, Spitzer RL, Williams JB. The PHQ-9: validity of a brief depression severity measure. J Gen Intern Med. 2001;16(9):606-13." ;
+    dcterms:title "Research schema for depression severity in text"@en ;
+    miao:hasMentalIllnessCategory ex:MildDepression,
+        ex:MinimalDepression,
+        ex:ModerateDepression,
+        ex:SevereDepression .
+
+ex:SevereDepression a miao:MentalIllnessCategory ;
+    rdfs:label "Severe Depression"@en ;
+    dcterms:description "Severe depressive symptoms. PHQ-9 score range: 15-27 (includes moderately severe 15-19 and severe 20-27). Warrants active treatment with pharmacotherapy and/or psychotherapy."@en ;
+    dcterms:identifier 3 ;
+    dcterms:title "Severe depression"@en ;
+    skos:related snomed:310497006 ;
+    miao:isMentalIllnessCategoryOf ex:DepressionSeveritySchema_Research .
+
+ex:BERT_Depression_Classifier_Run a miao:DetectionRun ;
+    dcterms:created "2025-12-03T17:30:18"^^xsd:dateTime ;
+    dcterms:title "Depression Detection Run - BERT Depression Classifier" ;
+    miao:hasEvaluation ex:BERT_Depression_Classifier_Evaluation ;
+    miao:usesDataset ex:Depression_Severity_Dataset ;
+    miao:usesModel ex:BERT_Depression_Classifier ;
+    miao:usesSchema ex:DepressionSeveritySchema_Research .
+
+ex:Feature_Framework_Model_Run a miao:DetectionRun ;
+    dcterms:created "2025-12-03T17:30:18"^^xsd:dateTime ;
+    dcterms:title "Depression Detection Run - Feature Framework Model" ;
+    miao:hasEvaluation ex:Feature_Framework_Model_Evaluation ;
+    miao:usesDataset ex:Depression_Severity_Dataset ;
+    miao:usesModel ex:Feature_Framework_Model ;
+    miao:usesSchema ex:DepressionSeveritySchema_Research .
+
+ex:MildDepression a miao:MentalIllnessCategory ;
+    rdfs:label "Mild Depression"@en ;
+    dcterms:description "Mild depressive symptoms. PHQ-9 score range: 5-9. May warrant watchful waiting and repeated assessment."@en ;
+    dcterms:identifier 1 ;
+    dcterms:title "Mild depression"@en ;
+    skos:related snomed:310495003 ;
+    miao:isMentalIllnessCategoryOf ex:DepressionSeveritySchema_Research .
+
+ex:MinimalDepression a miao:MentalIllnessCategory ;
+    rdfs:label "Minimal Depression"@en ;
+    dcterms:description "Minimal or no depressive symptoms. PHQ-9 score range: 0-4. Indicates little to no clinical significance."@en ;
+    dcterms:identifier 0 ;
+    dcterms:title "Minimal depression"@en ;
+    miao:isMentalIllnessCategoryOf ex:DepressionSeveritySchema_Research .
+
+ex:ModerateDepression a miao:MentalIllnessCategory ;
+    rdfs:label "Moderate Depression"@en ;
+    dcterms:description "Moderate depressive symptoms. PHQ-9 score range: 10-14. Warrants treatment plan, considering counseling, follow-up, and/or pharmacotherapy."@en ;
+    dcterms:identifier 2 ;
+    dcterms:title "Moderate depression"@en ;
+    skos:related snomed:310496002 ;
+    miao:isMentalIllnessCategoryOf ex:DepressionSeveritySchema_Research .
+

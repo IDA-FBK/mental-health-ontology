@@ -6,7 +6,6 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix mls: <http://www.w3.org/ns/mls#> .
 @prefix snomed: <http://snomed.info/id/> .
-@prefix mhmo: <http://purl.bioontology.org/ontology/MHMO/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/miao/clinical-annotation/> .
 
@@ -94,5 +93,4 @@ ex:MentalIllness_MDD_P00010 a miao:MentalIllness ;
     miao:belongsToMentalIllnessesSet ex:MentalIllnessesSet_P00010 ;
     miao:refersToSample "Patient_P00010"^^xsd:string ;
     miao:hasMentalIllnessLevel "Moderate to Severe"^^xsd:string ;
-    
     rdfs:comment "Diagnosis based on PHQ-9 score of 17 and clinical observation of DSM-5 criteria including depressed mood, anhedonia, sleep disturbances, fatigue, concentration difficulties, and passive suicidal ideation"@en .

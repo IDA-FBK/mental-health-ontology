@@ -1,5 +1,5 @@
 @prefix ex: <http://example.org/miao/> .
-@prefix miao: <http://www.semanticweb.org/miao#> .
+@prefix miao: <https://w3id.org/miao#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
