@@ -1,0 +1,176 @@
+@prefix miao: <https://w3id.org/miao#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix snomed: <http://snomed.info/id/> .
+@prefix mhmo: <http://purl.bioontology.org/ontology/MHMO/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ex: <http://example.org/miao/clinical-annotation/> .
+
+# ============================================================================
+# Clinical Professional
+# ============================================================================
+
+ex:DrLauraMartin a prov:Agent , 
+                   prov:Person ,
+                   foaf:Person ;
+    foaf:name "Dr. Laura Martin" ;
+    foaf:title "PhD" ;
+    dcterms:identifier "ESP-PSY-2018-45892" ;
+    rdfs:comment "Licensed clinical psychologist specialized in mood disorders"@en .
+
+# ============================================================================
+# Input Data
+# ============================================================================
+
+ex:PatientQuestionnaire_P00010 a mls:Data ;
+    dcterms:title "Patient Health Questionnaire-9 (PHQ-9)"@en ;
+    dcterms:created "2025-11-28T10:30:00Z"^^xsd:dateTime ;
+    dcterms:identifier "PHQ9-P00010-S12" ;
+    rdfs:comment "PHQ-9 score of 17 indicates moderately severe depression"@en .
+
+ex:TherapySessionNotes_P00010 a mls:Data ;
+    dcterms:title "Clinical Session Notes - Session 12"@en ;
+    dcterms:created "2025-11-28T11:45:00Z"^^xsd:dateTime ;
+    dcterms:identifier "SESSION-NOTES-P00010-S12" ;
+    prov:wasAttributedTo ex:DrLauraMartin ;
+    rdfs:comment "Clinical notes documenting depressive symptoms including low mood, anhedonia, sleep disturbances, and passive suicidal ideation"@en .
+
+# ============================================================================
+# Patient (anonymized)
+# ============================================================================
+
+ex:Patient_P00010 a prov:Agent ;
+    dcterms:identifier "P00010" ;
+    rdfs:comment "Anonymized patient identifier"@en .
+
+# ============================================================================
+# Mental Illness Schema (from 01-schemas-definition.ttl)
+# ============================================================================
+
+ex:DSM5_Schema a miao:MentalIllnessesSchema ;
+    dcterms:title "DSM-5"@en ;
+    dcterms:publisher "American Psychiatric Association" .
+
+ex:DSM5_MDD a miao:MentalIllnessCategory ;
+    dcterms:title "Major Depressive Disorder"@en ;
+    dcterms:identifier "296.2x-296.3x" ;
+    miao:isMentalIllnessCategoryOf ex:DSM5_Schema ;
+    skos:exactMatch snomed:370143000 .
+
+# ============================================================================
+# Manual Detection Activity
+# ============================================================================
+
+ex:ManualDetection_P00010_S12 a miao:ManualMentalIllnessesDetection ,
+                                prov:Activity ;
+    rdfs:label "Clinical assessment of patient P00010"@en ;
+    dcterms:created "2025-11-28T12:00:00Z"^^xsd:dateTime ;
+    
+    miao:hasInputData ex:PatientQuestionnaire_P00010 ,
+                      ex:TherapySessionNotes_P00010 ;
+    
+    miao:usedMentalIllnessesSchema ex:DSM5_Schema ;
+    prov:wasAssociatedWith ex:DrLauraMartin ;
+    prov:generated ex:MentalIllnessesSet_P00010 .
+
+# ============================================================================
+# Detection Results
+# ============================================================================
+
+ex:MentalIllnessesSet_P00010 a miao:MentalIllnessesSet ,
+                              prov:Entity ;
+    dcterms:created "2025-11-28T12:00:00Z"^^xsd:dateTime ;
+    prov:wasGeneratedBy ex:ManualDetection_P00010_S12 ;
+    prov:wasAttributedTo ex:DrLauraMartin ;
+    miao:hasMentalIllness ex:MentalIllness_MDD_P00010 .
+
+ex:MentalIllness_MDD_P00010 a miao:MentalIllness ;
+    rdfs:label "Major Depressive Disorder diagnosis for patient P00010"@en ;
+    miao:referredToMentalIllnessCategory ex:DSM5_MDD ;
+    miao:belongsToMentalIllnessesSet ex:MentalIllnessesSet_P00010 ;
+    miao:refersToSample "Patient_P00010"^^xsd:string ;
+    miao:hasMentalIllnessLevel "Moderate to Severe"^^xsd:string ;
+    
+    rdfs:comment "Diagnosis based on PHQ-9 score of 17 and clinical observation of DSM-5 criteria including depressed mood, anhedonia, sleep disturbances, fatigue, concentration difficulties, and passive suicidal ideation"@en .
+
+# ============================================================================
+# Treatment Plan (Mental Health Management Ontology)
+# ============================================================================
+
+ex:TreatmentPlan_P00010 a mhmo:TreatmentPlan ;
+    dcterms:created "2025-11-28T12:00:00Z"^^xsd:dateTime ;
+    dcterms:creator ex:DrLauraMartin ;
+    mhmo:treatsCondition ex:MentalIllness_MDD_P00010 ;
+    
+    # Treatment components
+    dcterms:hasPart ex:CBT_Intervention ,
+                    ex:PsychiatricConsultation .
+
+# ============================================================================
+# Psychotherapy Intervention (SNOMED CT + MHMO)
+# ============================================================================
+
+ex:CBT_Intervention a mhmo:PsychotherapeuticIntervention ;
+    rdfs:label "Cognitive Behavioral Therapy for Depression"@en ;
+    skos:exactMatch snomed:38678006 ;  # Cognitive behavioral therapy (procedure)
+    dcterms:description "Weekly cognitive behavioral therapy sessions focusing on behavioral activation and cognitive restructuring for depression"@en ;
+    ex:frequency "Weekly" ;
+    ex:duration "P12W"^^xsd:duration ;  # 12 weeks
+    ex:sessionLength "PT50M"^^xsd:duration .  # 50 minutes
+
+# ============================================================================
+# Psychiatric Consultation (SNOMED CT + MHMO)
+# ============================================================================
+
+ex:PsychiatricConsultation a mhmo:PsychiatricAssessment ;
+    rdfs:label "Psychiatric consultation for medication evaluation"@en ;
+    skos:exactMatch snomed:183516009 ;  # Referral to psychiatry service (procedure)
+    dcterms:description "Referral to psychiatry for evaluation of antidepressant medication options"@en ;
+    rdfs:comment "Patient previously declined medication; consultation will focus on psychoeducation and shared decision-making"@en .
+
+# ============================================================================
+# Risk Management (MHMO)
+# ============================================================================
+
+ex:RiskManagementPlan_P00010 a mhmo:RiskManagementStrategy ;
+    dcterms:created "2025-11-28T12:00:00Z"^^xsd:dateTime ;
+    mhmo:addressesRisk ex:SuicidalIdeationRisk ;
+    
+    # Safety planning
+    ex:hasSafetyComponent [
+        rdfs:label "Crisis intervention protocol" ;
+        skos:related snomed:225368008 ;  # Crisis intervention (procedure)
+        ex:emergencyContact "24/7 Crisis Hotline: 717-003-717"
+    ] .
+
+ex:SuicidalIdeationRisk a mhmo:ClinicalRisk ;
+    rdfs:label "Risk of suicidal ideation" ;
+    skos:related snomed:271594007 ;  # Suicidal ideation (finding)
+    mhmo:riskLevel "Low to Moderate" ;
+    rdfs:comment "Passive suicidal thoughts present without active plan or intent"@en .
+
+# ============================================================================
+# Follow-up Plan (MHMO)
+# ============================================================================
+
+ex:FollowUpPlan_P00010 a mhmo:FollowUpSchedule ;
+    dcterms:created "2025-11-28T12:00:00Z"^^xsd:dateTime ;
+    mhmo:monitoredCondition ex:MentalIllness_MDD_P00010 ;
+    
+    ex:hasSchedule [
+        rdfs:label "Initial intensive phase" ;
+        ex:duration "P4W"^^xsd:duration ;  # 4 weeks
+        ex:frequency "Weekly therapy sessions" ;
+        ex:assessment "PHQ-9 re-assessment at each session" ;
+        skos:related snomed:183617005  # Follow-up 1 week (finding)
+    ] ;
+    
+    ex:hasOutcomeMeasure [
+        rdfs:label "Treatment response assessment" ;
+        ex:metric "PHQ-9 score reduction of ≥50% or score <10" ;
+        ex:timepoint "P4W"^^xsd:duration
+    ] .
