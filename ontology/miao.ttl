@@ -288,7 +288,7 @@ miao:MentalIllnessCategory rdf:type owl:Class ;
                                            [ rdf:type owl:Restriction ;
                                              owl:onProperty miao:isMentalIllnessCategoryOf ;
                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                             owl:onClass miao:MentalIIlnessesSchema
+                                             owl:onClass miao:MentalIllnessesSchema
                                            ] ;
                            rdfs:comment "A concept used to represent a mental illness category that belongs to a specific schema (e.g., ontology) used to represent mental illnesses" ;
                            rdfs:label "Categoria Malattia Mentale"@it ,
