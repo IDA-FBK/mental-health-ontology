@@ -1,0 +1,185 @@
+@prefix ex: <http://example.org/miao/> .
+@prefix miao: <http://www.semanticweb.org/miao#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix snomed: <http://snomed.info/id/> .
+@prefix icd11: <http://id.who.int/icd/entity/> .
+
+# ============================================================================
+# DSM-5 Schema
+# ============================================================================
+
+ex:DSM5_Schema a miao:MentalIllnessesSchema ;
+    dcterms:title "DSM-5: Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition"@en ;
+    dcterms:publisher "American Psychiatric Association" ;
+    dcterms:created "2013"^^xsd:gYear ;
+    dcterms:description "The Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition (DSM-5), is the authoritative guide to the diagnosis of mental disorders used by healthcare professionals in the United States and much of the world."@en ;
+    miao:hasMentalIllnessCategory ex:DSM5_MDD,
+        ex:DSM5_PersistentDepressiveDisorder,
+        ex:DSM5_GAD .
+
+ex:DSM5_MDD a miao:MentalIllnessCategory ;
+    dcterms:title "Major Depressive Disorder"@en ;
+    dcterms:description "A mental health disorder characterized by persistently depressed mood or loss of interest in activities, causing significant impairment in daily life."@en ;
+    dcterms:identifier "296.2x-296.3x" ;
+    miao:isMentalIllnessCategoryOf ex:DSM5_Schema ;
+    # Mappings to other standards
+    skos:exactMatch snomed:370143000 ;  # Major depressive disorder (SNOMED CT)
+    skos:closeMatch icd11:6A70 .        # Single episode depressive disorder (ICD-11)
+
+ex:DSM5_PersistentDepressiveDisorder a miao:MentalIllnessCategory ;
+    dcterms:title "Persistent Depressive Disorder (Dysthymia)"@en ;
+    dcterms:description "A chronic form of depression with symptoms lasting at least two years in adults."@en ;
+    dcterms:identifier "300.4" ;
+    miao:isMentalIllnessCategoryOf ex:DSM5_Schema ;
+    skos:exactMatch snomed:78667006 .   # Dysthymic disorder (SNOMED CT)
+
+ex:DSM5_GAD a miao:MentalIllnessCategory ;
+    dcterms:title "Generalized Anxiety Disorder"@en ;
+    dcterms:description "Excessive anxiety and worry about various activities or events, occurring more days than not for at least six months."@en ;
+    dcterms:identifier "300.02" ;
+    miao:isMentalIllnessCategoryOf ex:DSM5_Schema ;
+    skos:exactMatch snomed:21897009 .   # Generalized anxiety disorder (SNOMED CT)
+
+# ============================================================================
+# Research Schema for Depression Severity (PHQ-9 based)
+# ============================================================================
+
+ex:DepressionSeveritySchema_Research a miao:MentalIllnessesSchema ;
+    dcterms:created "2025-12-02"^^xsd:date ;
+    dcterms:description "Ordinal taxonomy of depression severity (Minimal, Mild, Moderate, Severe) used in social media corpora and text-based computational research on depression detection. Based on PHQ-9 severity thresholds."@en ;
+    dcterms:title "Research schema for depression severity in text"@en ;
+    dcterms:source "Kroenke K, Spitzer RL, Williams JB. The PHQ-9: validity of a brief depression severity measure. J Gen Intern Med. 2001;16(9):606-13." ;
+    miao:hasMentalIllnessCategory ex:MinimalDepression,
+        ex:MildDepression,
+        ex:ModerateDepression,
+        ex:SevereDepression .
+
+ex:MinimalDepression a miao:MentalIllnessCategory ;
+    rdfs:label "Minimal Depression"@en ;
+    dcterms:description "Minimal or no depressive symptoms. PHQ-9 score range: 0-4. Indicates little to no clinical significance."@en ;
+    dcterms:identifier "0"^^xsd:integer ;
+    dcterms:title "Minimal depression"@en ;
+    miao:isMentalIllnessCategoryOf ex:DepressionSeveritySchema_Research ;
+    miao:hasScoreRange "0-4"^^xsd:string ;
+    miao:severityLevel "minimal"^^xsd:string .
+
+ex:MildDepression a miao:MentalIllnessCategory ;
+    rdfs:label "Mild Depression"@en ;
+    dcterms:description "Mild depressive symptoms. PHQ-9 score range: 5-9. May warrant watchful waiting and repeated assessment."@en ;
+    dcterms:identifier "1"^^xsd:integer ;
+    dcterms:title "Mild depression"@en ;
+    miao:isMentalIllnessCategoryOf ex:DepressionSeveritySchema_Research ;
+    miao:hasScoreRange "5-9"^^xsd:string ;
+    miao:severityLevel "mild"^^xsd:string ;
+    skos:related snomed:310495003 .     # Mild depression (SNOMED CT)
+
+ex:ModerateDepression a miao:MentalIllnessCategory ;
+    rdfs:label "Moderate Depression"@en ;
+    dcterms:description "Moderate depressive symptoms. PHQ-9 score range: 10-14. Warrants treatment plan, considering counseling, follow-up, and/or pharmacotherapy."@en ;
+    dcterms:identifier "2"^^xsd:integer ;
+    dcterms:title "Moderate depression"@en ;
+    miao:isMentalIllnessCategoryOf ex:DepressionSeveritySchema_Research ;
+    miao:hasScoreRange "10-14"^^xsd:string ;
+    miao:severityLevel "moderate"^^xsd:string ;
+    skos:related snomed:310496002 .     # Moderate depression (SNOMED CT)
+
+ex:SevereDepression a miao:MentalIllnessCategory ;
+    rdfs:label "Severe Depression"@en ;
+    dcterms:description "Severe depressive symptoms. PHQ-9 score range: 15-27 (includes moderately severe 15-19 and severe 20-27). Warrants active treatment with pharmacotherapy and/or psychotherapy."@en ;
+    dcterms:identifier "3"^^xsd:integer ;
+    dcterms:title "Severe depression"@en ;
+    miao:isMentalIllnessCategoryOf ex:DepressionSeveritySchema_Research ;
+    miao:hasScoreRange "15-27"^^xsd:string ;
+    miao:severityLevel "severe"^^xsd:string ;
+    skos:related snomed:310497006 .     # Severe depression (SNOMED CT)
+
+# ============================================================================
+# Binary Stress Classification Schema
+# ============================================================================
+
+ex:StressSchema_Binary a miao:MentalIllnessesSchema ;
+    dcterms:created "2025-12-02"^^xsd:date ;
+    dcterms:description "Binary schema for computational stress detection from text and multimodal signals. Used in social media analysis and real-time monitoring applications."@en ;
+    dcterms:title "Binary Stress Classification Schema"@en ;
+    dcterms:source "Turcan E, McKeown K. Dreaddit: A Reddit Dataset for Stress Analysis in Social Media. LOUHI 2019." ;
+    miao:hasMentalIllnessCategory ex:StressPositive,
+        ex:StressNegative .
+
+ex:StressPositive a miao:MentalIllnessCategory ;
+    rdfs:label "Stress Detected"@en ;
+    dcterms:description "Psychological stress indicators detected through linguistic markers, physiological signals, or behavioral patterns."@en ;
+    dcterms:title "Stress"@en ;
+    dcterms:identifier "1"^^xsd:integer ;
+    miao:isMentalIllnessCategoryOf ex:StressSchema_Binary ;
+    skos:related snomed:262188008 .     # Psychological stress (SNOMED CT)
+
+ex:StressNegative a miao:MentalIllnessCategory ;
+    rdfs:label "No Stress Detected"@en ;
+    dcterms:description "No psychological stress indicators detected. Subject appears to be in a normal psychological state without significant stress markers."@en ;
+    dcterms:title "No Stress"@en ;
+    dcterms:identifier "0"^^xsd:integer ;
+    miao:isMentalIllnessCategoryOf ex:StressSchema_Binary .
+
+# ============================================================================
+# Alternative Depression Schema aligned with ICD-11
+# ============================================================================
+
+ex:ICD11_DepressionSchema a miao:MentalIllnessesSchema ;
+    dcterms:created "2025-12-02"^^xsd:date ;
+    dcterms:description "Depression classification aligned with ICD-11 categories for interoperability with international health records."@en ;
+    dcterms:title "ICD-11 Aligned Depression Schema"@en ;
+    dcterms:publisher "World Health Organization" ;
+    miao:hasMentalIllnessCategory ex:ICD11_SingleEpisodeDepression,
+        ex:ICD11_RecurrentDepression .
+
+ex:ICD11_SingleEpisodeDepression a miao:MentalIllnessCategory ;
+    rdfs:label "Single Episode Depressive Disorder"@en ;
+    dcterms:title "Single Episode Depressive Disorder"@en ;
+    dcterms:description "A depressive disorder characterized by a single episode without history of prior episodes."@en ;
+    miao:isMentalIllnessCategoryOf ex:ICD11_DepressionSchema ;
+    owl:equivalentClass icd11:6A70 ;    # ICD-11 Foundation entity
+    skos:closeMatch ex:DSM5_MDD .       # Related to DSM-5 MDD
+
+ex:ICD11_RecurrentDepression a miao:MentalIllnessCategory ;
+    rdfs:label "Recurrent Depressive Disorder"@en ;
+    dcterms:title "Recurrent Depressive Disorder"@en ;
+    dcterms:description "A depressive disorder characterized by a history of at least two depressive episodes."@en ;
+    miao:isMentalIllnessCategoryOf ex:ICD11_DepressionSchema ;
+    owl:equivalentClass icd11:6A71 ;    # ICD-11 Foundation entity
+    skos:related snomed:191616009 .     # Recurrent major depressive episodes (SNOMED CT)
+
+# ============================================================================
+# Multi-label Anxiety and Depression Schema
+# ============================================================================
+
+ex:AnxietyDepressionSchema_MultiLabel a miao:MentalIllnessesSchema ;
+    dcterms:created "2025-12-02"^^xsd:date ;
+    dcterms:description "Multi-label schema enabling simultaneous classification of both anxiety and depression conditions, addressing their common comorbidity."@en ;
+    dcterms:title "Multi-label Anxiety and Depression Schema"@en ;
+    miao:hasMentalIllnessCategory ex:Depression_ML,
+        ex:Anxiety_ML,
+        ex:NoMentalIllness_ML .
+
+ex:Depression_ML a miao:MentalIllnessCategory ;
+    rdfs:label "Depression"@en ;
+    dcterms:title "Depression (Multi-label)"@en ;
+    dcterms:description "Depressive symptoms detected in multi-label classification context."@en ;
+    miao:isMentalIllnessCategoryOf ex:AnxietyDepressionSchema_MultiLabel ;
+    skos:broader ex:DSM5_MDD .
+
+ex:Anxiety_ML a miao:MentalIllnessCategory ;
+    rdfs:label "Anxiety"@en ;
+    dcterms:title "Anxiety (Multi-label)"@en ;
+    dcterms:description "Anxiety symptoms detected in multi-label classification context."@en ;
+    miao:isMentalIllnessCategoryOf ex:AnxietyDepressionSchema_MultiLabel ;
+    skos:broader ex:DSM5_GAD .
+
+ex:NoMentalIllness_ML a miao:MentalIllnessCategory ;
+    rdfs:label "No Mental Illness"@en ;
+    dcterms:title "No Mental Illness Detected"@en ;
+    dcterms:description "No mental illness indicators detected in the analyzed data."@en ;
+    miao:isMentalIllnessCategoryOf ex:AnxietyDepressionSchema_MultiLabel .
