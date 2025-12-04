@@ -1,4 +1,4 @@
-[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa] [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/IDA-FBK/mental-health-ontology/tree/main/notebook) [![HTML Documentation](https://img.shields.io/badge/Widoco-Documentation-blue)](https://ida-fbk.github.io/mental-health-ontology/documentation/html-docs/index.html)
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa] [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/IDA-FBK/mental-health-ontology/tree/main/notebook) [![HTML Documentation](https://img.shields.io/badge/Widoco-Documentation-blue)](https://ida-fbk.github.io/mental-health-ontology/documentation/html-docs/index.html)[![DOI](https://zenodo.org/badge/1016772612.svg)](https://doi.org/10.5281/zenodo.17815393)
 
 [cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
 [cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
