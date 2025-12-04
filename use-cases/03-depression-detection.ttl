@@ -8,7 +8,7 @@
 @prefix snomed: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:Evaluation_BERT_Base a mls:ModelEvaluation ;
+ex:Evaluation_BERT_Base a mls:ImplementationEvaluation ;
     dcterms:title "Evaluation: BERT_Base" ;
     mls:evaluates ex:Model_BERT_Base ;
     mls:specifiedBy ex:BERT_Base_Metric_accuracy,
@@ -16,7 +16,7 @@ ex:Evaluation_BERT_Base a mls:ModelEvaluation ;
         ex:BERT_Base_Metric_precision,
         ex:BERT_Base_Metric_recall .
 
-ex:Evaluation_BiLSTM a mls:ModelEvaluation ;
+ex:Evaluation_BiLSTM a mls:ImplementationEvaluation ;
     dcterms:title "Evaluation: BiLSTM" ;
     mls:evaluates ex:Model_BiLSTM ;
     mls:specifiedBy ex:BiLSTM_Metric_accuracy,
@@ -24,7 +24,7 @@ ex:Evaluation_BiLSTM a mls:ModelEvaluation ;
         ex:BiLSTM_Metric_precision,
         ex:BiLSTM_Metric_recall .
 
-ex:Evaluation_LogisticRegression_TF_IDF a mls:ModelEvaluation ;
+ex:Evaluation_LogisticRegression_TF_IDF a mls:ImplementationEvaluation ;
     dcterms:title "Evaluation: LogisticRegression_TF_IDF" ;
     mls:evaluates ex:Model_LogisticRegression_TF_IDF ;
     mls:specifiedBy ex:LogisticRegression_TF_IDF_Metric_accuracy,
@@ -32,7 +32,7 @@ ex:Evaluation_LogisticRegression_TF_IDF a mls:ModelEvaluation ;
         ex:LogisticRegression_TF_IDF_Metric_precision,
         ex:LogisticRegression_TF_IDF_Metric_recall .
 
-ex:Evaluation_SVM_TF_IDF a mls:ModelEvaluation ;
+ex:Evaluation_SVM_TF_IDF a mls:ImplementationEvaluation ;
     dcterms:title "Evaluation: SVM_TF_IDF" ;
     mls:evaluates ex:Model_SVM_TF_IDF ;
     mls:specifiedBy ex:SVM_TF_IDF_Metric_accuracy,
@@ -97,7 +97,7 @@ ex:Detection_BERT_Base a mls:Run,
     dcterms:description "Automatic detection run using BERT_Base model" ;
     dcterms:title "Depression Detection Run: BERT_Base" ;
     mls:hasInput ex:Depression_Severity_Dataset ;
-    mls:implements ex:Model_BERT_Base ;
+    mls:executes ex:Model_BERT_Base ;
     prov:generated ex:ResultSet_BERT_Base ;
     miao:hasInputData ex:Depression_Severity_Dataset ;
     miao:usedMentalIllnessesSchema ex:DepressionSeveritySchema_Research .
@@ -107,7 +107,7 @@ ex:Detection_BiLSTM a mls:Run,
     dcterms:description "Automatic detection run using BiLSTM model" ;
     dcterms:title "Depression Detection Run: BiLSTM" ;
     mls:hasInput ex:Depression_Severity_Dataset ;
-    mls:implements ex:Model_BiLSTM ;
+    mls:executes ex:Model_BiLSTM ;
     prov:generated ex:ResultSet_BiLSTM ;
     miao:hasInputData ex:Depression_Severity_Dataset ;
     miao:usedMentalIllnessesSchema ex:DepressionSeveritySchema_Research .
@@ -117,7 +117,7 @@ ex:Detection_LogisticRegression_TF_IDF a mls:Run,
     dcterms:description "Automatic detection run using LogisticRegression_TF_IDF model" ;
     dcterms:title "Depression Detection Run: LogisticRegression_TF_IDF" ;
     mls:hasInput ex:Depression_Severity_Dataset ;
-    mls:implements ex:Model_LogisticRegression_TF_IDF ;
+    mls:executes ex:Model_LogisticRegression_TF_IDF ;
     prov:generated ex:ResultSet_LogisticRegression_TF_IDF ;
     miao:hasInputData ex:Depression_Severity_Dataset ;
     miao:usedMentalIllnessesSchema ex:DepressionSeveritySchema_Research .
@@ -127,7 +127,7 @@ ex:Detection_SVM_TF_IDF a mls:Run,
     dcterms:description "Automatic detection run using SVM_TF_IDF model" ;
     dcterms:title "Depression Detection Run: SVM_TF_IDF" ;
     mls:hasInput ex:Depression_Severity_Dataset ;
-    mls:implements ex:Model_SVM_TF_IDF ;
+    mls:executes ex:Model_SVM_TF_IDF ;
     prov:generated ex:ResultSet_SVM_TF_IDF ;
     miao:hasInputData ex:Depression_Severity_Dataset ;
     miao:usedMentalIllnessesSchema ex:DepressionSeveritySchema_Research .
@@ -271,55 +271,60 @@ ex:SevereDepression a miao:MentalIllnessCategory ;
     skos:related snomed:310497006 ;
     miao:isMentalIllnessCategoryOf ex:DepressionSeveritySchema_Research .
 
-ex:BERT_Base_Metric_accuracy a mls:EvaluationMeasure ;
-    rdfs:label "accuracy" ;
+ex:predictiveAccuracy a mls:EvaluationMeasure .
+ex:f1score a mls:EvaluationMeasure .
+ex:recall a mls:EvaluationMeasure .
+ex:precision a mls:EvaluationMeasure .
+
+ex:BERT_Base_Metric_accuracy a mls:ModelEvaluation ;
+    mls:specifiedBy ex:predictiveAccuracy
     mls:hasValue "0.85"^^xsd:float .
 
-ex:BERT_Base_Metric_f1_score a mls:EvaluationMeasure ;
-    rdfs:label "f1_score" ;
+ex:BERT_Base_Metric_f1_score a mls:ModelEvaluation ;
+    mls:specifiedBy ex:f1score ;
     mls:hasValue "0.85"^^xsd:float .
 
-ex:BERT_Base_Metric_precision a mls:EvaluationMeasure ;
-    rdfs:label "precision" ;
+ex:BERT_Base_Metric_precision a mls:ModelEvaluation ;
+    mls:specifiedBy ex:precision ;
     mls:hasValue "0.83"^^xsd:float .
 
-ex:BERT_Base_Metric_recall a mls:EvaluationMeasure ;
-    rdfs:label "recall" ;
+ex:BERT_Base_Metric_recall a mls:ModelEvaluation ;
+    mls:specifiedBy ex:recall ;
     mls:hasValue "0.87"^^xsd:float .
 
-ex:BiLSTM_Metric_accuracy a mls:EvaluationMeasure ;
-    rdfs:label "accuracy" ;
+ex:BiLSTM_Metric_accuracy a mls:ModelEvaluation ;
+    mls:specifiedBy ex:predictiveAccuracy
     mls:hasValue "0.85"^^xsd:float .
 
-ex:BiLSTM_Metric_f1_score a mls:EvaluationMeasure ;
-    rdfs:label "f1_score" ;
+ex:BiLSTM_Metric_f1_score a mls:ModelEvaluation ;
+    mls:specifiedBy ex:f1score ;
     mls:hasValue "0.85"^^xsd:float .
 
-ex:BiLSTM_Metric_precision a mls:EvaluationMeasure ;
-    rdfs:label "precision" ;
+ex:BiLSTM_Metric_precision a mls:ModelEvaluation ;
+    mls:specifiedBy ex:precision ;
     mls:hasValue "0.83"^^xsd:float .
 
-ex:BiLSTM_Metric_recall a mls:EvaluationMeasure ;
-    rdfs:label "recall" ;
+ex:BiLSTM_Metric_recall a mls:ModelEvaluation ;
+    mls:specifiedBy ex:recall ;
     mls:hasValue "0.87"^^xsd:float .
 
-ex:LogisticRegression_TF_IDF_Metric_accuracy a mls:EvaluationMeasure ;
-    rdfs:label "accuracy" ;
+ex:LogisticRegression_TF_IDF_Metric_accuracy a mls:ModelEvaluation ;
+    mls:specifiedBy ex:predictiveAccuracy
     mls:hasValue "0.85"^^xsd:float .
 
-ex:LogisticRegression_TF_IDF_Metric_f1_score a mls:EvaluationMeasure ;
-    rdfs:label "f1_score" ;
+ex:LogisticRegression_TF_IDF_Metric_f1_score a mls:ModelEvaluation ;
+    mls:specifiedBy ex:f1score ;
     mls:hasValue "0.85"^^xsd:float .
 
-ex:LogisticRegression_TF_IDF_Metric_precision a mls:EvaluationMeasure ;
-    rdfs:label "precision" ;
+ex:LogisticRegression_TF_IDF_Metric_precision a mls:ModelEvaluation ;
+    mls:specifiedBy ex:precision ;
     mls:hasValue "0.83"^^xsd:float .
 
-ex:LogisticRegression_TF_IDF_Metric_recall a mls:EvaluationMeasure ;
-    rdfs:label "recall" ;
+ex:LogisticRegression_TF_IDF_Metric_recall a mls:ModelEvaluation ;
+    mls:specifiedBy ex:recall ;
     mls:hasValue "0.87"^^xsd:float .
 
-ex:Model_BERT_Base a mls:Model ;
+ex:Model_BERT_Base a mls:Implementation ;
     dcterms:description "BERT-base fine-tuned for depression severity classification" ;
     dcterms:title "Depression Detection: BERT_Base" ;
     mls:hasHyperParameter ex:BERT_Base_Setting_batch_size,
@@ -328,61 +333,61 @@ ex:Model_BERT_Base a mls:Model ;
         ex:BERT_Base_Setting_max_seq_length,
         ex:BERT_Base_Setting_num_epochs ;
     mls:hasImplementation ex:Implementation_BERT_Base ;
-    mls:hasQuality ex:BERT_Base_Metric_accuracy,
+    mls:hasOutput ex:BERT_Base_Metric_accuracy,
         ex:BERT_Base_Metric_f1_score,
         ex:BERT_Base_Metric_precision,
         ex:BERT_Base_Metric_recall .
 
-ex:Model_BiLSTM a mls:Model ;
+ex:Model_BiLSTM a mls:Implementation ;
     dcterms:description "Bidirectional LSTM with attention for sequence classification" ;
     dcterms:title "Depression Detection: BiLSTM" ;
     mls:hasHyperParameter ex:BiLSTM_Setting_max_features,
         ex:BiLSTM_Setting_min_df,
         ex:BiLSTM_Setting_ngram_range ;
     mls:hasImplementation ex:Implementation_BiLSTM ;
-    mls:hasQuality ex:BiLSTM_Metric_accuracy,
+    mls:hasOutput ex:BiLSTM_Metric_accuracy,
         ex:BiLSTM_Metric_f1_score,
         ex:BiLSTM_Metric_precision,
         ex:BiLSTM_Metric_recall .
 
-ex:Model_LogisticRegression_TF_IDF a mls:Model ;
+ex:Model_LogisticRegression_TF_IDF a mls:Implementation ;
     dcterms:description "Logistic Regression with TF-IDF features" ;
     dcterms:title "Depression Detection: LogisticRegression_TF_IDF" ;
     mls:hasHyperParameter ex:LogisticRegression_TF_IDF_Setting_max_features,
         ex:LogisticRegression_TF_IDF_Setting_min_df,
         ex:LogisticRegression_TF_IDF_Setting_ngram_range ;
     mls:hasImplementation ex:Implementation_LogisticRegression_TF_IDF ;
-    mls:hasQuality ex:LogisticRegression_TF_IDF_Metric_accuracy,
+    mls:hasOutput ex:LogisticRegression_TF_IDF_Metric_accuracy,
         ex:LogisticRegression_TF_IDF_Metric_f1_score,
         ex:LogisticRegression_TF_IDF_Metric_precision,
         ex:LogisticRegression_TF_IDF_Metric_recall .
 
-ex:Model_SVM_TF_IDF a mls:Model ;
+ex:Model_SVM_TF_IDF a mls:Implementation ;
     dcterms:description "Support Vector Machine with TF-IDF features" ;
     dcterms:title "Depression Detection: SVM_TF_IDF" ;
     mls:hasHyperParameter ex:SVM_TF_IDF_Setting_max_features,
         ex:SVM_TF_IDF_Setting_min_df,
         ex:SVM_TF_IDF_Setting_ngram_range ;
     mls:hasImplementation ex:Implementation_SVM_TF_IDF ;
-    mls:hasQuality ex:SVM_TF_IDF_Metric_accuracy,
+    mls:hasOutput ex:SVM_TF_IDF_Metric_accuracy,
         ex:SVM_TF_IDF_Metric_f1_score,
         ex:SVM_TF_IDF_Metric_precision,
         ex:SVM_TF_IDF_Metric_recall .
 
-ex:SVM_TF_IDF_Metric_accuracy a mls:EvaluationMeasure ;
-    rdfs:label "accuracy" ;
+ex:SVM_TF_IDF_Metric_accuracy a mls:ModelEvaluation ;
+    mls:specifiedBy ex:predictiveAccuracy
     mls:hasValue "0.85"^^xsd:float .
 
-ex:SVM_TF_IDF_Metric_f1_score a mls:EvaluationMeasure ;
-    rdfs:label "f1_score" ;
+ex:SVM_TF_IDF_Metric_f1_score a mls:ModelEvaluation ;
+    mls:specifiedBy ex:f1score ;
     mls:hasValue "0.85"^^xsd:float .
 
-ex:SVM_TF_IDF_Metric_precision a mls:EvaluationMeasure ;
-    rdfs:label "precision" ;
+ex:SVM_TF_IDF_Metric_precision a mls:ModelEvaluation ;
+    mls:specifiedBy ex:precision ;
     mls:hasValue "0.83"^^xsd:float .
 
-ex:SVM_TF_IDF_Metric_recall a mls:EvaluationMeasure ;
-    rdfs:label "recall" ;
+ex:SVM_TF_IDF_Metric_recall a mls:ModelEvaluation ;
+    mls:specifiedBy ex:recall ;
     mls:hasValue "0.87"^^xsd:float .
 
 ex:HyperParam_max_features a mls:HyperParameter ;
@@ -415,7 +420,7 @@ ex:Depression_Severity_Dataset a mls:Dataset ;
         ex:Feature_SentimentScore,
         ex:Feature_TextContent,
         ex:Feature_TextLength ;
-    mls:hasQuality ex:DataChar_AverageTextLength,
+    mls:hasOutput ex:DataChar_AverageTextLength,
         ex:DataChar_ClassBalance,
         ex:DataChar_NumberOfClasses,
         ex:DataChar_NumberOfInstances .

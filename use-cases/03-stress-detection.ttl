@@ -8,7 +8,7 @@
 @prefix snomed: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:Evaluation_BERT_Base a mls:ModelEvaluation ;
+ex:Evaluation_BERT_Base a mls:ImplementationEvaluation ;
     dcterms:title "Evaluation: BERT_Base" ;
     mls:evaluates ex:Model_BERT_Base ;
     mls:specifiedBy ex:BERT_Base_Metric_accuracy,
@@ -16,7 +16,7 @@ ex:Evaluation_BERT_Base a mls:ModelEvaluation ;
         ex:BERT_Base_Metric_precision,
         ex:BERT_Base_Metric_recall .
 
-ex:Evaluation_BiLSTM_Attention a mls:ModelEvaluation ;
+ex:Evaluation_BiLSTM_Attention a mls:ImplementationEvaluation ;
     dcterms:title "Evaluation: BiLSTM_Attention" ;
     mls:evaluates ex:Model_BiLSTM_Attention ;
     mls:specifiedBy ex:BiLSTM_Attention_Metric_accuracy,
@@ -24,7 +24,7 @@ ex:Evaluation_BiLSTM_Attention a mls:ModelEvaluation ;
         ex:BiLSTM_Attention_Metric_precision,
         ex:BiLSTM_Attention_Metric_recall .
 
-ex:Evaluation_RandomForest_TF_IDF a mls:ModelEvaluation ;
+ex:Evaluation_RandomForest_TF_IDF a mls:ImplementationEvaluation ;
     dcterms:title "Evaluation: RandomForest_TF_IDF" ;
     mls:evaluates ex:Model_RandomForest_TF_IDF ;
     mls:specifiedBy ex:RandomForest_TF_IDF_Metric_accuracy,
@@ -32,7 +32,7 @@ ex:Evaluation_RandomForest_TF_IDF a mls:ModelEvaluation ;
         ex:RandomForest_TF_IDF_Metric_precision,
         ex:RandomForest_TF_IDF_Metric_recall .
 
-ex:Evaluation_RoBERTa a mls:ModelEvaluation ;
+ex:Evaluation_RoBERTa a mls:ImplementationEvaluation ;
     dcterms:title "Evaluation: RoBERTa" ;
     mls:evaluates ex:Model_RoBERTa ;
     mls:specifiedBy ex:RoBERTa_Metric_accuracy,
@@ -40,7 +40,7 @@ ex:Evaluation_RoBERTa a mls:ModelEvaluation ;
         ex:RoBERTa_Metric_precision,
         ex:RoBERTa_Metric_recall .
 
-ex:Evaluation_SVM_TF_IDF a mls:ModelEvaluation ;
+ex:Evaluation_SVM_TF_IDF a mls:ImplementationEvaluation ;
     dcterms:title "Evaluation: SVM_TF_IDF" ;
     mls:evaluates ex:Model_SVM_TF_IDF ;
     mls:specifiedBy ex:SVM_TF_IDF_Metric_accuracy,
@@ -96,7 +96,7 @@ ex:Detection_BERT_Base a mls:Run,
     dcterms:description "Automatic stress detection using BERT_Base" ;
     dcterms:title "Stress Detection Run: BERT_Base" ;
     mls:hasInput ex:Stress_Detection_Dataset ;
-    mls:implements ex:Model_BERT_Base ;
+    mls:executes ex:Model_BERT_Base ;
     prov:generated ex:ResultSet_BERT_Base ;
     miao:hasInputData ex:Stress_Detection_Dataset ;
     miao:usedMentalIllnessesSchema ex:StressSchema_Binary .
@@ -106,7 +106,7 @@ ex:Detection_BiLSTM_Attention a mls:Run,
     dcterms:description "Automatic stress detection using BiLSTM_Attention" ;
     dcterms:title "Stress Detection Run: BiLSTM_Attention" ;
     mls:hasInput ex:Stress_Detection_Dataset ;
-    mls:implements ex:Model_BiLSTM_Attention ;
+    mls:executes ex:Model_BiLSTM_Attention ;
     prov:generated ex:ResultSet_BiLSTM_Attention ;
     miao:hasInputData ex:Stress_Detection_Dataset ;
     miao:usedMentalIllnessesSchema ex:StressSchema_Binary .
@@ -116,7 +116,7 @@ ex:Detection_RandomForest_TF_IDF a mls:Run,
     dcterms:description "Automatic stress detection using RandomForest_TF_IDF" ;
     dcterms:title "Stress Detection Run: RandomForest_TF_IDF" ;
     mls:hasInput ex:Stress_Detection_Dataset ;
-    mls:implements ex:Model_RandomForest_TF_IDF ;
+    mls:executes ex:Model_RandomForest_TF_IDF ;
     prov:generated ex:ResultSet_RandomForest_TF_IDF ;
     miao:hasInputData ex:Stress_Detection_Dataset ;
     miao:usedMentalIllnessesSchema ex:StressSchema_Binary .
@@ -126,7 +126,7 @@ ex:Detection_RoBERTa a mls:Run,
     dcterms:description "Automatic stress detection using RoBERTa" ;
     dcterms:title "Stress Detection Run: RoBERTa" ;
     mls:hasInput ex:Stress_Detection_Dataset ;
-    mls:implements ex:Model_RoBERTa ;
+    mls:executes ex:Model_RoBERTa ;
     prov:generated ex:ResultSet_RoBERTa ;
     miao:hasInputData ex:Stress_Detection_Dataset ;
     miao:usedMentalIllnessesSchema ex:StressSchema_Binary .
@@ -136,7 +136,7 @@ ex:Detection_SVM_TF_IDF a mls:Run,
     dcterms:description "Automatic stress detection using SVM_TF_IDF" ;
     dcterms:title "Stress Detection Run: SVM_TF_IDF" ;
     mls:hasInput ex:Stress_Detection_Dataset ;
-    mls:implements ex:Model_SVM_TF_IDF ;
+    mls:executes ex:Model_SVM_TF_IDF ;
     prov:generated ex:ResultSet_SVM_TF_IDF ;
     miao:hasInputData ex:Stress_Detection_Dataset ;
     miao:usedMentalIllnessesSchema ex:StressSchema_Binary .
@@ -272,35 +272,35 @@ ex:StressPositive a miao:MentalIllnessCategory ;
     miao:isMentalIllnessCategoryOf ex:StressSchema_Binary .
 
 ex:BERT_Base_Metric_accuracy a mls:EvaluationMeasure ;
-    rdfs:label "accuracy" ;
+    mls:specifiedBy ex:predictiveAccuracy
     mls:hasValue "0.82"^^xsd:float .
 
 ex:BERT_Base_Metric_f1_score a mls:EvaluationMeasure ;
-    rdfs:label "f1_score" ;
+    mls:specifiedBy ex:f1score ;
     mls:hasValue "0.82"^^xsd:float .
 
 ex:BERT_Base_Metric_precision a mls:EvaluationMeasure ;
-    rdfs:label "precision" ;
+    mls:specifiedBy ex:precision ;
     mls:hasValue "0.81"^^xsd:float .
 
 ex:BERT_Base_Metric_recall a mls:EvaluationMeasure ;
-    rdfs:label "recall" ;
+    mls:specifiedBy ex:recall ;
     mls:hasValue "0.84"^^xsd:float .
 
 ex:BiLSTM_Attention_Metric_accuracy a mls:EvaluationMeasure ;
-    rdfs:label "accuracy" ;
+    mls:specifiedBy ex:predictiveAccuracy
     mls:hasValue "0.82"^^xsd:float .
 
 ex:BiLSTM_Attention_Metric_f1_score a mls:EvaluationMeasure ;
-    rdfs:label "f1_score" ;
+    mls:specifiedBy ex:f1score ;
     mls:hasValue "0.82"^^xsd:float .
 
 ex:BiLSTM_Attention_Metric_precision a mls:EvaluationMeasure ;
-    rdfs:label "precision" ;
+    mls:specifiedBy ex:precision ;
     mls:hasValue "0.81"^^xsd:float .
 
 ex:BiLSTM_Attention_Metric_recall a mls:EvaluationMeasure ;
-    rdfs:label "recall" ;
+    mls:specifiedBy ex:recall ;
     mls:hasValue "0.84"^^xsd:float .
 
 ex:HyperParam_batch_size a mls:HyperParameter ;
@@ -315,7 +315,7 @@ ex:HyperParam_max_seq_length a mls:HyperParameter ;
 ex:HyperParam_num_epochs a mls:HyperParameter ;
     rdfs:label "num_epochs" .
 
-ex:Model_BERT_Base a mls:Model ;
+ex:Model_BERT_Base a mls:Implementation ;
     dcterms:description "BERT-base fine-tuned for binary stress classification" ;
     dcterms:title "Stress Detection: BERT_Base" ;
     mls:hasHyperParameter ex:BERT_Base_Setting_batch_size,
@@ -323,36 +323,36 @@ ex:Model_BERT_Base a mls:Model ;
         ex:BERT_Base_Setting_max_seq_length,
         ex:BERT_Base_Setting_num_epochs ;
     mls:hasImplementation ex:Implementation_BERT_Base ;
-    mls:hasQuality ex:BERT_Base_Metric_accuracy,
+    mls:hasOutput ex:BERT_Base_Metric_accuracy,
         ex:BERT_Base_Metric_f1_score,
         ex:BERT_Base_Metric_precision,
         ex:BERT_Base_Metric_recall .
 
-ex:Model_BiLSTM_Attention a mls:Model ;
+ex:Model_BiLSTM_Attention a mls:Implementation ;
     dcterms:description "Bidirectional LSTM with attention mechanism" ;
     dcterms:title "Stress Detection: BiLSTM_Attention" ;
     mls:hasHyperParameter ex:BiLSTM_Attention_Setting_max_features,
         ex:BiLSTM_Attention_Setting_min_df,
         ex:BiLSTM_Attention_Setting_ngram_range ;
     mls:hasImplementation ex:Implementation_BiLSTM_Attention ;
-    mls:hasQuality ex:BiLSTM_Attention_Metric_accuracy,
+    mls:hasOutput ex:BiLSTM_Attention_Metric_accuracy,
         ex:BiLSTM_Attention_Metric_f1_score,
         ex:BiLSTM_Attention_Metric_precision,
         ex:BiLSTM_Attention_Metric_recall .
 
-ex:Model_RandomForest_TF_IDF a mls:Model ;
+ex:Model_RandomForest_TF_IDF a mls:Implementation ;
     dcterms:description "Random Forest classifier with TF-IDF features" ;
     dcterms:title "Stress Detection: RandomForest_TF_IDF" ;
     mls:hasHyperParameter ex:RandomForest_TF_IDF_Setting_max_features,
         ex:RandomForest_TF_IDF_Setting_min_df,
         ex:RandomForest_TF_IDF_Setting_ngram_range ;
     mls:hasImplementation ex:Implementation_RandomForest_TF_IDF ;
-    mls:hasQuality ex:RandomForest_TF_IDF_Metric_accuracy,
+    mls:hasOutput ex:RandomForest_TF_IDF_Metric_accuracy,
         ex:RandomForest_TF_IDF_Metric_f1_score,
         ex:RandomForest_TF_IDF_Metric_precision,
         ex:RandomForest_TF_IDF_Metric_recall .
 
-ex:Model_RoBERTa a mls:Model ;
+ex:Model_RoBERTa a mls:Implementation ;
     dcterms:description "RoBERTa model fine-tuned for stress detection from text" ;
     dcterms:title "Stress Detection: RoBERTa" ;
     mls:hasHyperParameter ex:RoBERTa_Setting_batch_size,
@@ -360,69 +360,74 @@ ex:Model_RoBERTa a mls:Model ;
         ex:RoBERTa_Setting_max_seq_length,
         ex:RoBERTa_Setting_num_epochs ;
     mls:hasImplementation ex:Implementation_RoBERTa ;
-    mls:hasQuality ex:RoBERTa_Metric_accuracy,
+    mls:hasOutput ex:RoBERTa_Metric_accuracy,
         ex:RoBERTa_Metric_f1_score,
         ex:RoBERTa_Metric_precision,
         ex:RoBERTa_Metric_recall .
 
-ex:Model_SVM_TF_IDF a mls:Model ;
+ex:Model_SVM_TF_IDF a mls:Implementation ;
     dcterms:description "Support Vector Machine with TF-IDF features" ;
     dcterms:title "Stress Detection: SVM_TF_IDF" ;
     mls:hasHyperParameter ex:SVM_TF_IDF_Setting_max_features,
         ex:SVM_TF_IDF_Setting_min_df,
         ex:SVM_TF_IDF_Setting_ngram_range ;
     mls:hasImplementation ex:Implementation_SVM_TF_IDF ;
-    mls:hasQuality ex:SVM_TF_IDF_Metric_accuracy,
+    mls:hasOutput ex:SVM_TF_IDF_Metric_accuracy,
         ex:SVM_TF_IDF_Metric_f1_score,
         ex:SVM_TF_IDF_Metric_precision,
         ex:SVM_TF_IDF_Metric_recall .
 
-ex:RandomForest_TF_IDF_Metric_accuracy a mls:EvaluationMeasure ;
-    rdfs:label "accuracy" ;
+ex:predictiveAccuracy a mls:EvaluationMeasure .
+ex:f1score a mls:EvaluationMeasure .
+ex:recall a mls:EvaluationMeasure .
+ex:precision a mls:EvaluationMeasure .
+
+ex:RandomForest_TF_IDF_Metric_accuracy a mls:ModelEvaluation ;
+    mls:specifiedBy ex:predictiveAccuracy ;
     mls:hasValue "0.82"^^xsd:float .
 
-ex:RandomForest_TF_IDF_Metric_f1_score a mls:EvaluationMeasure ;
-    rdfs:label "f1_score" ;
+ex:RandomForest_TF_IDF_Metric_f1_score a mls:ModelEvaluation ;
+    mls:specifiedBy ex:f1score ;
     mls:hasValue "0.82"^^xsd:float .
 
-ex:RandomForest_TF_IDF_Metric_precision a mls:EvaluationMeasure ;
-    rdfs:label "precision" ;
+ex:RandomForest_TF_IDF_Metric_precision a mls:ModelEvaluation ;
+    mls:specifiedBy ex:precision ;
     mls:hasValue "0.81"^^xsd:float .
 
-ex:RandomForest_TF_IDF_Metric_recall a mls:EvaluationMeasure ;
-    rdfs:label "recall" ;
+ex:RandomForest_TF_IDF_Metric_recall a mls:ModelEvaluation ;
+    mls:specifiedBy ex:recall ;
     mls:hasValue "0.84"^^xsd:float .
 
-ex:RoBERTa_Metric_accuracy a mls:EvaluationMeasure ;
-    rdfs:label "accuracy" ;
+ex:RoBERTa_Metric_accuracy a mls:ModelEvaluation ;
+    mls:specifiedBy ex:predictiveAccuracy ;
     mls:hasValue "0.82"^^xsd:float .
 
-ex:RoBERTa_Metric_f1_score a mls:EvaluationMeasure ;
-    rdfs:label "f1_score" ;
+ex:RoBERTa_Metric_f1_score a mls:ModelEvaluation ;
+    mls:specifiedBy ex:f1score ;
     mls:hasValue "0.82"^^xsd:float .
 
-ex:RoBERTa_Metric_precision a mls:EvaluationMeasure ;
-    rdfs:label "precision" ;
+ex:RoBERTa_Metric_precision a mls:ModelEvaluation ;
+    mls:specifiedBy ex:precision ;
     mls:hasValue "0.81"^^xsd:float .
 
-ex:RoBERTa_Metric_recall a mls:EvaluationMeasure ;
-    rdfs:label "recall" ;
+ex:RoBERTa_Metric_recall a mls:ModelEvaluation ;
+    mls:specifiedBy ex:recall ;
     mls:hasValue "0.84"^^xsd:float .
 
-ex:SVM_TF_IDF_Metric_accuracy a mls:EvaluationMeasure ;
-    rdfs:label "accuracy" ;
+ex:SVM_TF_IDF_Metric_accuracy a mls:ModelEvaluation ;
+    mls:specifiedBy ex:predictiveAccuracy ;
     mls:hasValue "0.82"^^xsd:float .
 
-ex:SVM_TF_IDF_Metric_f1_score a mls:EvaluationMeasure ;
-    rdfs:label "f1_score" ;
+ex:SVM_TF_IDF_Metric_f1_score a mls:ModelEvaluation ;
+    mls:specifiedBy ex:f1score ;
     mls:hasValue "0.82"^^xsd:float .
 
-ex:SVM_TF_IDF_Metric_precision a mls:EvaluationMeasure ;
-    rdfs:label "precision" ;
+ex:SVM_TF_IDF_Metric_precision a mls:ModelEvaluation ;
+    mls:specifiedBy ex:precision ;
     mls:hasValue "0.81"^^xsd:float .
 
-ex:SVM_TF_IDF_Metric_recall a mls:EvaluationMeasure ;
-    rdfs:label "recall" ;
+ex:SVM_TF_IDF_Metric_recall a mls:ModelEvaluation ;
+    mls:specifiedBy ex:recall ;
     mls:hasValue "0.84"^^xsd:float .
 
 ex:HyperParam_max_features a mls:HyperParameter ;
@@ -451,7 +456,7 @@ ex:Stress_Detection_Dataset a mls:Dataset ;
         ex:Feature_PhysiologicalMarkers,
         ex:Feature_TemporalUrgency,
         ex:Feature_TextContent ;
-    mls:hasQuality ex:DataChar_NumberOfClasses,
+    mls:hasOutput ex:DataChar_NumberOfClasses,
         ex:DataChar_NumberOfInstances,
         ex:DataChar_StressPrevalence .
 
