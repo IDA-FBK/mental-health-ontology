@@ -1,4 +1,4 @@
-# Mental Illness Detection Ontology Requirements & Competency Questions
+# Requirements & Competency Questions
 
 This document provides the requirements and competency questions (CQs) guiding the design of the MIAO ontology.  
 The ontology is intended to unify representations of human and AI driven mental illness detection, ensuring semantic interoperability and enabling explainable analysis of detection results.
@@ -69,6 +69,6 @@ These requirements and CQs are operationalized through example RDF/Turtle datase
 | `ex1_manual.ttl` | Manual diagnosis by a clinical expert using DSM-5 and patient-provided data |
 | `ex2_automatic.ttl` | Automatic detection using ML/AI models (BERT, GPT-4, LSTM, Multi-Modal Transformer) |
 
-SPARQL queries that answer the competency questions available at [Google Coolab Notebook](https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/notebook)
+SPARQL queries that answer the competency questions available at [Google Coolab Notebook](https://github.com/IDA-FBK/mental-health-ontology/tree/main/notebook)
 
 
