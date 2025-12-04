@@ -241,7 +241,7 @@ ex:recall a mls:EvaluationMeasure .
 ex:precision a mls:EvaluationMeasure .
 
 ex:BERT_Base_Metric_accuracy a mls:ModelEvaluation ;
-    mls:specifiedBy ex:predictiveAccuracy
+    mls:specifiedBy ex:predictiveAccuracy ;
     mls:hasValue "0.85"^^xsd:float .
 
 ex:BERT_Base_Metric_f1_score a mls:ModelEvaluation ;
@@ -257,7 +257,7 @@ ex:BERT_Base_Metric_recall a mls:ModelEvaluation ;
     mls:hasValue "0.87"^^xsd:float .
 
 ex:BiLSTM_Metric_accuracy a mls:ModelEvaluation ;
-    mls:specifiedBy ex:predictiveAccuracy
+    mls:specifiedBy ex:predictiveAccuracy ;
     mls:hasValue "0.85"^^xsd:float .
 
 ex:BiLSTM_Metric_f1_score a mls:ModelEvaluation ;
@@ -273,7 +273,7 @@ ex:BiLSTM_Metric_recall a mls:ModelEvaluation ;
     mls:hasValue "0.87"^^xsd:float .
 
 ex:LogisticRegression_TF_IDF_Metric_accuracy a mls:ModelEvaluation ;
-    mls:specifiedBy ex:predictiveAccuracy
+    mls:specifiedBy ex:predictiveAccuracy ;
     mls:hasValue "0.85"^^xsd:float .
 
 ex:LogisticRegression_TF_IDF_Metric_f1_score a mls:ModelEvaluation ;
@@ -319,7 +319,7 @@ ex:Model_SVM_TF_IDF a mls:Implementation ;
         ex:SVM_TF_IDF_Setting_ngram_range .
 
 ex:SVM_TF_IDF_Metric_accuracy a mls:ModelEvaluation ;
-    mls:specifiedBy ex:predictiveAccuracy
+    mls:specifiedBy ex:predictiveAccuracy ;
     mls:hasValue "0.85"^^xsd:float .
 
 ex:SVM_TF_IDF_Metric_f1_score a mls:ModelEvaluation ;
