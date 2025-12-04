@@ -1,7 +1,7 @@
 # Mental Illness Detection Ontology Examples
 
-This folder provides examples of representing **mental illness detection activities** using MIAO, including both **manual** and **automatic detection**. These examples are used to answer [competency questions](https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/reqs%26cqs), 
-implemented in a [google colab notebook](https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/notebook), demonstrating how mental illness detection data can be queried and analyzed.
+This folder provides examples of representing **mental illness detection activities** using MIAO, including both **manual** and **automatic detection**. These examples are used to answer [competency questions](https://github.com/IDA-FBK/mental-health-ontology/tree/main/reqs%26cqs), 
+implemented in a [google colab notebook](https://github.com/IDA-FBK/mental-health-ontology/tree/main/notebook), demonstrating how mental illness detection data can be queried and analyzed.
 This folder contains two examples:
 
 1. `ex1-manual.ttl` – manual detection by a clinical expert  
@@ -90,6 +90,6 @@ All models are evaluated using **predictive accuracy** (`mls:EvaluationMeasure`)
 
 > **Interact with those files in the Notebook:**
 > 
-><a href="https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/notebook" style="text-decoration: none;">
+><a href="https://github.com/IDA-FBK/mental-health-ontology/tree/main/notebook" style="text-decoration: none;">
 >  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
 ></a>
