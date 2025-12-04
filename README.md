@@ -1,4 +1,4 @@
-[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa] [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/notebook) [![HTML Documentation](https://img.shields.io/badge/Widoco-Documentation-blue)](https://ida-fbk.github.io/mental-health-ontology/documentation/html-docs/index.html)
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa] [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/IDA-FBK/mental-health-ontology/tree/main/notebook) [![HTML Documentation](https://img.shields.io/badge/Widoco-Documentation-blue)](https://ida-fbk.github.io/mental-health-ontology/documentation/html-docs/index.html)
 
 [cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
 [cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
@@ -32,7 +32,7 @@ The development of the MIAO schema follows a 4-step procedure:
    (**NFR<sub>s</sub>**) requirements that the ontology should satisfy. These requirements provide guidance for the initial high-level conceptualization
    of the ontology. Based on these requirements, we also defined a set of
    competency questions (**CQ<sub>s</sub>**) to further refine the scope and intended use of the
-   ontology (see [REQs&CQs](https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/reqs%26cqs)).
+   ontology (see [REQs&CQs](https://github.com/IDA-FBK/mental-health-ontology/tree/main/reqs%26cqs)).
 
 3. **Construction**
      
@@ -106,11 +106,11 @@ MIAO integrates:
 
 ## 🚀 Google Colab Notebook
 
-We have implemented a Python **Colab Notebook** showing how to interact with MIAO ontology by performing SPARQL queries based on the CQ<sub>s</sub> of each REQ ([REQs&CQs](https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/reqs%26cqs)). 
+We have implemented a Python **Colab Notebook** showing how to interact with MIAO ontology by performing SPARQL queries based on the CQ<sub>s</sub> of each REQ ([REQs&CQs](https://github.com/IDA-FBK/mental-health-ontology/tree/main/reqs%26cqs)). 
 
 Click below to access the interactive notebook:
 
-<a href="https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/notebook" style="text-decoration: none;">
+<a href="https://github.com/IDA-FBK/mental-health-ontology/tree/main/notebook" style="text-decoration: none;">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
 </a>
 
@@ -118,13 +118,14 @@ Click below to access the interactive notebook:
 
 > **⚠️ Important**
 > 
-> To load and run the notebook correctly, please follow the instructions in the [README.md](https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/notebook/README.md).
+> To load and run the notebook correctly, please follow the instructions in the [README.md](https://github.com/IDA-FBK/mental-health-ontology/tree/main/notebook/README.md).
 
 
 ---
 > [!NOTE]  
 > - For more detailed information, please refer to the paper.
 > - Two Turtle files showing how to model manual and automatic mental illness detection activities using MIAO are available [here](/examples/) (also used in the notebook).
+> - Use Cases are available [here](/use-cases/)
 
 ## Authors
 - Gianluca Apriceno: apriceno@fbk.eu
