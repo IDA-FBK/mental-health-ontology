@@ -1,0 +1,29 @@
+PREFIX miao: <https://w3id.org/miao#>
+PREFIX mls: <http://www.w3.org/ns/mls#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX snomed: <http://snomed.info/id/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+# ============================================================================
+# QUERY 1: Cross-dataset Multi-label Annotation
+# ============================================================================
+# Retrieve samples with both high-confidence stress and moderate/severe depression
+# Use case: Studying stress-depression comorbidity patterns
+
+SELECT ?sample ?stressConfidence ?depCategory
+WHERE {
+  ?stressIllness miao:referredToMentalIllnessCategory ex:StressPositive ;
+                 miao:hasMentalIllnessDetectionConfidence ?stressConfidence ;
+                 miao:refersToSample ?sample .
+
+  ?depIllness miao:referredToMentalIllnessCategory ?depCategory ;
+              miao:refersToSample ?sample .
+
+  VALUES ?depCategory { ex:ModerateDepression ex:SevereDepression }
+  FILTER (?stressConfidence >= 0.80)
+}
+ORDER BY DESC(?stressConfidence)

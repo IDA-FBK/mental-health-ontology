@@ -201,27 +201,32 @@ ex:RandomForest_TF_IDF_Setting_ngram_range a mls:HyperParameterSetting ;
 ex:ResultSet_BERT_Base a prov:Entity,
         miao:MentalIllnessesSet ;
     dcterms:title "Stress Detection Results: BERT_Base" ;
-    prov:wasGeneratedBy ex:Detection_BERT_Base .
+    prov:wasGeneratedBy ex:Detection_BERT_Base ;
+    miao:hasMentalIllness ex:Stress_Sample001, ex:NoStress_Sample003 .
 
 ex:ResultSet_BiLSTM_Attention a prov:Entity,
         miao:MentalIllnessesSet ;
     dcterms:title "Stress Detection Results: BiLSTM_Attention" ;
-    prov:wasGeneratedBy ex:Detection_BiLSTM_Attention .
+    prov:wasGeneratedBy ex:Detection_BiLSTM_Attention ;
+    miao:hasMentalIllness ex:Stress_Sample005 .
 
 ex:ResultSet_RandomForest_TF_IDF a prov:Entity,
         miao:MentalIllnessesSet ;
     dcterms:title "Stress Detection Results: RandomForest_TF_IDF" ;
-    prov:wasGeneratedBy ex:Detection_RandomForest_TF_IDF .
+    prov:wasGeneratedBy ex:Detection_RandomForest_TF_IDF ;
+    miao:hasMentalIllness ex:Stress_Sample007 .
 
 ex:ResultSet_RoBERTa a prov:Entity,
         miao:MentalIllnessesSet ;
     dcterms:title "Stress Detection Results: RoBERTa" ;
-    prov:wasGeneratedBy ex:Detection_RoBERTa .
+    prov:wasGeneratedBy ex:Detection_RoBERTa ;
+    miao:hasMentalIllness ex:NoStress_Sample009 .
 
 ex:ResultSet_SVM_TF_IDF a prov:Entity,
         miao:MentalIllnessesSet ;
     dcterms:title "Stress Detection Results: SVM_TF_IDF" ;
-    prov:wasGeneratedBy ex:Detection_SVM_TF_IDF .
+    prov:wasGeneratedBy ex:Detection_SVM_TF_IDF ;
+    miao:hasMentalIllness ex:Stress_Sample001 .
 
 ex:RoBERTa_Setting_batch_size a mls:HyperParameterSetting ;
     mls:hasValue 16 ;
@@ -450,3 +455,30 @@ ex:Stress_Detection_Dataset a mls:Dataset ;
         ex:DataChar_NumberOfInstances,
         ex:DataChar_StressPrevalence .
 
+
+ex:Stress rdfs:subClassOf miao:MentalIllness .
+
+ex:Stress_Sample001 a ex:Stress ;
+    miao:referredToMentalIllnessCategory ex:StressPositive ;
+    miao:hasMentalIllnessDetectionConfidence "0.89"^^xsd:float ;
+    miao:refersToSample "text_sample_001" .
+
+ex:Stress_Sample005 a ex:Stress ;
+    miao:referredToMentalIllnessCategory ex:StressPositive ;
+    miao:hasMentalIllnessDetectionConfidence "0.76"^^xsd:float ;
+    miao:refersToSample "text_sample_005" .
+
+ex:Stress_Sample007 a ex:Stress ;
+    miao:referredToMentalIllnessCategory ex:StressPositive ;
+    miao:hasMentalIllnessDetectionConfidence "0.81"^^xsd:float ;
+    miao:refersToSample "text_sample_007" .
+
+ex:NoStress_Sample003 a ex:Stress ;
+    miao:referredToMentalIllnessCategory ex:StressNegative ;
+    miao:hasMentalIllnessDetectionConfidence "0.92"^^xsd:float ;
+    miao:refersToSample "text_sample_003" .
+
+ex:NoStress_Sample009 a ex:Stress ;
+    miao:referredToMentalIllnessCategory ex:StressNegative ;
+    miao:hasMentalIllnessDetectionConfidence "0.88"^^xsd:float ;
+    miao:refersToSample "text_sample_009" .

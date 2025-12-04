@@ -226,22 +226,30 @@ ex:ModerateDepression a miao:MentalIllnessCategory ;
 ex:ResultSet_BERT_Base a prov:Entity,
         miao:MentalIllnessesSet ;
     dcterms:title "Detection Results: BERT_Base" ;
-    prov:wasGeneratedBy ex:Detection_BERT_Base .
+    prov:wasGeneratedBy ex:Detection_BERT_Base ;
+    miao:hasMentalIllness ex:Depression_Sample001, ex:Depression_Sample005 .
+
 
 ex:ResultSet_BiLSTM a prov:Entity,
         miao:MentalIllnessesSet ;
     dcterms:title "Detection Results: BiLSTM" ;
-    prov:wasGeneratedBy ex:Detection_BiLSTM .
+    prov:wasGeneratedBy ex:Detection_BiLSTM ;
+    miao:hasMentalIllness ex:Depression_Sample003, ex:Depression_Sample010 .
+
 
 ex:ResultSet_LogisticRegression_TF_IDF a prov:Entity,
         miao:MentalIllnessesSet ;
     dcterms:title "Detection Results: LogisticRegression_TF_IDF" ;
-    prov:wasGeneratedBy ex:Detection_LogisticRegression_TF_IDF .
+    prov:wasGeneratedBy ex:Detection_LogisticRegression_TF_IDF ;
+    miao:hasMentalIllness ex:Depression_Sample008 .
+
 
 ex:ResultSet_SVM_TF_IDF a prov:Entity,
         miao:MentalIllnessesSet ;
     dcterms:title "Detection Results: SVM_TF_IDF" ;
-    prov:wasGeneratedBy ex:Detection_SVM_TF_IDF .
+    prov:wasGeneratedBy ex:Detection_SVM_TF_IDF ;
+    miao:hasMentalIllness ex:Depression_Sample005 .
+
 
 ex:SVM_TF_IDF_Setting_max_features a mls:HyperParameterSetting ;
     mls:hasValue 10000 ;
@@ -412,3 +420,30 @@ ex:Depression_Severity_Dataset a mls:Dataset ;
         ex:DataChar_NumberOfClasses,
         ex:DataChar_NumberOfInstances .
 
+
+ex:Depression rdfs:subClassOf miao:MentalIllness .
+
+ex:Depression_Sample001 a ex:Depression ;
+    miao:referredToMentalIllnessCategory ex:MinimalDepression ;
+    miao:hasMentalIllnessDetectionConfidence "0.91"^^xsd:float ;
+    miao:refersToSample "text_sample_001" .
+
+ex:Depression_Sample003 a ex:Depression ;
+    miao:referredToMentalIllnessCategory ex:MildDepression ;
+    miao:hasMentalIllnessDetectionConfidence "0.78"^^xsd:float ;
+    miao:refersToSample "text_sample_003" .
+
+ex:Depression_Sample005 a ex:Depression ;
+    miao:referredToMentalIllnessCategory ex:ModerateDepression ;
+    miao:hasMentalIllnessDetectionConfidence "0.73"^^xsd:float ;
+    miao:refersToSample "text_sample_005" .
+
+ex:Depression_Sample008 a ex:Depression ;
+    miao:referredToMentalIllnessCategory ex:ModerateDepression ;
+    miao:hasMentalIllnessDetectionConfidence "0.81"^^xsd:float ;
+    miao:refersToSample "text_sample_008" .
+
+ex:Depression_Sample010 a ex:Depression ;
+    miao:referredToMentalIllnessCategory ex:SevereDepression ;
+    miao:hasMentalIllnessDetectionConfidence "0.86"^^xsd:float ;
+    miao:refersToSample "text_sample_010" .
