@@ -51,8 +51,7 @@ ex:DataChar_StressPrevalence a mls:DataCharacteristic ;
     dcterms:description "Proportion with stress indicators" ;
     mls:hasValue "0.5"^^xsd:float .
 
-ex:Detection_BERT_Base a mls:Run,
-        miao:AutomaticMentalIllnessesDetection ;
+ex:Detection_BERT_Base a miao:AutomaticMentalIllnessesDetection ;
     dcterms:description "Automatic stress detection using BERT_Base" ;
     dcterms:title "Stress Detection Run: BERT_Base" ;
     mls:hasInput ex:Stress_Detection_Dataset ;
@@ -65,8 +64,7 @@ ex:Detection_BERT_Base a mls:Run,
         ex:BERT_Base_Metric_recall ;
     miao:usedMentalIllnessesSchema ex:StressSchema_Binary .
 
-ex:Detection_BiLSTM_Attention a mls:Run,
-        miao:AutomaticMentalIllnessesDetection ;
+ex:Detection_BiLSTM_Attention a miao:AutomaticMentalIllnessesDetection ;
     dcterms:description "Automatic stress detection using BiLSTM_Attention" ;
     dcterms:title "Stress Detection Run: BiLSTM_Attention" ;
     mls:hasInput ex:Stress_Detection_Dataset ;
@@ -79,8 +77,7 @@ ex:Detection_BiLSTM_Attention a mls:Run,
         ex:BiLSTM_Attention_Metric_recall ;
     miao:usedMentalIllnessesSchema ex:StressSchema_Binary .
 
-ex:Detection_RandomForest_TF_IDF a mls:Run,
-        miao:AutomaticMentalIllnessesDetection ;
+ex:Detection_RandomForest_TF_IDF a miao:AutomaticMentalIllnessesDetection ;
     dcterms:description "Automatic stress detection using RandomForest_TF_IDF" ;
     dcterms:title "Stress Detection Run: RandomForest_TF_IDF" ;
     mls:hasInput ex:Stress_Detection_Dataset ;
@@ -93,8 +90,7 @@ ex:Detection_RandomForest_TF_IDF a mls:Run,
         ex:RandomForest_TF_IDF_Metric_recall ;
     miao:usedMentalIllnessesSchema ex:StressSchema_Binary .
 
-ex:Detection_RoBERTa a mls:Run,
-        miao:AutomaticMentalIllnessesDetection ;
+ex:Detection_RoBERTa a miao:AutomaticMentalIllnessesDetection ;
     dcterms:description "Automatic stress detection using RoBERTa" ;
     dcterms:title "Stress Detection Run: RoBERTa" ;
     mls:hasInput ex:Stress_Detection_Dataset ;
@@ -107,8 +103,7 @@ ex:Detection_RoBERTa a mls:Run,
         ex:RoBERTa_Metric_recall ;
     miao:usedMentalIllnessesSchema ex:StressSchema_Binary .
 
-ex:Detection_SVM_TF_IDF a mls:Run,
-        miao:AutomaticMentalIllnessesDetection ;
+ex:Detection_SVM_TF_IDF a miao:AutomaticMentalIllnessesDetection ;
     dcterms:description "Automatic stress detection using SVM_TF_IDF" ;
     dcterms:title "Stress Detection Run: SVM_TF_IDF" ;
     mls:hasInput ex:Stress_Detection_Dataset ;
