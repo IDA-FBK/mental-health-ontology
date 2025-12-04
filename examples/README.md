@@ -1,4 +1,4 @@
-# Mental Illness Detection Ontology Examples
+# Examples
 
 This folder provides examples of representing **mental illness detection activities** using MIAO, including both **manual** and **automatic detection**. These examples are used to answer [competency questions](https://github.com/IDA-FBK/mental-health-ontology/tree/main/reqs%26cqs), 
 implemented in a [google colab notebook](https://github.com/IDA-FBK/mental-health-ontology/tree/main/notebook), demonstrating how mental illness detection data can be queried and analyzed.
