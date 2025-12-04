@@ -212,7 +212,7 @@ ex:StressPositive a miao:MentalIllnessCategory ;
     miao:isMentalIllnessCategoryOf ex:StressSchema_Binary .
 
 ex:BERT_Base_Metric_accuracy a mls:EvaluationMeasure ;
-    mls:specifiedBy ex:predictiveAccuracy
+    mls:specifiedBy ex:predictiveAccuracy ;
     mls:hasValue "0.82"^^xsd:float .
 
 ex:BERT_Base_Metric_f1_score a mls:EvaluationMeasure ;
@@ -228,7 +228,7 @@ ex:BERT_Base_Metric_recall a mls:EvaluationMeasure ;
     mls:hasValue "0.84"^^xsd:float .
 
 ex:BiLSTM_Attention_Metric_accuracy a mls:EvaluationMeasure ;
-    mls:specifiedBy ex:predictiveAccuracy
+    mls:specifiedBy ex:predictiveAccuracy ;
     mls:hasValue "0.82"^^xsd:float .
 
 ex:BiLSTM_Attention_Metric_f1_score a mls:EvaluationMeasure ;
@@ -318,7 +318,7 @@ ex:recall a mls:EvaluationMeasure .
 ex:precision a mls:EvaluationMeasure .
 
 ex:RandomForest_TF_IDF_Metric_accuracy a mls:ModelEvaluation ;
-    mls:specifiedBy ex:predictiveAccuracy ;
+    mls:specifiedBy ex:predictiveAccuracy ; ;
     mls:hasValue "0.82"^^xsd:float .
 
 ex:RandomForest_TF_IDF_Metric_f1_score a mls:ModelEvaluation ;
@@ -334,7 +334,7 @@ ex:RandomForest_TF_IDF_Metric_recall a mls:ModelEvaluation ;
     mls:hasValue "0.84"^^xsd:float .
 
 ex:RoBERTa_Metric_accuracy a mls:ModelEvaluation ;
-    mls:specifiedBy ex:predictiveAccuracy ;
+    mls:specifiedBy ex:predictiveAccuracy ; ;
     mls:hasValue "0.82"^^xsd:float .
 
 ex:RoBERTa_Metric_f1_score a mls:ModelEvaluation ;
@@ -350,7 +350,7 @@ ex:RoBERTa_Metric_recall a mls:ModelEvaluation ;
     mls:hasValue "0.84"^^xsd:float .
 
 ex:SVM_TF_IDF_Metric_accuracy a mls:ModelEvaluation ;
-    mls:specifiedBy ex:predictiveAccuracy ;
+    mls:specifiedBy ex:predictiveAccuracy ; ;
     mls:hasValue "0.82"^^xsd:float .
 
 ex:SVM_TF_IDF_Metric_f1_score a mls:ModelEvaluation ;
