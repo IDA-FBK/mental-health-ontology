@@ -60,44 +60,56 @@ ex:DataChar_NumberOfInstances a mls:DataCharacteristic ;
     dcterms:description "Total number of samples in dataset" ;
     mls:hasValue "10"^^xsd:float .
 
-ex:Detection_BERT_Base a mls:Run,
-        miao:AutomaticMentalIllnessesDetection ;
+ex:Detection_BERT_Base a miao:AutomaticMentalIllnessesDetection ;
     dcterms:description "Automatic detection run using BERT_Base model" ;
     dcterms:title "Depression Detection Run: BERT_Base" ;
     mls:hasInput ex:Depression_Severity_Dataset ;
     mls:executes ex:Model_BERT_Base ;
     prov:generated ex:ResultSet_BERT_Base ;
     miao:hasInputData ex:Depression_Severity_Dataset ;
+    mls:hasOutput ex:BERT_Base_Metric_accuracy,
+        ex:BERT_Base_Metric_f1_score,
+        ex:BERT_Base_Metric_precision,
+        ex:BERT_Base_Metric_recall ;
     miao:usedMentalIllnessesSchema ex:DepressionSeveritySchema_Research .
 
-ex:Detection_BiLSTM a mls:Run,
-        miao:AutomaticMentalIllnessesDetection ;
+ex:Detection_BiLSTM a miao:AutomaticMentalIllnessesDetection ;
     dcterms:description "Automatic detection run using BiLSTM model" ;
     dcterms:title "Depression Detection Run: BiLSTM" ;
     mls:hasInput ex:Depression_Severity_Dataset ;
     mls:executes ex:Model_BiLSTM ;
     prov:generated ex:ResultSet_BiLSTM ;
     miao:hasInputData ex:Depression_Severity_Dataset ;
+    mls:hasOutput ex:BiLSTM_Metric_accuracy,
+        ex:BiLSTM_Metric_f1_score,
+        ex:BiLSTM_Metric_precision,
+        ex:BiLSTM_Metric_recall ;
     miao:usedMentalIllnessesSchema ex:DepressionSeveritySchema_Research .
 
-ex:Detection_LogisticRegression_TF_IDF a mls:Run,
-        miao:AutomaticMentalIllnessesDetection ;
+ex:Detection_LogisticRegression_TF_IDF a miao:AutomaticMentalIllnessesDetection ;
     dcterms:description "Automatic detection run using LogisticRegression_TF_IDF model" ;
     dcterms:title "Depression Detection Run: LogisticRegression_TF_IDF" ;
     mls:hasInput ex:Depression_Severity_Dataset ;
     mls:executes ex:Model_LogisticRegression_TF_IDF ;
     prov:generated ex:ResultSet_LogisticRegression_TF_IDF ;
     miao:hasInputData ex:Depression_Severity_Dataset ;
+    mls:hasOutput ex:LogisticRegression_TF_IDF_Metric_accuracy,
+        ex:LogisticRegression_TF_IDF_Metric_f1_score,
+        ex:LogisticRegression_TF_IDF_Metric_precision,
+        ex:LogisticRegression_TF_IDF_Metric_recall ;
     miao:usedMentalIllnessesSchema ex:DepressionSeveritySchema_Research .
 
-ex:Detection_SVM_TF_IDF a mls:Run,
-        miao:AutomaticMentalIllnessesDetection ;
+ex:Detection_SVM_TF_IDF a miao:AutomaticMentalIllnessesDetection ;
     dcterms:description "Automatic detection run using SVM_TF_IDF model" ;
     dcterms:title "Depression Detection Run: SVM_TF_IDF" ;
     mls:hasInput ex:Depression_Severity_Dataset ;
     mls:executes ex:Model_SVM_TF_IDF ;
     prov:generated ex:ResultSet_SVM_TF_IDF ;
     miao:hasInputData ex:Depression_Severity_Dataset ;
+    mls:hasOutput ex:SVM_TF_IDF_Metric_accuracy,
+        ex:SVM_TF_IDF_Metric_f1_score,
+        ex:SVM_TF_IDF_Metric_precision,
+        ex:SVM_TF_IDF_Metric_recall ;
     miao:usedMentalIllnessesSchema ex:DepressionSeveritySchema_Research .
 
 ex:Feature_EmotionalIntensity a mls:Feature ;
@@ -283,44 +295,28 @@ ex:Model_BERT_Base a mls:Implementation ;
         ex:BERT_Base_Setting_dropout_rate,
         ex:BERT_Base_Setting_learning_rate,
         ex:BERT_Base_Setting_max_seq_length,
-        ex:BERT_Base_Setting_num_epochs ;
-    mls:hasOutput ex:BERT_Base_Metric_accuracy,
-        ex:BERT_Base_Metric_f1_score,
-        ex:BERT_Base_Metric_precision,
-        ex:BERT_Base_Metric_recall .
+        ex:BERT_Base_Setting_num_epochs .
 
 ex:Model_BiLSTM a mls:Implementation ;
     dcterms:description "Bidirectional LSTM with attention for sequence classification" ;
     dcterms:title "Depression Detection: BiLSTM" ;
     mls:hasHyperParameter ex:BiLSTM_Setting_max_features,
         ex:BiLSTM_Setting_min_df,
-        ex:BiLSTM_Setting_ngram_range ;
-    mls:hasOutput ex:BiLSTM_Metric_accuracy,
-        ex:BiLSTM_Metric_f1_score,
-        ex:BiLSTM_Metric_precision,
-        ex:BiLSTM_Metric_recall .
+        ex:BiLSTM_Setting_ngram_range .
 
 ex:Model_LogisticRegression_TF_IDF a mls:Implementation ;
     dcterms:description "Logistic Regression with TF-IDF features" ;
     dcterms:title "Depression Detection: LogisticRegression_TF_IDF" ;
     mls:hasHyperParameter ex:LogisticRegression_TF_IDF_Setting_max_features,
         ex:LogisticRegression_TF_IDF_Setting_min_df,
-        ex:LogisticRegression_TF_IDF_Setting_ngram_range ;
-    mls:hasOutput ex:LogisticRegression_TF_IDF_Metric_accuracy,
-        ex:LogisticRegression_TF_IDF_Metric_f1_score,
-        ex:LogisticRegression_TF_IDF_Metric_precision,
-        ex:LogisticRegression_TF_IDF_Metric_recall .
+        ex:LogisticRegression_TF_IDF_Setting_ngram_range .
 
 ex:Model_SVM_TF_IDF a mls:Implementation ;
     dcterms:description "Support Vector Machine with TF-IDF features" ;
     dcterms:title "Depression Detection: SVM_TF_IDF" ;
     mls:hasHyperParameter ex:SVM_TF_IDF_Setting_max_features,
         ex:SVM_TF_IDF_Setting_min_df,
-        ex:SVM_TF_IDF_Setting_ngram_range ;
-    mls:hasOutput ex:SVM_TF_IDF_Metric_accuracy,
-        ex:SVM_TF_IDF_Metric_f1_score,
-        ex:SVM_TF_IDF_Metric_precision,
-        ex:SVM_TF_IDF_Metric_recall .
+        ex:SVM_TF_IDF_Setting_ngram_range .
 
 ex:SVM_TF_IDF_Metric_accuracy a mls:ModelEvaluation ;
     mls:specifiedBy ex:predictiveAccuracy
