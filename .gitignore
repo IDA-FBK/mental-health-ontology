@@ -1,1 +1,5 @@
 relatedwork/*.pdf
+paper/*.tex
+paper/
+use-cases/old
+05-treatment-plans.ttl

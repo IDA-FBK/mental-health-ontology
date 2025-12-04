@@ -1,97 +1,320 @@
-@prefix dc: <http://purl.org/dc/terms/> .
 @prefix mls: <http://www.w3.org/ns/mls#> .
-@prefix nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
-@prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix miao: <https://w3id.org/miao#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix itsrdf: <http://www.w3.org/2005/11/its/rdf#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://w3id.org/miao#> .
 
-@prefix miao: <http://www.gsi.upm.es/ontologies/miao/ns#> .
+<https://w3id.org/miao#> rdf:type owl:Ontology ;
+                          owl:imports <https://raw.githubusercontent.com/ML-Schema/core/master/MLSchema.ttl> ;
+                          dcterms:created "2025-10-27"^^xsd:date ;
+                          dcterms:creator "Carlos Á. Iglesias" ,
+                                          "Gianluca Apriceno" ,
+                                          "Mauro Dragoni" ,
+                                          "Sergio Muñoz López" ,
+                                          "Tania Bailoni" ;
+                          dcterms:license "https://creativecommons.org/licenses/by-nc-sa/4.0/" ;
+                          dcterms:modified "2025-10-27"^^xsd:date ;
+                          dcterms:publisher "Intelligent Digital Agents Research Group <https://ida.fbk.eu> @digital health and wellbeing center, fondazione bruno kessler <https://digitalhealthcenter-en.fbk.eu/home>  and gsi - universidad politécnica de madrid <https://www.gsi.upm.es/es/>" ;
+                          dcterms:rights "CreativeCommons 4.0 NonCommercial-ShareAlike <https://creativecommons.org/licenses/by-nc-sa/4.0/>" ;
+                          dcterms:title "MIAO: A Mental Illness Analysis Ontology for Detecting Mental Health Conditions"@en ;
+                          vann:preferredNamespacePrefix "miao" ;
+                          vann:preferredNamespaceUri "https://w3id.org/miao#" ;
+                          owl:versionInfo 1.00 .
 
-<http://www.gsi.upm.es/ontologies/miao/ns> a owl:Ontology ;
-   rdfs:label "MIAO Mental Illness Analysis Ontology"@en ;
-   owl:versionInfo "1.0.0"^^xsd:string ;
-   owl:versionIRI <http://www.gsi.upm.es/ontologies/miao/ns/1.0.0> ;
-   owl:imports <http://www.w3.org/2005/11/its/rdf#> , <http://www.w3.org/ns/prov-o#> ;
-   dc:title "MIAO Mental Illness Analysis Ontology"@en ;
-   rdfs:comment "MIAO is an ontology designed for representing mental illness analysis and annotations."@en ;
-   dc:description "MIAO is an ontology for representing mental illnesses, their characteristics, and annotation of related phenomena."@en ;
-   vann:preferredNamespacePrefix "miao" ;
-   vann:preferredNamespaceUri "http://www.gsi.upm.es/ontologies/miao/ns#" .
+#################################################################
+#    Annotation properties
+#################################################################
 
-miao:AnalysedEntity a owl:Class ;
-   rdfs:subClassOf prov:Entity ;
-   rdfs:label "Analysed Entity"@en ;
-   rdfs:comment "Represents any entity that serves as the subject or source of mental illness analysis. This may include textual data (e.g., clinical notes, social media posts, questionnaires), or agents (e.g., patients, respondents, participants) whose mental health status is being assessed."@en .
-
-miao:MentalIllnessAnnotation a owl:Class ;
-   rdfs:subClassOf prov:Entity , oa:Annotation ;
-   rdfs:label "Mental Illness Annotation"@en ;
-   rdfs:comment "Represents an annotation indicating the presence, symptoms, or characteristics of a mental illness, extracted or inferred from analysed sources such as text, questionnaires, or other data."@en .
-
-miao:MentalIllnessAnalysis a owl:Class ;
-   rdfs:subClassOf prov:Activity ;
-   rdfs:label "Mental Illness Analysis"@en ;
-   rdfs:comment "Represents the activity of analyzing a resource (such as text, questionnaire responses, or other data) to detect, annotate, or infer mental illnesses or related characteristics."@en .
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
 
 
-miao:MentalIllnessModel a owl:Class ;
-   rdfs:subClassOf prov:Entity ;
-   rdfs:label "Mental Illness Model"@en ;
-   rdfs:comment "Represents a conceptual or computational model used to categorize, structure, or assess mental illnesses and related phenomena. This may include clinical classification systems (e.g., DSM-5, ICD-11), computational models for symptom grouping or severity grading, or custom frameworks defining both typologies and levels of mental health conditions."@en .
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
 
-miao:MentalIllnessCategory a owl:Class ;
-   rdfs:subClassOf prov:Entity ;
-   rdfs:label "Mental Illness Category"@en ;
-   rdfs:comment "Abstract superclass for categories related to mental illnesses. Use the subclass miao:DisorderType for categories representing types of mental illness (e.g., anxiety disorder, depressive disorder), and miao:SeverityLevel for categories representing severity or grade (e.g., mild, moderate, severe), as defined by a particular model or classification system."@en .
 
-miao:DisorderType a owl:Class ;
-    rdfs:subClassOf miao:MentalIllnessCategory ;
-    rdfs:label "Disorder Type"@en ;
-    rdfs:comment "A category representing a type of mental illness (e.g., depressive disorder, anxiety disorder)."@en .
+###  http://purl.org/dc/terms/rights
+dcterms:rights rdf:type owl:AnnotationProperty .
 
-miao:SeverityLevel a owl:Class ;
-    rdfs:subClassOf miao:MentalIllnessCategory ;
-    rdfs:label "Severity Level"@en ;
-    rdfs:comment "A category representing the severity or grade of a mental illness (e.g., mild, moderate, severe)."@en .
 
-miao:hasMentalIllnessCategory a owl:ObjectProperty ;
-   rdfs:subPropertyOf prov:hadMember ;
-   rdfs:label "has mental illness category"@en ;
-   rdfs:domain [
-       a owl:Class ;
-       owl:unionOf ( miao:MentalIllnessAnnotation miao:MentalIllnessModel )
-   ] ;
-   rdfs:range miao:MentalIllnessCategory ;
-   rdfs:comment "Specifies the category of the mental illness."@en .
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 
-miao:hasMentalIllnessIntensity a owl:DatatypeProperty ;
-   rdfs:label "has mental illness intensity"@en ;
-   rdfs:comment "Value that quantifies the intensity or severity of the detected or annotated mental illness or symptom."@en ;
-   rdfs:domain miao:MentalIllnessAnnotation ;
-   rdfs:range xsd:float .
 
-miao:usedMentalIllnessModel a owl:ObjectProperty ;
-   rdfs:subPropertyOf prov:used ;
-   rdfs:label "used mental illness model"@en ;
-   rdfs:domain miao:MentalIllnessAnalysis ;
-   rdfs:range miao:MentalIllnessModel ;
-   rdfs:comment "Specifies the mental illness model used in the analysis."@en .
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
-miao:analysed a owl:ObjectProperty ;
-   rdfs:subPropertyOf prov:used ;
-   rdfs:label "analysed"@en ;
-   rdfs:domain miao:AnnotationAnalysis ;
-   rdfs:range miao:AnalysedEntity ;
-   rdfs:comment "This property relates the analysis activity with the resource that is analysed."@en .
 
-miao:usedMLModel a owl:ObjectProperty ;
-   rdfs:subPropertyOf prov:used ;
-   rdfs:label "used machine learning model"@en ;
-   rdfs:domain prov:Activity ;
-   rdfs:range mls:Model ;
-   rdfs:comment "This property relates an activity (such as a MentalIllnessAnalysis) with the Machine Learning Model (mls:Model) used to carry out the activity."@en .
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://purl.org/dc/terms/URI
+dcterms:URI rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.w3.org/ns/prov#generated
+prov:generated rdf:type owl:ObjectProperty ;
+               owl:inverseOf prov:wasGeneratedBy ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain miao:MentalIllnessesDetection ;
+               rdfs:range miao:MentalIllnessesSet ;
+               rdfs:comment "Relation taken from the Prov ontology that is used to represent the relation between a MentalIllnessesDetection and the generated set of MentalIllnessesSet." .
+
+
+###  http://www.w3.org/ns/prov#wasGeneratedBy
+prov:wasGeneratedBy rdf:type owl:ObjectProperty ,
+                             owl:InverseFunctionalProperty ;
+                    rdfs:domain miao:MentalIllnessesSet ;
+                    rdfs:range miao:MentalIllnessesDetection ;
+                    rdfs:comment "Ref: https://www.w3.org/TR/prov-o/#wasGeneratedBy" .
+
+
+###  https://w3id.org/miao#belongsToMentalIllnessesSet
+miao:belongsToMentalIllnessesSet rdf:type owl:ObjectProperty ;
+                                 owl:inverseOf miao:hasMentalIllness ;
+                                 rdfs:domain miao:MentalIllness ;
+                                 rdfs:range miao:MentalIllnessesSet ;
+                                 rdfs:comment "Inverse relation of hasMentalIllness. This relation connect a MentalIllness with its corresponding MentalIllnessesSet." .
+
+
+###  https://w3id.org/miao#hasInputData
+miao:hasInputData rdf:type owl:ObjectProperty ;
+                  owl:inverseOf miao:isInputOfMentalIllnessesDetection ;
+                  rdfs:domain miao:MentalIllnessesDetection ;
+                  rdfs:range mls:Data ;
+                  rdfs:comment "A relation between a MentalIllnessesDetection and data that is taken as input to the MentalIllnessesDetection." .
+
+
+###  https://w3id.org/miao#hasMentalIllness
+miao:hasMentalIllness rdf:type owl:ObjectProperty ;
+                      rdfs:domain miao:MentalIllnessesSet ;
+                      rdfs:range miao:MentalIllness ;
+                      rdfs:comment "Relation connecting a MentalIllnessesSet with its corresponding MentalIllnesses." .
+
+
+###  https://w3id.org/miao#hasMentalIllnessCategory
+miao:hasMentalIllnessCategory rdf:type owl:ObjectProperty ;
+                             owl:inverseOf miao:isMentalIllnessCategoryOf ;
+                             rdfs:domain miao:MentalIllnessesSchema ;
+                             rdfs:range miao:MentalIllnessCategory ;
+                             rdfs:comment "A relation between a MentalIllnessesModel and its Mental Illness categories." .
+
+
+###  https://w3id.org/miao#isInputOfMentalIllnessesDetection
+miao:isInputOfMentalIllnessesDetection rdf:type owl:ObjectProperty ;
+                                      rdfs:domain mls:Data ;
+                                      rdfs:range miao:MentalIllnessesDetection .
+
+
+###  https://w3id.org/miao#isMentalIllnessCategoryOf
+miao:isMentalIllnessCategoryOf rdf:type owl:ObjectProperty ;
+                              rdfs:domain miao:MentalIllnessCategory ;
+                              rdfs:range miao:MentalIllnessesSchema ;
+                              rdfs:comment "Inverse relation of hasMentalIllnessCategory object propery that represents the relation between a MentalIllnessCategory and its corresponding MentalIllnessesModel." .
+
+
+###  https://w3id.org/miao#referredToMentalIllness
+miao:referredToMentalIllness rdf:type owl:ObjectProperty ;
+                             owl:inverseOf miao:referredToMentalIllnessCategory ;
+                             rdf:type owl:InverseFunctionalProperty ;
+                             rdfs:domain miao:MentalIllnessCategory ;
+                             rdfs:range miao:MentalIllness ;
+                             rdfs:comment "Inverse relation of referredToMentalIllnessCategory used to represent to which MentalIllness (predicted) a MentalIllnessCategoy (from the literature) corresponds to." .
+
+
+###  https://w3id.org/miao#referredToMentalIllnessCategory
+miao:referredToMentalIllnessCategory rdf:type owl:ObjectProperty ,
+                                              owl:FunctionalProperty ;
+                                     rdfs:domain miao:MentalIllness ;
+                                     rdfs:range miao:MentalIllnessCategory ;
+                                     rdfs:comment "Relation used to represent to which MentalIllnessCategoy (from the literature) a MentalIllness (predicted) corresponds to." .
+
+
+###  https://w3id.org/miao#usedInMentalIllnessesDetection
+miao:usedInMentalIllnessesDetection rdf:type owl:ObjectProperty ;
+                                    owl:inverseOf miao:usedMentalIllnessesSchema ;
+                                    rdfs:domain miao:MentalIllnessesSchema ;
+                                    rdfs:range miao:MentalIllnessesDetection ;
+                                    rdfs:comment "Inverse relation of usedMentalIllnessesSchema used to indicate which MentalIllnessesDetection a specific MentalIllnessesSchema (from the literature) refers to." .
+
+
+###  https://w3id.org/miao#usedMentalIllnessesSchema
+miao:usedMentalIllnessesSchema rdf:type owl:ObjectProperty ,
+                                        owl:FunctionalProperty ;
+                               rdfs:domain miao:MentalIllnessesDetection ;
+                               rdfs:range miao:MentalIllnessesSchema ;
+                               rdfs:comment "Relations used to indicate to which MentalIllnessesSchema (from the literature) a MentalIllnessesDetection is based on." .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/miao#hasMentalIllnessDetectionConfidence
+miao:hasMentalIllnessDetectionConfidence rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain miao:MentalIllness ;
+                                         rdfs:range xsd:decimal ;
+                                         rdfs:comment "Data Property used to represent the confidence of both an human expert or a machine/deep learning model about the presence of a mental illness." .
+
+
+###  https://w3id.org/miao#hasMentalIllnessLevel
+miao:hasMentalIllnessLevel rdf:type owl:DatatypeProperty ;
+                           rdfs:domain miao:MentalIllness ;
+                           rdfs:range xsd:string ;
+                           rdfs:comment "Represents the intensity of the mental illness as a categorical value, e.g., Low, Medium, or High." .
+
+
+###  https://w3id.org/miao#hasMentalIllnessScore
+miao:hasMentalIllnessScore rdf:type owl:DatatypeProperty ;
+                           rdfs:domain miao:MentalIllness ;
+                           rdfs:range xsd:decimal ;
+                           rdfs:comment "Represents the intensity of the mental illness as a numeric score between 0 and 1." .
+
+
+###  https://w3id.org/miao#refersToSample
+miao:refersToSample rdf:type owl:DatatypeProperty ;
+                    rdfs:domain miao:MentalIllness ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "This data property represents the unique identifier of the specific data sample on which one or more mental illnesses have been detected. It is used to link a mental illness detection result to the original collected data instance." .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/ns/mls#Data
+mls:Data rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/mls#Run
+mls:Run rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Activity
+prov:Activity rdf:type owl:Class ;
+              rdfs:comment "Ref: https://www.w3.org/TR/prov-o/#Activity" .
+
+
+###  http://www.w3.org/ns/prov#Entity
+prov:Entity rdf:type owl:Class ;
+            rdfs:comment "Ref: https://www.w3.org/TR/prov-o/#Entity" .
+
+
+###  https://w3id.org/miao#AutomaticMentalIllnessesDetection
+miao:AutomaticMentalIllnessesDetection rdf:type owl:Class ;
+                                       rdfs:subClassOf mls:Run ,
+                                                       miao:MentalIllnessesDetection ;
+                                       owl:disjointWith miao:ManualMentalIllnessesDetection ;
+                                       rdfs:comment "An AutomaticMentalIllnessesDetection represents an analysis (i.e., a run) performed by a machine/deep learning model to detect mental illnesses from a given source." ;
+                                       rdfs:label "Automatic Mental Illnesses Detection"@en ,
+                                                  "Rilevamento Automatico Malattie Mentali"@it .
+
+
+###  https://w3id.org/miao#ManualMentalIllnessesDetection
+miao:ManualMentalIllnessesDetection rdf:type owl:Class ;
+                                    rdfs:subClassOf miao:MentalIllnessesDetection ;
+                                    rdfs:comment "A ManualMentalIllnessesDetection represents an analysis performed by a human expert to detect mental illnesses from a given source." ;
+                                    rdfs:label "Manual Detection Mental Illnesses"@en ,
+                                               "Rilevamento Manuale Malattie Mentali"@it .
+
+
+###  https://w3id.org/miao#MentalIllnessesSchema
+miao:MentalIllnessesSchema rdf:type owl:Class ;
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty miao:hasMentalIllnessCategory ;
+                                             owl:someValuesFrom miao:MentalIllnessCategory
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty miao:usedInMentalIllnessesDetection ;
+                                             owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                             owl:onClass miao:MentalIllnessesDetection
+                                           ] ;
+                           rdfs:comment "Represents a category of mental illness within a specific schema (e.g., an ontology or classification system)." ;
+                           rdfs:label "Mental Illnesses Schema"@en ,
+                                      "Schema Malattie Mentali"@it .
+
+
+###  https://w3id.org/miao#MentalIllnessesSet
+miao:MentalIllnessesSet rdf:type owl:Class ;
+                        rdfs:subClassOf prov:Entity ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty miao:hasMentalIllness ;
+                                          owl:someValuesFrom miao:MentalIllness
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty prov:wasGeneratedBy ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass miao:MentalIllnessesDetection
+                                        ] ;
+                        rdfs:comment "Concept used to represent a set of detected mental illnesses." ;
+                        rdfs:label "Insieme Malattie Mentali"@it ,
+                                   "Mental Illnesses Set"@en .
+
+
+###  https://w3id.org/miao#MentalIllness
+miao:MentalIllness rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty miao:belongsToMentalIllnessesSet ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass miao:MentalIllnessesSet
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty miao:referredToMentalIllnessCategory ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass miao:MentalIllnessCategory
+                                   ] ;
+                   rdfs:comment "A MentalIllness represents a detected or predicted mental illness, typically as a result of a human or machine/deep learning analysis." ;
+                   rdfs:label "Malattia Mentale"@it ,
+                              "Mental Illness"@en .
+
+
+###  https://w3id.org/miao#MentalIllnessCategory
+miao:MentalIllnessCategory rdf:type owl:Class ;
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty miao:referredToMentalIllness ;
+                                             owl:someValuesFrom miao:MentalIllness
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty miao:isMentalIllnessCategoryOf ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass miao:MentalIllnessesSchema
+                                           ] ;
+                           rdfs:comment "A concept used to represent a mental illness category that belongs to a specific schema (e.g., ontology) used to represent mental illnesses" ;
+                           rdfs:label "Categoria Malattia Mentale"@it ,
+                                      "Mental Illness Category"@en .
+
+
+###  https://w3id.org/miao#MentalIllnessesDetection
+miao:MentalIllnessesDetection rdf:type owl:Class ;
+                              rdfs:subClassOf prov:Activity ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty miao:hasInputData ;
+                                                owl:someValuesFrom mls:Data
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty prov:generated ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass miao:MentalIllnessesSet
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty miao:usedMentalIllnessesSchema ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass miao:MentalIllnessesSchema
+                                              ] ;
+                              rdfs:comment "High-level concept used to represent a mental illness detection process regardless of the type (i.e., manual or automatic)." ;
+                              rdfs:label "Mental Illnesses Detection"@en ,
+                                         "Rilevamento Malattie Mentali"@it .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi

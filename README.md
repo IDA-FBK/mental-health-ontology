@@ -1,233 +1,144 @@
-# MIAO: Mental Illness Analysis Ontology
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa] [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/notebook) [![HTML Documentation](https://img.shields.io/badge/Widoco-Documentation-blue)](https://ida-fbk.github.io/mental-health-ontology/documentation/html-docs/index.html)
 
-## Introduction
+[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
+[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
 
-**MIAO (Mental Illness Analysis Ontology)** is an ontology designed to represent and model the process of analyzing and detecting mental health conditions from various data sources. It provides a structured vocabulary for describing entities, activities, annotations, and models involved in mental illness analysis, particularly in computational settings.
+<p align="center">
+  <img src="logo/miao-logo.png" alt="MIAO Logo" width="600">
+</p>
 
-The ontology is built upon well-established vocabularies such as PROV-O for provenance, the Web Annotation Ontology (OA) for annotations, and the Machine Learning Schema (MLS) for ML models, ensuring interoperability and extensibility.
+# MIAO: A Mental Illness Analysis Ontology for Detecting Mental Health Conditions
 
-**Namespace URI:** `http://www.gsi.upm.es/ontologies/miao/ns#`  
-**Preferred Prefix:** `miao`
+We introduce the Mental Illness Analysis Ontology (**MIAO**), an ontology designed to model the detection process of mental illness. MIAO has two key characteristics: (i) it provides a conceptual framework for the detection process, regardless of the detection method, allowing for both human and
+AI-driven detection approaches, and (ii) it separates the detection process from the underlying mental illness model (e.g., ontology) used to represent mental health conditions, enabling the use of different mental illness models, depending
+on the needs of the user or application. Two research questions guide our investigation and the development of the MIAO ontology:
 
----
+- **RQ<sub>1</sub>**: How can the detection process of mental illness be effectively modeled in a way that is agnostic to the specific detection method used (human or AI)?
+- **RQ<sub>2</sub>**: How can existing mental health models be integrated to support the detection process, ensuring compatibility across different detection systems and applications?
+  
+## Ontology Development
+<img src="diagrams/miao_development.png" width="950">
+
+The development of the MIAO schema follows a 4-step procedure:
+ 1. **Domain analysis**
+ 
+    The analysis of the domain of interest provides an overview of the state of the art, of the challenges, the strength and limitations
+    of modelling mental illness, and especially the lack of models conceptualizing mental illness detection. The results have been reported in the previous section;
+    this analysis also prompts the research questions (i.e., **RQ<sub>1</sub>** and **RQ<sub>2</sub>**) which guide our work.
+
+2. **Specification**
+     
+   After reviewing the literature and formulating the research questions, we defined a set of functional (**FR<sub>s</sub>**) and non-functional
+   (**NFR<sub>s</sub>**) requirements that the ontology should satisfy. These requirements provide guidance for the initial high-level conceptualization
+   of the ontology. Based on these requirements, we also defined a set of
+   competency questions (**CQ<sub>s</sub>**) to further refine the scope and intended use of the
+   ontology (see [REQs&CQs](https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/reqs%26cqs)).
+
+3. **Construction**
+     
+   The construction phase involves both the design andcformalization of the ontology. Starting from the CQs, we defined the concepts
+   needed to model the mental illness detection domain. Also, in accordance with established best practices in ontology development, we prioritized reusing existing
+   data models and vocabularies as a foundation, extending them to capturecdomain-specific classes and properties. Therefore, to express the concepts related
+   to automatic detection models, we integrated [ML Schema](https://ml-schema.github.io/documentation/ML%20Schema.html), which is used to represent and interchange information on data mining and machine learning
+   algorithms, datasets, and experiments. Subsequently, we designed the model
+   merging the concepts defined in our domain with those present in ML Schema.
+   After having finalized the model we formalized the ontology in Turtle TTL format
+   with the Protégé tool.
+
+4. **Validation**
+     
+     **OntOlogy Pitfall Scanner!**: [OOPS results](https://ida-fbk.github.io/mental-health-ontology/documentation/html-docs/OOPSevaluation/oopsEval)
 
 ## Ontology Overview
 
-MIAO revolves around a few core concepts that model the entire analysis pipeline, from the source data to the final, categorized annotation.
+![MIAO Ontology Overview](diagrams/miao_conceptualization.png)
 
-![MIAO Ontology Overview](diagrams/mentalhealth-ontology.png)
+MIAO integrates:
+- PROV-O – provenance modeling
+- MLS – machine learning concepts
+- Dublin Core Terms – metadata
+- VANN – namespace management
 
-### Core Classes
+**Namespace URI:** `https://w3id.org/miao`  
+**Preferred Prefix:** `miao`  
+**Version:** 1.00 
 
-*   `miao:AnalysedEntity`: Represents any entity serving as the source for mental illness analysis. This can be textual data (e.g., clinical notes, social media posts) or agents (e.g., patients, questionnaire respondents).
-*   `miao:MentalIllnessAnalysis`: An activity that represents the process of analyzing a resource to detect, annotate, or infer mental illnesses or related characteristics. It is a subclass of `prov:Activity`.
-*   `miao:MentalIllnessAnnotation`: Represents an annotation indicating the presence, symptoms, or characteristics of a mental illness. It is a subclass of `oa:Annotation`.
-*   `miao:MentalIllnessModel`*: Represents a conceptual or computational model used to categorize, structure, or assess mental illnesses and related phenomena. This includes clinical classification systems (e.g., DSM-5, ICD-11), computational models for symptom grouping or severity grading, or custom frameworks defining both typologies and levels of mental health conditions.
-*   `miao:MentalIllnessCategory`: **Abstract superclass** for categories related to mental illnesses.
-    * `miao:DisorderType`: Subclass of `miao:MentalIllnessCategory` for categories representing types of mental illness (e.g., anxiety disorder, depressive disorder).
-    * `miao:SeverityLevel`: Subclass of `miao:MentalIllnessCategory` for categories representing severity or grade (e.g., mild, moderate, severe).
+## Classes
 
-### Core Properties
+| Class | Description | Cardinalities / Restrictions |
+|-------|-------------|------------------------------|
+| **MentalIllnessesDetection** | Represents a mental illness detection process (manual or automatic) | Must have exactly 1 input schema (`usedMentalIllnessesSchema`) and generates exactly 1 `MentalIllnessesSet`; input data (`hasInputData`) can be ≥1 |
+| **ManualMentalIllnessesDetection** | Detection performed manually by an expert | Subclass of `MentalIllnessesDetection` |
+| **AutomaticMentalIllnessesDetection** | Detection performed automatically by a machine model | Subclass of `MentalIllnessesDetection` and `mls:Run` |
+| **MentalIllness** | Detected or predicted mental illness | Belongs to exactly 1 `MentalIllnessesSet`; maps to exactly 1 `MentalIllnessCategory` (`referredToMentalIllnessCategory`) |
+| **MentalIllnessCategory** | Category defined in a schema | Refers to ≥1 `MentalIllness` (`referredToMentalIllness`) and belongs to exactly 1 `MentalIllnessesSchema` |
+| **MentalIllnessesSchema** | Schema or model defining categories | Must have ≥1 `MentalIllnessCategory`; may be used in ≥0 `MentalIllnessesDetection` |
+| **MentalIllnessesSet** | Set of detected mental illnesses | Contains ≥1 `MentalIllness`; generated by exactly 1 `MentalIllnessesDetection` |
 
-*   `miao:analysed`: Links an analysis activity (`miao:MentalIllnessAnalysis`) to the entity being analysed (`miao:AnalysedEntity`).
-*   `miao:usedMentalIllnessModel`: Specifies the `miao:MentalIllnessModel` used in a particular analysis activity.
-*   `miao:hasMentalIllnessCategory`: Links a `miao:MentalIllnessAnnotation` or a `miao:MentalIllnessModel` to a specific `miao:MentalIllnessCategory` (which can be a DisorderType or SeverityLevel).
-*   `miao:hasMentalIllnessIntensity`: A datatype property that quantifies the intensity or severity of a detected mental illness or symptom, associated with a `miao:MentalIllnessAnnotation`.
-*   `miao:usedMLModel`: Links an analysis activity to a machine learning model (`mls:Model`) used to perform it.
+
+## Object Properties
+
+| Property | Domain → Range | Cardinalities / Restrictions | Description |
+|----------|----------------|-----------------------------|-------------|
+| `hasMentalIllness` | MentalIllnessesSet → MentalIllness | ≥1 MentalIllness per set | Connects a set to its mental illnesses |
+| `belongsToMentalIllnessesSet` | MentalIllness → MentalIllnessesSet | Exactly 1 set per mental illness | Inverse of `hasMentalIllness` |
+| `hasMentalIllnessCategory` | MentalIllnessesSchema → MentalIllnessCategory | ≥1 category per schema | Connects a mental health schema to its categories |
+| `isMentalIllnessCategoryOf` | MentalIllnessCategory → MentalIllnessesSchema | Exactly 1 schema per category | Inverse of `hasMentalIllnessCategory` |
+| `referredToMentalIllnessCategory` | MentalIllness → MentalIllnessCategory | Exactly 1 category per illness | Connect a mental illness to its schema category |
+| `referredToMentalIllness` | MentalIllnessCategory → MentalIllness | Functional property | Inverse of `referredToMentalIllnessCategory` |
+| `usedMentalIllnessesSchema` | MentalIllnessesDetection → MentalIllnessesSchema | Exactly 1 schema per detection | Schema used in detection |
+| `usedInMentalIllnessesDetection` | MentalIllnessesSchema → MentalIllnessesDetection | ≥0 detections per schema | Inverse of `usedMentalIllnessesSchema` |
+| `hasInputData` | MentalIllnessesDetection → MLS Data | ≥1 input | Input data for detection |
+| `isInputOfMentalIllnessesDetection` | MLS Data → MentalIllnessesDetection| ≥1 Detection | Inverse of `isInputOfMentalIllnessesDetection` |
+| `prov:generated` | MentalIllnessesDetection → MentalIllnessesSet | Exactly 1 set generated | Output of detection |
+| `prov:wasGeneratedBy` | MentalIllnessesSet → MentalIllnessesDetection | Exactly 1 detection per set | Inverse of `prov:generated` |
+
+
+## Data Properties
+
+| Property | Domain | Range | Description |
+|----------|--------|-------|-------------|
+| `refersToSample` | MentalIllness | string | Numerical identifier of the data sample on which one or more mental illnesses were detected|
+| `hasMentalIllnessDetectionConfidence` | MentalIllness | decimal | Confidence of detection (human or ML) |
+| `hasMentalIllnessScore` | MentalIllness | decimal | Numeric intensity (0–1) |
+| `hasMentalIllnessLevel` | MentalIllness | string | Categorical intensity (Low, Medium, High) |
+
+
+## 🚀 Google Colab Notebook
+
+We have implemented a Python **Colab Notebook** showing how to interact with MIAO ontology by performing SPARQL queries based on the CQ<sub>s</sub> of each REQ ([REQs&CQs](https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/reqs%26cqs)). 
+
+Click below to access the interactive notebook:
+
+<a href="https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/notebook" style="text-decoration: none;">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
+</a>
+
+<p></p>
+
+> **⚠️ Important**
+> 
+> To load and run the notebook correctly, please follow the instructions in the [README.md](https://github.com/IDA-FBK/mental-health-ontology/tree/conceptualization-dev/notebook/README.md).
 
 
 ---
+> [!NOTE]  
+> - For more detailed information, please refer to the paper.
+> - Two Turtle files showing how to model manual and automatic mental illness detection activities using MIAO are available [here](/examples/) (also used in the notebook).
 
-## Example of Use
+## Authors
+- Gianluca Apriceno: apriceno@fbk.eu
+- Sergio Muñoz: sergio.munoz@upm.es
+- Tania Bailoni: tbailoni@fbk.eu
+- Mauro Dragoni: dragoni@fbk.eu
+- Carlos Á. Iglesias: carlosangel.iglesias@upm.es
 
+## License
+This work is licensed under a
+[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
 
-## Use Cases
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
 
-This section illustrates practical scenarios and example data patterns for using the MIAO ontology in mental illness analysis. The examples demonstrate how to define classification models and categories, integrate with external mental health ontologies, and annotate resources with either disorder typologies or severity levels.
-
----
-
-### Example 1: Defining Models and Categories
-
-```
-
-@prefix mhc: [http://example.org/mentalhealth/classification\#](http://example.org/mentalhealth/classification#) .
-@prefix miao: [http://www.gsi.upm.es/ontologies/miao/ns\#](http://www.gsi.upm.es/ontologies/miao/ns#) .
-@prefix rdfs: [http://www.w3.org/2000/01/rdf-schema\#](http://www.w3.org/2000/01/rdf-schema#) .
-
-# Typology model 
-
-mhc:ICD11 a miao:MentalIllnessModel ;
-    rdfs:label "ICD-11 Typology" ;
-    miao:hasMentalIllnessCategory mhc:DepressiveDisorder, mhc:AnxietyDisorder .
-
-mhc:DepressiveDisorder a miao:DisorderType ;
-    rdfs:label "Depressive Disorder" .
-
-mhc:AnxietyDisorder a miao:DisorderType ;
-    rdfs:label "Anxiety Disorder" .
-
-# Severity model
-
-mhc:ICD11Severity a miao:MentalIllnessModel ;
-    rdfs:label "ICD-11 Severity Levels" ;
-    miao:hasMentalIllnessCategory mhc:Mild, mhc:Severe .
-
-mhc:Mild a miao:SeverityLevel ;
-    rdfs:label "Mild" .
-
-mhc:Severe a miao:SeverityLevel ;
-    rdfs:label "Severe" .
-
-```
-
-**Description:**  
-Models for disorder typologies and severity levels are defined as separate `MentalIllnessModel` instances, each with their respective categories. Categories are explicitly typed as `DisorderType` or `SeverityLevel` (subclasses of `MentalIllnessCategory`).
----
-
-### Example 2: Manual Annotation of a Clinical Note (Typology)
-
-```
-
-@prefix : [http://www.gsi.upm.es/ontologies/miao/examples\#](http://www.gsi.upm.es/ontologies/miao/examples#) .
-@prefix miao: [http://www.gsi.upm.es/ontologies/miao/ns\#](http://www.gsi.upm.es/ontologies/miao/ns#) .
-@prefix oa: [http://www.w3.org/ns/oa\#](http://www.w3.org/ns/oa#) .
-@prefix prov: [http://www.w3.org/ns/prov\#](http://www.w3.org/ns/prov#) .
-@prefix itsrdf: [http://www.w3.org/2005/11/its/rdf\#](http://www.w3.org/2005/11/its/rdf#) .
-@prefix mhc: [http://example.org/mentalhealth/classification\#](http://example.org/mentalhealth/classification#) .
-@prefix xsd: [http://www.w3.org/2001/XMLSchema\#](http://www.w3.org/2001/XMLSchema#) .
-
-:note1 a miao:AnalysedEntity, schema:MedicalRecord ;
-    schema:articleBody "Patient reports persistent sadness and loss of interest in daily activities." ;
-    schema:dateCreated "2025-06-10"^^xsd:date .
-
-:annotator1 a prov:Person ;
-    rdfs:label "Dr. Jane Smith" .
-
-:analysis1 a miao:MentalIllnessAnalysis ;
-    prov:wasAssociatedWith :annotator1 ;
-    miao:analysed :note1 ;
-    miao:usedMentalIllnessModel mhc:ICD11 ;
-    prov:generated :annotation1 .
-
-:annotation1 a miao:MentalIllnessAnnotation ;
-    miao:hasMentalIllnessCategory mhc:DepressiveDisorder ;
-    miao:hasMentalIllnessIntensity "0.85"^^xsd:float ;
-    itsrdf:taConfidence "0.95"^^xsd:decimal ;
-    oa:hasTarget :note1 .
-
-```
-
-**Description:**  
-A clinician manually annotates a clinical note, assigning a disorder typology from the ICD-11 model.
-
----
-
-### Example 3: Manual Annotation of a Clinical Note (Severity Level)
-
-```
-
-@prefix : [http://www.gsi.upm.es/ontologies/miao/examples\#](http://www.gsi.upm.es/ontologies/miao/examples#) .
-@prefix miao: [http://www.gsi.upm.es/ontologies/miao/ns\#](http://www.gsi.upm.es/ontologies/miao/ns#) .
-@prefix oa: [http://www.w3.org/ns/oa\#](http://www.w3.org/ns/oa#) .
-@prefix prov: [http://www.w3.org/ns/prov\#](http://www.w3.org/ns/prov#) .
-@prefix itsrdf: [http://www.w3.org/2005/11/its/rdf\#](http://www.w3.org/2005/11/its/rdf#) .
-@prefix mhc: [http://example.org/mentalhealth/classification\#](http://example.org/mentalhealth/classification#) .
-@prefix xsd: [http://www.w3.org/2001/XMLSchema\#](http://www.w3.org/2001/XMLSchema#) .
-
-:analysis2 a miao:MentalIllnessAnalysis ;
-    prov:wasAssociatedWith :annotator1 ;
-    miao:analysed :note1 ;
-    miao:usedMentalIllnessModel mhc:ICD11Severity ;
-    prov:generated :annotation2 .
-
-:annotation2 a miao:MentalIllnessAnnotation ;
-    miao:hasMentalIllnessCategory mhc:Severe ;
-    miao:hasMentalIllnessIntensity "0.85"^^xsd:float ;
-    itsrdf:taConfidence "0.95"^^xsd:decimal ;
-    oa:hasTarget :note1 .
-
-```
-
-**Description:**  
-A separate annotation records the severity level ("Severe") using a category from the severity model (`ICD11Severity`). 
-
----
+[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
 
 
-### Example 4: Automated Analysis Using a Machine Learning Model
-
-```
-
-@prefix : [http://www.gsi.upm.es/ontologies/miao/examples\#](http://www.gsi.upm.es/ontologies/miao/examples#) .
-@prefix miao: [http://www.gsi.upm.es/ontologies/miao/ns\#](http://www.gsi.upm.es/ontologies/miao/ns#) .
-@prefix oa: [http://www.w3.org/ns/oa\#](http://www.w3.org/ns/oa#) .
-@prefix prov: [http://www.w3.org/ns/prov\#](http://www.w3.org/ns/prov#) .
-@prefix mls: [http://www.w3.org/ns/mls\#](http://www.w3.org/ns/mls#) .
-@prefix itsrdf: [http://www.w3.org/2005/11/its/rdf\#](http://www.w3.org/2005/11/its/rdf#) .
-@prefix mhc: [http://example.org/mentalhealth/classification\#](http://example.org/mentalhealth/classification#) .
-@prefix xsd: [http://www.w3.org/2001/XMLSchema\#](http://www.w3.org/2001/XMLSchema#) .
-
-:tweet1 a miao:AnalysedEntity, schema:SocialMediaPosting ;
-    schema:text "I can't sleep and feel anxious all the time." ;
-    schema:dateCreated "2025-07-01"^^xsd:date .
-
-:ml_model1 a mls:Model ;
-    rdfs:label "Anxiety Detector BERT v2.1" .
-
-:analysis2 a miao:MentalIllnessAnalysis ;
-    prov:wasAssociatedWith :ml_agent1 ;
-    miao:analysed :tweet1 ;
-    miao:usedMentalIllnessModel mhc:ICD11 ;
-    miao:usedMLModel :ml_model1 ;
-    prov:generated :annotation3 .
-
-:annotation3 a miao:MentalIllnessAnnotation ;
-    miao:hasMentalIllnessCategory mhc:AnxietyDisorder ;
-    miao:hasMentalIllnessIntensity "0.67"^^xsd:float ;
-    itsrdf:taConfidence "0.81"^^xsd:decimal ;
-    oa:hasTarget :tweet1 .
-
-```
-
-**Description:**  
-A machine learning agent analyzes a social media post and assigns a disorder typology.
-
----
-
-### Example 5: Multi-Source Analysis
-
-```
-
-:patient1 a prov:Person ;
-    schema:identifier "P12345" .
-
-:questionnaire1 a miao:AnalysedEntity, schema:Questionnaire ;
-    schema:about :patient1 ;
-    schema:dateCreated "2025-07-05"^^xsd:date .
-
-:note2 a miao:AnalysedEntity, schema:MedicalRecord ;
-    schema:about :patient1 ;
-    schema:dateCreated "2025-07-06"^^xsd:date .
-
-:analysis3 a miao:MentalIllnessAnalysis ;
-    prov:wasAssociatedWith :ml_agent2 ;
-    miao:analysed :questionnaire1, :note2 ;
-    miao:usedMentalIllnessModel mhc:ICD11 ;
-    miao:usedMLModel :ml_model2 ;
-    prov:generated :annotation4 .
-
-:annotation4 a miao:MentalIllnessAnnotation ;
-    miao:hasMentalIllnessCategory mhc:DepressiveDisorder ;
-    miao:hasMentalIllnessIntensity "0.55"^^xsd:float ;
-    itsrdf:taConfidence "0.88"^^xsd:decimal ;
-    oa:hasTarget :questionnaire1, :note2 .
-
-```
-
-**Description:**  
-An analysis aggregates information from multiple sources (questionnaire and clinical note) for a single patient, producing a unified annotation with a disorder typology. Severity, if needed, would be annotated separately or as an intensity value.
-
----
-
-These use cases demonstrate MIAO's flexibility for representing both manual and automated mental illness annotation and supporting multi-source integration.
