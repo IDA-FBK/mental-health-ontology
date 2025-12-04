@@ -8,38 +8,6 @@
 @prefix snomed: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:Evaluation_BERT_Base a mls:ImplementationEvaluation ;
-    dcterms:title "Evaluation: BERT_Base" ;
-    mls:evaluates ex:Model_BERT_Base ;
-    mls:specifiedBy ex:BERT_Base_Metric_accuracy,
-        ex:BERT_Base_Metric_f1_score,
-        ex:BERT_Base_Metric_precision,
-        ex:BERT_Base_Metric_recall .
-
-ex:Evaluation_BiLSTM a mls:ImplementationEvaluation ;
-    dcterms:title "Evaluation: BiLSTM" ;
-    mls:evaluates ex:Model_BiLSTM ;
-    mls:specifiedBy ex:BiLSTM_Metric_accuracy,
-        ex:BiLSTM_Metric_f1_score,
-        ex:BiLSTM_Metric_precision,
-        ex:BiLSTM_Metric_recall .
-
-ex:Evaluation_LogisticRegression_TF_IDF a mls:ImplementationEvaluation ;
-    dcterms:title "Evaluation: LogisticRegression_TF_IDF" ;
-    mls:evaluates ex:Model_LogisticRegression_TF_IDF ;
-    mls:specifiedBy ex:LogisticRegression_TF_IDF_Metric_accuracy,
-        ex:LogisticRegression_TF_IDF_Metric_f1_score,
-        ex:LogisticRegression_TF_IDF_Metric_precision,
-        ex:LogisticRegression_TF_IDF_Metric_recall .
-
-ex:Evaluation_SVM_TF_IDF a mls:ImplementationEvaluation ;
-    dcterms:title "Evaluation: SVM_TF_IDF" ;
-    mls:evaluates ex:Model_SVM_TF_IDF ;
-    mls:specifiedBy ex:SVM_TF_IDF_Metric_accuracy,
-        ex:SVM_TF_IDF_Metric_f1_score,
-        ex:SVM_TF_IDF_Metric_precision,
-        ex:SVM_TF_IDF_Metric_recall .
-
 ex:BERT_Base_Setting_batch_size a mls:HyperParameterSetting ;
     mls:hasValue 16 ;
     mls:specifiedBy ex:HyperParam_batch_size .
@@ -171,22 +139,6 @@ ex:HyperParam_max_seq_length a mls:HyperParameter ;
 ex:HyperParam_num_epochs a mls:HyperParameter ;
     rdfs:label "num_epochs" ;
     dcterms:description "Number of epochs" .
-
-ex:Implementation_BERT_Base a mls:Implementation ;
-    rdfs:label "Transformer (BERT)" ;
-    dcterms:description "Implementation: PyTorch/Transformers" .
-
-ex:Implementation_BiLSTM a mls:Implementation ;
-    rdfs:label "Recurrent Neural Network (BiLSTM)" ;
-    dcterms:description "Implementation: TensorFlow/Keras" .
-
-ex:Implementation_LogisticRegression_TF_IDF a mls:Implementation ;
-    rdfs:label "Logistic Regression" ;
-    dcterms:description "Implementation: scikit-learn" .
-
-ex:Implementation_SVM_TF_IDF a mls:Implementation ;
-    rdfs:label "SVM (RBF kernel)" ;
-    dcterms:description "Implementation: scikit-learn" .
 
 ex:LogisticRegression_TF_IDF_Setting_max_features a mls:HyperParameterSetting ;
     mls:hasValue 10000 ;
@@ -332,7 +284,6 @@ ex:Model_BERT_Base a mls:Implementation ;
         ex:BERT_Base_Setting_learning_rate,
         ex:BERT_Base_Setting_max_seq_length,
         ex:BERT_Base_Setting_num_epochs ;
-    mls:hasImplementation ex:Implementation_BERT_Base ;
     mls:hasOutput ex:BERT_Base_Metric_accuracy,
         ex:BERT_Base_Metric_f1_score,
         ex:BERT_Base_Metric_precision,
@@ -344,7 +295,6 @@ ex:Model_BiLSTM a mls:Implementation ;
     mls:hasHyperParameter ex:BiLSTM_Setting_max_features,
         ex:BiLSTM_Setting_min_df,
         ex:BiLSTM_Setting_ngram_range ;
-    mls:hasImplementation ex:Implementation_BiLSTM ;
     mls:hasOutput ex:BiLSTM_Metric_accuracy,
         ex:BiLSTM_Metric_f1_score,
         ex:BiLSTM_Metric_precision,
@@ -356,7 +306,6 @@ ex:Model_LogisticRegression_TF_IDF a mls:Implementation ;
     mls:hasHyperParameter ex:LogisticRegression_TF_IDF_Setting_max_features,
         ex:LogisticRegression_TF_IDF_Setting_min_df,
         ex:LogisticRegression_TF_IDF_Setting_ngram_range ;
-    mls:hasImplementation ex:Implementation_LogisticRegression_TF_IDF ;
     mls:hasOutput ex:LogisticRegression_TF_IDF_Metric_accuracy,
         ex:LogisticRegression_TF_IDF_Metric_f1_score,
         ex:LogisticRegression_TF_IDF_Metric_precision,
@@ -368,7 +317,6 @@ ex:Model_SVM_TF_IDF a mls:Implementation ;
     mls:hasHyperParameter ex:SVM_TF_IDF_Setting_max_features,
         ex:SVM_TF_IDF_Setting_min_df,
         ex:SVM_TF_IDF_Setting_ngram_range ;
-    mls:hasImplementation ex:Implementation_SVM_TF_IDF ;
     mls:hasOutput ex:SVM_TF_IDF_Metric_accuracy,
         ex:SVM_TF_IDF_Metric_f1_score,
         ex:SVM_TF_IDF_Metric_precision,

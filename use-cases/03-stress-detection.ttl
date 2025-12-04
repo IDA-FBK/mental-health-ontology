@@ -8,46 +8,6 @@
 @prefix snomed: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:Evaluation_BERT_Base a mls:ImplementationEvaluation ;
-    dcterms:title "Evaluation: BERT_Base" ;
-    mls:evaluates ex:Model_BERT_Base ;
-    mls:specifiedBy ex:BERT_Base_Metric_accuracy,
-        ex:BERT_Base_Metric_f1_score,
-        ex:BERT_Base_Metric_precision,
-        ex:BERT_Base_Metric_recall .
-
-ex:Evaluation_BiLSTM_Attention a mls:ImplementationEvaluation ;
-    dcterms:title "Evaluation: BiLSTM_Attention" ;
-    mls:evaluates ex:Model_BiLSTM_Attention ;
-    mls:specifiedBy ex:BiLSTM_Attention_Metric_accuracy,
-        ex:BiLSTM_Attention_Metric_f1_score,
-        ex:BiLSTM_Attention_Metric_precision,
-        ex:BiLSTM_Attention_Metric_recall .
-
-ex:Evaluation_RandomForest_TF_IDF a mls:ImplementationEvaluation ;
-    dcterms:title "Evaluation: RandomForest_TF_IDF" ;
-    mls:evaluates ex:Model_RandomForest_TF_IDF ;
-    mls:specifiedBy ex:RandomForest_TF_IDF_Metric_accuracy,
-        ex:RandomForest_TF_IDF_Metric_f1_score,
-        ex:RandomForest_TF_IDF_Metric_precision,
-        ex:RandomForest_TF_IDF_Metric_recall .
-
-ex:Evaluation_RoBERTa a mls:ImplementationEvaluation ;
-    dcterms:title "Evaluation: RoBERTa" ;
-    mls:evaluates ex:Model_RoBERTa ;
-    mls:specifiedBy ex:RoBERTa_Metric_accuracy,
-        ex:RoBERTa_Metric_f1_score,
-        ex:RoBERTa_Metric_precision,
-        ex:RoBERTa_Metric_recall .
-
-ex:Evaluation_SVM_TF_IDF a mls:ImplementationEvaluation ;
-    dcterms:title "Evaluation: SVM_TF_IDF" ;
-    mls:evaluates ex:Model_SVM_TF_IDF ;
-    mls:specifiedBy ex:SVM_TF_IDF_Metric_accuracy,
-        ex:SVM_TF_IDF_Metric_f1_score,
-        ex:SVM_TF_IDF_Metric_precision,
-        ex:SVM_TF_IDF_Metric_recall .
-
 ex:BERT_Base_Setting_batch_size a mls:HyperParameterSetting ;
     mls:hasValue 16 ;
     mls:specifiedBy ex:HyperParam_batch_size .
@@ -165,26 +125,6 @@ ex:Feature_TextContent a mls:Feature ;
     rdfs:label "TextContent" ;
     dcterms:description "Raw text from social media or surveys" ;
     mls:hasDataType "string" .
-
-ex:Implementation_BERT_Base a mls:Implementation ;
-    rdfs:label "Transformer (BERT)" ;
-    dcterms:description "Implementation: PyTorch/Transformers" .
-
-ex:Implementation_BiLSTM_Attention a mls:Implementation ;
-    rdfs:label "Recurrent Neural Network (BiLSTM)" ;
-    dcterms:description "Implementation: TensorFlow/Keras" .
-
-ex:Implementation_RandomForest_TF_IDF a mls:Implementation ;
-    rdfs:label "Random Forest" ;
-    dcterms:description "Implementation: scikit-learn" .
-
-ex:Implementation_RoBERTa a mls:Implementation ;
-    rdfs:label "Transformer (RoBERTa)" ;
-    dcterms:description "Implementation: PyTorch/Transformers" .
-
-ex:Implementation_SVM_TF_IDF a mls:Implementation ;
-    rdfs:label "SVM (Linear kernel)" ;
-    dcterms:description "Implementation: scikit-learn" .
 
 ex:RandomForest_TF_IDF_Setting_max_features a mls:HyperParameterSetting ;
     mls:hasValue 10000 ;
@@ -322,7 +262,6 @@ ex:Model_BERT_Base a mls:Implementation ;
         ex:BERT_Base_Setting_learning_rate,
         ex:BERT_Base_Setting_max_seq_length,
         ex:BERT_Base_Setting_num_epochs ;
-    mls:hasImplementation ex:Implementation_BERT_Base ;
     mls:hasOutput ex:BERT_Base_Metric_accuracy,
         ex:BERT_Base_Metric_f1_score,
         ex:BERT_Base_Metric_precision,
@@ -334,7 +273,6 @@ ex:Model_BiLSTM_Attention a mls:Implementation ;
     mls:hasHyperParameter ex:BiLSTM_Attention_Setting_max_features,
         ex:BiLSTM_Attention_Setting_min_df,
         ex:BiLSTM_Attention_Setting_ngram_range ;
-    mls:hasImplementation ex:Implementation_BiLSTM_Attention ;
     mls:hasOutput ex:BiLSTM_Attention_Metric_accuracy,
         ex:BiLSTM_Attention_Metric_f1_score,
         ex:BiLSTM_Attention_Metric_precision,
@@ -346,7 +284,6 @@ ex:Model_RandomForest_TF_IDF a mls:Implementation ;
     mls:hasHyperParameter ex:RandomForest_TF_IDF_Setting_max_features,
         ex:RandomForest_TF_IDF_Setting_min_df,
         ex:RandomForest_TF_IDF_Setting_ngram_range ;
-    mls:hasImplementation ex:Implementation_RandomForest_TF_IDF ;
     mls:hasOutput ex:RandomForest_TF_IDF_Metric_accuracy,
         ex:RandomForest_TF_IDF_Metric_f1_score,
         ex:RandomForest_TF_IDF_Metric_precision,
@@ -359,7 +296,6 @@ ex:Model_RoBERTa a mls:Implementation ;
         ex:RoBERTa_Setting_learning_rate,
         ex:RoBERTa_Setting_max_seq_length,
         ex:RoBERTa_Setting_num_epochs ;
-    mls:hasImplementation ex:Implementation_RoBERTa ;
     mls:hasOutput ex:RoBERTa_Metric_accuracy,
         ex:RoBERTa_Metric_f1_score,
         ex:RoBERTa_Metric_precision,
@@ -371,7 +307,6 @@ ex:Model_SVM_TF_IDF a mls:Implementation ;
     mls:hasHyperParameter ex:SVM_TF_IDF_Setting_max_features,
         ex:SVM_TF_IDF_Setting_min_df,
         ex:SVM_TF_IDF_Setting_ngram_range ;
-    mls:hasImplementation ex:Implementation_SVM_TF_IDF ;
     mls:hasOutput ex:SVM_TF_IDF_Metric_accuracy,
         ex:SVM_TF_IDF_Metric_f1_score,
         ex:SVM_TF_IDF_Metric_precision,
