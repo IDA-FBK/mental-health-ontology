@@ -2,371 +2,203 @@
 @prefix ex: <http://example.org/miao/> .
 @prefix miao: <https://w3id.org/miao#> .
 @prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix snomed: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:BERT_Depression_Classifier_Prediction_0 a miao:Prediction ;
-    miao:confidence "0.94"^^xsd:float ;
-    miao:forSample ex:Sample_0 ;
-    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
-    miao:groundTruthCategory ex:MinimalDepression ;
-    miao:predictedCategory ex:MinimalDepression .
-
-ex:BERT_Depression_Classifier_Prediction_1 a miao:Prediction ;
-    miao:confidence "0.85"^^xsd:float ;
-    miao:forSample ex:Sample_1 ;
-    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
-    miao:groundTruthCategory ex:MildDepression ;
-    miao:predictedCategory ex:MildDepression .
-
-ex:BERT_Depression_Classifier_Prediction_2 a miao:Prediction ;
-    miao:confidence "0.74"^^xsd:float ;
-    miao:forSample ex:Sample_2 ;
-    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
-    miao:groundTruthCategory ex:ModerateDepression ;
-    miao:predictedCategory ex:ModerateDepression .
-
-ex:BERT_Depression_Classifier_Prediction_3 a miao:Prediction ;
-    miao:confidence "0.62"^^xsd:float ;
-    miao:forSample ex:Sample_3 ;
-    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
-    miao:groundTruthCategory ex:SevereDepression ;
-    miao:predictedCategory ex:MinimalDepression .
-
-ex:BERT_Depression_Classifier_Prediction_4 a miao:Prediction ;
-    miao:confidence "0.71"^^xsd:float ;
-    miao:forSample ex:Sample_4 ;
-    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
-    miao:groundTruthCategory ex:MinimalDepression ;
-    miao:predictedCategory ex:MinimalDepression .
-
-ex:BERT_Depression_Classifier_Prediction_5 a miao:Prediction ;
-    miao:confidence "0.91"^^xsd:float ;
-    miao:forSample ex:Sample_5 ;
-    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
-    miao:groundTruthCategory ex:MildDepression ;
-    miao:predictedCategory ex:MildDepression .
-
-ex:BERT_Depression_Classifier_Prediction_6 a miao:Prediction ;
-    miao:confidence "0.75"^^xsd:float ;
-    miao:forSample ex:Sample_6 ;
-    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
-    miao:groundTruthCategory ex:ModerateDepression ;
-    miao:predictedCategory ex:ModerateDepression .
-
-ex:BERT_Depression_Classifier_Prediction_7 a miao:Prediction ;
-    miao:confidence "0.78"^^xsd:float ;
-    miao:forSample ex:Sample_7 ;
-    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
-    miao:groundTruthCategory ex:SevereDepression ;
-    miao:predictedCategory ex:SevereDepression .
-
-ex:BERT_Depression_Classifier_Prediction_8 a miao:Prediction ;
-    miao:confidence "0.81"^^xsd:float ;
-    miao:forSample ex:Sample_8 ;
-    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
-    miao:groundTruthCategory ex:MinimalDepression ;
-    miao:predictedCategory ex:MinimalDepression .
-
-ex:BERT_Depression_Classifier_Prediction_9 a miao:Prediction ;
-    miao:confidence "0.85"^^xsd:float ;
-    miao:forSample ex:Sample_9 ;
-    miao:fromDetectionRun ex:BERT_Depression_Classifier_Run ;
-    miao:groundTruthCategory ex:ModerateDepression ;
-    miao:predictedCategory ex:ModerateDepression .
-
-ex:Feature_Framework_Model_Prediction_0 a miao:Prediction ;
-    miao:confidence "0.59"^^xsd:float ;
-    miao:forSample ex:Sample_0 ;
-    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
-    miao:groundTruthCategory ex:MinimalDepression ;
-    miao:predictedCategory ex:SevereDepression .
-
-ex:Feature_Framework_Model_Prediction_1 a miao:Prediction ;
-    miao:confidence "0.75"^^xsd:float ;
-    miao:forSample ex:Sample_1 ;
-    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
-    miao:groundTruthCategory ex:MildDepression ;
-    miao:predictedCategory ex:MildDepression .
-
-ex:Feature_Framework_Model_Prediction_2 a miao:Prediction ;
-    miao:confidence "0.85"^^xsd:float ;
-    miao:forSample ex:Sample_2 ;
-    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
-    miao:groundTruthCategory ex:ModerateDepression ;
-    miao:predictedCategory ex:ModerateDepression .
-
-ex:Feature_Framework_Model_Prediction_3 a miao:Prediction ;
-    miao:confidence "0.64"^^xsd:float ;
-    miao:forSample ex:Sample_3 ;
-    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
-    miao:groundTruthCategory ex:SevereDepression ;
-    miao:predictedCategory ex:ModerateDepression .
-
-ex:Feature_Framework_Model_Prediction_4 a miao:Prediction ;
-    miao:confidence "0.7"^^xsd:float ;
-    miao:forSample ex:Sample_4 ;
-    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
-    miao:groundTruthCategory ex:MinimalDepression ;
-    miao:predictedCategory ex:MinimalDepression .
-
-ex:Feature_Framework_Model_Prediction_5 a miao:Prediction ;
-    miao:confidence "0.84"^^xsd:float ;
-    miao:forSample ex:Sample_5 ;
-    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
-    miao:groundTruthCategory ex:MildDepression ;
-    miao:predictedCategory ex:MildDepression .
-
-ex:Feature_Framework_Model_Prediction_6 a miao:Prediction ;
-    miao:confidence "0.7"^^xsd:float ;
-    miao:forSample ex:Sample_6 ;
-    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
-    miao:groundTruthCategory ex:ModerateDepression ;
-    miao:predictedCategory ex:ModerateDepression .
-
-ex:Feature_Framework_Model_Prediction_7 a miao:Prediction ;
-    miao:confidence "0.76"^^xsd:float ;
-    miao:forSample ex:Sample_7 ;
-    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
-    miao:groundTruthCategory ex:SevereDepression ;
-    miao:predictedCategory ex:SevereDepression .
-
-ex:Feature_Framework_Model_Prediction_8 a miao:Prediction ;
-    miao:confidence "0.85"^^xsd:float ;
-    miao:forSample ex:Sample_8 ;
-    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
-    miao:groundTruthCategory ex:MinimalDepression ;
-    miao:predictedCategory ex:MinimalDepression .
-
-ex:Feature_Framework_Model_Prediction_9 a miao:Prediction ;
-    miao:confidence "0.74"^^xsd:float ;
-    miao:forSample ex:Sample_9 ;
-    miao:fromDetectionRun ex:Feature_Framework_Model_Run ;
-    miao:groundTruthCategory ex:ModerateDepression ;
-    miao:predictedCategory ex:ModerateDepression .
-
-ex:BERT_Depression_Classifier a mls:Model ;
-    dcterms:title "BERT Depression Classifier" ;
-    mls:hasQuality ex:BERT_Depression_Classifier_Metric_accuracy,
-        ex:BERT_Depression_Classifier_Metric_avg_confidence,
-        ex:BERT_Depression_Classifier_Metric_f1_score,
-        ex:BERT_Depression_Classifier_Metric_precision,
-        ex:BERT_Depression_Classifier_Metric_recall ;
-    mls:implements ex:BERT_Depression_Classifier_Implementation .
-
-ex:BERT_Depression_Classifier_EvalMetric_accuracy a miao:PerformanceMetric ;
-    rdfs:label "accuracy" ;
-    miao:hasValue "0.9"^^xsd:float .
-
-ex:BERT_Depression_Classifier_EvalMetric_avg_confidence a miao:PerformanceMetric ;
-    rdfs:label "avg_confidence" ;
-    miao:hasValue "0.796"^^xsd:float .
-
-ex:BERT_Depression_Classifier_EvalMetric_f1_score a miao:PerformanceMetric ;
-    rdfs:label "f1_score" ;
-    miao:hasValue "0.881"^^xsd:float .
-
-ex:BERT_Depression_Classifier_EvalMetric_precision a miao:PerformanceMetric ;
-    rdfs:label "precision" ;
-    miao:hasValue "0.9375"^^xsd:float .
-
-ex:BERT_Depression_Classifier_EvalMetric_recall a miao:PerformanceMetric ;
-    rdfs:label "recall" ;
-    miao:hasValue "0.875"^^xsd:float .
-
-ex:BERT_Depression_Classifier_Evaluation a miao:Evaluation ;
-    dcterms:title "Evaluation - BERT Depression Classifier" ;
-    miao:hasMetric ex:BERT_Depression_Classifier_EvalMetric_accuracy,
-        ex:BERT_Depression_Classifier_EvalMetric_avg_confidence,
-        ex:BERT_Depression_Classifier_EvalMetric_f1_score,
-        ex:BERT_Depression_Classifier_EvalMetric_precision,
-        ex:BERT_Depression_Classifier_EvalMetric_recall .
-
-ex:BERT_Depression_Classifier_Implementation a mls:Implementation ;
-    dcterms:title "BERT Depression Classifier" .
-
-ex:BERT_Depression_Classifier_Metric_accuracy a mls:ModelPerformance ;
-    rdfs:label "accuracy" ;
-    mls:hasValue "0.9"^^xsd:float .
-
-ex:BERT_Depression_Classifier_Metric_avg_confidence a mls:ModelPerformance ;
-    rdfs:label "avg_confidence" ;
-    mls:hasValue "0.796"^^xsd:float .
-
-ex:BERT_Depression_Classifier_Metric_f1_score a mls:ModelPerformance ;
-    rdfs:label "f1_score" ;
-    mls:hasValue "0.881"^^xsd:float .
-
-ex:BERT_Depression_Classifier_Metric_precision a mls:ModelPerformance ;
-    rdfs:label "precision" ;
-    mls:hasValue "0.9375"^^xsd:float .
-
-ex:BERT_Depression_Classifier_Metric_recall a mls:ModelPerformance ;
-    rdfs:label "recall" ;
-    mls:hasValue "0.875"^^xsd:float .
-
-ex:Depression_Severity_Dataset_Distribution_Level0 a miao:ClassDistribution ;
-    miao:hasClass ex:MinimalDepression ;
-    miao:numberOfInstances 3 .
-
-ex:Depression_Severity_Dataset_Distribution_Level1 a miao:ClassDistribution ;
-    miao:hasClass ex:MildDepression ;
-    miao:numberOfInstances 2 .
-
-ex:Depression_Severity_Dataset_Distribution_Level2 a miao:ClassDistribution ;
-    miao:hasClass ex:ModerateDepression ;
-    miao:numberOfInstances 3 .
-
-ex:Depression_Severity_Dataset_Distribution_Level3 a miao:ClassDistribution ;
-    miao:hasClass ex:SevereDepression ;
-    miao:numberOfInstances 2 .
-
-ex:Feature_Framework_Model a mls:Model ;
-    dcterms:title "Feature Framework Model" ;
-    mls:hasQuality ex:Feature_Framework_Model_Metric_accuracy,
-        ex:Feature_Framework_Model_Metric_avg_confidence,
-        ex:Feature_Framework_Model_Metric_f1_score,
-        ex:Feature_Framework_Model_Metric_precision,
-        ex:Feature_Framework_Model_Metric_recall ;
-    mls:implements ex:Feature_Framework_Model_Implementation .
-
-ex:Feature_Framework_Model_EvalMetric_accuracy a miao:PerformanceMetric ;
-    rdfs:label "accuracy" ;
-    miao:hasValue "0.8"^^xsd:float .
-
-ex:Feature_Framework_Model_EvalMetric_avg_confidence a miao:PerformanceMetric ;
-    rdfs:label "avg_confidence" ;
-    miao:hasValue "0.742"^^xsd:float .
-
-ex:Feature_Framework_Model_EvalMetric_f1_score a miao:PerformanceMetric ;
-    rdfs:label "f1_score" ;
-    miao:hasValue "0.7893"^^xsd:float .
-
-ex:Feature_Framework_Model_EvalMetric_precision a miao:PerformanceMetric ;
-    rdfs:label "precision" ;
-    miao:hasValue "0.8125"^^xsd:float .
-
-ex:Feature_Framework_Model_EvalMetric_recall a miao:PerformanceMetric ;
-    rdfs:label "recall" ;
-    miao:hasValue "0.7917"^^xsd:float .
-
-ex:Feature_Framework_Model_Evaluation a miao:Evaluation ;
-    dcterms:title "Evaluation - Feature Framework Model" ;
-    miao:hasMetric ex:Feature_Framework_Model_EvalMetric_accuracy,
-        ex:Feature_Framework_Model_EvalMetric_avg_confidence,
-        ex:Feature_Framework_Model_EvalMetric_f1_score,
-        ex:Feature_Framework_Model_EvalMetric_precision,
-        ex:Feature_Framework_Model_EvalMetric_recall .
-
-ex:Feature_Framework_Model_Implementation a mls:Implementation ;
-    dcterms:title "Feature Framework Model" .
-
-ex:Feature_Framework_Model_Metric_accuracy a mls:ModelPerformance ;
-    rdfs:label "accuracy" ;
-    mls:hasValue "0.8"^^xsd:float .
-
-ex:Feature_Framework_Model_Metric_avg_confidence a mls:ModelPerformance ;
-    rdfs:label "avg_confidence" ;
-    mls:hasValue "0.742"^^xsd:float .
-
-ex:Feature_Framework_Model_Metric_f1_score a mls:ModelPerformance ;
-    rdfs:label "f1_score" ;
-    mls:hasValue "0.7893"^^xsd:float .
-
-ex:Feature_Framework_Model_Metric_precision a mls:ModelPerformance ;
-    rdfs:label "precision" ;
-    mls:hasValue "0.8125"^^xsd:float .
-
-ex:Feature_Framework_Model_Metric_recall a mls:ModelPerformance ;
-    rdfs:label "recall" ;
-    mls:hasValue "0.7917"^^xsd:float .
-
-ex:Depression_Severity_Dataset a miao:Dataset ;
-    dcterms:created "2025-12-03"^^xsd:date ;
-    dcterms:description "Text dataset with 10 samples annotated with depression severity labels (0-3) based on PHQ-9 criteria." ;
-    dcterms:title "Depression Severity Dataset" ;
-    miao:hasClassDistribution ex:Depression_Severity_Dataset_Distribution_Level0,
-        ex:Depression_Severity_Dataset_Distribution_Level1,
-        ex:Depression_Severity_Dataset_Distribution_Level2,
-        ex:Depression_Severity_Dataset_Distribution_Level3 ;
-    miao:numberOfSamples 10 ;
-    miao:usesSchema ex:DepressionSeveritySchema_Research .
-
-ex:Sample_0 a miao:Sample ;
-    dcterms:description "Feeling okay today, nothing special but managing fine" ;
-    dcterms:identifier 0 .
-
-ex:Sample_1 a miao:Sample ;
-    dcterms:description "Sometimes I feel a bit down but it passes quickly" ;
-    dcterms:identifier 1 .
-
-ex:Sample_2 a miao:Sample ;
-    dcterms:description "Having trouble getting out of bed, everything feels heavy" ;
-    dcterms:identifier 2 .
-
-ex:Sample_3 a miao:Sample ;
-    dcterms:description "I can't remember the last time I felt happy, constant despair" ;
-    dcterms:identifier 3 .
-
-ex:Sample_4 a miao:Sample ;
-    dcterms:description "Life is good, enjoying my hobbies and social activities" ;
-    dcterms:identifier 4 .
-
-ex:Sample_5 a miao:Sample ;
-    dcterms:description "Feel slightly sad occasionally but cope well overall" ;
-    dcterms:identifier 5 .
-
-ex:Sample_6 a miao:Sample ;
-    dcterms:description "Struggling to concentrate, lost interest in most things" ;
-    dcterms:identifier 6 .
-
-ex:Sample_7 a miao:Sample ;
-    dcterms:description "Complete hopelessness, thoughts of ending it all" ;
-    dcterms:identifier 7 .
-
-ex:Sample_8 a miao:Sample ;
-    dcterms:description "Pretty content with life, normal ups and downs" ;
-    dcterms:identifier 8 .
-
-ex:Sample_9 a miao:Sample ;
-    dcterms:description "Persistent sadness affecting work and relationships" ;
-    dcterms:identifier 9 .
-
-ex:DepressionSeveritySchema_Research a miao:MentalIllnessesSchema ;
-    dcterms:created "2025-12-02"^^xsd:date ;
-    dcterms:description "Ordinal taxonomy of depression severity (Minimal, Mild, Moderate, Severe) used in social media corpora and text-based computational research on depression detection. Based on PHQ-9 severity thresholds."@en ;
-    dcterms:source "Kroenke K, Spitzer RL, Williams JB. The PHQ-9: validity of a brief depression severity measure. J Gen Intern Med. 2001;16(9):606-13." ;
-    dcterms:title "Research schema for depression severity in text"@en ;
-    miao:hasMentalIllnessCategory ex:MildDepression,
-        ex:MinimalDepression,
-        ex:ModerateDepression,
-        ex:SevereDepression .
-
-ex:SevereDepression a miao:MentalIllnessCategory ;
-    rdfs:label "Severe Depression"@en ;
-    dcterms:description "Severe depressive symptoms. PHQ-9 score range: 15-27 (includes moderately severe 15-19 and severe 20-27). Warrants active treatment with pharmacotherapy and/or psychotherapy."@en ;
-    dcterms:identifier 3 ;
-    dcterms:title "Severe depression"@en ;
-    skos:related snomed:310497006 ;
-    miao:isMentalIllnessCategoryOf ex:DepressionSeveritySchema_Research .
-
-ex:BERT_Depression_Classifier_Run a miao:DetectionRun ;
-    dcterms:created "2025-12-03T17:30:18"^^xsd:dateTime ;
-    dcterms:title "Depression Detection Run - BERT Depression Classifier" ;
-    miao:hasEvaluation ex:BERT_Depression_Classifier_Evaluation ;
-    miao:usesDataset ex:Depression_Severity_Dataset ;
-    miao:usesModel ex:BERT_Depression_Classifier ;
-    miao:usesSchema ex:DepressionSeveritySchema_Research .
-
-ex:Feature_Framework_Model_Run a miao:DetectionRun ;
-    dcterms:created "2025-12-03T17:30:18"^^xsd:dateTime ;
-    dcterms:title "Depression Detection Run - Feature Framework Model" ;
-    miao:hasEvaluation ex:Feature_Framework_Model_Evaluation ;
-    miao:usesDataset ex:Depression_Severity_Dataset ;
-    miao:usesModel ex:Feature_Framework_Model ;
-    miao:usesSchema ex:DepressionSeveritySchema_Research .
+ex:Evaluation_BERT_Base a mls:ModelEvaluation ;
+    dcterms:title "Evaluation: BERT_Base" ;
+    mls:evaluates ex:Model_BERT_Base ;
+    mls:specifiedBy ex:BERT_Base_Metric_accuracy,
+        ex:BERT_Base_Metric_f1_score,
+        ex:BERT_Base_Metric_precision,
+        ex:BERT_Base_Metric_recall .
+
+ex:Evaluation_BiLSTM a mls:ModelEvaluation ;
+    dcterms:title "Evaluation: BiLSTM" ;
+    mls:evaluates ex:Model_BiLSTM ;
+    mls:specifiedBy ex:BiLSTM_Metric_accuracy,
+        ex:BiLSTM_Metric_f1_score,
+        ex:BiLSTM_Metric_precision,
+        ex:BiLSTM_Metric_recall .
+
+ex:Evaluation_LogisticRegression_TF_IDF a mls:ModelEvaluation ;
+    dcterms:title "Evaluation: LogisticRegression_TF_IDF" ;
+    mls:evaluates ex:Model_LogisticRegression_TF_IDF ;
+    mls:specifiedBy ex:LogisticRegression_TF_IDF_Metric_accuracy,
+        ex:LogisticRegression_TF_IDF_Metric_f1_score,
+        ex:LogisticRegression_TF_IDF_Metric_precision,
+        ex:LogisticRegression_TF_IDF_Metric_recall .
+
+ex:Evaluation_SVM_TF_IDF a mls:ModelEvaluation ;
+    dcterms:title "Evaluation: SVM_TF_IDF" ;
+    mls:evaluates ex:Model_SVM_TF_IDF ;
+    mls:specifiedBy ex:SVM_TF_IDF_Metric_accuracy,
+        ex:SVM_TF_IDF_Metric_f1_score,
+        ex:SVM_TF_IDF_Metric_precision,
+        ex:SVM_TF_IDF_Metric_recall .
+
+ex:BERT_Base_Setting_batch_size a mls:HyperParameterSetting ;
+    mls:hasValue 16 ;
+    mls:specifiedBy ex:HyperParam_batch_size .
+
+ex:BERT_Base_Setting_dropout_rate a mls:HyperParameterSetting ;
+    mls:hasValue "0.1"^^xsd:float ;
+    mls:specifiedBy ex:HyperParam_dropout_rate .
+
+ex:BERT_Base_Setting_learning_rate a mls:HyperParameterSetting ;
+    mls:hasValue "2e-05"^^xsd:float ;
+    mls:specifiedBy ex:HyperParam_learning_rate .
+
+ex:BERT_Base_Setting_max_seq_length a mls:HyperParameterSetting ;
+    mls:hasValue 512 ;
+    mls:specifiedBy ex:HyperParam_max_seq_length .
+
+ex:BERT_Base_Setting_num_epochs a mls:HyperParameterSetting ;
+    mls:hasValue 3 ;
+    mls:specifiedBy ex:HyperParam_num_epochs .
+
+ex:BiLSTM_Setting_max_features a mls:HyperParameterSetting ;
+    mls:hasValue 10000 ;
+    mls:specifiedBy ex:HyperParam_max_features .
+
+ex:BiLSTM_Setting_min_df a mls:HyperParameterSetting ;
+    mls:hasValue 5 ;
+    mls:specifiedBy ex:HyperParam_min_df .
+
+ex:BiLSTM_Setting_ngram_range a mls:HyperParameterSetting ;
+    mls:hasValue "(1,2)" ;
+    mls:specifiedBy ex:HyperParam_ngram_range .
+
+ex:DataChar_AverageTextLength a mls:DataCharacteristic ;
+    rdfs:label "AverageTextLength" ;
+    dcterms:description "Average character length of text" ;
+    mls:hasValue "52.7"^^xsd:float .
+
+ex:DataChar_ClassBalance a mls:DataCharacteristic ;
+    rdfs:label "ClassBalance" ;
+    dcterms:description "Class distribution balance coefficient" ;
+    mls:hasValue "0.231"^^xsd:float .
+
+ex:DataChar_NumberOfClasses a mls:DataCharacteristic ;
+    rdfs:label "NumberOfClasses" ;
+    dcterms:description "Number of depression severity classes" ;
+    mls:hasValue "4"^^xsd:float .
+
+ex:DataChar_NumberOfInstances a mls:DataCharacteristic ;
+    rdfs:label "NumberOfInstances" ;
+    dcterms:description "Total number of samples in dataset" ;
+    mls:hasValue "10"^^xsd:float .
+
+ex:Detection_BERT_Base a mls:Run,
+        miao:AutomaticMentalIllnessesDetection ;
+    dcterms:description "Automatic detection run using BERT_Base model" ;
+    dcterms:title "Depression Detection Run: BERT_Base" ;
+    mls:hasInput ex:Depression_Severity_Dataset ;
+    mls:implements ex:Model_BERT_Base ;
+    prov:generated ex:ResultSet_BERT_Base ;
+    miao:hasInputData ex:Depression_Severity_Dataset ;
+    miao:usedMentalIllnessesSchema ex:DepressionSeveritySchema_Research .
+
+ex:Detection_BiLSTM a mls:Run,
+        miao:AutomaticMentalIllnessesDetection ;
+    dcterms:description "Automatic detection run using BiLSTM model" ;
+    dcterms:title "Depression Detection Run: BiLSTM" ;
+    mls:hasInput ex:Depression_Severity_Dataset ;
+    mls:implements ex:Model_BiLSTM ;
+    prov:generated ex:ResultSet_BiLSTM ;
+    miao:hasInputData ex:Depression_Severity_Dataset ;
+    miao:usedMentalIllnessesSchema ex:DepressionSeveritySchema_Research .
+
+ex:Detection_LogisticRegression_TF_IDF a mls:Run,
+        miao:AutomaticMentalIllnessesDetection ;
+    dcterms:description "Automatic detection run using LogisticRegression_TF_IDF model" ;
+    dcterms:title "Depression Detection Run: LogisticRegression_TF_IDF" ;
+    mls:hasInput ex:Depression_Severity_Dataset ;
+    mls:implements ex:Model_LogisticRegression_TF_IDF ;
+    prov:generated ex:ResultSet_LogisticRegression_TF_IDF ;
+    miao:hasInputData ex:Depression_Severity_Dataset ;
+    miao:usedMentalIllnessesSchema ex:DepressionSeveritySchema_Research .
+
+ex:Detection_SVM_TF_IDF a mls:Run,
+        miao:AutomaticMentalIllnessesDetection ;
+    dcterms:description "Automatic detection run using SVM_TF_IDF model" ;
+    dcterms:title "Depression Detection Run: SVM_TF_IDF" ;
+    mls:hasInput ex:Depression_Severity_Dataset ;
+    mls:implements ex:Model_SVM_TF_IDF ;
+    prov:generated ex:ResultSet_SVM_TF_IDF ;
+    miao:hasInputData ex:Depression_Severity_Dataset ;
+    miao:usedMentalIllnessesSchema ex:DepressionSeveritySchema_Research .
+
+ex:Feature_EmotionalIntensity a mls:Feature ;
+    rdfs:label "EmotionalIntensity" ;
+    dcterms:description "Intensity of emotional expression in text" ;
+    mls:hasDataType "float" .
+
+ex:Feature_SentimentScore a mls:Feature ;
+    rdfs:label "SentimentScore" ;
+    dcterms:description "Computed sentiment polarity score" ;
+    mls:hasDataType "float" .
+
+ex:Feature_TextContent a mls:Feature ;
+    rdfs:label "TextContent" ;
+    dcterms:description "Raw text content from social media posts or clinical notes" ;
+    mls:hasDataType "string" .
+
+ex:Feature_TextLength a mls:Feature ;
+    rdfs:label "TextLength" ;
+    dcterms:description "Character length of the text content" ;
+    mls:hasDataType "integer" .
+
+ex:HyperParam_batch_size a mls:HyperParameter ;
+    rdfs:label "batch_size" ;
+    dcterms:description "Training batch size" .
+
+ex:HyperParam_dropout_rate a mls:HyperParameter ;
+    rdfs:label "dropout_rate" ;
+    dcterms:description "Dropout probability" .
+
+ex:HyperParam_learning_rate a mls:HyperParameter ;
+    rdfs:label "learning_rate" ;
+    dcterms:description "Learning rate" .
+
+ex:HyperParam_max_seq_length a mls:HyperParameter ;
+    rdfs:label "max_seq_length" ;
+    dcterms:description "Max sequence length" .
+
+ex:HyperParam_num_epochs a mls:HyperParameter ;
+    rdfs:label "num_epochs" ;
+    dcterms:description "Number of epochs" .
+
+ex:Implementation_BERT_Base a mls:Implementation ;
+    rdfs:label "Transformer (BERT)" ;
+    dcterms:description "Implementation: PyTorch/Transformers" .
+
+ex:Implementation_BiLSTM a mls:Implementation ;
+    rdfs:label "Recurrent Neural Network (BiLSTM)" ;
+    dcterms:description "Implementation: TensorFlow/Keras" .
+
+ex:Implementation_LogisticRegression_TF_IDF a mls:Implementation ;
+    rdfs:label "Logistic Regression" ;
+    dcterms:description "Implementation: scikit-learn" .
+
+ex:Implementation_SVM_TF_IDF a mls:Implementation ;
+    rdfs:label "SVM (RBF kernel)" ;
+    dcterms:description "Implementation: scikit-learn" .
+
+ex:LogisticRegression_TF_IDF_Setting_max_features a mls:HyperParameterSetting ;
+    mls:hasValue 10000 ;
+    mls:specifiedBy ex:HyperParam_max_features .
+
+ex:LogisticRegression_TF_IDF_Setting_min_df a mls:HyperParameterSetting ;
+    mls:hasValue 5 ;
+    mls:specifiedBy ex:HyperParam_min_df .
+
+ex:LogisticRegression_TF_IDF_Setting_ngram_range a mls:HyperParameterSetting ;
+    mls:hasValue "(1,2)" ;
+    mls:specifiedBy ex:HyperParam_ngram_range .
 
 ex:MildDepression a miao:MentalIllnessCategory ;
     rdfs:label "Mild Depression"@en ;
@@ -390,4 +222,193 @@ ex:ModerateDepression a miao:MentalIllnessCategory ;
     dcterms:title "Moderate depression"@en ;
     skos:related snomed:310496002 ;
     miao:isMentalIllnessCategoryOf ex:DepressionSeveritySchema_Research .
+
+ex:ResultSet_BERT_Base a prov:Entity,
+        miao:MentalIllnessesSet ;
+    dcterms:title "Detection Results: BERT_Base" ;
+    prov:wasGeneratedBy ex:Detection_BERT_Base .
+
+ex:ResultSet_BiLSTM a prov:Entity,
+        miao:MentalIllnessesSet ;
+    dcterms:title "Detection Results: BiLSTM" ;
+    prov:wasGeneratedBy ex:Detection_BiLSTM .
+
+ex:ResultSet_LogisticRegression_TF_IDF a prov:Entity,
+        miao:MentalIllnessesSet ;
+    dcterms:title "Detection Results: LogisticRegression_TF_IDF" ;
+    prov:wasGeneratedBy ex:Detection_LogisticRegression_TF_IDF .
+
+ex:ResultSet_SVM_TF_IDF a prov:Entity,
+        miao:MentalIllnessesSet ;
+    dcterms:title "Detection Results: SVM_TF_IDF" ;
+    prov:wasGeneratedBy ex:Detection_SVM_TF_IDF .
+
+ex:SVM_TF_IDF_Setting_max_features a mls:HyperParameterSetting ;
+    mls:hasValue 10000 ;
+    mls:specifiedBy ex:HyperParam_max_features .
+
+ex:SVM_TF_IDF_Setting_min_df a mls:HyperParameterSetting ;
+    mls:hasValue 5 ;
+    mls:specifiedBy ex:HyperParam_min_df .
+
+ex:SVM_TF_IDF_Setting_ngram_range a mls:HyperParameterSetting ;
+    mls:hasValue "(1,2)" ;
+    mls:specifiedBy ex:HyperParam_ngram_range .
+
+ex:SevereDepression a miao:MentalIllnessCategory ;
+    rdfs:label "Severe Depression"@en ;
+    dcterms:description "Severe depressive symptoms. PHQ-9 score range: 15-27 (includes moderately severe 15-19 and severe 20-27). Warrants active treatment with pharmacotherapy and/or psychotherapy."@en ;
+    dcterms:identifier 3 ;
+    dcterms:title "Severe depression"@en ;
+    skos:related snomed:310497006 ;
+    miao:isMentalIllnessCategoryOf ex:DepressionSeveritySchema_Research .
+
+ex:BERT_Base_Metric_accuracy a mls:EvaluationMeasure ;
+    rdfs:label "accuracy" ;
+    mls:hasValue "0.85"^^xsd:float .
+
+ex:BERT_Base_Metric_f1_score a mls:EvaluationMeasure ;
+    rdfs:label "f1_score" ;
+    mls:hasValue "0.85"^^xsd:float .
+
+ex:BERT_Base_Metric_precision a mls:EvaluationMeasure ;
+    rdfs:label "precision" ;
+    mls:hasValue "0.83"^^xsd:float .
+
+ex:BERT_Base_Metric_recall a mls:EvaluationMeasure ;
+    rdfs:label "recall" ;
+    mls:hasValue "0.87"^^xsd:float .
+
+ex:BiLSTM_Metric_accuracy a mls:EvaluationMeasure ;
+    rdfs:label "accuracy" ;
+    mls:hasValue "0.85"^^xsd:float .
+
+ex:BiLSTM_Metric_f1_score a mls:EvaluationMeasure ;
+    rdfs:label "f1_score" ;
+    mls:hasValue "0.85"^^xsd:float .
+
+ex:BiLSTM_Metric_precision a mls:EvaluationMeasure ;
+    rdfs:label "precision" ;
+    mls:hasValue "0.83"^^xsd:float .
+
+ex:BiLSTM_Metric_recall a mls:EvaluationMeasure ;
+    rdfs:label "recall" ;
+    mls:hasValue "0.87"^^xsd:float .
+
+ex:LogisticRegression_TF_IDF_Metric_accuracy a mls:EvaluationMeasure ;
+    rdfs:label "accuracy" ;
+    mls:hasValue "0.85"^^xsd:float .
+
+ex:LogisticRegression_TF_IDF_Metric_f1_score a mls:EvaluationMeasure ;
+    rdfs:label "f1_score" ;
+    mls:hasValue "0.85"^^xsd:float .
+
+ex:LogisticRegression_TF_IDF_Metric_precision a mls:EvaluationMeasure ;
+    rdfs:label "precision" ;
+    mls:hasValue "0.83"^^xsd:float .
+
+ex:LogisticRegression_TF_IDF_Metric_recall a mls:EvaluationMeasure ;
+    rdfs:label "recall" ;
+    mls:hasValue "0.87"^^xsd:float .
+
+ex:Model_BERT_Base a mls:Model ;
+    dcterms:description "BERT-base fine-tuned for depression severity classification" ;
+    dcterms:title "Depression Detection: BERT_Base" ;
+    mls:hasHyperParameter ex:BERT_Base_Setting_batch_size,
+        ex:BERT_Base_Setting_dropout_rate,
+        ex:BERT_Base_Setting_learning_rate,
+        ex:BERT_Base_Setting_max_seq_length,
+        ex:BERT_Base_Setting_num_epochs ;
+    mls:hasImplementation ex:Implementation_BERT_Base ;
+    mls:hasQuality ex:BERT_Base_Metric_accuracy,
+        ex:BERT_Base_Metric_f1_score,
+        ex:BERT_Base_Metric_precision,
+        ex:BERT_Base_Metric_recall .
+
+ex:Model_BiLSTM a mls:Model ;
+    dcterms:description "Bidirectional LSTM with attention for sequence classification" ;
+    dcterms:title "Depression Detection: BiLSTM" ;
+    mls:hasHyperParameter ex:BiLSTM_Setting_max_features,
+        ex:BiLSTM_Setting_min_df,
+        ex:BiLSTM_Setting_ngram_range ;
+    mls:hasImplementation ex:Implementation_BiLSTM ;
+    mls:hasQuality ex:BiLSTM_Metric_accuracy,
+        ex:BiLSTM_Metric_f1_score,
+        ex:BiLSTM_Metric_precision,
+        ex:BiLSTM_Metric_recall .
+
+ex:Model_LogisticRegression_TF_IDF a mls:Model ;
+    dcterms:description "Logistic Regression with TF-IDF features" ;
+    dcterms:title "Depression Detection: LogisticRegression_TF_IDF" ;
+    mls:hasHyperParameter ex:LogisticRegression_TF_IDF_Setting_max_features,
+        ex:LogisticRegression_TF_IDF_Setting_min_df,
+        ex:LogisticRegression_TF_IDF_Setting_ngram_range ;
+    mls:hasImplementation ex:Implementation_LogisticRegression_TF_IDF ;
+    mls:hasQuality ex:LogisticRegression_TF_IDF_Metric_accuracy,
+        ex:LogisticRegression_TF_IDF_Metric_f1_score,
+        ex:LogisticRegression_TF_IDF_Metric_precision,
+        ex:LogisticRegression_TF_IDF_Metric_recall .
+
+ex:Model_SVM_TF_IDF a mls:Model ;
+    dcterms:description "Support Vector Machine with TF-IDF features" ;
+    dcterms:title "Depression Detection: SVM_TF_IDF" ;
+    mls:hasHyperParameter ex:SVM_TF_IDF_Setting_max_features,
+        ex:SVM_TF_IDF_Setting_min_df,
+        ex:SVM_TF_IDF_Setting_ngram_range ;
+    mls:hasImplementation ex:Implementation_SVM_TF_IDF ;
+    mls:hasQuality ex:SVM_TF_IDF_Metric_accuracy,
+        ex:SVM_TF_IDF_Metric_f1_score,
+        ex:SVM_TF_IDF_Metric_precision,
+        ex:SVM_TF_IDF_Metric_recall .
+
+ex:SVM_TF_IDF_Metric_accuracy a mls:EvaluationMeasure ;
+    rdfs:label "accuracy" ;
+    mls:hasValue "0.85"^^xsd:float .
+
+ex:SVM_TF_IDF_Metric_f1_score a mls:EvaluationMeasure ;
+    rdfs:label "f1_score" ;
+    mls:hasValue "0.85"^^xsd:float .
+
+ex:SVM_TF_IDF_Metric_precision a mls:EvaluationMeasure ;
+    rdfs:label "precision" ;
+    mls:hasValue "0.83"^^xsd:float .
+
+ex:SVM_TF_IDF_Metric_recall a mls:EvaluationMeasure ;
+    rdfs:label "recall" ;
+    mls:hasValue "0.87"^^xsd:float .
+
+ex:HyperParam_max_features a mls:HyperParameter ;
+    rdfs:label "max_features" ;
+    dcterms:description "Max vocabulary size" .
+
+ex:HyperParam_min_df a mls:HyperParameter ;
+    rdfs:label "min_df" ;
+    dcterms:description "Min document frequency" .
+
+ex:HyperParam_ngram_range a mls:HyperParameter ;
+    rdfs:label "ngram_range" ;
+    dcterms:description "N-gram range" .
+
+ex:DepressionSeveritySchema_Research a miao:MentalIllnessesSchema ;
+    dcterms:created "2025-12-02"^^xsd:date ;
+    dcterms:description "Ordinal taxonomy of depression severity (Minimal, Mild, Moderate, Severe) used in social media corpora and text-based computational research on depression detection. Based on PHQ-9 severity thresholds."@en ;
+    dcterms:source "Kroenke K, Spitzer RL, Williams JB. The PHQ-9: validity of a brief depression severity measure. J Gen Intern Med. 2001;16(9):606-13." ;
+    dcterms:title "Research schema for depression severity in text"@en ;
+    miao:hasMentalIllnessCategory ex:MildDepression,
+        ex:MinimalDepression,
+        ex:ModerateDepression,
+        ex:SevereDepression .
+
+ex:Depression_Severity_Dataset a mls:Dataset ;
+    dcterms:created "2025-12-04"^^xsd:date ;
+    dcterms:description "Text dataset with 10 samples annotated with depression severity labels (0-3) based on PHQ-9 criteria." ;
+    dcterms:title "Depression Severity Dataset" ;
+    mls:hasFeature ex:Feature_EmotionalIntensity,
+        ex:Feature_SentimentScore,
+        ex:Feature_TextContent,
+        ex:Feature_TextLength ;
+    mls:hasQuality ex:DataChar_AverageTextLength,
+        ex:DataChar_ClassBalance,
+        ex:DataChar_NumberOfClasses,
+        ex:DataChar_NumberOfInstances .
 

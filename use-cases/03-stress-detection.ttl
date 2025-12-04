@@ -1,0 +1,452 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <http://example.org/miao/> .
+@prefix miao: <https://w3id.org/miao#> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix snomed: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Evaluation_BERT_Base a mls:ModelEvaluation ;
+    dcterms:title "Evaluation: BERT_Base" ;
+    mls:evaluates ex:Model_BERT_Base ;
+    mls:specifiedBy ex:BERT_Base_Metric_accuracy,
+        ex:BERT_Base_Metric_f1_score,
+        ex:BERT_Base_Metric_precision,
+        ex:BERT_Base_Metric_recall .
+
+ex:Evaluation_BiLSTM_Attention a mls:ModelEvaluation ;
+    dcterms:title "Evaluation: BiLSTM_Attention" ;
+    mls:evaluates ex:Model_BiLSTM_Attention ;
+    mls:specifiedBy ex:BiLSTM_Attention_Metric_accuracy,
+        ex:BiLSTM_Attention_Metric_f1_score,
+        ex:BiLSTM_Attention_Metric_precision,
+        ex:BiLSTM_Attention_Metric_recall .
+
+ex:Evaluation_RandomForest_TF_IDF a mls:ModelEvaluation ;
+    dcterms:title "Evaluation: RandomForest_TF_IDF" ;
+    mls:evaluates ex:Model_RandomForest_TF_IDF ;
+    mls:specifiedBy ex:RandomForest_TF_IDF_Metric_accuracy,
+        ex:RandomForest_TF_IDF_Metric_f1_score,
+        ex:RandomForest_TF_IDF_Metric_precision,
+        ex:RandomForest_TF_IDF_Metric_recall .
+
+ex:Evaluation_RoBERTa a mls:ModelEvaluation ;
+    dcterms:title "Evaluation: RoBERTa" ;
+    mls:evaluates ex:Model_RoBERTa ;
+    mls:specifiedBy ex:RoBERTa_Metric_accuracy,
+        ex:RoBERTa_Metric_f1_score,
+        ex:RoBERTa_Metric_precision,
+        ex:RoBERTa_Metric_recall .
+
+ex:Evaluation_SVM_TF_IDF a mls:ModelEvaluation ;
+    dcterms:title "Evaluation: SVM_TF_IDF" ;
+    mls:evaluates ex:Model_SVM_TF_IDF ;
+    mls:specifiedBy ex:SVM_TF_IDF_Metric_accuracy,
+        ex:SVM_TF_IDF_Metric_f1_score,
+        ex:SVM_TF_IDF_Metric_precision,
+        ex:SVM_TF_IDF_Metric_recall .
+
+ex:BERT_Base_Setting_batch_size a mls:HyperParameterSetting ;
+    mls:hasValue 16 ;
+    mls:specifiedBy ex:HyperParam_batch_size .
+
+ex:BERT_Base_Setting_learning_rate a mls:HyperParameterSetting ;
+    mls:hasValue 3e-05 ;
+    mls:specifiedBy ex:HyperParam_learning_rate .
+
+ex:BERT_Base_Setting_max_seq_length a mls:HyperParameterSetting ;
+    mls:hasValue 256 ;
+    mls:specifiedBy ex:HyperParam_max_seq_length .
+
+ex:BERT_Base_Setting_num_epochs a mls:HyperParameterSetting ;
+    mls:hasValue 4 ;
+    mls:specifiedBy ex:HyperParam_num_epochs .
+
+ex:BiLSTM_Attention_Setting_max_features a mls:HyperParameterSetting ;
+    mls:hasValue 10000 ;
+    mls:specifiedBy ex:HyperParam_max_features .
+
+ex:BiLSTM_Attention_Setting_min_df a mls:HyperParameterSetting ;
+    mls:hasValue 3 ;
+    mls:specifiedBy ex:HyperParam_min_df .
+
+ex:BiLSTM_Attention_Setting_ngram_range a mls:HyperParameterSetting ;
+    mls:hasValue "(1,3)" ;
+    mls:specifiedBy ex:HyperParam_ngram_range .
+
+ex:DataChar_NumberOfClasses a mls:DataCharacteristic ;
+    rdfs:label "NumberOfClasses" ;
+    dcterms:description "Binary stress classification" ;
+    mls:hasValue "2"^^xsd:float .
+
+ex:DataChar_NumberOfInstances a mls:DataCharacteristic ;
+    rdfs:label "NumberOfInstances" ;
+    dcterms:description "Total samples" ;
+    mls:hasValue "10"^^xsd:float .
+
+ex:DataChar_StressPrevalence a mls:DataCharacteristic ;
+    rdfs:label "StressPrevalence" ;
+    dcterms:description "Proportion with stress indicators" ;
+    mls:hasValue "0.5"^^xsd:float .
+
+ex:Detection_BERT_Base a mls:Run,
+        miao:AutomaticMentalIllnessesDetection ;
+    dcterms:description "Automatic stress detection using BERT_Base" ;
+    dcterms:title "Stress Detection Run: BERT_Base" ;
+    mls:hasInput ex:Stress_Detection_Dataset ;
+    mls:implements ex:Model_BERT_Base ;
+    prov:generated ex:ResultSet_BERT_Base ;
+    miao:hasInputData ex:Stress_Detection_Dataset ;
+    miao:usedMentalIllnessesSchema ex:StressSchema_Binary .
+
+ex:Detection_BiLSTM_Attention a mls:Run,
+        miao:AutomaticMentalIllnessesDetection ;
+    dcterms:description "Automatic stress detection using BiLSTM_Attention" ;
+    dcterms:title "Stress Detection Run: BiLSTM_Attention" ;
+    mls:hasInput ex:Stress_Detection_Dataset ;
+    mls:implements ex:Model_BiLSTM_Attention ;
+    prov:generated ex:ResultSet_BiLSTM_Attention ;
+    miao:hasInputData ex:Stress_Detection_Dataset ;
+    miao:usedMentalIllnessesSchema ex:StressSchema_Binary .
+
+ex:Detection_RandomForest_TF_IDF a mls:Run,
+        miao:AutomaticMentalIllnessesDetection ;
+    dcterms:description "Automatic stress detection using RandomForest_TF_IDF" ;
+    dcterms:title "Stress Detection Run: RandomForest_TF_IDF" ;
+    mls:hasInput ex:Stress_Detection_Dataset ;
+    mls:implements ex:Model_RandomForest_TF_IDF ;
+    prov:generated ex:ResultSet_RandomForest_TF_IDF ;
+    miao:hasInputData ex:Stress_Detection_Dataset ;
+    miao:usedMentalIllnessesSchema ex:StressSchema_Binary .
+
+ex:Detection_RoBERTa a mls:Run,
+        miao:AutomaticMentalIllnessesDetection ;
+    dcterms:description "Automatic stress detection using RoBERTa" ;
+    dcterms:title "Stress Detection Run: RoBERTa" ;
+    mls:hasInput ex:Stress_Detection_Dataset ;
+    mls:implements ex:Model_RoBERTa ;
+    prov:generated ex:ResultSet_RoBERTa ;
+    miao:hasInputData ex:Stress_Detection_Dataset ;
+    miao:usedMentalIllnessesSchema ex:StressSchema_Binary .
+
+ex:Detection_SVM_TF_IDF a mls:Run,
+        miao:AutomaticMentalIllnessesDetection ;
+    dcterms:description "Automatic stress detection using SVM_TF_IDF" ;
+    dcterms:title "Stress Detection Run: SVM_TF_IDF" ;
+    mls:hasInput ex:Stress_Detection_Dataset ;
+    mls:implements ex:Model_SVM_TF_IDF ;
+    prov:generated ex:ResultSet_SVM_TF_IDF ;
+    miao:hasInputData ex:Stress_Detection_Dataset ;
+    miao:usedMentalIllnessesSchema ex:StressSchema_Binary .
+
+ex:Feature_CognitiveLoadIndicators a mls:Feature ;
+    rdfs:label "CognitiveLoadIndicators" ;
+    dcterms:description "Markers of cognitive overwhelm" ;
+    mls:hasDataType "float" .
+
+ex:Feature_NegativeEmotionScore a mls:Feature ;
+    rdfs:label "NegativeEmotionScore" ;
+    dcterms:description "Prevalence of negative emotions (worry, anxiety)" ;
+    mls:hasDataType "float" .
+
+ex:Feature_PhysiologicalMarkers a mls:Feature ;
+    rdfs:label "PhysiologicalMarkers" ;
+    dcterms:description "Physical stress symptoms" ;
+    mls:hasDataType "float" .
+
+ex:Feature_TemporalUrgency a mls:Feature ;
+    rdfs:label "TemporalUrgency" ;
+    dcterms:description "Time pressure expressions" ;
+    mls:hasDataType "float" .
+
+ex:Feature_TextContent a mls:Feature ;
+    rdfs:label "TextContent" ;
+    dcterms:description "Raw text from social media or surveys" ;
+    mls:hasDataType "string" .
+
+ex:Implementation_BERT_Base a mls:Implementation ;
+    rdfs:label "Transformer (BERT)" ;
+    dcterms:description "Implementation: PyTorch/Transformers" .
+
+ex:Implementation_BiLSTM_Attention a mls:Implementation ;
+    rdfs:label "Recurrent Neural Network (BiLSTM)" ;
+    dcterms:description "Implementation: TensorFlow/Keras" .
+
+ex:Implementation_RandomForest_TF_IDF a mls:Implementation ;
+    rdfs:label "Random Forest" ;
+    dcterms:description "Implementation: scikit-learn" .
+
+ex:Implementation_RoBERTa a mls:Implementation ;
+    rdfs:label "Transformer (RoBERTa)" ;
+    dcterms:description "Implementation: PyTorch/Transformers" .
+
+ex:Implementation_SVM_TF_IDF a mls:Implementation ;
+    rdfs:label "SVM (Linear kernel)" ;
+    dcterms:description "Implementation: scikit-learn" .
+
+ex:RandomForest_TF_IDF_Setting_max_features a mls:HyperParameterSetting ;
+    mls:hasValue 10000 ;
+    mls:specifiedBy ex:HyperParam_max_features .
+
+ex:RandomForest_TF_IDF_Setting_min_df a mls:HyperParameterSetting ;
+    mls:hasValue 3 ;
+    mls:specifiedBy ex:HyperParam_min_df .
+
+ex:RandomForest_TF_IDF_Setting_ngram_range a mls:HyperParameterSetting ;
+    mls:hasValue "(1,3)" ;
+    mls:specifiedBy ex:HyperParam_ngram_range .
+
+ex:ResultSet_BERT_Base a prov:Entity,
+        miao:MentalIllnessesSet ;
+    dcterms:title "Stress Detection Results: BERT_Base" ;
+    prov:wasGeneratedBy ex:Detection_BERT_Base .
+
+ex:ResultSet_BiLSTM_Attention a prov:Entity,
+        miao:MentalIllnessesSet ;
+    dcterms:title "Stress Detection Results: BiLSTM_Attention" ;
+    prov:wasGeneratedBy ex:Detection_BiLSTM_Attention .
+
+ex:ResultSet_RandomForest_TF_IDF a prov:Entity,
+        miao:MentalIllnessesSet ;
+    dcterms:title "Stress Detection Results: RandomForest_TF_IDF" ;
+    prov:wasGeneratedBy ex:Detection_RandomForest_TF_IDF .
+
+ex:ResultSet_RoBERTa a prov:Entity,
+        miao:MentalIllnessesSet ;
+    dcterms:title "Stress Detection Results: RoBERTa" ;
+    prov:wasGeneratedBy ex:Detection_RoBERTa .
+
+ex:ResultSet_SVM_TF_IDF a prov:Entity,
+        miao:MentalIllnessesSet ;
+    dcterms:title "Stress Detection Results: SVM_TF_IDF" ;
+    prov:wasGeneratedBy ex:Detection_SVM_TF_IDF .
+
+ex:RoBERTa_Setting_batch_size a mls:HyperParameterSetting ;
+    mls:hasValue 16 ;
+    mls:specifiedBy ex:HyperParam_batch_size .
+
+ex:RoBERTa_Setting_learning_rate a mls:HyperParameterSetting ;
+    mls:hasValue 3e-05 ;
+    mls:specifiedBy ex:HyperParam_learning_rate .
+
+ex:RoBERTa_Setting_max_seq_length a mls:HyperParameterSetting ;
+    mls:hasValue 256 ;
+    mls:specifiedBy ex:HyperParam_max_seq_length .
+
+ex:RoBERTa_Setting_num_epochs a mls:HyperParameterSetting ;
+    mls:hasValue 4 ;
+    mls:specifiedBy ex:HyperParam_num_epochs .
+
+ex:SVM_TF_IDF_Setting_max_features a mls:HyperParameterSetting ;
+    mls:hasValue 10000 ;
+    mls:specifiedBy ex:HyperParam_max_features .
+
+ex:SVM_TF_IDF_Setting_min_df a mls:HyperParameterSetting ;
+    mls:hasValue 3 ;
+    mls:specifiedBy ex:HyperParam_min_df .
+
+ex:SVM_TF_IDF_Setting_ngram_range a mls:HyperParameterSetting ;
+    mls:hasValue "(1,3)" ;
+    mls:specifiedBy ex:HyperParam_ngram_range .
+
+ex:StressNegative a miao:MentalIllnessCategory ;
+    rdfs:label "No Stress Detected"@en ;
+    dcterms:description "No psychological stress indicators detected. Subject appears to be in a normal psychological state without significant stress markers."@en ;
+    dcterms:identifier 0 ;
+    dcterms:title "No Stress"@en ;
+    miao:isMentalIllnessCategoryOf ex:StressSchema_Binary .
+
+ex:StressPositive a miao:MentalIllnessCategory ;
+    rdfs:label "Stress Detected"@en ;
+    dcterms:description "Psychological stress indicators detected through linguistic markers, physiological signals, or behavioral patterns."@en ;
+    dcterms:identifier 1 ;
+    dcterms:title "Stress"@en ;
+    skos:related snomed:262188008 ;
+    miao:isMentalIllnessCategoryOf ex:StressSchema_Binary .
+
+ex:BERT_Base_Metric_accuracy a mls:EvaluationMeasure ;
+    rdfs:label "accuracy" ;
+    mls:hasValue "0.82"^^xsd:float .
+
+ex:BERT_Base_Metric_f1_score a mls:EvaluationMeasure ;
+    rdfs:label "f1_score" ;
+    mls:hasValue "0.82"^^xsd:float .
+
+ex:BERT_Base_Metric_precision a mls:EvaluationMeasure ;
+    rdfs:label "precision" ;
+    mls:hasValue "0.81"^^xsd:float .
+
+ex:BERT_Base_Metric_recall a mls:EvaluationMeasure ;
+    rdfs:label "recall" ;
+    mls:hasValue "0.84"^^xsd:float .
+
+ex:BiLSTM_Attention_Metric_accuracy a mls:EvaluationMeasure ;
+    rdfs:label "accuracy" ;
+    mls:hasValue "0.82"^^xsd:float .
+
+ex:BiLSTM_Attention_Metric_f1_score a mls:EvaluationMeasure ;
+    rdfs:label "f1_score" ;
+    mls:hasValue "0.82"^^xsd:float .
+
+ex:BiLSTM_Attention_Metric_precision a mls:EvaluationMeasure ;
+    rdfs:label "precision" ;
+    mls:hasValue "0.81"^^xsd:float .
+
+ex:BiLSTM_Attention_Metric_recall a mls:EvaluationMeasure ;
+    rdfs:label "recall" ;
+    mls:hasValue "0.84"^^xsd:float .
+
+ex:HyperParam_batch_size a mls:HyperParameter ;
+    rdfs:label "batch_size" .
+
+ex:HyperParam_learning_rate a mls:HyperParameter ;
+    rdfs:label "learning_rate" .
+
+ex:HyperParam_max_seq_length a mls:HyperParameter ;
+    rdfs:label "max_seq_length" .
+
+ex:HyperParam_num_epochs a mls:HyperParameter ;
+    rdfs:label "num_epochs" .
+
+ex:Model_BERT_Base a mls:Model ;
+    dcterms:description "BERT-base fine-tuned for binary stress classification" ;
+    dcterms:title "Stress Detection: BERT_Base" ;
+    mls:hasHyperParameter ex:BERT_Base_Setting_batch_size,
+        ex:BERT_Base_Setting_learning_rate,
+        ex:BERT_Base_Setting_max_seq_length,
+        ex:BERT_Base_Setting_num_epochs ;
+    mls:hasImplementation ex:Implementation_BERT_Base ;
+    mls:hasQuality ex:BERT_Base_Metric_accuracy,
+        ex:BERT_Base_Metric_f1_score,
+        ex:BERT_Base_Metric_precision,
+        ex:BERT_Base_Metric_recall .
+
+ex:Model_BiLSTM_Attention a mls:Model ;
+    dcterms:description "Bidirectional LSTM with attention mechanism" ;
+    dcterms:title "Stress Detection: BiLSTM_Attention" ;
+    mls:hasHyperParameter ex:BiLSTM_Attention_Setting_max_features,
+        ex:BiLSTM_Attention_Setting_min_df,
+        ex:BiLSTM_Attention_Setting_ngram_range ;
+    mls:hasImplementation ex:Implementation_BiLSTM_Attention ;
+    mls:hasQuality ex:BiLSTM_Attention_Metric_accuracy,
+        ex:BiLSTM_Attention_Metric_f1_score,
+        ex:BiLSTM_Attention_Metric_precision,
+        ex:BiLSTM_Attention_Metric_recall .
+
+ex:Model_RandomForest_TF_IDF a mls:Model ;
+    dcterms:description "Random Forest classifier with TF-IDF features" ;
+    dcterms:title "Stress Detection: RandomForest_TF_IDF" ;
+    mls:hasHyperParameter ex:RandomForest_TF_IDF_Setting_max_features,
+        ex:RandomForest_TF_IDF_Setting_min_df,
+        ex:RandomForest_TF_IDF_Setting_ngram_range ;
+    mls:hasImplementation ex:Implementation_RandomForest_TF_IDF ;
+    mls:hasQuality ex:RandomForest_TF_IDF_Metric_accuracy,
+        ex:RandomForest_TF_IDF_Metric_f1_score,
+        ex:RandomForest_TF_IDF_Metric_precision,
+        ex:RandomForest_TF_IDF_Metric_recall .
+
+ex:Model_RoBERTa a mls:Model ;
+    dcterms:description "RoBERTa model fine-tuned for stress detection from text" ;
+    dcterms:title "Stress Detection: RoBERTa" ;
+    mls:hasHyperParameter ex:RoBERTa_Setting_batch_size,
+        ex:RoBERTa_Setting_learning_rate,
+        ex:RoBERTa_Setting_max_seq_length,
+        ex:RoBERTa_Setting_num_epochs ;
+    mls:hasImplementation ex:Implementation_RoBERTa ;
+    mls:hasQuality ex:RoBERTa_Metric_accuracy,
+        ex:RoBERTa_Metric_f1_score,
+        ex:RoBERTa_Metric_precision,
+        ex:RoBERTa_Metric_recall .
+
+ex:Model_SVM_TF_IDF a mls:Model ;
+    dcterms:description "Support Vector Machine with TF-IDF features" ;
+    dcterms:title "Stress Detection: SVM_TF_IDF" ;
+    mls:hasHyperParameter ex:SVM_TF_IDF_Setting_max_features,
+        ex:SVM_TF_IDF_Setting_min_df,
+        ex:SVM_TF_IDF_Setting_ngram_range ;
+    mls:hasImplementation ex:Implementation_SVM_TF_IDF ;
+    mls:hasQuality ex:SVM_TF_IDF_Metric_accuracy,
+        ex:SVM_TF_IDF_Metric_f1_score,
+        ex:SVM_TF_IDF_Metric_precision,
+        ex:SVM_TF_IDF_Metric_recall .
+
+ex:RandomForest_TF_IDF_Metric_accuracy a mls:EvaluationMeasure ;
+    rdfs:label "accuracy" ;
+    mls:hasValue "0.82"^^xsd:float .
+
+ex:RandomForest_TF_IDF_Metric_f1_score a mls:EvaluationMeasure ;
+    rdfs:label "f1_score" ;
+    mls:hasValue "0.82"^^xsd:float .
+
+ex:RandomForest_TF_IDF_Metric_precision a mls:EvaluationMeasure ;
+    rdfs:label "precision" ;
+    mls:hasValue "0.81"^^xsd:float .
+
+ex:RandomForest_TF_IDF_Metric_recall a mls:EvaluationMeasure ;
+    rdfs:label "recall" ;
+    mls:hasValue "0.84"^^xsd:float .
+
+ex:RoBERTa_Metric_accuracy a mls:EvaluationMeasure ;
+    rdfs:label "accuracy" ;
+    mls:hasValue "0.82"^^xsd:float .
+
+ex:RoBERTa_Metric_f1_score a mls:EvaluationMeasure ;
+    rdfs:label "f1_score" ;
+    mls:hasValue "0.82"^^xsd:float .
+
+ex:RoBERTa_Metric_precision a mls:EvaluationMeasure ;
+    rdfs:label "precision" ;
+    mls:hasValue "0.81"^^xsd:float .
+
+ex:RoBERTa_Metric_recall a mls:EvaluationMeasure ;
+    rdfs:label "recall" ;
+    mls:hasValue "0.84"^^xsd:float .
+
+ex:SVM_TF_IDF_Metric_accuracy a mls:EvaluationMeasure ;
+    rdfs:label "accuracy" ;
+    mls:hasValue "0.82"^^xsd:float .
+
+ex:SVM_TF_IDF_Metric_f1_score a mls:EvaluationMeasure ;
+    rdfs:label "f1_score" ;
+    mls:hasValue "0.82"^^xsd:float .
+
+ex:SVM_TF_IDF_Metric_precision a mls:EvaluationMeasure ;
+    rdfs:label "precision" ;
+    mls:hasValue "0.81"^^xsd:float .
+
+ex:SVM_TF_IDF_Metric_recall a mls:EvaluationMeasure ;
+    rdfs:label "recall" ;
+    mls:hasValue "0.84"^^xsd:float .
+
+ex:HyperParam_max_features a mls:HyperParameter ;
+    rdfs:label "max_features" .
+
+ex:HyperParam_min_df a mls:HyperParameter ;
+    rdfs:label "min_df" .
+
+ex:HyperParam_ngram_range a mls:HyperParameter ;
+    rdfs:label "ngram_range" .
+
+ex:StressSchema_Binary a miao:MentalIllnessesSchema ;
+    dcterms:created "2025-12-02"^^xsd:date ;
+    dcterms:description "Binary schema for computational stress detection from text and multimodal signals. Used in social media analysis and real-time monitoring applications."@en ;
+    dcterms:source "Turcan E, McKeown K. Dreaddit: A Reddit Dataset for Stress Analysis in Social Media. LOUHI 2019." ;
+    dcterms:title "Binary Stress Classification Schema"@en ;
+    miao:hasMentalIllnessCategory ex:StressNegative,
+        ex:StressPositive .
+
+ex:Stress_Detection_Dataset a mls:Dataset ;
+    dcterms:created "2025-12-04"^^xsd:date ;
+    dcterms:description "Text dataset with 10 samples annotated with binary stress labels (0=No Stress, 1=Stress) for computational stress detection research." ;
+    dcterms:title "Stress Detection Dataset" ;
+    mls:hasFeature ex:Feature_CognitiveLoadIndicators,
+        ex:Feature_NegativeEmotionScore,
+        ex:Feature_PhysiologicalMarkers,
+        ex:Feature_TemporalUrgency,
+        ex:Feature_TextContent ;
+    mls:hasQuality ex:DataChar_NumberOfClasses,
+        ex:DataChar_NumberOfInstances,
+        ex:DataChar_StressPrevalence .
+
