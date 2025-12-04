@@ -3,6 +3,10 @@
 [cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
 [cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
 
+<p align="center">
+  <img src="logo/miao-logo.png" alt="MIAO Logo" width="600">
+</p>
+
 # MIAO: A Mental Illness Analysis Ontology for Detecting Mental Health Conditions
 
 We introduce the Mental Illness Analysis Ontology (**MIAO**), an ontology designed to model the detection process of mental illness. MIAO has two key characteristics: (i) it provides a conceptual framework for the detection process, regardless of the detection method, allowing for both human and
