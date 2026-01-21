@@ -25,13 +25,13 @@ ex:DrLauraMartin a prov:Agent ,
 # Input Data
 # ============================================================================
 
-ex:PatientQuestionnaire_P00010 a mls:Data ;
+ex:PatientQuestionnaire_P00010 a mls:Dataset ;
     dcterms:title "Patient Health Questionnaire-9 (PHQ-9)"@en ;
     dcterms:created "2025-11-28T10:30:00Z"^^xsd:dateTime ;
     dcterms:identifier "PHQ9-P00010-S12" ;
     rdfs:comment "PHQ-9 score of 17 indicates moderately severe depression"@en .
 
-ex:TherapySessionNotes_P00010 a mls:Data ;
+ex:TherapySessionNotes_P00010 a mls:Dataset ;
     dcterms:title "Clinical Session Notes - Session 12"@en ;
     dcterms:created "2025-11-28T11:45:00Z"^^xsd:dateTime ;
     dcterms:identifier "SESSION-NOTES-P00010-S12" ;
@@ -64,8 +64,7 @@ ex:DSM5_MDD a miao:MentalIllnessCategory ;
 # Manual Detection Activity
 # ============================================================================
 
-ex:ManualDetection_P00010_S12 a miao:ManualMentalIllnessesDetection ,
-                                prov:Activity ;
+ex:ManualDetection_P00010_S12 a miao:ManualMentalIllnessesDetection ;
     rdfs:label "Clinical assessment of patient P00010"@en ;
     dcterms:created "2025-11-28T12:00:00Z"^^xsd:dateTime ;
     
@@ -87,7 +86,9 @@ ex:MentalIllnessesSet_P00010 a miao:MentalIllnessesSet ,
     prov:wasAttributedTo ex:DrLauraMartin ;
     miao:hasMentalIllness ex:MentalIllness_MDD_P00010 .
 
-ex:MentalIllness_MDD_P00010 a miao:MentalIllness ;
+ex:Depression rdfs:subClassOf miao:MentalIllness .
+
+ex:MentalIllness_MDD_P00010 a ex:Depression ;
     rdfs:label "Major Depressive Disorder diagnosis for patient P00010"@en ;
     miao:referredToMentalIllnessCategory ex:DSM5_MDD ;
     miao:belongsToMentalIllnessesSet ex:MentalIllnessesSet_P00010 ;
