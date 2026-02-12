@@ -1,1420 +1,1401 @@
-@prefix : <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#> .
 @prefix mls: <http://www.w3.org/ns/mls#> .
-@prefix miao: <https://w3id.org/miao#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix miao: <https://w3id.org/miao#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix miaoval: <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#> .
 @base <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#> .
 
 <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#> rdf:type owl:Ontology ;
-                                                                      owl:imports <https://raw.githubusercontent.com/IDA-FBK/mental-health-ontology/refs/heads/main/ontology/miao.ttl> .
-
-#################################################################
-#    Data properties
-#################################################################
-
-###  http://www.w3.org/ns/mls#hasValue
-<http://www.w3.org/ns/mls#hasValue> rdfs:domain <http://www.w3.org/ns/mls#DatasetCharacteristic> ,
-                                                <http://www.w3.org/ns/mls#FeatureCharacteristic> ;
-                                    rdfs:range xsd:long .
-
+                                                                       owl:imports <https://raw.githubusercontent.com/IDA-FBK/mental-health-ontology/refs/heads/main/ontology/miao.ttl> .
 
 #################################################################
 #    Classes
 #################################################################
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#Classification
-:Classification rdf:type owl:Class ;
-                rdfs:subClassOf <http://www.w3.org/ns/mls#Algorithm> .
+miaoval:Classification rdf:type owl:Class ;
+                       rdfs:subClassOf mls:Algorithm .
 
 
 #################################################################
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A02-AutismSpectrumDisorder
-<http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A02-AutismSpectrumDisorder> rdf:type owl:NamedIndividual ,
-                                                                                                          <https://w3id.org/miao#MentalIllnessCategory> ;
-                                                                                                 <https://w3id.org/miao#isMentalIllnessCategoryOf> :ICD-11 ;
-                                                                                                 <https://w3id.org/miao#referredToMentalIllness> :CNNAutism1 ,
-                                                                                                                                                 :XGBoostAutism1 ;
-                                                                                                 <http://purl.org/dc/terms/description> "Autism spectrum disorder is characterised by persistent deficits in the ability to initiate and to sustain reciprocal social interaction and social communication, and by a range of restricted, repetitive, and inflexible patterns of behaviour, interests or activities that are clearly atypical or excessive for the individual’s age and sociocultural context. The onset of the disorder occurs during the developmental period, typically in early childhood, but symptoms may not become fully manifest until later, when social demands exceed limited capacities. Deficits are sufficiently severe to cause impairment in personal, family, social, educational, occupational or other important areas of functioning and are usually a pervasive feature of the individual’s functioning observable in all settings, although they may vary according to social, educational, or other context. Individuals along the spectrum exhibit a full range of intellectual functioning and language abilities. https://icd.who.int/browse/2025-01/mms/en#437815624" .
-
-
-###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A20-Schizophrenia
-<http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A20-Schizophrenia> rdf:type owl:NamedIndividual ,
-                                                                                                 <https://w3id.org/miao#MentalIllnessCategory> ;
-                                                                                        <https://w3id.org/miao#isMentalIllnessCategoryOf> :ICD-11 ;
-                                                                                        <https://w3id.org/miao#referredToMentalIllness> :CNNSchizophrenia6 ,
-                                                                                                                                        :XGBoostSchizophrenia6 ;
-                                                                                        <http://purl.org/dc/terms/description> "Schizophrenia is characterised by disturbances in multiple mental modalities, including thinking (e.g., delusions, disorganisation in the form of thought), perception (e.g., hallucinations), self-experience (e.g., the experience that one's feelings, impulses, thoughts, or behaviour are under the control of an external force), cognition (e.g., impaired attention, verbal memory, and social cognition), volition (e.g., loss of motivation), affect (e.g., blunted emotional expression), and behaviour (e.g., behaviour that appears bizarre or purposeless, unpredictable or inappropriate emotional responses that interfere with the organisation of behaviour). Psychomotor disturbances, including catatonia, may be present. Persistent delusions, persistent hallucinations, thought disorder, and experiences of influence, passivity, or control are considered core symptoms. Symptoms must have persisted for at least one month in order for a diagnosis of schizophrenia to be assigned. The symptoms are not a manifestation of another health condition (e.g., a brain tumour) and are not due to the effect of a substance or medication on the central nervous system (e.g., corticosteroids), including withdrawal (e.g., alcohol withdrawal). https://icd.who.int/browse/2025-01/mms/en#1683919430" .
-
-
-###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A6Z-BipolarOrRelatedDisordersUnspecified
-<http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A6Z-BipolarOrRelatedDisordersUnspecified> rdf:type owl:NamedIndividual ,
-                                                                                                                        <https://w3id.org/miao#MentalIllnessCategory> ;
-                                                                                                               <https://w3id.org/miao#isMentalIllnessCategoryOf> :ICD-11 ;
-                                                                                                               <https://w3id.org/miao#referredToMentalIllness> :CNNBipolar2 ,
-                                                                                                                                                               :XGBoostBipolar2 ;
-                                                                                                               <http://purl.org/dc/terms/description> "https://icd.who.int/browse/2025-01/mms/en#613065957%2Funspecified" .
-
-
-###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6B00-GeneralisedAnxietyDisorder
-<http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6B00-GeneralisedAnxietyDisorder> rdf:type owl:NamedIndividual ,
-                                                                                                              <https://w3id.org/miao#MentalIllnessCategory> ;
-                                                                                                     <https://w3id.org/miao#isMentalIllnessCategoryOf> :ICD-11 ;
-                                                                                                     <https://w3id.org/miao#referredToMentalIllness> :CNNAnxiety3 ,
-                                                                                                                                                     :XGBoostAnxiety3 ;
-                                                                                                     <http://purl.org/dc/terms/description> "Generalised anxiety disorder is characterised by marked symptoms of anxiety that persist for at least several months, for more days than not, manifested by either general apprehension (i.e. ‘free-floating anxiety’) or excessive worry focused on multiple everyday events, most often concerning family, health, finances, and school or work, together with additional symptoms such as muscular tension or motor restlessness, sympathetic autonomic over-activity, subjective experience of nervousness, difficulty maintaining concentration, irritability, or sleep disturbance. The symptoms result in significant distress or significant impairment in personal, family, social, educational, occupational, or other important areas of functioning. The symptoms are not a manifestation of another health condition and are not due to the effects of a substance or medication on the central nervous system. https://icd.who.int/browse/2025-01/mms/en#1712535455" .
-
-
-###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6D10-PersonalityDisorder
-<http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6D10-PersonalityDisorder> rdf:type owl:NamedIndividual ,
-                                                                                                       <https://w3id.org/miao#MentalIllnessCategory> ;
-                                                                                              <https://w3id.org/miao#isMentalIllnessCategoryOf> :ICD-11 ;
-                                                                                              <https://w3id.org/miao#referredToMentalIllness> :CNNBPD5 ,
-                                                                                                                                              :XGBoostBPD5 ;
-                                                                                              <http://purl.org/dc/terms/description> "Personality disorder is characterised by problems in functioning of aspects of the self (e.g., identity, self-worth, accuracy of self-view, self-direction), and/or interpersonal dysfunction (e.g., ability to develop and maintain close and mutually satisfying relationships, ability to understand others’ perspectives and to manage conflict in relationships) that have persisted over an extended period of time (e.g., 2 years or more). The disturbance is manifest in patterns of cognition, emotional experience, emotional expression, and behaviour that are maladaptive (e.g., inflexible or poorly regulated) and is manifest across a range of personal and social situations (i.e., is not limited to specific relationships or social roles). The patterns of behaviour characterizing the disturbance are not developmentally appropriate and cannot be explained primarily by social or cultural factors, including socio-political conflict. The disturbance is associated with substantial distress or significant impairment in personal, family, social, educational, occupational or other important areas of functioning. https://icd.who.int/browse/2025-01/mms/en#941859884" .
-
-
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#BinaryClassificationTask
-:BinaryClassificationTask rdf:type owl:NamedIndividual ,
-                                   <http://www.w3.org/ns/mls#Task> ;
-                          <http://www.w3.org/ns/mls#definedOn> :CNNWord2vec ,
-                                                               :RedditPosts ,
-                                                               :XGBoostTF-IDFvec .
+miaoval:BinaryClassificationTask rdf:type owl:NamedIndividual ,
+                                          mls:Task ;
+                                 mls:definedOn miaoval:CNNWord2vec ,
+                                               miaoval:RedditPosts ,
+                                               miaoval:XGBoostTF-IDFvec .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAlgoritm
-:CNNAlgoritm rdf:type owl:NamedIndividual ,
-                      :Classification .
+miaoval:CNNAlgoritm rdf:type owl:NamedIndividual ,
+                             miaoval:Classification .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxiety3
-:CNNAnxiety3 rdf:type owl:NamedIndividual ,
-                      <https://w3id.org/miao#MentalIllness> ;
-             <https://w3id.org/miao#belongsToMentalIllnessesSet> :CNNAnxietySet ;
-             <https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6B00-GeneralisedAnxietyDisorder> ;
-             <https://w3id.org/miao#hasMentalIllnessDetectionConfidence> 0.95 ;
-             <https://w3id.org/miao#refersToSample> "post3" .
+miaoval:CNNAnxiety3 rdf:type owl:NamedIndividual ,
+                             miao:MentalIllness ;
+                    miao:belongsToMentalIllnessesSet miaoval:CNNAnxietySet ;
+                    miao:referredToMentalIllnessCategory miaoval:B00-GeneralisedAnxietyDisorder ;
+                    miao:hasMentalIllnessDetectionConfidence 0.95 ;
+                    miao:refersToSample "post3" .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxietyAccuracy
-:CNNAnxietyAccuracy rdf:type owl:NamedIndividual ,
-                             <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNAnxietyAccuracy rdf:type owl:NamedIndividual ,
+                                    mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxietyAccuracyEval
-:CNNAnxietyAccuracyEval rdf:type owl:NamedIndividual ,
-                                 <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                        <http://www.w3.org/ns/mls#specifiedBy> :CNNAnxietyAccuracy ;
-                        <http://www.w3.org/ns/mls#hasValue> "77.81"^^xsd:float .
+miaoval:CNNAnxietyAccuracyEval rdf:type owl:NamedIndividual ,
+                                        mls:ModelEvaluation ;
+                               mls:specifiedBy miaoval:CNNAnxietyAccuracy ;
+                               mls:hasValue "77.81"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxietyDetection
-:CNNAnxietyDetection rdf:type owl:NamedIndividual ,
-                              <https://w3id.org/miao#AutomaticMentalIllnessesDetection> ;
-                     <http://www.w3.org/ns/mls#achieves> :BinaryClassificationTask ;
-                     <http://www.w3.org/ns/mls#executes> :CNNAnxietyImplementation ;
-                     <http://www.w3.org/ns/mls#hasInput> :CNNAnxietyEpochsSetting ,
-                                                         :CNNAnxietyLearningRateSetting ;
-                     <http://www.w3.org/ns/mls#hasOutput> :CNNAnxietyAccuracyEval ,
-                                                          :CNNAnxietyF1Eval ,
-                                                          :CNNAnxietyModel ,
-                                                          :CNNAnxietyPrecisionEval ,
-                                                          :CNNAnxietyRecallEval ;
-                     <http://www.w3.org/ns/mls#realizes> :CNNAlgoritm ;
-                     <http://www.w3.org/ns/prov#generated> :CNNAnxietySet ;
-                     <https://w3id.org/miao#hasInputData> :CNNWord2vec ,
-                                                          :RedditPosts ;
-                     <https://w3id.org/miao#usedMentalIllnessesSchema> :ICD-11 .
+miaoval:CNNAnxietyDetection rdf:type owl:NamedIndividual ,
+                                     miao:AutomaticMentalIllnessesDetection ;
+                            mls:achieves miaoval:BinaryClassificationTask ;
+                            mls:executes miaoval:CNNAnxietyImplementation ;
+                            mls:hasInput miaoval:CNNAnxietyEpochsSetting ,
+                                         miaoval:CNNAnxietyLearningRateSetting ;
+                            mls:hasOutput miaoval:CNNAnxietyAccuracyEval ,
+                                          miaoval:CNNAnxietyF1Eval ,
+                                          miaoval:CNNAnxietyModel ,
+                                          miaoval:CNNAnxietyPrecisionEval ,
+                                          miaoval:CNNAnxietyRecallEval ;
+                            mls:realizes miaoval:CNNAlgoritm ;
+                            <http://www.w3.org/ns/prov#generated> miaoval:CNNAnxietySet ;
+                            miao:hasInputData miaoval:CNNWord2vec ,
+                                              miaoval:RedditPosts ;
+                            miao:usedMentalIllnessesSchema miaoval:ICD-11 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxietyEpochs
-:CNNAnxietyEpochs rdf:type owl:NamedIndividual ,
-                           <http://www.w3.org/ns/mls#HyperParameter> ;
-                  <http://www.w3.org/ns/mls#hasValue> "50.0"^^xsd:float .
+miaoval:CNNAnxietyEpochs rdf:type owl:NamedIndividual ,
+                                  mls:HyperParameter ;
+                         mls:hasValue "50.0"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxietyEpochsSetting
-:CNNAnxietyEpochsSetting rdf:type owl:NamedIndividual ,
-                                  <http://www.w3.org/ns/mls#HyperParameterSetting> ;
-                         <http://www.w3.org/ns/mls#specifiedBy> :CNNAnxietyEpochs .
+miaoval:CNNAnxietyEpochsSetting rdf:type owl:NamedIndividual ,
+                                         mls:HyperParameterSetting ;
+                                mls:specifiedBy miaoval:CNNAnxietyEpochs .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxietyEvalSpec
-:CNNAnxietyEvalSpec rdf:type owl:NamedIndividual ,
-                             <http://www.w3.org/ns/mls#EvaluationSpecification> ;
-                    <http://www.w3.org/ns/mls#defines> :BinaryClassificationTask ;
-                    <http://www.w3.org/ns/mls#hasPart> :CNNAnxietyAccuracy ,
-                                                       :CNNAnxietyF1 ,
-                                                       :CNNAnxietyPrecision ,
-                                                       :CNNAnxietyRecall ,
-                                                       :Hold-out .
+miaoval:CNNAnxietyEvalSpec rdf:type owl:NamedIndividual ,
+                                    mls:EvaluationSpecification ;
+                           mls:defines miaoval:BinaryClassificationTask ;
+                           mls:hasPart miaoval:CNNAnxietyAccuracy ,
+                                       miaoval:CNNAnxietyF1 ,
+                                       miaoval:CNNAnxietyPrecision ,
+                                       miaoval:CNNAnxietyRecall ,
+                                       miaoval:Hold-out .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxietyF1
-:CNNAnxietyF1 rdf:type owl:NamedIndividual ,
-                       <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNAnxietyF1 rdf:type owl:NamedIndividual ,
+                              mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxietyF1Eval
-:CNNAnxietyF1Eval rdf:type owl:NamedIndividual ,
-                           <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                  <http://www.w3.org/ns/mls#specifiedBy> :CNNAnxietyF1 ;
-                  <http://www.w3.org/ns/mls#hasValue> "56.25"^^xsd:float .
+miaoval:CNNAnxietyF1Eval rdf:type owl:NamedIndividual ,
+                                  mls:ModelEvaluation ;
+                         mls:specifiedBy miaoval:CNNAnxietyF1 ;
+                         mls:hasValue "56.25"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxietyImplementation
-:CNNAnxietyImplementation rdf:type owl:NamedIndividual ,
-                                   <http://www.w3.org/ns/mls#Implementation> ;
-                          <http://www.w3.org/ns/mls#hasPart> :PyTorch .
+miaoval:CNNAnxietyImplementation rdf:type owl:NamedIndividual ,
+                                          mls:Implementation ;
+                                 mls:hasPart miaoval:PyTorch .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxietyLearningRate
-:CNNAnxietyLearningRate rdf:type owl:NamedIndividual ,
-                                 <http://www.w3.org/ns/mls#HyperParameter> ;
-                        <http://www.w3.org/ns/mls#hasValue> "0.001"^^xsd:float .
+miaoval:CNNAnxietyLearningRate rdf:type owl:NamedIndividual ,
+                                        mls:HyperParameter ;
+                               mls:hasValue "0.001"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxietyLearningRateSetting
-:CNNAnxietyLearningRateSetting rdf:type owl:NamedIndividual ,
-                                        <http://www.w3.org/ns/mls#HyperParameterSetting> ;
-                               <http://www.w3.org/ns/mls#specifiedBy> :CNNAnxietyLearningRate .
+miaoval:CNNAnxietyLearningRateSetting rdf:type owl:NamedIndividual ,
+                                               mls:HyperParameterSetting ;
+                                      mls:specifiedBy miaoval:CNNAnxietyLearningRate .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxietyModel
-:CNNAnxietyModel rdf:type owl:NamedIndividual ,
-                          <http://www.w3.org/ns/mls#Model> .
+miaoval:CNNAnxietyModel rdf:type owl:NamedIndividual ,
+                                 mls:Model .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxietyPrecision
-:CNNAnxietyPrecision rdf:type owl:NamedIndividual ,
-                              <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNAnxietyPrecision rdf:type owl:NamedIndividual ,
+                                     mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxietyPrecisionEval
-:CNNAnxietyPrecisionEval rdf:type owl:NamedIndividual ,
-                                  <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                         <http://www.w3.org/ns/mls#specifiedBy> :CNNAnxietyPrecision ;
-                         <http://www.w3.org/ns/mls#hasValue> "87.54"^^xsd:float .
+miaoval:CNNAnxietyPrecisionEval rdf:type owl:NamedIndividual ,
+                                         mls:ModelEvaluation ;
+                                mls:specifiedBy miaoval:CNNAnxietyPrecision ;
+                                mls:hasValue "87.54"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxietyRecall
-:CNNAnxietyRecall rdf:type owl:NamedIndividual ,
-                           <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNAnxietyRecall rdf:type owl:NamedIndividual ,
+                                  mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxietyRecallEval
-:CNNAnxietyRecallEval rdf:type owl:NamedIndividual ,
-                               <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                      <http://www.w3.org/ns/mls#specifiedBy> :CNNAnxietyRecall ;
-                      <http://www.w3.org/ns/mls#hasValue> "41.44"^^xsd:float .
+miaoval:CNNAnxietyRecallEval rdf:type owl:NamedIndividual ,
+                                      mls:ModelEvaluation ;
+                             mls:specifiedBy miaoval:CNNAnxietyRecall ;
+                             mls:hasValue "41.44"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAnxietySet
-:CNNAnxietySet rdf:type owl:NamedIndividual ,
-                        <https://w3id.org/miao#MentalIllnessesSet> ;
-               <http://www.w3.org/ns/prov#wasGeneratedBy> :CNNAnxietyDetection ;
-               <https://w3id.org/miao#hasMentalIllness> :CNNAnxiety3 .
+miaoval:CNNAnxietySet rdf:type owl:NamedIndividual ,
+                               miao:MentalIllnessesSet ;
+                      <http://www.w3.org/ns/prov#wasGeneratedBy> miaoval:CNNAnxietyDetection ;
+                      miao:hasMentalIllness miaoval:CNNAnxiety3 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutism1
-:CNNAutism1 rdf:type owl:NamedIndividual ,
-                     <https://w3id.org/miao#MentalIllness> ;
-            <https://w3id.org/miao#belongsToMentalIllnessesSet> :CNNAutismSet ;
-            <https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A02-AutismSpectrumDisorder> ;
-            <https://w3id.org/miao#hasMentalIllnessDetectionConfidence> 0.9 ;
-            <https://w3id.org/miao#refersToSample> "post1" .
+miaoval:CNNAutism1 rdf:type owl:NamedIndividual ,
+                            miao:MentalIllness ;
+                   miao:belongsToMentalIllnessesSet miaoval:CNNAutismSet ;
+                   miao:referredToMentalIllnessCategory miaoval:A02-AutismSpectrumDisorder ;
+                   miao:hasMentalIllnessDetectionConfidence 0.9 ;
+                   miao:refersToSample "post1" .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutismAccuracy
-:CNNAutismAccuracy rdf:type owl:NamedIndividual ,
-                            <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNAutismAccuracy rdf:type owl:NamedIndividual ,
+                                   mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutismAccuracyEval
-:CNNAutismAccuracyEval rdf:type owl:NamedIndividual ,
-                                <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                       <http://www.w3.org/ns/mls#specifiedBy> :CNNAutismAccuracy ;
-                       <http://www.w3.org/ns/mls#hasValue> "96.96"^^xsd:float .
+miaoval:CNNAutismAccuracyEval rdf:type owl:NamedIndividual ,
+                                       mls:ModelEvaluation ;
+                              mls:specifiedBy miaoval:CNNAutismAccuracy ;
+                              mls:hasValue "96.96"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutismDetection
-:CNNAutismDetection rdf:type owl:NamedIndividual ,
-                             <https://w3id.org/miao#AutomaticMentalIllnessesDetection> ;
-                    <http://www.w3.org/ns/mls#achieves> :BinaryClassificationTask ;
-                    <http://www.w3.org/ns/mls#executes> :CNNAutismImplementation ;
-                    <http://www.w3.org/ns/mls#hasInput> :CNNAutismEpochsSetting ,
-                                                        :CNNAutismLearningRateSetting ;
-                    <http://www.w3.org/ns/mls#hasOutput> :CNNAutismAccuracyEval ,
-                                                         :CNNAutismModel ,
-                                                         :CNNAutismPrecisionEval ,
-                                                         :CNNAutismRecallEval ;
-                    <http://www.w3.org/ns/mls#realizes> :CNNAlgoritm ;
-                    <http://www.w3.org/ns/prov#generated> :CNNAutismSet ;
-                    <https://w3id.org/miao#hasInputData> :CNNAutismF1Eval ,
-                                                         :CNNWord2vec ,
-                                                         :RedditPosts ;
-                    <https://w3id.org/miao#usedMentalIllnessesSchema> :ICD-11 .
+miaoval:CNNAutismDetection rdf:type owl:NamedIndividual ,
+                                    miao:AutomaticMentalIllnessesDetection ;
+                           mls:achieves miaoval:BinaryClassificationTask ;
+                           mls:executes miaoval:CNNAutismImplementation ;
+                           mls:hasInput miaoval:CNNAutismEpochsSetting ,
+                                        miaoval:CNNAutismLearningRateSetting ;
+                           mls:hasOutput miaoval:CNNAutismAccuracyEval ,
+                                         miaoval:CNNAutismF1Eval ,
+                                         miaoval:CNNAutismModel ,
+                                         miaoval:CNNAutismPrecisionEval ,
+                                         miaoval:CNNAutismRecallEval ;
+                           mls:realizes miaoval:CNNAlgoritm ;
+                           <http://www.w3.org/ns/prov#generated> miaoval:CNNAutismSet ;
+                           miao:hasInputData miaoval:CNNWord2vec ,
+                                             miaoval:RedditPosts ;
+                           miao:usedMentalIllnessesSchema miaoval:ICD-11 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutismEpochs
-:CNNAutismEpochs rdf:type owl:NamedIndividual ,
-                          <http://www.w3.org/ns/mls#HyperParameter> ;
-                 <http://www.w3.org/ns/mls#hasValue> 50.0 .
+miaoval:CNNAutismEpochs rdf:type owl:NamedIndividual ,
+                                 mls:HyperParameter ;
+                        mls:hasValue 50.0 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutismEpochsSetting
-:CNNAutismEpochsSetting rdf:type owl:NamedIndividual ,
-                                 <http://www.w3.org/ns/mls#HyperParameterSetting> ;
-                        <http://www.w3.org/ns/mls#specifiedBy> :CNNAutismEpochs .
+miaoval:CNNAutismEpochsSetting rdf:type owl:NamedIndividual ,
+                                        mls:HyperParameterSetting ;
+                               mls:specifiedBy miaoval:CNNAutismEpochs .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutismEvalSpec
-:CNNAutismEvalSpec rdf:type owl:NamedIndividual ,
-                            <http://www.w3.org/ns/mls#EvaluationSpecification> ;
-                   <http://www.w3.org/ns/mls#defines> :BinaryClassificationTask ;
-                   <http://www.w3.org/ns/mls#hasPart> :CNNAutismAccuracy ,
-                                                      :CNNAutismF1 ,
-                                                      :CNNAutismPrecision ,
-                                                      :CNNAutismRecall ,
-                                                      :Hold-out .
+miaoval:CNNAutismEvalSpec rdf:type owl:NamedIndividual ,
+                                   mls:EvaluationSpecification ;
+                          mls:defines miaoval:BinaryClassificationTask ;
+                          mls:hasPart miaoval:CNNAutismAccuracy ,
+                                      miaoval:CNNAutismF1 ,
+                                      miaoval:CNNAutismPrecision ,
+                                      miaoval:CNNAutismRecall ,
+                                      miaoval:Hold-out .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutismF1
-:CNNAutismF1 rdf:type owl:NamedIndividual ,
-                      <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNAutismF1 rdf:type owl:NamedIndividual ,
+                             mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutismF1Eval
-:CNNAutismF1Eval rdf:type owl:NamedIndividual ,
-                          <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                 <http://www.w3.org/ns/mls#specifiedBy> :CNNAutismF1 ;
-                 <http://www.w3.org/ns/mls#hasValue> "48.73"^^xsd:float .
+miaoval:CNNAutismF1Eval rdf:type owl:NamedIndividual ,
+                                 mls:ModelEvaluation ;
+                        mls:specifiedBy miaoval:CNNAutismF1 ;
+                        mls:hasValue "48.73"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutismImplementation
-:CNNAutismImplementation rdf:type owl:NamedIndividual ,
-                                  <http://www.w3.org/ns/mls#Implementation> ;
-                         <http://www.w3.org/ns/mls#hasPart> :PyTorch .
+miaoval:CNNAutismImplementation rdf:type owl:NamedIndividual ,
+                                         mls:Implementation ;
+                                mls:hasPart miaoval:PyTorch .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutismLearningRate
-:CNNAutismLearningRate rdf:type owl:NamedIndividual ,
-                                <http://www.w3.org/ns/mls#HyperParameter> ;
-                       <http://www.w3.org/ns/mls#hasValue> "0.001"^^xsd:float .
+miaoval:CNNAutismLearningRate rdf:type owl:NamedIndividual ,
+                                       mls:HyperParameter ;
+                              mls:hasValue "0.001"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutismLearningRateSetting
-:CNNAutismLearningRateSetting rdf:type owl:NamedIndividual ,
-                                       <http://www.w3.org/ns/mls#HyperParameterSetting> ;
-                              <http://www.w3.org/ns/mls#specifiedBy> :CNNAutismLearningRate .
+miaoval:CNNAutismLearningRateSetting rdf:type owl:NamedIndividual ,
+                                              mls:HyperParameterSetting ;
+                                     mls:specifiedBy miaoval:CNNAutismLearningRate .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutismModel
-:CNNAutismModel rdf:type owl:NamedIndividual ,
-                         <http://www.w3.org/ns/mls#Model> .
+miaoval:CNNAutismModel rdf:type owl:NamedIndividual ,
+                                mls:Model .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutismPrecision
-:CNNAutismPrecision rdf:type owl:NamedIndividual ,
-                             <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNAutismPrecision rdf:type owl:NamedIndividual ,
+                                    mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutismPrecisionEval
-:CNNAutismPrecisionEval rdf:type owl:NamedIndividual ,
-                                 <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                        <http://www.w3.org/ns/mls#specifiedBy> :CNNAutismPrecision ;
-                        <http://www.w3.org/ns/mls#hasValue> "48.08"^^xsd:float .
+miaoval:CNNAutismPrecisionEval rdf:type owl:NamedIndividual ,
+                                        mls:ModelEvaluation ;
+                               mls:specifiedBy miaoval:CNNAutismPrecision ;
+                               mls:hasValue "48.08"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutismRecall
-:CNNAutismRecall rdf:type owl:NamedIndividual ,
-                          <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNAutismRecall rdf:type owl:NamedIndividual ,
+                                 mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutismRecallEval
-:CNNAutismRecallEval rdf:type owl:NamedIndividual ,
-                              <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                     <http://www.w3.org/ns/mls#specifiedBy> :CNNAutismRecall ;
-                     <http://www.w3.org/ns/mls#hasValue> "49.39"^^xsd:float .
+miaoval:CNNAutismRecallEval rdf:type owl:NamedIndividual ,
+                                     mls:ModelEvaluation ;
+                            mls:specifiedBy miaoval:CNNAutismRecall ;
+                            mls:hasValue "49.39"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNAutismSet
-:CNNAutismSet rdf:type owl:NamedIndividual ,
-                       <https://w3id.org/miao#MentalIllnessesSet> ;
-              <http://www.w3.org/ns/prov#wasGeneratedBy> :CNNAutismDetection ;
-              <https://w3id.org/miao#hasMentalIllness> :CNNAutism1 .
+miaoval:CNNAutismSet rdf:type owl:NamedIndividual ,
+                              miao:MentalIllnessesSet ;
+                     <http://www.w3.org/ns/prov#wasGeneratedBy> miaoval:CNNAutismDetection ;
+                     miao:hasMentalIllness miaoval:CNNAutism1 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPD5
-:CNNBPD5 rdf:type owl:NamedIndividual ,
-                  <https://w3id.org/miao#MentalIllness> ;
-         <https://w3id.org/miao#belongsToMentalIllnessesSet> :CNNBPDSet ;
-         <https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6D10-PersonalityDisorder> ;
-         <https://w3id.org/miao#hasMentalIllnessDetectionConfidence> 0.79 ;
-         <https://w3id.org/miao#refersToSample> "post5" .
+miaoval:CNNBPD5 rdf:type owl:NamedIndividual ,
+                         miao:MentalIllness ;
+                miao:belongsToMentalIllnessesSet miaoval:CNNBPDSet ;
+                miao:referredToMentalIllnessCategory miaoval:D10-PersonalityDisorder ;
+                miao:hasMentalIllnessDetectionConfidence 0.79 ;
+                miao:refersToSample "post5" .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPDAccuracy
-:CNNBPDAccuracy rdf:type owl:NamedIndividual ,
-                         <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNBPDAccuracy rdf:type owl:NamedIndividual ,
+                                mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPDAccuracyEval
-:CNNBPDAccuracyEval rdf:type owl:NamedIndividual ,
-                             <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                    <http://www.w3.org/ns/mls#specifiedBy> :CNNBPDAccuracy ;
-                    <http://www.w3.org/ns/mls#hasValue> "90.49"^^xsd:float .
+miaoval:CNNBPDAccuracyEval rdf:type owl:NamedIndividual ,
+                                    mls:ModelEvaluation ;
+                           mls:specifiedBy miaoval:CNNBPDAccuracy ;
+                           mls:hasValue "90.49"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPDDetection
-:CNNBPDDetection rdf:type owl:NamedIndividual ,
-                          <https://w3id.org/miao#AutomaticMentalIllnessesDetection> ;
-                 <http://www.w3.org/ns/mls#achieves> :BinaryClassificationTask ;
-                 <http://www.w3.org/ns/mls#executes> :CNNBPDImplementation ;
-                 <http://www.w3.org/ns/mls#hasInput> :CNNBPDEpochsSetting ,
-                                                     :CNNBPDLearningRateSetting ;
-                 <http://www.w3.org/ns/mls#hasOutput> :CNNBPDAccuracyEval ,
-                                                      :CNNBPDF1Eval ,
-                                                      :CNNBPDModel ,
-                                                      :CNNBPDPrecisionEval ,
-                                                      :CNNBPDRecallEval ;
-                 <http://www.w3.org/ns/mls#realizes> :CNNAlgoritm ;
-                 <http://www.w3.org/ns/prov#generated> :CNNBPDSet ;
-                 <https://w3id.org/miao#hasInputData> :CNNWord2vec ,
-                                                      :RedditPosts ;
-                 <https://w3id.org/miao#usedMentalIllnessesSchema> :ICD-11 .
+miaoval:CNNBPDDetection rdf:type owl:NamedIndividual ,
+                                 miao:AutomaticMentalIllnessesDetection ;
+                        mls:achieves miaoval:BinaryClassificationTask ;
+                        mls:executes miaoval:CNNBPDImplementation ;
+                        mls:hasInput miaoval:CNNBPDEpochsSetting ,
+                                     miaoval:CNNBPDLearningRateSetting ;
+                        mls:hasOutput miaoval:CNNBPDAccuracyEval ,
+                                      miaoval:CNNBPDF1Eval ,
+                                      miaoval:CNNBPDModel ,
+                                      miaoval:CNNBPDPrecisionEval ,
+                                      miaoval:CNNBPDRecallEval ;
+                        mls:realizes miaoval:CNNAlgoritm ;
+                        <http://www.w3.org/ns/prov#generated> miaoval:CNNBPDSet ;
+                        miao:hasInputData miaoval:CNNWord2vec ,
+                                          miaoval:RedditPosts ;
+                        miao:usedMentalIllnessesSchema miaoval:ICD-11 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPDEpochs
-:CNNBPDEpochs rdf:type owl:NamedIndividual ,
-                       <http://www.w3.org/ns/mls#HyperParameter> ;
-              <http://www.w3.org/ns/mls#hasValue> 50.0 .
+miaoval:CNNBPDEpochs rdf:type owl:NamedIndividual ,
+                              mls:HyperParameter ;
+                     mls:hasValue 50.0 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPDEpochsSetting
-:CNNBPDEpochsSetting rdf:type owl:NamedIndividual ,
-                              <http://www.w3.org/ns/mls#HyperParameterSetting> ;
-                     <http://www.w3.org/ns/mls#specifiedBy> :CNNBPDEpochs .
+miaoval:CNNBPDEpochsSetting rdf:type owl:NamedIndividual ,
+                                     mls:HyperParameterSetting ;
+                            mls:specifiedBy miaoval:CNNBPDEpochs .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPDEvalSpec
-:CNNBPDEvalSpec rdf:type owl:NamedIndividual ,
-                         <http://www.w3.org/ns/mls#EvaluationSpecification> ;
-                <http://www.w3.org/ns/mls#defines> :BinaryClassificationTask ;
-                <http://www.w3.org/ns/mls#hasPart> :CNNBPDAccuracy ,
-                                                   :CNNBPDF1 ,
-                                                   :CNNBPDRecall ,
-                                                   :Hold-out .
+miaoval:CNNBPDEvalSpec rdf:type owl:NamedIndividual ,
+                                mls:EvaluationSpecification ;
+                       mls:defines miaoval:BinaryClassificationTask ;
+                       mls:hasPart miaoval:CNNBPDAccuracy ,
+                                   miaoval:CNNBPDF1 ,
+                                   miaoval:CNNBPDRecall ,
+                                   miaoval:Hold-out .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPDF1
-:CNNBPDF1 rdf:type owl:NamedIndividual ,
-                   <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNBPDF1 rdf:type owl:NamedIndividual ,
+                          mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPDF1Eval
-:CNNBPDF1Eval rdf:type owl:NamedIndividual ,
-                       <http://www.w3.org/ns/mls#ModelEvaluation> ;
-              <http://www.w3.org/ns/mls#specifiedBy> :CNNBPDF1 ;
-              <http://www.w3.org/ns/mls#hasValue> "48.21"^^xsd:float .
+miaoval:CNNBPDF1Eval rdf:type owl:NamedIndividual ,
+                              mls:ModelEvaluation ;
+                     mls:specifiedBy miaoval:CNNBPDF1 ;
+                     mls:hasValue "48.21"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPDImplementation
-:CNNBPDImplementation rdf:type owl:NamedIndividual ,
-                               <http://www.w3.org/ns/mls#Implementation> ;
-                      <http://www.w3.org/ns/mls#hasPart> :PyTorch .
+miaoval:CNNBPDImplementation rdf:type owl:NamedIndividual ,
+                                      mls:Implementation ;
+                             mls:hasPart miaoval:PyTorch .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPDLearningRate
-:CNNBPDLearningRate rdf:type owl:NamedIndividual ,
-                             <http://www.w3.org/ns/mls#HyperParameter> ;
-                    <http://www.w3.org/ns/mls#hasValue> "0.001"^^xsd:float .
+miaoval:CNNBPDLearningRate rdf:type owl:NamedIndividual ,
+                                    mls:HyperParameter ;
+                           mls:hasValue "0.001"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPDLearningRateSetting
-:CNNBPDLearningRateSetting rdf:type owl:NamedIndividual ,
-                                    <http://www.w3.org/ns/mls#HyperParameterSetting> ;
-                           <http://www.w3.org/ns/mls#specifiedBy> :CNNBPDLearningRate .
+miaoval:CNNBPDLearningRateSetting rdf:type owl:NamedIndividual ,
+                                           mls:HyperParameterSetting ;
+                                  mls:specifiedBy miaoval:CNNBPDLearningRate .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPDModel
-:CNNBPDModel rdf:type owl:NamedIndividual ,
-                      <http://www.w3.org/ns/mls#Model> .
+miaoval:CNNBPDModel rdf:type owl:NamedIndividual ,
+                             mls:Model .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPDPrecision
-:CNNBPDPrecision rdf:type owl:NamedIndividual ,
-                          <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNBPDPrecision rdf:type owl:NamedIndividual ,
+                                 mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPDPrecisionEval
-:CNNBPDPrecisionEval rdf:type owl:NamedIndividual ,
-                              <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                     <http://www.w3.org/ns/mls#specifiedBy> :CNNBPDPrecision ;
-                     <http://www.w3.org/ns/mls#hasValue> "91.84"^^xsd:float .
+miaoval:CNNBPDPrecisionEval rdf:type owl:NamedIndividual ,
+                                     mls:ModelEvaluation ;
+                            mls:specifiedBy miaoval:CNNBPDPrecision ;
+                            mls:hasValue "91.84"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPDRecall
-:CNNBPDRecall rdf:type owl:NamedIndividual ,
-                       <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNBPDRecall rdf:type owl:NamedIndividual ,
+                              mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPDRecallEval
-:CNNBPDRecallEval rdf:type owl:NamedIndividual ,
-                           <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                  <http://www.w3.org/ns/mls#specifiedBy> :CNNBPDRecall ;
-                  <http://www.w3.org/ns/mls#hasValue> "32.69"^^xsd:float .
+miaoval:CNNBPDRecallEval rdf:type owl:NamedIndividual ,
+                                  mls:ModelEvaluation ;
+                         mls:specifiedBy miaoval:CNNBPDRecall ;
+                         mls:hasValue "32.69"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBPDSet
-:CNNBPDSet rdf:type owl:NamedIndividual ,
-                    <https://w3id.org/miao#MentalIllnessesSet> ;
-           <http://www.w3.org/ns/prov#wasGeneratedBy> :CNNBPDDetection ;
-           <https://w3id.org/miao#hasMentalIllness> :CNNBPD5 .
+miaoval:CNNBPDSet rdf:type owl:NamedIndividual ,
+                           miao:MentalIllnessesSet ;
+                  <http://www.w3.org/ns/prov#wasGeneratedBy> miaoval:CNNBPDDetection ;
+                  miao:hasMentalIllness miaoval:CNNBPD5 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolar2
-:CNNBipolar2 rdf:type owl:NamedIndividual ,
-                      <https://w3id.org/miao#MentalIllness> ;
-             <https://w3id.org/miao#belongsToMentalIllnessesSet> :CNNBipolarSet ;
-             <https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A6Z-BipolarOrRelatedDisordersUnspecified> ;
-             <https://w3id.org/miao#hasMentalIllnessDetectionConfidence> 0.85 ;
-             <https://w3id.org/miao#refersToSample> "post2" .
+miaoval:CNNBipolar2 rdf:type owl:NamedIndividual ,
+                             miao:MentalIllness ;
+                    miao:belongsToMentalIllnessesSet miaoval:CNNBipolarSet ;
+                    miao:referredToMentalIllnessCategory miaoval:A6Z-BipolarOrRelatedDisordersUnspecified ;
+                    miao:hasMentalIllnessDetectionConfidence 0.85 ;
+                    miao:refersToSample "post2" .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolarAccuracy
-:CNNBipolarAccuracy rdf:type owl:NamedIndividual ,
-                             <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNBipolarAccuracy rdf:type owl:NamedIndividual ,
+                                    mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolarAccuracyEval
-:CNNBipolarAccuracyEval rdf:type owl:NamedIndividual ,
-                                 <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                        <http://www.w3.org/ns/mls#specifiedBy> :CNNBipolarAccuracy ;
-                        <http://www.w3.org/ns/mls#hasValue> "90.2"^^xsd:float .
+miaoval:CNNBipolarAccuracyEval rdf:type owl:NamedIndividual ,
+                                        mls:ModelEvaluation ;
+                               mls:specifiedBy miaoval:CNNBipolarAccuracy ;
+                               mls:hasValue "90.2"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolarDetection
-:CNNBipolarDetection rdf:type owl:NamedIndividual ,
-                              <https://w3id.org/miao#AutomaticMentalIllnessesDetection> ;
-                     <http://www.w3.org/ns/mls#achieves> :BinaryClassificationTask ;
-                     <http://www.w3.org/ns/mls#executes> :CNNBipolarImplementation ;
-                     <http://www.w3.org/ns/mls#hasInput> :CNNBipolarEpochsSetting ,
-                                                         :CNNBipolarLearningRateSetting ;
-                     <http://www.w3.org/ns/mls#hasOutput> :CNNBipolarAccuracyEval ,
-                                                          :CNNBipolarF1Eval ,
-                                                          :CNNBipolarModel ,
-                                                          :CNNBipolarPrecisionEval ,
-                                                          :CNNBipolarRecallEval ;
-                     <http://www.w3.org/ns/mls#realizes> :CNNAlgoritm ;
-                     <http://www.w3.org/ns/prov#generated> :CNNBipolarSet ;
-                     <https://w3id.org/miao#hasInputData> :CNNWord2vec ,
-                                                          :RedditPosts ;
-                     <https://w3id.org/miao#usedMentalIllnessesSchema> :ICD-11 .
+miaoval:CNNBipolarDetection rdf:type owl:NamedIndividual ,
+                                     miao:AutomaticMentalIllnessesDetection ;
+                            mls:achieves miaoval:BinaryClassificationTask ;
+                            mls:executes miaoval:CNNBipolarImplementation ;
+                            mls:hasInput miaoval:CNNBipolarEpochsSetting ,
+                                         miaoval:CNNBipolarLearningRateSetting ;
+                            mls:hasOutput miaoval:CNNBipolarAccuracyEval ,
+                                          miaoval:CNNBipolarF1Eval ,
+                                          miaoval:CNNBipolarModel ,
+                                          miaoval:CNNBipolarPrecisionEval ,
+                                          miaoval:CNNBipolarRecallEval ;
+                            mls:realizes miaoval:CNNAlgoritm ;
+                            <http://www.w3.org/ns/prov#generated> miaoval:CNNBipolarSet ;
+                            miao:hasInputData miaoval:CNNWord2vec ,
+                                              miaoval:RedditPosts ;
+                            miao:usedMentalIllnessesSchema miaoval:ICD-11 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolarEpochs
-:CNNBipolarEpochs rdf:type owl:NamedIndividual ,
-                           <http://www.w3.org/ns/mls#HyperParameter> ;
-                  <http://www.w3.org/ns/mls#hasValue> 50.0 .
+miaoval:CNNBipolarEpochs rdf:type owl:NamedIndividual ,
+                                  mls:HyperParameter ;
+                         mls:hasValue 50.0 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolarEpochsSetting
-:CNNBipolarEpochsSetting rdf:type owl:NamedIndividual ,
-                                  <http://www.w3.org/ns/mls#HyperParameterSetting> ;
-                         <http://www.w3.org/ns/mls#specifiedBy> :CNNBipolarEpochs .
+miaoval:CNNBipolarEpochsSetting rdf:type owl:NamedIndividual ,
+                                         mls:HyperParameterSetting ;
+                                mls:specifiedBy miaoval:CNNBipolarEpochs .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolarEvalSpec
-:CNNBipolarEvalSpec rdf:type owl:NamedIndividual ,
-                             <http://www.w3.org/ns/mls#EvaluationSpecification> ;
-                    <http://www.w3.org/ns/mls#defines> :BinaryClassificationTask ;
-                    <http://www.w3.org/ns/mls#hasPart> :CNNBipolarAccuracy ,
-                                                       :CNNBipolarF1 ,
-                                                       :CNNBipolarPrecision ,
-                                                       :CNNBipolarRecall ,
-                                                       :Hold-out .
+miaoval:CNNBipolarEvalSpec rdf:type owl:NamedIndividual ,
+                                    mls:EvaluationSpecification ;
+                           mls:defines miaoval:BinaryClassificationTask ;
+                           mls:hasPart miaoval:CNNBipolarAccuracy ,
+                                       miaoval:CNNBipolarF1 ,
+                                       miaoval:CNNBipolarPrecision ,
+                                       miaoval:CNNBipolarRecall ,
+                                       miaoval:Hold-out .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolarF1
-:CNNBipolarF1 rdf:type owl:NamedIndividual ,
-                       <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNBipolarF1 rdf:type owl:NamedIndividual ,
+                              mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolarF1Eval
-:CNNBipolarF1Eval rdf:type owl:NamedIndividual ,
-                           <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                  <http://www.w3.org/ns/mls#specifiedBy> :CNNBipolarF1 ;
-                  <http://www.w3.org/ns/mls#hasValue> "52.95"^^xsd:float .
+miaoval:CNNBipolarF1Eval rdf:type owl:NamedIndividual ,
+                                  mls:ModelEvaluation ;
+                         mls:specifiedBy miaoval:CNNBipolarF1 ;
+                         mls:hasValue "52.95"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolarImplementation
-:CNNBipolarImplementation rdf:type owl:NamedIndividual ,
-                                   <http://www.w3.org/ns/mls#Implementation> ;
-                          <http://www.w3.org/ns/mls#hasPart> :PyTorch .
+miaoval:CNNBipolarImplementation rdf:type owl:NamedIndividual ,
+                                          mls:Implementation ;
+                                 mls:hasPart miaoval:PyTorch .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolarLearningRate
-:CNNBipolarLearningRate rdf:type owl:NamedIndividual ,
-                                 <http://www.w3.org/ns/mls#HyperParameter> ;
-                        <http://www.w3.org/ns/mls#hasValue> "0.001"^^xsd:float .
+miaoval:CNNBipolarLearningRate rdf:type owl:NamedIndividual ,
+                                        mls:HyperParameter ;
+                               mls:hasValue "0.001"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolarLearningRateSetting
-:CNNBipolarLearningRateSetting rdf:type owl:NamedIndividual ,
-                                        <http://www.w3.org/ns/mls#HyperParameterSetting> ;
-                               <http://www.w3.org/ns/mls#specifiedBy> :CNNBipolarLearningRate .
+miaoval:CNNBipolarLearningRateSetting rdf:type owl:NamedIndividual ,
+                                               mls:HyperParameterSetting ;
+                                      mls:specifiedBy miaoval:CNNBipolarLearningRate .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolarModel
-:CNNBipolarModel rdf:type owl:NamedIndividual ,
-                          <http://www.w3.org/ns/mls#Model> .
+miaoval:CNNBipolarModel rdf:type owl:NamedIndividual ,
+                                 mls:Model .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolarPrecision
-:CNNBipolarPrecision rdf:type owl:NamedIndividual ,
-                              <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNBipolarPrecision rdf:type owl:NamedIndividual ,
+                                     mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolarPrecisionEval
-:CNNBipolarPrecisionEval rdf:type owl:NamedIndividual ,
-                                  <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                         <http://www.w3.org/ns/mls#specifiedBy> :CNNBipolarPrecision ;
-                         <http://www.w3.org/ns/mls#hasValue> "87.22"^^xsd:float .
+miaoval:CNNBipolarPrecisionEval rdf:type owl:NamedIndividual ,
+                                         mls:ModelEvaluation ;
+                                mls:specifiedBy miaoval:CNNBipolarPrecision ;
+                                mls:hasValue "87.22"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolarRecall
-:CNNBipolarRecall rdf:type owl:NamedIndividual ,
-                           <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNBipolarRecall rdf:type owl:NamedIndividual ,
+                                  mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolarRecallEval
-:CNNBipolarRecallEval rdf:type owl:NamedIndividual ,
-                               <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                      <http://www.w3.org/ns/mls#specifiedBy> :CNNBipolarRecall ;
-                      <http://www.w3.org/ns/mls#hasValue> "38.02"^^xsd:float .
+miaoval:CNNBipolarRecallEval rdf:type owl:NamedIndividual ,
+                                      mls:ModelEvaluation ;
+                             mls:specifiedBy miaoval:CNNBipolarRecall ;
+                             mls:hasValue "38.02"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNBipolarSet
-:CNNBipolarSet rdf:type owl:NamedIndividual ,
-                        <https://w3id.org/miao#MentalIllnessesSet> ;
-               <http://www.w3.org/ns/prov#wasGeneratedBy> :CNNBipolarDetection ;
-               <https://w3id.org/miao#hasMentalIllness> :CNNBipolar2 .
+miaoval:CNNBipolarSet rdf:type owl:NamedIndividual ,
+                               miao:MentalIllnessesSet ;
+                      <http://www.w3.org/ns/prov#wasGeneratedBy> miaoval:CNNBipolarDetection ;
+                      miao:hasMentalIllness miaoval:CNNBipolar2 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepression4
-:CNNDepression4 rdf:type owl:NamedIndividual ,
-                         <https://w3id.org/miao#MentalIllness> ;
-                <https://w3id.org/miao#belongsToMentalIllnessesSet> :CNNDepressionSet ;
-                <https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A7Z-DepressiveDisordersUnspecified> ;
-                <https://w3id.org/miao#hasMentalIllnessDetectionConfidence> 0.91 ;
-                <https://w3id.org/miao#refersToSample> "post4" .
+miaoval:CNNDepression4 rdf:type owl:NamedIndividual ,
+                                miao:MentalIllness ;
+                       miao:belongsToMentalIllnessesSet miaoval:CNNDepressionSet ;
+                       miao:referredToMentalIllnessCategory miaoval:A7Z-DepressiveDisordersUnspecified ;
+                       miao:hasMentalIllnessDetectionConfidence 0.91 ;
+                       miao:refersToSample "post4" .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepressionAccuracy
-:CNNDepressionAccuracy rdf:type owl:NamedIndividual ,
-                                <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNDepressionAccuracy rdf:type owl:NamedIndividual ,
+                                       mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepressionAccuracyEval
-:CNNDepressionAccuracyEval rdf:type owl:NamedIndividual ,
-                                    <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                           <http://www.w3.org/ns/mls#specifiedBy> :CNNDepressionAccuracy ;
-                           <http://www.w3.org/ns/mls#hasValue> "75.13"^^xsd:float .
+miaoval:CNNDepressionAccuracyEval rdf:type owl:NamedIndividual ,
+                                           mls:ModelEvaluation ;
+                                  mls:specifiedBy miaoval:CNNDepressionAccuracy ;
+                                  mls:hasValue "75.13"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepressionDetection
-:CNNDepressionDetection rdf:type owl:NamedIndividual ,
-                                 <https://w3id.org/miao#AutomaticMentalIllnessesDetection> ;
-                        <http://www.w3.org/ns/mls#achieves> :BinaryClassificationTask ;
-                        <http://www.w3.org/ns/mls#executes> :CNNDepressionImplementation ;
-                        <http://www.w3.org/ns/mls#hasInput> :CNNDepressionEpochsSetting ,
-                                                            :CNNDepressionLearningRateSetting ;
-                        <http://www.w3.org/ns/mls#hasOutput> :CNNAnxietyModel ,
-                                                             :CNNDepressionAccuracyEval ,
-                                                             :CNNDepressionF1Eval ,
-                                                             :CNNDepressionPrecisionEval ,
-                                                             :CNNDepressionRecallEval ;
-                        <http://www.w3.org/ns/mls#realizes> :CNNAlgoritm ;
-                        <http://www.w3.org/ns/prov#generated> :CNNDepressionSet ;
-                        <https://w3id.org/miao#hasInputData> :CNNWord2vec ,
-                                                             :RedditPosts ;
-                        <https://w3id.org/miao#usedMentalIllnessesSchema> :ICD-11 .
+miaoval:CNNDepressionDetection rdf:type owl:NamedIndividual ,
+                                        miao:AutomaticMentalIllnessesDetection ;
+                               mls:achieves miaoval:BinaryClassificationTask ;
+                               mls:executes miaoval:CNNDepressionImplementation ;
+                               mls:hasInput miaoval:CNNDepressionEpochsSetting ,
+                                            miaoval:CNNDepressionLearningRateSetting ;
+                               mls:hasOutput miaoval:CNNAnxietyModel ,
+                                             miaoval:CNNDepressionAccuracyEval ,
+                                             miaoval:CNNDepressionF1Eval ,
+                                             miaoval:CNNDepressionPrecisionEval ,
+                                             miaoval:CNNDepressionRecallEval ;
+                               mls:realizes miaoval:CNNAlgoritm ;
+                               <http://www.w3.org/ns/prov#generated> miaoval:CNNDepressionSet ;
+                               miao:hasInputData miaoval:CNNWord2vec ,
+                                                 miaoval:RedditPosts ;
+                               miao:usedMentalIllnessesSchema miaoval:ICD-11 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepressionEpochs
-:CNNDepressionEpochs rdf:type owl:NamedIndividual ,
-                              <http://www.w3.org/ns/mls#HyperParameter> ;
-                     <http://www.w3.org/ns/mls#hasValue> 50.0 .
+miaoval:CNNDepressionEpochs rdf:type owl:NamedIndividual ,
+                                     mls:HyperParameter ;
+                            mls:hasValue 50.0 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepressionEpochsSetting
-:CNNDepressionEpochsSetting rdf:type owl:NamedIndividual ,
-                                     <http://www.w3.org/ns/mls#HyperParameterSetting> ;
-                            <http://www.w3.org/ns/mls#specifiedBy> :CNNDepressionEpochs .
+miaoval:CNNDepressionEpochsSetting rdf:type owl:NamedIndividual ,
+                                            mls:HyperParameterSetting ;
+                                   mls:specifiedBy miaoval:CNNDepressionEpochs .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepressionEvalSpec
-:CNNDepressionEvalSpec rdf:type owl:NamedIndividual ,
-                                <http://www.w3.org/ns/mls#EvaluationSpecification> ;
-                       <http://www.w3.org/ns/mls#defines> :BinaryClassificationTask ;
-                       <http://www.w3.org/ns/mls#hasPart> :CNNDepressionAccuracy ,
-                                                          :CNNDepressionF1 ,
-                                                          :CNNDepressionPrecision ,
-                                                          :CNNDepressionRecall ,
-                                                          :Hold-out .
+miaoval:CNNDepressionEvalSpec rdf:type owl:NamedIndividual ,
+                                       mls:EvaluationSpecification ;
+                              mls:defines miaoval:BinaryClassificationTask ;
+                              mls:hasPart miaoval:CNNDepressionAccuracy ,
+                                          miaoval:CNNDepressionF1 ,
+                                          miaoval:CNNDepressionPrecision ,
+                                          miaoval:CNNDepressionRecall ,
+                                          miaoval:Hold-out .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepressionF1
-:CNNDepressionF1 rdf:type owl:NamedIndividual ,
-                          <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNDepressionF1 rdf:type owl:NamedIndividual ,
+                                 mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepressionF1Eval
-:CNNDepressionF1Eval rdf:type owl:NamedIndividual ,
-                              <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                     <http://www.w3.org/ns/mls#specifiedBy> :CNNDepressionF1 ;
-                     <http://www.w3.org/ns/mls#hasValue> "79.49"^^xsd:float .
+miaoval:CNNDepressionF1Eval rdf:type owl:NamedIndividual ,
+                                     mls:ModelEvaluation ;
+                            mls:specifiedBy miaoval:CNNDepressionF1 ;
+                            mls:hasValue "79.49"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepressionImplementation
-:CNNDepressionImplementation rdf:type owl:NamedIndividual ,
-                                      <http://www.w3.org/ns/mls#Implementation> ;
-                             <http://www.w3.org/ns/mls#hasPart> :PyTorch .
+miaoval:CNNDepressionImplementation rdf:type owl:NamedIndividual ,
+                                             mls:Implementation ;
+                                    mls:hasPart miaoval:PyTorch .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepressionLearningRate
-:CNNDepressionLearningRate rdf:type owl:NamedIndividual ,
-                                    <http://www.w3.org/ns/mls#HyperParameter> ;
-                           <http://www.w3.org/ns/mls#hasValue> "0.001"^^xsd:float .
+miaoval:CNNDepressionLearningRate rdf:type owl:NamedIndividual ,
+                                           mls:HyperParameter ;
+                                  mls:hasValue "0.001"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepressionLearningRateSetting
-:CNNDepressionLearningRateSetting rdf:type owl:NamedIndividual ,
-                                           <http://www.w3.org/ns/mls#HyperParameterSetting> ;
-                                  <http://www.w3.org/ns/mls#specifiedBy> :CNNDepressionLearningRate .
+miaoval:CNNDepressionLearningRateSetting rdf:type owl:NamedIndividual ,
+                                                  mls:HyperParameterSetting ;
+                                         mls:specifiedBy miaoval:CNNDepressionLearningRate .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepressionModel
-:CNNDepressionModel rdf:type owl:NamedIndividual ,
-                             <http://www.w3.org/ns/mls#Model> .
+miaoval:CNNDepressionModel rdf:type owl:NamedIndividual ,
+                                    mls:Model .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepressionPrecision
-:CNNDepressionPrecision rdf:type owl:NamedIndividual ,
-                                 <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNDepressionPrecision rdf:type owl:NamedIndividual ,
+                                        mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepressionPrecisionEval
-:CNNDepressionPrecisionEval rdf:type owl:NamedIndividual ,
-                                     <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                            <http://www.w3.org/ns/mls#specifiedBy> :CNNDepressionPrecision ;
-                            <http://www.w3.org/ns/mls#hasValue> "89.1"^^xsd:float .
+miaoval:CNNDepressionPrecisionEval rdf:type owl:NamedIndividual ,
+                                            mls:ModelEvaluation ;
+                                   mls:specifiedBy miaoval:CNNDepressionPrecision ;
+                                   mls:hasValue "89.1"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepressionRecall
-:CNNDepressionRecall rdf:type owl:NamedIndividual ,
-                              <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNDepressionRecall rdf:type owl:NamedIndividual ,
+                                     mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepressionRecallEval
-:CNNDepressionRecallEval rdf:type owl:NamedIndividual ,
-                                  <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                         <http://www.w3.org/ns/mls#specifiedBy> :CNNDepressionRecall ;
-                         <http://www.w3.org/ns/mls#hasValue> "71.75"^^xsd:float .
+miaoval:CNNDepressionRecallEval rdf:type owl:NamedIndividual ,
+                                         mls:ModelEvaluation ;
+                                mls:specifiedBy miaoval:CNNDepressionRecall ;
+                                mls:hasValue "71.75"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNDepressionSet
-:CNNDepressionSet rdf:type owl:NamedIndividual ,
-                           <https://w3id.org/miao#MentalIllnessesSet> ;
-                  <http://www.w3.org/ns/prov#wasGeneratedBy> :CNNDepressionDetection ;
-                  <https://w3id.org/miao#hasMentalIllness> :CNNDepression4 .
+miaoval:CNNDepressionSet rdf:type owl:NamedIndividual ,
+                                  miao:MentalIllnessesSet ;
+                         <http://www.w3.org/ns/prov#wasGeneratedBy> miaoval:CNNDepressionDetection ;
+                         miao:hasMentalIllness miaoval:CNNDepression4 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNSchizophrenia6
-:CNNSchizophrenia6 rdf:type owl:NamedIndividual ,
-                            <https://w3id.org/miao#MentalIllness> ;
-                   <https://w3id.org/miao#belongsToMentalIllnessesSet> :CNNSchizophreniaSet ;
-                   <https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A20-Schizophrenia> ;
-                   <https://w3id.org/miao#hasMentalIllnessDetectionConfidence> 0.79 ;
-                   <https://w3id.org/miao#refersToSample> "post6" .
+miaoval:CNNSchizophrenia6 rdf:type owl:NamedIndividual ,
+                                   miao:MentalIllness ;
+                          miao:belongsToMentalIllnessesSet miaoval:CNNSchizophreniaSet ;
+                          miao:referredToMentalIllnessCategory miaoval:A20-Schizophrenia ;
+                          miao:hasMentalIllnessDetectionConfidence 0.79 ;
+                          miao:refersToSample "post6" .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNSchizophreniaAccuracy
-:CNNSchizophreniaAccuracy rdf:type owl:NamedIndividual ,
-                                   <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNSchizophreniaAccuracy rdf:type owl:NamedIndividual ,
+                                          mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNSchizophreniaAccuracyEval
-:CNNSchizophreniaAccuracyEval rdf:type owl:NamedIndividual ,
-                                       <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                              <http://www.w3.org/ns/mls#specifiedBy> :CNNSchizophreniaAccuracy ;
-                              <http://www.w3.org/ns/mls#hasValue> "94.33"^^xsd:float .
+miaoval:CNNSchizophreniaAccuracyEval rdf:type owl:NamedIndividual ,
+                                              mls:ModelEvaluation ;
+                                     mls:specifiedBy miaoval:CNNSchizophreniaAccuracy ;
+                                     mls:hasValue "94.33"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNSchizophreniaDetection
-:CNNSchizophreniaDetection rdf:type owl:NamedIndividual ,
-                                    <https://w3id.org/miao#AutomaticMentalIllnessesDetection> ;
-                           <http://www.w3.org/ns/mls#achieves> :BinaryClassificationTask ;
-                           <http://www.w3.org/ns/mls#executes> :CNNSchizophreniaImplementation ;
-                           <http://www.w3.org/ns/mls#hasInput> :CNNSchizophreniaEpochsSetting ,
-                                                               :CNNSchizophreniaLearningRateSetting ;
-                           <http://www.w3.org/ns/mls#hasOutput> :CNNSchizophreniaAccuracyEval ,
-                                                                :CNNSchizophreniaF1Eval ,
-                                                                :CNNSchizophreniaModel ,
-                                                                :CNNSchizophreniaPrecisionEval ,
-                                                                :CNNSchizophreniaRecallEval ;
-                           <http://www.w3.org/ns/mls#realizes> :CNNAlgoritm ;
-                           <http://www.w3.org/ns/prov#generated> :CNNSchizophreniaSet ;
-                           <https://w3id.org/miao#hasInputData> :CNNWord2vec ,
-                                                                :RedditPosts ;
-                           <https://w3id.org/miao#usedMentalIllnessesSchema> :ICD-11 .
+miaoval:CNNSchizophreniaDetection rdf:type owl:NamedIndividual ,
+                                           miao:AutomaticMentalIllnessesDetection ;
+                                  mls:achieves miaoval:BinaryClassificationTask ;
+                                  mls:executes miaoval:CNNSchizophreniaImplementation ;
+                                  mls:hasInput miaoval:CNNSchizophreniaEpochsSetting ,
+                                               miaoval:CNNSchizophreniaLearningRateSetting ;
+                                  mls:hasOutput miaoval:CNNSchizophreniaAccuracyEval ,
+                                                miaoval:CNNSchizophreniaF1Eval ,
+                                                miaoval:CNNSchizophreniaModel ,
+                                                miaoval:CNNSchizophreniaPrecisionEval ,
+                                                miaoval:CNNSchizophreniaRecallEval ;
+                                  mls:realizes miaoval:CNNAlgoritm ;
+                                  <http://www.w3.org/ns/prov#generated> miaoval:CNNSchizophreniaSet ;
+                                  miao:hasInputData miaoval:CNNWord2vec ,
+                                                    miaoval:RedditPosts ;
+                                  miao:usedMentalIllnessesSchema miaoval:ICD-11 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNSchizophreniaEpochs
-:CNNSchizophreniaEpochs rdf:type owl:NamedIndividual ,
-                                 <http://www.w3.org/ns/mls#HyperParameter> ;
-                        <http://www.w3.org/ns/mls#hasValue> 50.0 .
+miaoval:CNNSchizophreniaEpochs rdf:type owl:NamedIndividual ,
+                                        mls:HyperParameter ;
+                               mls:hasValue 50.0 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNSchizophreniaEpochsSetting
-:CNNSchizophreniaEpochsSetting rdf:type owl:NamedIndividual ,
-                                        <http://www.w3.org/ns/mls#HyperParameterSetting> ;
-                               <http://www.w3.org/ns/mls#specifiedBy> :CNNSchizophreniaEpochs .
+miaoval:CNNSchizophreniaEpochsSetting rdf:type owl:NamedIndividual ,
+                                               mls:HyperParameterSetting ;
+                                      mls:specifiedBy miaoval:CNNSchizophreniaEpochs .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNSchizophreniaF1
-:CNNSchizophreniaF1 rdf:type owl:NamedIndividual ,
-                             <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNSchizophreniaF1 rdf:type owl:NamedIndividual ,
+                                    mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNSchizophreniaF1Eval
-:CNNSchizophreniaF1Eval rdf:type owl:NamedIndividual ,
-                                 <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                        <http://www.w3.org/ns/mls#specifiedBy> :CNNSchizophreniaF1 ;
-                        <http://www.w3.org/ns/mls#hasValue> "38.07"^^xsd:float ,
-                                                            "81.16"^^xsd:float .
+miaoval:CNNSchizophreniaF1Eval rdf:type owl:NamedIndividual ,
+                                        mls:ModelEvaluation ;
+                               mls:specifiedBy miaoval:CNNSchizophreniaF1 ;
+                               mls:hasValue "38.07"^^xsd:float ,
+                                            "81.16"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNSchizophreniaImplementation
-:CNNSchizophreniaImplementation rdf:type owl:NamedIndividual ,
-                                         <http://www.w3.org/ns/mls#Implementation> ;
-                                <http://www.w3.org/ns/mls#hasPart> :PyTorch .
+miaoval:CNNSchizophreniaImplementation rdf:type owl:NamedIndividual ,
+                                                mls:Implementation ;
+                                       mls:hasPart miaoval:PyTorch .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNSchizophreniaLearningRate
-:CNNSchizophreniaLearningRate rdf:type owl:NamedIndividual ,
-                                       <http://www.w3.org/ns/mls#HyperParameter> ;
-                              <http://www.w3.org/ns/mls#hasValue> "0.001"^^xsd:float .
+miaoval:CNNSchizophreniaLearningRate rdf:type owl:NamedIndividual ,
+                                              mls:HyperParameter ;
+                                     mls:hasValue "0.001"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNSchizophreniaLearningRateSetting
-:CNNSchizophreniaLearningRateSetting rdf:type owl:NamedIndividual ,
-                                              <http://www.w3.org/ns/mls#HyperParameterSetting> ;
-                                     <http://www.w3.org/ns/mls#specifiedBy> :CNNSchizophreniaLearningRate .
+miaoval:CNNSchizophreniaLearningRateSetting rdf:type owl:NamedIndividual ,
+                                                     mls:HyperParameterSetting ;
+                                            mls:specifiedBy miaoval:CNNSchizophreniaLearningRate .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNSchizophreniaModel
-:CNNSchizophreniaModel rdf:type owl:NamedIndividual ,
-                                <http://www.w3.org/ns/mls#Model> .
+miaoval:CNNSchizophreniaModel rdf:type owl:NamedIndividual ,
+                                       mls:Model .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNSchizophreniaPrecision
-:CNNSchizophreniaPrecision rdf:type owl:NamedIndividual ,
-                                    <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNSchizophreniaPrecision rdf:type owl:NamedIndividual ,
+                                           mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNSchizophreniaPrecisionEval
-:CNNSchizophreniaPrecisionEval rdf:type owl:NamedIndividual ,
-                                        <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                               <http://www.w3.org/ns/mls#specifiedBy> :CNNSchizophreniaPrecision ;
-                               <http://www.w3.org/ns/mls#hasValue> "81.16"^^xsd:float .
+miaoval:CNNSchizophreniaPrecisionEval rdf:type owl:NamedIndividual ,
+                                               mls:ModelEvaluation ;
+                                      mls:specifiedBy miaoval:CNNSchizophreniaPrecision ;
+                                      mls:hasValue "81.16"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNSchizophreniaRecall
-:CNNSchizophreniaRecall rdf:type owl:NamedIndividual ,
-                                 <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:CNNSchizophreniaRecall rdf:type owl:NamedIndividual ,
+                                        mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNSchizophreniaRecallEval
-:CNNSchizophreniaRecallEval rdf:type owl:NamedIndividual ,
-                                     <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                            <http://www.w3.org/ns/mls#specifiedBy> :CNNSchizophreniaRecall ;
-                            <http://www.w3.org/ns/mls#hasValue> "24.87"^^xsd:float .
+miaoval:CNNSchizophreniaRecallEval rdf:type owl:NamedIndividual ,
+                                            mls:ModelEvaluation ;
+                                   mls:specifiedBy miaoval:CNNSchizophreniaRecall ;
+                                   mls:hasValue "24.87"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNSchizophreniaSet
-:CNNSchizophreniaSet rdf:type owl:NamedIndividual ,
-                              <https://w3id.org/miao#MentalIllnessesSet> ;
-                     <http://www.w3.org/ns/prov#wasGeneratedBy> :CNNSchizophreniaDetection ;
-                     <https://w3id.org/miao#hasMentalIllness> :CNNSchizophrenia6 .
+miaoval:CNNSchizophreniaSet rdf:type owl:NamedIndividual ,
+                                     miao:MentalIllnessesSet ;
+                            <http://www.w3.org/ns/prov#wasGeneratedBy> miaoval:CNNSchizophreniaDetection ;
+                            miao:hasMentalIllness miaoval:CNNSchizophrenia6 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#CNNWord2vec
-:CNNWord2vec rdf:type owl:NamedIndividual ,
-                      <http://www.w3.org/ns/mls#Feature> ;
-             <https://w3id.org/miao#isInputOfMentalIllnessesDetection> :CNNAnxietyDetection ,
-                                                                       :CNNAutismDetection ,
-                                                                       :CNNBPDDetection ,
-                                                                       :CNNBipolarDetection ,
-                                                                       :CNNDepressionDetection ,
-                                                                       :CNNSchizophreniaDetection ;
-             rdfs:comment """Features for the CNN, obtained using word-embedding procedures
+miaoval:CNNWord2vec rdf:type owl:NamedIndividual ,
+                             mls:Feature ;
+                    miao:isInputOfMentalIllnessesDetection miaoval:CNNAnxietyDetection ,
+                                                           miaoval:CNNAutismDetection ,
+                                                           miaoval:CNNBPDDetection ,
+                                                           miaoval:CNNBipolarDetection ,
+                                                           miaoval:CNNDepressionDetection ,
+                                                           miaoval:CNNSchizophreniaDetection ;
+                    rdfs:comment """Features for the CNN, obtained using word-embedding procedures
 from the pre-processed texts using the word2vec API of Python Package, Gensim.""" .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#D-NumberOfInstances
-:D-NumberOfInstances rdf:type owl:NamedIndividual ,
-                              <http://www.w3.org/ns/mls#DatasetCharacteristic> ;
-                     <http://www.w3.org/ns/mls#hasValue> "488472"^^xsd:long .
+miaoval:D-NumberOfInstances rdf:type owl:NamedIndividual ,
+                                     mls:DatasetCharacteristic ;
+                            mls:hasValue "488472"^^xsd:long .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#F-NumberOfInstances
-:F-NumberOfInstances rdf:type owl:NamedIndividual ,
-                              <http://www.w3.org/ns/mls#FeatureCharacteristic> ;
-                     <http://www.w3.org/ns/mls#hasValue> "488472"^^xsd:long .
+miaoval:F-NumberOfInstances rdf:type owl:NamedIndividual ,
+                                     mls:FeatureCharacteristic ;
+                            mls:hasValue "488472"^^xsd:long .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#Hold-out
-:Hold-out rdf:type owl:NamedIndividual ,
-                   <http://www.w3.org/ns/mls#EvaluationProcedure> .
+miaoval:Hold-out rdf:type owl:NamedIndividual ,
+                          mls:EvaluationProcedure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#ICD-11
-:ICD-11 rdf:type owl:NamedIndividual ,
-                 <https://w3id.org/miao#MentalIllnessesSchema> ;
-        <https://w3id.org/miao#hasMentalIllnessCategory> <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A02-AutismSpectrumDisorder> ,
-                                                         <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A20-Schizophrenia> ,
-                                                         <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A6Z-BipolarOrRelatedDisordersUnspecified> ,
-                                                         <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6B00-GeneralisedAnxietyDisorder> ,
-                                                         <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6D10-PersonalityDisorder> ,
-                                                         <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A7Z-DepressiveDisordersUnspecified> ;
-        <https://w3id.org/miao#usedInMentalIllnessesDetection> :CNNAnxietyDetection ,
-                                                               :CNNAutismDetection ,
-                                                               :CNNBPDDetection ,
-                                                               :CNNBipolarDetection ,
-                                                               :CNNDepressionDetection ,
-                                                               :CNNSchizophreniaDetection ,
-                                                               :XGBoostAnxietyDetection ,
-                                                               :XGBoostAutismDetection ,
-                                                               :XGBoostBPDDetection ,
-                                                               :XGBoostBipolarDetection ,
-                                                               :XGBoostDepressionDetection ,
-                                                               :XGBoostSchizophreniaDetection ;
-        <http://purl.org/dc/terms/creator> "World Health Organization (WHO): https://www.who.int/" ;
-        <http://purl.org/dc/terms/hasVersion> 11 ,
-                                              """International Statistical Classification of Diseases and Related Health Problems (ICD) s the international standard for systematic recording, reporting, analysis, interpretation and comparison of mortality and morbidity data. This 11th revision (ICD-11) is the result of an unprecedented collaboration with clinicians, statisticians, classification
+miaoval:ICD-11 rdf:type owl:NamedIndividual ,
+                        miao:MentalIllnessesSchema ;
+               miao:hasMentalIllnessCategory miaoval:A02-AutismSpectrumDisorder ,
+                                             miaoval:A20-Schizophrenia ,
+                                             miaoval:A6Z-BipolarOrRelatedDisordersUnspecified ,
+                                             miaoval:A7Z-DepressiveDisordersUnspecified ,
+                                             miaoval:B00-GeneralisedAnxietyDisorder ,
+                                             miaoval:D10-PersonalityDisorder ;
+               miao:usedInMentalIllnessesDetection miaoval:CNNAnxietyDetection ,
+                                                   miaoval:CNNAutismDetection ,
+                                                   miaoval:CNNBPDDetection ,
+                                                   miaoval:CNNBipolarDetection ,
+                                                   miaoval:CNNDepressionDetection ,
+                                                   miaoval:CNNSchizophreniaDetection ,
+                                                   miaoval:XGBoostAnxietyDetection ,
+                                                   miaoval:XGBoostAutismDetection ,
+                                                   miaoval:XGBoostBPDDetection ,
+                                                   miaoval:XGBoostBipolarDetection ,
+                                                   miaoval:XGBoostDepressionDetection ,
+                                                   miaoval:XGBoostSchizophreniaDetection ;
+               <http://purl.org/dc/terms/creator> "World Health Organization (WHO): https://www.who.int/" ;
+               <http://purl.org/dc/terms/hasVersion> 11 ,
+                                                     """International Statistical Classification of Diseases and Related Health Problems (ICD) s the international standard for systematic recording, reporting, analysis, interpretation and comparison of mortality and morbidity data. This 11th revision (ICD-11) is the result of an unprecedented collaboration with clinicians, statisticians, classification
 and IT experts from around the world, making it useable by these groups, as well as by coders. ICD–11 allows countries to count and identify their most pressing health issues by using an up-to-date and clinically relevant classification system. Health conditions and accidents are assigned ICD–11 codes, resulting in data that can be used by governments to design effective public health policies, and measure their impact, or used for clinical recording. For the first time, ICD is fully electronic, currently providing access to 17 000 diagnostic categories, with over 100 000 medical
 diagnostic index terms. The index-based search algorithm interprets more than 1.6 million terms. ICD–11 is easy to install and use online or offline, using free 'container' software. https://icd.who.int/en/""" .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#PyTorch
-:PyTorch rdf:type owl:NamedIndividual ,
-                  <http://www.w3.org/ns/mls#Software> ;
-         <http://purl.org/dc/terms/description> "https://pytorch.org/" .
+miaoval:PyTorch rdf:type owl:NamedIndividual ,
+                         mls:Software ;
+                <http://purl.org/dc/terms/description> "https://pytorch.org/" .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#RedditPosts
-:RedditPosts rdf:type owl:NamedIndividual ,
-                      <http://www.w3.org/ns/mls#Dataset> .
+miaoval:RedditPosts rdf:type owl:NamedIndividual ,
+                             mls:Dataset .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAlgoritm
-:XGBoostAlgoritm rdf:type owl:NamedIndividual ,
-                          :Classification .
+miaoval:XGBoostAlgoritm rdf:type owl:NamedIndividual ,
+                                 miaoval:Classification .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAnxiety3
-:XGBoostAnxiety3 rdf:type owl:NamedIndividual ,
-                          <https://w3id.org/miao#MentalIllness> ;
-                 <https://w3id.org/miao#belongsToMentalIllnessesSet> :XGBoostAnxietySet ;
-                 <https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6B00-GeneralisedAnxietyDisorder> ;
-                 <https://w3id.org/miao#hasMentalIllnessDetectionConfidence> 0.92 ;
-                 <https://w3id.org/miao#refersToSample> "post3" .
+miaoval:XGBoostAnxiety3 rdf:type owl:NamedIndividual ,
+                                 miao:MentalIllness ;
+                        miao:belongsToMentalIllnessesSet miaoval:XGBoostAnxietySet ;
+                        miao:referredToMentalIllnessCategory miaoval:B00-GeneralisedAnxietyDisorder ;
+                        miao:hasMentalIllnessDetectionConfidence 0.92 ;
+                        miao:refersToSample "post3" .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAnxietyAccuracy
-:XGBoostAnxietyAccuracy rdf:type owl:NamedIndividual ,
-                                 <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:XGBoostAnxietyAccuracy rdf:type owl:NamedIndividual ,
+                                        mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAnxietyAccuracyEval
-:XGBoostAnxietyAccuracyEval rdf:type owl:NamedIndividual ,
-                                     <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                            <http://www.w3.org/ns/mls#specifiedBy> :XGBoostAnxietyAccuracy ;
-                            <http://www.w3.org/ns/mls#hasValue> "70.41"^^xsd:float .
+miaoval:XGBoostAnxietyAccuracyEval rdf:type owl:NamedIndividual ,
+                                            mls:ModelEvaluation ;
+                                   mls:specifiedBy miaoval:XGBoostAnxietyAccuracy ;
+                                   mls:hasValue "70.41"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAnxietyDetection
-:XGBoostAnxietyDetection rdf:type owl:NamedIndividual ,
-                                  <https://w3id.org/miao#AutomaticMentalIllnessesDetection> ;
-                         <http://www.w3.org/ns/mls#achieves> :BinaryClassificationTask ;
-                         <http://www.w3.org/ns/mls#executes> :XGBoostAnxietyImplementation ;
-                         <http://www.w3.org/ns/mls#hasOutput> :XGBoostAnxietyAccuracyEval ,
-                                                              :XGBoostAnxietyF1Eval ,
-                                                              :XGBoostAnxietyModel ;
-                         <http://www.w3.org/ns/mls#realizes> :XGBoostAlgoritm ;
-                         <http://www.w3.org/ns/prov#generated> :XGBoostAnxietySet ;
-                         <https://w3id.org/miao#hasInputData> :RedditPosts ,
-                                                              :XGBoostTF-IDFvec ;
-                         <https://w3id.org/miao#usedMentalIllnessesSchema> :ICD-11 .
+miaoval:XGBoostAnxietyDetection rdf:type owl:NamedIndividual ,
+                                         miao:AutomaticMentalIllnessesDetection ;
+                                mls:achieves miaoval:BinaryClassificationTask ;
+                                mls:executes miaoval:XGBoostAnxietyImplementation ;
+                                mls:hasOutput miaoval:XGBoostAnxietyAccuracyEval ,
+                                              miaoval:XGBoostAnxietyF1Eval ,
+                                              miaoval:XGBoostAnxietyModel ;
+                                mls:realizes miaoval:XGBoostAlgoritm ;
+                                <http://www.w3.org/ns/prov#generated> miaoval:XGBoostAnxietySet ;
+                                miao:hasInputData miaoval:RedditPosts ,
+                                                  miaoval:XGBoostTF-IDFvec ;
+                                miao:usedMentalIllnessesSchema miaoval:ICD-11 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAnxietyEvalSpec
-:XGBoostAnxietyEvalSpec rdf:type owl:NamedIndividual ,
-                                 <http://www.w3.org/ns/mls#EvaluationSpecification> ;
-                        <http://www.w3.org/ns/mls#defines> :BinaryClassificationTask ;
-                        <http://www.w3.org/ns/mls#hasPart> :Hold-out ,
-                                                           :XGBoostAnxietyAccuracy ,
-                                                           :XGBoostAnxietyF1 .
+miaoval:XGBoostAnxietyEvalSpec rdf:type owl:NamedIndividual ,
+                                        mls:EvaluationSpecification ;
+                               mls:defines miaoval:BinaryClassificationTask ;
+                               mls:hasPart miaoval:Hold-out ,
+                                           miaoval:XGBoostAnxietyAccuracy ,
+                                           miaoval:XGBoostAnxietyF1 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAnxietyF1
-:XGBoostAnxietyF1 rdf:type owl:NamedIndividual ,
-                           <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:XGBoostAnxietyF1 rdf:type owl:NamedIndividual ,
+                                  mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAnxietyF1Eval
-:XGBoostAnxietyF1Eval rdf:type owl:NamedIndividual ,
-                               <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                      <http://www.w3.org/ns/mls#specifiedBy> :XGBoostAnxietyF1 ;
-                      <http://www.w3.org/ns/mls#hasValue> "55.92"^^xsd:float .
+miaoval:XGBoostAnxietyF1Eval rdf:type owl:NamedIndividual ,
+                                      mls:ModelEvaluation ;
+                             mls:specifiedBy miaoval:XGBoostAnxietyF1 ;
+                             mls:hasValue "55.92"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAnxietyImplementation
-:XGBoostAnxietyImplementation rdf:type owl:NamedIndividual ,
-                                       <http://www.w3.org/ns/mls#Implementation> ;
-                              <http://www.w3.org/ns/mls#hasPart> :XGBoostLib .
+miaoval:XGBoostAnxietyImplementation rdf:type owl:NamedIndividual ,
+                                              mls:Implementation ;
+                                     mls:hasPart miaoval:XGBoostLib .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAnxietyModel
-:XGBoostAnxietyModel rdf:type owl:NamedIndividual ,
-                              <http://www.w3.org/ns/mls#Model> .
+miaoval:XGBoostAnxietyModel rdf:type owl:NamedIndividual ,
+                                     mls:Model .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAnxietySet
-:XGBoostAnxietySet rdf:type owl:NamedIndividual ,
-                            <https://w3id.org/miao#MentalIllnessesSet> ;
-                   <http://www.w3.org/ns/prov#wasGeneratedBy> :XGBoostAnxietyDetection ;
-                   <https://w3id.org/miao#hasMentalIllness> :XGBoostAnxiety3 .
+miaoval:XGBoostAnxietySet rdf:type owl:NamedIndividual ,
+                                   miao:MentalIllnessesSet ;
+                          <http://www.w3.org/ns/prov#wasGeneratedBy> miaoval:XGBoostAnxietyDetection ;
+                          miao:hasMentalIllness miaoval:XGBoostAnxiety3 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAutism1
-:XGBoostAutism1 rdf:type owl:NamedIndividual ,
-                         <https://w3id.org/miao#MentalIllness> ;
-                <https://w3id.org/miao#belongsToMentalIllnessesSet> :XGBoostAutismSet ;
-                <https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A02-AutismSpectrumDisorder> ;
-                <https://w3id.org/miao#hasMentalIllnessDetectionConfidence> 0.8 ;
-                <https://w3id.org/miao#refersToSample> "post1" .
+miaoval:XGBoostAutism1 rdf:type owl:NamedIndividual ,
+                                miao:MentalIllness ;
+                       miao:belongsToMentalIllnessesSet miaoval:XGBoostAutismSet ;
+                       miao:referredToMentalIllnessCategory miaoval:A02-AutismSpectrumDisorder ;
+                       miao:hasMentalIllnessDetectionConfidence 0.8 ;
+                       miao:refersToSample "post1" .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAutismAccuracy
-:XGBoostAutismAccuracy rdf:type owl:NamedIndividual ,
-                                <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:XGBoostAutismAccuracy rdf:type owl:NamedIndividual ,
+                                       mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAutismAccuracyEval
-:XGBoostAutismAccuracyEval rdf:type owl:NamedIndividual ,
-                                    <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                           <http://www.w3.org/ns/mls#specifiedBy> :XGBoostAutismAccuracy ;
-                           <http://www.w3.org/ns/mls#hasValue> "94.91"^^xsd:float .
+miaoval:XGBoostAutismAccuracyEval rdf:type owl:NamedIndividual ,
+                                           mls:ModelEvaluation ;
+                                  mls:specifiedBy miaoval:XGBoostAutismAccuracy ;
+                                  mls:hasValue "94.91"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAutismDetection
-:XGBoostAutismDetection rdf:type owl:NamedIndividual ,
-                                 <https://w3id.org/miao#AutomaticMentalIllnessesDetection> ;
-                        <http://www.w3.org/ns/mls#achieves> :BinaryClassificationTask ;
-                        <http://www.w3.org/ns/mls#executes> :XGBoostAutismImplementation ;
-                        <http://www.w3.org/ns/mls#hasOutput> :XGBoostAutismAccuracyEval ,
-                                                             :XGBoostAutismF1Eval ,
-                                                             :XGBoostAutismModel ;
-                        <http://www.w3.org/ns/mls#realizes> :XGBoostAlgoritm ;
-                        <http://www.w3.org/ns/prov#generated> :XGBoostAutismSet ;
-                        <https://w3id.org/miao#hasInputData> :RedditPosts ,
-                                                             :XGBoostTF-IDFvec ;
-                        <https://w3id.org/miao#usedMentalIllnessesSchema> :ICD-11 .
+miaoval:XGBoostAutismDetection rdf:type owl:NamedIndividual ,
+                                        miao:AutomaticMentalIllnessesDetection ;
+                               mls:achieves miaoval:BinaryClassificationTask ;
+                               mls:executes miaoval:XGBoostAutismImplementation ;
+                               mls:hasOutput miaoval:XGBoostAutismAccuracyEval ,
+                                             miaoval:XGBoostAutismF1Eval ,
+                                             miaoval:XGBoostAutismModel ;
+                               mls:realizes miaoval:XGBoostAlgoritm ;
+                               <http://www.w3.org/ns/prov#generated> miaoval:XGBoostAutismSet ;
+                               miao:hasInputData miaoval:RedditPosts ,
+                                                 miaoval:XGBoostTF-IDFvec ;
+                               miao:usedMentalIllnessesSchema miaoval:ICD-11 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAutismEvalSpec
-:XGBoostAutismEvalSpec rdf:type owl:NamedIndividual ,
-                                <http://www.w3.org/ns/mls#EvaluationSpecification> ;
-                       <http://www.w3.org/ns/mls#defines> :BinaryClassificationTask ;
-                       <http://www.w3.org/ns/mls#hasPart> :Hold-out ,
-                                                          :XGBoostAutismAccuracy ,
-                                                          :XGBoostAutismF1 .
+miaoval:XGBoostAutismEvalSpec rdf:type owl:NamedIndividual ,
+                                       mls:EvaluationSpecification ;
+                              mls:defines miaoval:BinaryClassificationTask ;
+                              mls:hasPart miaoval:Hold-out ,
+                                          miaoval:XGBoostAutismAccuracy ,
+                                          miaoval:XGBoostAutismF1 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAutismF1
-:XGBoostAutismF1 rdf:type owl:NamedIndividual ,
-                          <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:XGBoostAutismF1 rdf:type owl:NamedIndividual ,
+                                 mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAutismF1Eval
-:XGBoostAutismF1Eval rdf:type owl:NamedIndividual ,
-                              <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                     <http://www.w3.org/ns/mls#specifiedBy> :XGBoostAutismF1 ;
-                     <http://www.w3.org/ns/mls#hasValue> "38.31."^^xsd:float .
+miaoval:XGBoostAutismF1Eval rdf:type owl:NamedIndividual ,
+                                     mls:ModelEvaluation ;
+                            mls:specifiedBy miaoval:XGBoostAutismF1 ;
+                            mls:hasValue "38.31"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAutismImplementation
-:XGBoostAutismImplementation rdf:type owl:NamedIndividual ,
-                                      <http://www.w3.org/ns/mls#Implementation> ;
-                             <http://www.w3.org/ns/mls#hasPart> :XGBoostLib .
+miaoval:XGBoostAutismImplementation rdf:type owl:NamedIndividual ,
+                                             mls:Implementation ;
+                                    mls:hasPart miaoval:XGBoostLib .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAutismModel
-:XGBoostAutismModel rdf:type owl:NamedIndividual ,
-                             <http://www.w3.org/ns/mls#Model> .
+miaoval:XGBoostAutismModel rdf:type owl:NamedIndividual ,
+                                    mls:Model .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostAutismSet
-:XGBoostAutismSet rdf:type owl:NamedIndividual ,
-                           <https://w3id.org/miao#MentalIllnessesSet> ;
-                  <http://www.w3.org/ns/prov#wasGeneratedBy> :XGBoostAutismDetection ;
-                  <https://w3id.org/miao#hasMentalIllness> :XGBoostAutism1 .
+miaoval:XGBoostAutismSet rdf:type owl:NamedIndividual ,
+                                  miao:MentalIllnessesSet ;
+                         <http://www.w3.org/ns/prov#wasGeneratedBy> miaoval:XGBoostAutismDetection ;
+                         miao:hasMentalIllness miaoval:XGBoostAutism1 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBPD5
-:XGBoostBPD5 rdf:type owl:NamedIndividual ,
-                      <https://w3id.org/miao#MentalIllness> ;
-             <https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6D10-PersonalityDisorder> ;
-             <https://w3id.org/miao#hasMentalIllnessDetectionConfidence> 0.86 ;
-             <https://w3id.org/miao#refersToSample> "post5" .
+miaoval:XGBoostBPD5 rdf:type owl:NamedIndividual ,
+                             miao:MentalIllness ;
+                    miao:referredToMentalIllnessCategory miaoval:D10-PersonalityDisorder ;
+                    miao:hasMentalIllnessDetectionConfidence 0.86 ;
+                    miao:refersToSample "post5" .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBPDAccuracy
-:XGBoostBPDAccuracy rdf:type owl:NamedIndividual ,
-                             <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:XGBoostBPDAccuracy rdf:type owl:NamedIndividual ,
+                                    mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBPDAccuracyEval
-:XGBoostBPDAccuracyEval rdf:type owl:NamedIndividual ,
-                                 <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                        <http://www.w3.org/ns/mls#specifiedBy> :XGBoostBPDAccuracy ;
-                        <http://www.w3.org/ns/mls#hasValue> "85.14"^^xsd:float .
+miaoval:XGBoostBPDAccuracyEval rdf:type owl:NamedIndividual ,
+                                        mls:ModelEvaluation ;
+                               mls:specifiedBy miaoval:XGBoostBPDAccuracy ;
+                               mls:hasValue "85.14"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBPDDetection
-:XGBoostBPDDetection rdf:type owl:NamedIndividual ,
-                              <https://w3id.org/miao#AutomaticMentalIllnessesDetection> ;
-                     <http://www.w3.org/ns/mls#achieves> :BinaryClassificationTask ;
-                     <http://www.w3.org/ns/mls#executes> :XGBoostBPDImplementation ;
-                     <http://www.w3.org/ns/mls#hasOutput> :XGBoostBPDAccuracyEval ,
-                                                          :XGBoostBPDF1Eval ,
-                                                          :XGBoostBPDModel ;
-                     <http://www.w3.org/ns/mls#realizes> :XGBoostAlgoritm ;
-                     <http://www.w3.org/ns/prov#generated> :XGBoostBPDSet ;
-                     <https://w3id.org/miao#hasInputData> :RedditPosts ,
-                                                          :XGBoostTF-IDFvec ;
-                     <https://w3id.org/miao#usedMentalIllnessesSchema> :ICD-11 .
+miaoval:XGBoostBPDDetection rdf:type owl:NamedIndividual ,
+                                     miao:AutomaticMentalIllnessesDetection ;
+                            mls:achieves miaoval:BinaryClassificationTask ;
+                            mls:executes miaoval:XGBoostBPDImplementation ;
+                            mls:hasOutput miaoval:XGBoostBPDAccuracyEval ,
+                                          miaoval:XGBoostBPDF1Eval ,
+                                          miaoval:XGBoostBPDModel ;
+                            mls:realizes miaoval:XGBoostAlgoritm ;
+                            <http://www.w3.org/ns/prov#generated> miaoval:XGBoostBPDSet ;
+                            miao:hasInputData miaoval:RedditPosts ,
+                                              miaoval:XGBoostTF-IDFvec ;
+                            miao:usedMentalIllnessesSchema miaoval:ICD-11 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBPDEvalSpec
-:XGBoostBPDEvalSpec rdf:type owl:NamedIndividual ,
-                             <http://www.w3.org/ns/mls#EvaluationSpecification> ;
-                    <http://www.w3.org/ns/mls#defines> :BinaryClassificationTask ;
-                    <http://www.w3.org/ns/mls#hasPart> :Hold-out ,
-                                                       :XGBoostBPDAccuracy ,
-                                                       :XGBoostBPDF1 .
+miaoval:XGBoostBPDEvalSpec rdf:type owl:NamedIndividual ,
+                                    mls:EvaluationSpecification ;
+                           mls:defines miaoval:BinaryClassificationTask ;
+                           mls:hasPart miaoval:Hold-out ,
+                                       miaoval:XGBoostBPDAccuracy ,
+                                       miaoval:XGBoostBPDF1 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBPDF1
-:XGBoostBPDF1 rdf:type owl:NamedIndividual ,
-                       <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:XGBoostBPDF1 rdf:type owl:NamedIndividual ,
+                              mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBPDF1Eval
-:XGBoostBPDF1Eval rdf:type owl:NamedIndividual ,
-                           <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                  <http://www.w3.org/ns/mls#specifiedBy> :XGBoostBPDF1 ;
-                  <http://www.w3.org/ns/mls#hasValue> "46.43"^^xsd:float .
+miaoval:XGBoostBPDF1Eval rdf:type owl:NamedIndividual ,
+                                  mls:ModelEvaluation ;
+                         mls:specifiedBy miaoval:XGBoostBPDF1 ;
+                         mls:hasValue "46.43"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBPDImplementation
-:XGBoostBPDImplementation rdf:type owl:NamedIndividual ,
-                                   <http://www.w3.org/ns/mls#Implementation> ;
-                          <http://www.w3.org/ns/mls#hasPart> :XGBoostLib .
+miaoval:XGBoostBPDImplementation rdf:type owl:NamedIndividual ,
+                                          mls:Implementation ;
+                                 mls:hasPart miaoval:XGBoostLib .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBPDModel
-:XGBoostBPDModel rdf:type owl:NamedIndividual ,
-                          <http://www.w3.org/ns/mls#Model> .
+miaoval:XGBoostBPDModel rdf:type owl:NamedIndividual ,
+                                 mls:Model .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBPDSet
-:XGBoostBPDSet rdf:type owl:NamedIndividual ,
-                        <https://w3id.org/miao#MentalIllnessesSet> ;
-               <http://www.w3.org/ns/prov#wasGeneratedBy> :XGBoostBPDDetection ;
-               <https://w3id.org/miao#hasMentalIllness> :XGBoostBPD5 .
+miaoval:XGBoostBPDSet rdf:type owl:NamedIndividual ,
+                               miao:MentalIllnessesSet ;
+                      <http://www.w3.org/ns/prov#wasGeneratedBy> miaoval:XGBoostBPDDetection ;
+                      miao:hasMentalIllness miaoval:XGBoostBPD5 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBipolar2
-:XGBoostBipolar2 rdf:type owl:NamedIndividual ,
-                          <https://w3id.org/miao#MentalIllness> ;
-                 <https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A6Z-BipolarOrRelatedDisordersUnspecified> ;
-                 <https://w3id.org/miao#hasMentalIllnessDetectionConfidence> 0.8 ;
-                 <https://w3id.org/miao#refersToSample> "post2" .
+miaoval:XGBoostBipolar2 rdf:type owl:NamedIndividual ,
+                                 miao:MentalIllness ;
+                        miao:referredToMentalIllnessCategory miaoval:A6Z-BipolarOrRelatedDisordersUnspecified ;
+                        miao:hasMentalIllnessDetectionConfidence 0.8 ;
+                        miao:refersToSample "post2" .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBipolarAccuracy
-:XGBoostBipolarAccuracy rdf:type owl:NamedIndividual ,
-                                 <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:XGBoostBipolarAccuracy rdf:type owl:NamedIndividual ,
+                                        mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBipolarAccuracyEval
-:XGBoostBipolarAccuracyEval rdf:type owl:NamedIndividual ,
-                                     <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                            <http://www.w3.org/ns/mls#specifiedBy> :XGBoostBipolarAccuracy ;
-                            <http://www.w3.org/ns/mls#hasValue> "85.53"^^xsd:float .
+miaoval:XGBoostBipolarAccuracyEval rdf:type owl:NamedIndividual ,
+                                            mls:ModelEvaluation ;
+                                   mls:specifiedBy miaoval:XGBoostBipolarAccuracy ;
+                                   mls:hasValue "85.53"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBipolarDetection
-:XGBoostBipolarDetection rdf:type owl:NamedIndividual ,
-                                  <https://w3id.org/miao#AutomaticMentalIllnessesDetection> ;
-                         <http://www.w3.org/ns/mls#achieves> :BinaryClassificationTask ;
-                         <http://www.w3.org/ns/mls#executes> :XGBoostBipolarImplementation ;
-                         <http://www.w3.org/ns/mls#hasOutput> :XGBoostBipolarAccuracyEval ,
-                                                              :XGBoostBipolarF1Eval ,
-                                                              :XGBoostBipolarModel ;
-                         <http://www.w3.org/ns/mls#realizes> :XGBoostAlgoritm ;
-                         <http://www.w3.org/ns/prov#generated> :XGBoostBipolarSet ;
-                         <https://w3id.org/miao#hasInputData> :RedditPosts ,
-                                                              :XGBoostTF-IDFvec ;
-                         <https://w3id.org/miao#usedMentalIllnessesSchema> :ICD-11 .
+miaoval:XGBoostBipolarDetection rdf:type owl:NamedIndividual ,
+                                         miao:AutomaticMentalIllnessesDetection ;
+                                mls:achieves miaoval:BinaryClassificationTask ;
+                                mls:executes miaoval:XGBoostBipolarImplementation ;
+                                mls:hasOutput miaoval:XGBoostBipolarAccuracyEval ,
+                                              miaoval:XGBoostBipolarF1Eval ,
+                                              miaoval:XGBoostBipolarModel ;
+                                mls:realizes miaoval:XGBoostAlgoritm ;
+                                <http://www.w3.org/ns/prov#generated> miaoval:XGBoostBipolarSet ;
+                                miao:hasInputData miaoval:RedditPosts ,
+                                                  miaoval:XGBoostTF-IDFvec ;
+                                miao:usedMentalIllnessesSchema miaoval:ICD-11 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBipolarEvalSpec
-:XGBoostBipolarEvalSpec rdf:type owl:NamedIndividual ,
-                                 <http://www.w3.org/ns/mls#EvaluationSpecification> ;
-                        <http://www.w3.org/ns/mls#defines> :BinaryClassificationTask ;
-                        <http://www.w3.org/ns/mls#hasPart> :Hold-out ,
-                                                           :XGBoostBipolarAccuracy ,
-                                                           :XGBoostBipolarF1 .
+miaoval:XGBoostBipolarEvalSpec rdf:type owl:NamedIndividual ,
+                                        mls:EvaluationSpecification ;
+                               mls:defines miaoval:BinaryClassificationTask ;
+                               mls:hasPart miaoval:Hold-out ,
+                                           miaoval:XGBoostBipolarAccuracy ,
+                                           miaoval:XGBoostBipolarF1 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBipolarF1
-:XGBoostBipolarF1 rdf:type owl:NamedIndividual ,
-                           <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:XGBoostBipolarF1 rdf:type owl:NamedIndividual ,
+                                  mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBipolarF1Eval
-:XGBoostBipolarF1Eval rdf:type owl:NamedIndividual ,
-                               <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                      <http://www.w3.org/ns/mls#specifiedBy> :XGBoostBipolarF1 ;
-                      <http://www.w3.org/ns/mls#hasValue> "46.43"^^xsd:float .
+miaoval:XGBoostBipolarF1Eval rdf:type owl:NamedIndividual ,
+                                      mls:ModelEvaluation ;
+                             mls:specifiedBy miaoval:XGBoostBipolarF1 ;
+                             mls:hasValue "46.43"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBipolarImplementation
-:XGBoostBipolarImplementation rdf:type owl:NamedIndividual ,
-                                       <http://www.w3.org/ns/mls#Implementation> ;
-                              <http://www.w3.org/ns/mls#hasPart> :XGBoostLib .
+miaoval:XGBoostBipolarImplementation rdf:type owl:NamedIndividual ,
+                                              mls:Implementation ;
+                                     mls:hasPart miaoval:XGBoostLib .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBipolarModel
-:XGBoostBipolarModel rdf:type owl:NamedIndividual ,
-                              <http://www.w3.org/ns/mls#Model> .
+miaoval:XGBoostBipolarModel rdf:type owl:NamedIndividual ,
+                                     mls:Model .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostBipolarSet
-:XGBoostBipolarSet rdf:type owl:NamedIndividual ,
-                            <https://w3id.org/miao#MentalIllnessesSet> ;
-                   <http://www.w3.org/ns/prov#wasGeneratedBy> :XGBoostBipolarDetection ;
-                   <https://w3id.org/miao#hasMentalIllness> :XGBoostBipolar2 .
+miaoval:XGBoostBipolarSet rdf:type owl:NamedIndividual ,
+                                   miao:MentalIllnessesSet ;
+                          <http://www.w3.org/ns/prov#wasGeneratedBy> miaoval:XGBoostBipolarDetection ;
+                          miao:hasMentalIllness miaoval:XGBoostBipolar2 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostDepression4
-:XGBoostDepression4 rdf:type owl:NamedIndividual ,
-                             <https://w3id.org/miao#MentalIllness> ;
-                    <https://w3id.org/miao#belongsToMentalIllnessesSet> :XGBoostDepressionSet ;
-                    <https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A7Z-DepressiveDisordersUnspecified> ;
-                    <https://w3id.org/miao#hasMentalIllnessDetectionConfidence> 0.87 ;
-                    <https://w3id.org/miao#refersToSample> "post4" .
+miaoval:XGBoostDepression4 rdf:type owl:NamedIndividual ,
+                                    miao:MentalIllness ;
+                           miao:belongsToMentalIllnessesSet miaoval:XGBoostDepressionSet ;
+                           miao:referredToMentalIllnessCategory miaoval:A7Z-DepressiveDisordersUnspecified ;
+                           miao:hasMentalIllnessDetectionConfidence 0.87 ;
+                           miao:refersToSample "post4" .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostDepressionAccuracy
-:XGBoostDepressionAccuracy rdf:type owl:NamedIndividual ,
-                                    <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:XGBoostDepressionAccuracy rdf:type owl:NamedIndividual ,
+                                           mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostDepressionAccuracyEval
-:XGBoostDepressionAccuracyEval rdf:type owl:NamedIndividual ,
-                                        <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                               <http://www.w3.org/ns/mls#specifiedBy> :XGBoostDepressionAccuracy ;
-                               <http://www.w3.org/ns/mls#hasValue> "71.69"^^xsd:float .
+miaoval:XGBoostDepressionAccuracyEval rdf:type owl:NamedIndividual ,
+                                               mls:ModelEvaluation ;
+                                      mls:specifiedBy miaoval:XGBoostDepressionAccuracy ;
+                                      mls:hasValue "71.69"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostDepressionDetection
-:XGBoostDepressionDetection rdf:type owl:NamedIndividual ,
-                                     <https://w3id.org/miao#AutomaticMentalIllnessesDetection> ;
-                            <http://www.w3.org/ns/mls#achieves> :BinaryClassificationTask ;
-                            <http://www.w3.org/ns/mls#executes> :XGBoostDepressionImplementation ;
-                            <http://www.w3.org/ns/mls#hasOutput> :XGBoostDepressionAccuracyEval ,
-                                                                 :XGBoostDepressionModel ;
-                            <http://www.w3.org/ns/mls#realizes> :XGBoostAlgoritm ;
-                            <http://www.w3.org/ns/prov#generated> :XGBoostDepressionSet ;
-                            <https://w3id.org/miao#hasInputData> :RedditPosts ,
-                                                                 :XGBoostDepressionF1Eval ,
-                                                                 :XGBoostTF-IDFvec ;
-                            <https://w3id.org/miao#usedMentalIllnessesSchema> :ICD-11 .
+miaoval:XGBoostDepressionDetection rdf:type owl:NamedIndividual ,
+                                            miao:AutomaticMentalIllnessesDetection ;
+                                   mls:achieves miaoval:BinaryClassificationTask ;
+                                   mls:executes miaoval:XGBoostDepressionImplementation ;
+                                   mls:hasOutput miaoval:XGBoostDepressionAccuracyEval ,
+                                                 miaoval:XGBoostDepressionF1Eval ,
+                                                 miaoval:XGBoostDepressionModel ;
+                                   mls:realizes miaoval:XGBoostAlgoritm ;
+                                   <http://www.w3.org/ns/prov#generated> miaoval:XGBoostDepressionSet ;
+                                   miao:hasInputData miaoval:RedditPosts ,
+                                                     miaoval:XGBoostTF-IDFvec ;
+                                   miao:usedMentalIllnessesSchema miaoval:ICD-11 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostDepressionEvalSpec
-:XGBoostDepressionEvalSpec rdf:type owl:NamedIndividual ,
-                                    <http://www.w3.org/ns/mls#EvaluationSpecification> ;
-                           <http://www.w3.org/ns/mls#defines> :BinaryClassificationTask ;
-                           <http://www.w3.org/ns/mls#hasPart> :Hold-out ,
-                                                              :XGBoostDepressionAccuracy ,
-                                                              :XGBoostDepressionF1 .
+miaoval:XGBoostDepressionEvalSpec rdf:type owl:NamedIndividual ,
+                                           mls:EvaluationSpecification ;
+                                  mls:defines miaoval:BinaryClassificationTask ;
+                                  mls:hasPart miaoval:Hold-out ,
+                                              miaoval:XGBoostDepressionAccuracy ,
+                                              miaoval:XGBoostDepressionF1 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostDepressionF1
-:XGBoostDepressionF1 rdf:type owl:NamedIndividual ,
-                              <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:XGBoostDepressionF1 rdf:type owl:NamedIndividual ,
+                                     mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostDepressionF1Eval
-:XGBoostDepressionF1Eval rdf:type owl:NamedIndividual ,
-                                  <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                         <http://www.w3.org/ns/mls#specifiedBy> :XGBoostDepressionF1 ;
-                         <http://www.w3.org/ns/mls#hasValue> "58.02"^^xsd:float .
+miaoval:XGBoostDepressionF1Eval rdf:type owl:NamedIndividual ,
+                                         mls:ModelEvaluation ;
+                                mls:specifiedBy miaoval:XGBoostDepressionF1 ;
+                                mls:hasValue "58.02"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostDepressionImplementation
-:XGBoostDepressionImplementation rdf:type owl:NamedIndividual ,
-                                          <http://www.w3.org/ns/mls#Implementation> ;
-                                 <http://www.w3.org/ns/mls#hasPart> :XGBoostLib .
+miaoval:XGBoostDepressionImplementation rdf:type owl:NamedIndividual ,
+                                                 mls:Implementation ;
+                                        mls:hasPart miaoval:XGBoostLib .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostDepressionModel
-:XGBoostDepressionModel rdf:type owl:NamedIndividual ,
-                                 <http://www.w3.org/ns/mls#Model> .
+miaoval:XGBoostDepressionModel rdf:type owl:NamedIndividual ,
+                                        mls:Model .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostDepressionSet
-:XGBoostDepressionSet rdf:type owl:NamedIndividual ,
-                               <https://w3id.org/miao#MentalIllnessesSet> ;
-                      <http://www.w3.org/ns/prov#wasGeneratedBy> :XGBoostDepressionDetection ;
-                      <https://w3id.org/miao#hasMentalIllness> :XGBoostDepression4 .
+miaoval:XGBoostDepressionSet rdf:type owl:NamedIndividual ,
+                                      miao:MentalIllnessesSet ;
+                             <http://www.w3.org/ns/prov#wasGeneratedBy> miaoval:XGBoostDepressionDetection ;
+                             miao:hasMentalIllness miaoval:XGBoostDepression4 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostLib
-:XGBoostLib rdf:type owl:NamedIndividual ,
-                     <http://www.w3.org/ns/mls#Software> ;
-            <http://purl.org/dc/terms/description> "https://xgboost.readthedocs.io/en/stable/" .
-
-
-###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostSchizophreniAccuracy
-:XGBoostSchizophreniAccuracy rdf:type owl:NamedIndividual ,
-                                      <http://www.w3.org/ns/mls#EvaluationMeasure> .
-
-
-###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostSchizophreniF1
-:XGBoostSchizophreniF1 rdf:type owl:NamedIndividual ,
-                                <http://www.w3.org/ns/mls#EvaluationMeasure> .
+miaoval:XGBoostLib rdf:type owl:NamedIndividual ,
+                            mls:Software ;
+                   <http://purl.org/dc/terms/description> "https://xgboost.readthedocs.io/en/stable/" .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostSchizophrenia6
-:XGBoostSchizophrenia6 rdf:type owl:NamedIndividual ,
-                                <https://w3id.org/miao#MentalIllness> ;
-                       <https://w3id.org/miao#belongsToMentalIllnessesSet> :XGBoostSchizophreniaSet ;
-                       <https://w3id.org/miao#referredToMentalIllnessCategory> <http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A20-Schizophrenia> ;
-                       <https://w3id.org/miao#hasMentalIllnessDetectionConfidence> 0.81 ;
-                       <https://w3id.org/miao#refersToSample> "post6" .
+miaoval:XGBoostSchizophrenia6 rdf:type owl:NamedIndividual ,
+                                       miao:MentalIllness ;
+                              miao:belongsToMentalIllnessesSet miaoval:XGBoostSchizophreniaSet ;
+                              miao:referredToMentalIllnessCategory miaoval:A20-Schizophrenia ;
+                              miao:hasMentalIllnessDetectionConfidence 0.81 ;
+                              miao:refersToSample "post6" .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostSchizophreniaAccuracy
-:XGBoostSchizophreniaAccuracy rdf:type owl:NamedIndividual .
+miaoval:XGBoostSchizophreniaAccuracy rdf:type owl:NamedIndividual ,
+                                              mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostSchizophreniaAccuracyEval
-:XGBoostSchizophreniaAccuracyEval rdf:type owl:NamedIndividual ,
-                                           <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                                  <http://www.w3.org/ns/mls#specifiedBy> :XGBoostSchizophreniaAccuracy ;
-                                  <http://www.w3.org/ns/mls#hasValue> "86.72"^^xsd:float .
+miaoval:XGBoostSchizophreniaAccuracyEval rdf:type owl:NamedIndividual ,
+                                                  mls:ModelEvaluation ;
+                                         mls:specifiedBy miaoval:XGBoostSchizophreniaAccuracy ;
+                                         mls:hasValue "86.72"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostSchizophreniaDetection
-:XGBoostSchizophreniaDetection rdf:type owl:NamedIndividual ,
-                                        <https://w3id.org/miao#AutomaticMentalIllnessesDetection> ;
-                               <http://www.w3.org/ns/mls#achieves> :BinaryClassificationTask ;
-                               <http://www.w3.org/ns/mls#executes> :XGBoostSchizophreniaImplementation ;
-                               <http://www.w3.org/ns/mls#hasOutput> :XGBoostSchizophreniaAccuracyEval ,
-                                                                    :XGBoostSchizophreniaF1Eval ,
-                                                                    :XGBoostSchizophreniaModel ;
-                               <http://www.w3.org/ns/mls#realizes> :XGBoostAlgoritm ;
-                               <http://www.w3.org/ns/prov#generated> :XGBoostSchizophreniaSet ;
-                               <https://w3id.org/miao#hasInputData> :RedditPosts ,
-                                                                    :XGBoostTF-IDFvec ;
-                               <https://w3id.org/miao#usedMentalIllnessesSchema> :ICD-11 .
+miaoval:XGBoostSchizophreniaDetection rdf:type owl:NamedIndividual ,
+                                               miao:AutomaticMentalIllnessesDetection ;
+                                      mls:achieves miaoval:BinaryClassificationTask ;
+                                      mls:executes miaoval:XGBoostSchizophreniaImplementation ;
+                                      mls:hasOutput miaoval:XGBoostSchizophreniaAccuracyEval ,
+                                                    miaoval:XGBoostSchizophreniaF1Eval ,
+                                                    miaoval:XGBoostSchizophreniaModel ;
+                                      mls:realizes miaoval:XGBoostAlgoritm ;
+                                      <http://www.w3.org/ns/prov#generated> miaoval:XGBoostSchizophreniaSet ;
+                                      miao:hasInputData miaoval:RedditPosts ,
+                                                        miaoval:XGBoostTF-IDFvec ;
+                                      miao:usedMentalIllnessesSchema miaoval:ICD-11 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostSchizophreniaEvalSpec
-:XGBoostSchizophreniaEvalSpec rdf:type owl:NamedIndividual ,
-                                       <http://www.w3.org/ns/mls#EvaluationSpecification> ;
-                              <http://www.w3.org/ns/mls#defines> :BinaryClassificationTask ;
-                              <http://www.w3.org/ns/mls#hasPart> :Hold-out ,
-                                                                 :XGBoostSchizophreniaAccuracy ,
-                                                                 :XGBoostSchizophreniaF1 .
+miaoval:XGBoostSchizophreniaEvalSpec rdf:type owl:NamedIndividual ,
+                                              mls:EvaluationSpecification ;
+                                     mls:defines miaoval:BinaryClassificationTask ;
+                                     mls:hasPart miaoval:Hold-out ,
+                                                 miaoval:XGBoostSchizophreniaAccuracy ,
+                                                 miaoval:XGBoostSchizophreniaF1 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostSchizophreniaF1
-:XGBoostSchizophreniaF1 rdf:type owl:NamedIndividual .
+miaoval:XGBoostSchizophreniaF1 rdf:type owl:NamedIndividual ,
+                                        mls:EvaluationMeasure .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostSchizophreniaF1Eval
-:XGBoostSchizophreniaF1Eval rdf:type owl:NamedIndividual ,
-                                     <http://www.w3.org/ns/mls#ModelEvaluation> ;
-                            <http://www.w3.org/ns/mls#specifiedBy> :XGBoostSchizophreniaF1 ;
-                            <http://www.w3.org/ns/mls#hasValue> "40.97"^^xsd:float .
+miaoval:XGBoostSchizophreniaF1Eval rdf:type owl:NamedIndividual ,
+                                            mls:ModelEvaluation ;
+                                   mls:specifiedBy miaoval:XGBoostSchizophreniaF1 ;
+                                   mls:hasValue "40.97"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostSchizophreniaImplementation
-:XGBoostSchizophreniaImplementation rdf:type owl:NamedIndividual ,
-                                             <http://www.w3.org/ns/mls#Implementation> ;
-                                    <http://www.w3.org/ns/mls#hasPart> :XGBoostLib .
+miaoval:XGBoostSchizophreniaImplementation rdf:type owl:NamedIndividual ,
+                                                    mls:Implementation ;
+                                           mls:hasPart miaoval:XGBoostLib .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostSchizophreniaModel
-:XGBoostSchizophreniaModel rdf:type owl:NamedIndividual ,
-                                    <http://www.w3.org/ns/mls#Model> .
+miaoval:XGBoostSchizophreniaModel rdf:type owl:NamedIndividual ,
+                                           mls:Model .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostSchizophreniaSet
-:XGBoostSchizophreniaSet rdf:type owl:NamedIndividual ,
-                                  <https://w3id.org/miao#MentalIllnessesSet> ;
-                         <http://www.w3.org/ns/prov#wasGeneratedBy> :XGBoostSchizophreniaDetection ;
-                         <https://w3id.org/miao#hasMentalIllness> :XGBoostSchizophrenia6 .
+miaoval:XGBoostSchizophreniaSet rdf:type owl:NamedIndividual ,
+                                         miao:MentalIllnessesSet ;
+                                <http://www.w3.org/ns/prov#wasGeneratedBy> miaoval:XGBoostSchizophreniaDetection ;
+                                miao:hasMentalIllness miaoval:XGBoostSchizophrenia6 .
 
 
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#XGBoostTF-IDFvec
-:XGBoostTF-IDFvec rdf:type owl:NamedIndividual ,
-                           <http://www.w3.org/ns/mls#Feature> ;
-                  <https://w3id.org/miao#isInputOfMentalIllnessesDetection> :XGBoostAnxietyDetection ,
-                                                                            :XGBoostAutismDetection ,
-                                                                            :XGBoostBPDDetection ,
-                                                                            :XGBoostBipolarDetection ,
-                                                                            :XGBoostDepressionDetection ,
-                                                                            :XGBoostSchizophreniaDetection ;
-                  rdfs:comment """Features for XGBoost, obtained using  the TF-IDF vectorizer in the sckit-learn package
+miaoval:XGBoostTF-IDFvec rdf:type owl:NamedIndividual ,
+                                  mls:Feature ;
+                         miao:isInputOfMentalIllnessesDetection miaoval:XGBoostAnxietyDetection ,
+                                                                miaoval:XGBoostAutismDetection ,
+                                                                miaoval:XGBoostBPDDetection ,
+                                                                miaoval:XGBoostBipolarDetection ,
+                                                                miaoval:XGBoostDepressionDetection ,
+                                                                miaoval:XGBoostSchizophreniaDetection ;
+                         rdfs:comment """Features for XGBoost, obtained using  the TF-IDF vectorizer in the sckit-learn package
 that convert words into n-dimensional vectors.""" .
 
 
+###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A02-AutismSpectrumDisorder
+miaoval:A02-AutismSpectrumDisorder rdf:type owl:NamedIndividual ,
+                                            miao:MentalIllnessCategory ;
+                                   miao:isMentalIllnessCategoryOf miaoval:ICD-11 ;
+                                   miao:referredToMentalIllness miaoval:CNNAutism1 ,
+                                                                miaoval:XGBoostAutism1 ;
+                                   <http://purl.org/dc/terms/description> "Autism spectrum disorder is characterised by persistent deficits in the ability to initiate and to sustain reciprocal social interaction and social communication, and by a range of restricted, repetitive, and inflexible patterns of behaviour, interests or activities that are clearly atypical or excessive for the individual’s age and sociocultural context. The onset of the disorder occurs during the developmental period, typically in early childhood, but symptoms may not become fully manifest until later, when social demands exceed limited capacities. Deficits are sufficiently severe to cause impairment in personal, family, social, educational, occupational or other important areas of functioning and are usually a pervasive feature of the individual’s functioning observable in all settings, although they may vary according to social, educational, or other context. Individuals along the spectrum exhibit a full range of intellectual functioning and language abilities. https://icd.who.int/browse/2025-01/mms/en#437815624" .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A20-Schizophrenia
+miaoval:A20-Schizophrenia rdf:type owl:NamedIndividual ,
+                                   miao:MentalIllnessCategory ;
+                          miao:isMentalIllnessCategoryOf miaoval:ICD-11 ;
+                          miao:referredToMentalIllness miaoval:CNNSchizophrenia6 ,
+                                                       miaoval:XGBoostSchizophrenia6 ;
+                          <http://purl.org/dc/terms/description> "Schizophrenia is characterised by disturbances in multiple mental modalities, including thinking (e.g., delusions, disorganisation in the form of thought), perception (e.g., hallucinations), self-experience (e.g., the experience that one's feelings, impulses, thoughts, or behaviour are under the control of an external force), cognition (e.g., impaired attention, verbal memory, and social cognition), volition (e.g., loss of motivation), affect (e.g., blunted emotional expression), and behaviour (e.g., behaviour that appears bizarre or purposeless, unpredictable or inappropriate emotional responses that interfere with the organisation of behaviour). Psychomotor disturbances, including catatonia, may be present. Persistent delusions, persistent hallucinations, thought disorder, and experiences of influence, passivity, or control are considered core symptoms. Symptoms must have persisted for at least one month in order for a diagnosis of schizophrenia to be assigned. The symptoms are not a manifestation of another health condition (e.g., a brain tumour) and are not due to the effect of a substance or medication on the central nervous system (e.g., corticosteroids), including withdrawal (e.g., alcohol withdrawal). https://icd.who.int/browse/2025-01/mms/en#1683919430" .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A6Z-BipolarOrRelatedDisordersUnspecified
+miaoval:A6Z-BipolarOrRelatedDisordersUnspecified rdf:type owl:NamedIndividual ,
+                                                          miao:MentalIllnessCategory ;
+                                                 miao:isMentalIllnessCategoryOf miaoval:ICD-11 ;
+                                                 miao:referredToMentalIllness miaoval:CNNBipolar2 ,
+                                                                              miaoval:XGBoostBipolar2 ;
+                                                 <http://purl.org/dc/terms/description> "https://icd.who.int/browse/2025-01/mms/en#613065957%2Funspecified" .
+
+
 ###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A7Z-DepressiveDisordersUnspecified
-<http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6A7Z-DepressiveDisordersUnspecified> rdf:type owl:NamedIndividual ,
-                                                                                                                  <https://w3id.org/miao#MentalIllnessCategory> ;
-                                                                                                         <https://w3id.org/miao#hasInputData> :RedditPosts ,
-                                                                                                                                              :XGBoostTF-IDFvec ;
-                                                                                                         <https://w3id.org/miao#isMentalIllnessCategoryOf> :ICD-11 ;
-                                                                                                         <https://w3id.org/miao#referredToMentalIllness> :CNNDepression4 ,
-                                                                                                                                                         :XGBoostDepression4 ;
-                                                                                                         <https://w3id.org/miao#usedMentalIllnessesSchema> :ICD-11 ;
-                                                                                                         <http://purl.org/dc/terms/description> "https://icd.who.int/browse/2025-01/mms/en#1563440232%2Funspecified" .
+miaoval:A7Z-DepressiveDisordersUnspecified rdf:type owl:NamedIndividual ,
+                                                    miao:MentalIllnessCategory ;
+                                           miao:hasInputData miaoval:RedditPosts ,
+                                                             miaoval:XGBoostTF-IDFvec ;
+                                           miao:isMentalIllnessCategoryOf miaoval:ICD-11 ;
+                                           miao:referredToMentalIllness miaoval:CNNDepression4 ,
+                                                                        miaoval:XGBoostDepression4 ;
+                                           miao:usedMentalIllnessesSchema miaoval:ICD-11 ;
+                                           <http://purl.org/dc/terms/description> "https://icd.who.int/browse/2025-01/mms/en#1563440232%2Funspecified" .
 
 
-###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
+###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6B00-GeneralisedAnxietyDisorder
+miaoval:B00-GeneralisedAnxietyDisorder rdf:type owl:NamedIndividual ,
+                                                miao:MentalIllnessCategory ;
+                                       miao:isMentalIllnessCategoryOf miaoval:ICD-11 ;
+                                       miao:referredToMentalIllness miaoval:CNNAnxiety3 ,
+                                                                    miaoval:XGBoostAnxiety3 ;
+                                       <http://purl.org/dc/terms/description> "Generalised anxiety disorder is characterised by marked symptoms of anxiety that persist for at least several months, for more days than not, manifested by either general apprehension (i.e. ‘free-floating anxiety’) or excessive worry focused on multiple everyday events, most often concerning family, health, finances, and school or work, together with additional symptoms such as muscular tension or motor restlessness, sympathetic autonomic over-activity, subjective experience of nervousness, difficulty maintaining concentration, irritability, or sleep disturbance. The symptoms result in significant distress or significant impairment in personal, family, social, educational, occupational, or other important areas of functioning. The symptoms are not a manifestation of another health condition and are not due to the effects of a substance or medication on the central nervous system. https://icd.who.int/browse/2025-01/mms/en#1712535455" .
+
+
+###  http://www.semanticweb.org/sanar/ontologies/2026/0/miao-validation#6D10-PersonalityDisorder
+miaoval:D10-PersonalityDisorder rdf:type owl:NamedIndividual ,
+                                         miao:MentalIllnessCategory ;
+                                miao:isMentalIllnessCategoryOf miaoval:ICD-11 ;
+                                miao:referredToMentalIllness miaoval:CNNBPD5 ,
+                                                             miaoval:XGBoostBPD5 ;
+                                <http://purl.org/dc/terms/description> "Personality disorder is characterised by problems in functioning of aspects of the self (e.g., identity, self-worth, accuracy of self-view, self-direction), and/or interpersonal dysfunction (e.g., ability to develop and maintain close and mutually satisfying relationships, ability to understand others’ perspectives and to manage conflict in relationships) that have persisted over an extended period of time (e.g., 2 years or more). The disturbance is manifest in patterns of cognition, emotional experience, emotional expression, and behaviour that are maladaptive (e.g., inflexible or poorly regulated) and is manifest across a range of personal and social situations (i.e., is not limited to specific relationships or social roles). The patterns of behaviour characterizing the disturbance are not developmentally appropriate and cannot be explained primarily by social or cultural factors, including socio-political conflict. The disturbance is associated with substantial distress or significant impairment in personal, family, social, educational, occupational or other important areas of functioning. https://icd.who.int/browse/2025-01/mms/en#941859884" .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
