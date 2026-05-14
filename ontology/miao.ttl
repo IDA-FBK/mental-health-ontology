@@ -11,7 +11,8 @@
 @base <https://w3id.org/miao#> .
 
 <https://w3id.org/miao#> rdf:type owl:Ontology ;
-                          owl:imports <https://raw.githubusercontent.com/ML-Schema/core/master/MLSchema.ttl> ;
+                          owl:imports <http://www.w3.org/ns/prov-o-20130430> ,
+                                      <https://raw.githubusercontent.com/ML-Schema/core/master/MLSchema.ttl> ;
                           dcterms:created "2025-10-27"^^xsd:date ;
                           dcterms:creator "Carlos Á. Iglesias" ,
                                           "Gianluca Apriceno" ,
