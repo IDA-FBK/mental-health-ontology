@@ -92,6 +92,6 @@ ex:MentalIllness_MDD_P00010 a ex:Depression ;
     rdfs:label "Major Depressive Disorder diagnosis for patient P00010"@en ;
     miao:referredToMentalIllnessCategory ex:DSM5_MDD ;
     miao:belongsToMentalIllnessesSet ex:MentalIllnessesSet_P00010 ;
-    miao:refersToSample "Patient_P00010"^^xsd:string ;
+    miao:refersToSample "SESSION-NOTES-P00010-S12"^^xsd:string ;
     miao:hasMentalIllnessLevel "Moderate to Severe"^^xsd:string ;
     rdfs:comment "Diagnosis based on PHQ-9 score of 17 and clinical observation of DSM-5 criteria including depressed mood, anhedonia, sleep disturbances, fatigue, concentration difficulties, and passive suicidal ideation"@en .
