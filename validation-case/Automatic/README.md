@@ -1,4 +1,4 @@
-# Validation Case for MIAO
+# Automatic Detection Validation Case
 
 The goal of this validation is to demonstrate the applicability of MIAO to a real-world mental health detection scenario based on social media data and deep learning models.
 
@@ -21,7 +21,7 @@ The validation is based on a published research study on the detection of mental
 The models aim to identify individuals potentially affected by mental health conditions based on their social media activity, as a supplementary tool for monitoring mental health states.
 
 ## Mapping to MIAO
-![MIAO Ontology Overview](../diagrams/miao_ai_validation_case.png)
+![MIAO Ontology Overview](../../diagrams/miao_ai_validation_case.png)
 
 The validation case contains a **complete semantic mapping of the study to MIAO**, showing how AI detection processes, data, models, results, and evaluations are represented using the ontology. The figure above presents a **simplified view** of this mapping for clarity:
 
