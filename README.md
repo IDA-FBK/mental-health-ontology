@@ -51,7 +51,9 @@ The development of the MIAO schema follows a 4-step procedure:
 
 ## Ontology Overview
 
-![MIAO Ontology Overview](diagrams/miao_modules.png)
+<p align="center">
+  <img src="diagrams/miao_modules.png" alt="MIAO Logo" width="450">
+</p>
 
 The MIAO ontology is structured into five interconnected modules The **Input Data** module describes the datasets and extracted features that serve as the basis for the analysis. The **Detection** module models the different detection processes supported by the ontology, distinguishing between assessments performed manually by clinicians or experts and those obtained automatically through computational methods. In the case of automatic approaches, the ontology integrates and reuses concepts from the **ML Integration** module, such as learning models, experimental runs, tasks, and evaluation procedures. The **Scheme** module represents the diagnostic or classification systems adopted during the analysis process (e.g., ICD-11), while the **Output** module captures the resulting mental illness predictions and their representation. The latter two modules are closely related, since each identified condition is associated with a category defined by the selected classification scheme.
 
